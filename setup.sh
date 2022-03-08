@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
-sudo ln -sf ~/.nixos-config/configuration.nix /etc/nixos/configuration.nix
-sudo ln -sf /etc/nixos/hardware-configuration.nix ~/.nixos-config/
+ln -sf ~/.nixos-config/configuration.nix /etc/nixos/configuration.nix
+ln -sf /etc/nixos/hardware-configuration.nix ~/.nixos-config/

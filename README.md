@@ -4,10 +4,10 @@ My NixOS config
 
 ## Installation
 ```
-./install.sh
+sudo ./install.sh
 ```
 
 ## Configuration Setup
 ```
-./setup.sh
+sudo ./setup.sh
 ```
