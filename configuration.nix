@@ -11,8 +11,6 @@
       /etc/nixos/swap-configuration.nix
     ];
   
-  # Hardware
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -81,6 +79,19 @@
   
   nixpkgs.config.allowUnfree = true;
 
+  # Shell
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ll = "exa -aalg";
+      pp = "ping 1.1.1.1";
+    };
+    promptInit = ''
+      PROMPT=$'\n'"%F{6}%~%f"$'\n'"%B%(#.%F{1}.%F{2})%# %f%b"
+    '';
+  };
+  users.defaultUserShell = pkgs.zsh;
+
   # Sway
   hardware.opengl.enable = true;
 
@@ -92,23 +103,13 @@
     ];
   };
 
+  #xdg.portal.wlr.enable = true;
+
   environment.loginShellInit = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
       WLR_RENDERER_ALLOW_SOFTWARE=1 sway
     fi
   '';
-
-  # Shell
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      ll = "exa -aalg";
-    };
-    promptInit = ''
-      PROMPT=$'\n'"%F{6}%~%f"$'\n'"%B%F{2}%# %f%b"
-    '';
-  };
-  users.users.zaechus.shell = pkgs.zsh;
 
   # Fonts
   fonts.fonts = with pkgs; [
@@ -125,6 +126,8 @@
   # };
 
   # List services that you want to enable:
+
+  #services.pipewire.enable
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
