@@ -7,11 +7,11 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
+      /etc/nixos/swap-configuration.nix
     ];
   
   # Hardware
-  boot.initrd.luks.devices."swap".device = "/dev/disk/by-uuid/d5eeb7a8-af5f-4a91-ac92-c231edab4b47";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
