@@ -1,5 +1,0 @@
-{ config, ... }:
-
-{
-  boot.initrd.luks.devices."swap".device = "/dev/disk/by-uuid/d5eeb7a8-af5f-4a91-ac92-c231edab4b47";
-}
