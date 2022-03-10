@@ -4,16 +4,34 @@
 
 { config, pkgs, ... }:
 
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  autologin = pkgs.writeText "autologin-script.sh" ''
+    if [[ "$(tty)" == "/dev/tty1" ]]; then
+      ${pkgs.shadow}/bin/login -f zaechus;
+    else
+      ${pkgs.shadow}/bin/login;
+    fi
+  '';
+in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       /etc/nixos/hardware-configuration.nix
       /etc/nixos/swap-configuration.nix
+      (import "${home-manager}/nixos")
     ];
-  
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # TTY1 Autologin
+  services.getty = {
+    loginProgram = "${pkgs.bash}/bin/sh";
+    loginOptions = toString autologin;
+    extraArgs = [ "--skip-login" ];
+  };
 
   networking.hostName = "nixvm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -63,6 +81,13 @@
   users.users.zaechus = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+  };
+
+  home-manager.users.zaechus = {
+    programs.zsh = {
+      enable = true;
+      defaultKeymap = "viins";
+    };
   };
 
   # List packages installed in system profile. To search, run:
