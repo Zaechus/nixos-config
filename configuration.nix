@@ -80,7 +80,7 @@ in
   # };
   users.users.zaechus = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" ];
   };
 
   home-manager.users.zaechus = {
@@ -88,18 +88,74 @@ in
       enable = true;
       defaultKeymap = "viins";
     };
+
+    wayland.windowManager.sway = {
+      enable = true;
+      config = {
+	keybindings = {
+          "Mod4+Return" = "exec alacritty";
+          "Mod4+d" = "exec bemenu-run";
+
+          "Mod4+e" = "layout toggle split";
+          "Mod4+w" = "layout tabbed";
+
+          "Mod4+Up" = "focus up";
+          "Mod4+Down" = "focus down";
+          "Mod4+Left" = "focus left";
+          "Mod4+Right" = "focus right";
+
+          "Mod4+Shift+Up" = "move up";
+          "Mod4+Shift+Down" = "move down";
+          "Mod4+Shift+Left" = "move left";
+          "Mod4+Shift+Right" = "move right";
+
+	  "Mod4+1" = "workspace number 1";
+	  "Mod4+2" = "workspace number 2";
+	  "Mod4+3" = "workspace number 3";
+	  "Mod4+4" = "workspace number 4";
+	  "Mod4+5" = "workspace number 5";
+	  "Mod4+6" = "workspace number 6";
+	  "Mod4+7" = "workspace number 7";
+	  "Mod4+8" = "workspace number 8";
+	  "Mod4+9" = "workspace number 9";
+	  "Mod4+0" = "workspace number 10";
+
+          "Mod4+Shift+1" = "move container to workspace number 1";
+          "Mod4+Shift+2" = "move container to workspace number 2";
+          "Mod4+Shift+3" = "move container to workspace number 3";
+          "Mod4+Shift+4" = "move container to workspace number 4";
+          "Mod4+Shift+5" = "move container to workspace number 5";
+          "Mod4+Shift+6" = "move container to workspace number 6";
+          "Mod4+Shift+7" = "move container to workspace number 7";
+          "Mod4+Shift+8" = "move container to workspace number 8";
+          "Mod4+Shift+9" = "move container to workspace number 9";
+          "Mod4+Shift+0" = "move container to workspace number 10";
+	};
+
+	bars = [{
+	  position = "top";
+	  statusCommand = "echo 1";
+        }];
+
+	startup = [
+          #{ command = "pipewire" }
+        ];
+      };
+    };
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    #brightnessctl
     bat exa fd ripgrep
     neovim
     git
     neofetch
     bottom
+    rustup gcc
     ungoogled-chromium
-    lutris
+    lutris papirus-icon-theme
   ];
   
   nixpkgs.config.allowUnfree = true;
@@ -108,6 +164,7 @@ in
   programs.zsh = {
     enable = true;
     shellAliases = {
+      doas = "sudo";
       ll = "exa -aalg";
       pp = "ping 1.1.1.1";
     };
@@ -122,6 +179,7 @@ in
 
   programs.sway = {
     enable = true;
+    wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       bemenu grim slurp swaylock wl-clipboard
       alacritty
