@@ -18,6 +18,7 @@ in
   imports =
     [
       (import "${home-manager}/nixos")
+      ../../home-manager/default.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -82,11 +83,6 @@ in
   };
 
   home-manager.users.zaechus = {
-    programs.zsh = {
-      enable = true;
-      defaultKeymap = "viins";
-    };
-
     wayland.windowManager.sway = {
       enable = true;
       config = {
