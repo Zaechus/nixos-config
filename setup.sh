@@ -2,5 +2,7 @@
 
 script_path=$(dirname $(realpath $0))
 
-ln -sf $script_path/configuration.nix /etc/nixos/configuration.nix
-chown root:root $script_path/configuration.nix
+config_path=$(ls $script_path/hosts/$1/configuration.nix)
+
+sed -i "/\/etc\/nixos\/swap-configuration.nix/ s~$~ $config_path~" /etc/nixos/configuration.nix
+nixos-rebuild --switch

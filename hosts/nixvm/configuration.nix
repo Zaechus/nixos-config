@@ -17,8 +17,6 @@ in
 {
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
-      /etc/nixos/swap-configuration.nix
       (import "${home-manager}/nixos")
     ];
 

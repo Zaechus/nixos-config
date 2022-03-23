@@ -4,12 +4,12 @@
 
 My NixOS config
 
-## Installation
+## [NixOS Installation](https://nixos.org/download.html#nixos-iso)
 ```
 sudo ./install.sh
 ```
 
-## Configuration Setup
+### Configuration Setup
 ```
-sudo ./setup.sh
+sudo ./setup.sh <HOSTNAME>
 ```

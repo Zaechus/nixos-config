@@ -1,0 +1,62 @@
+# Lines configured by zsh-newuser-install
+fpath+=~/.zfunc
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+unsetopt beep
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/zaechus/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# PATH
+path+=("$HOME/.cargo/bin")
+path+=("$HOME/.local/bin")
+
+export PATH
+
+# ENVVARS
+export EDITOR="nvim"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export PAGER="bat"
+export XDG_CURRENT_DESKTOP="sway"
+export MOZ_ENABLE_WAYLAND=1
+
+# alias
+alias btm="btm --battery -R"
+
+alias diff="diff --color"
+
+alias doas='sudo'
+
+alias l="exa --icons --color=always"
+alias la="l -a"
+alias ll="l -aalg"
+lt() {
+    l --git-ignore -TL $1 $2 | bat -p
+}
+lta() {
+    l -aT $1 | bat -p
+}
+
+alias lisosort="exa -lRs size --no-permissions --no-user --no-time ~/images/disk/**/*.iso"
+
+alias pp="ping 1.1.1.1"
+
+alias sc2cfg="swaymsg input type:keyboard repeat_rate 150 && swaymsg input type:keyboard repeat_delay 150"
+alias unsc2="swaymsg input type:keyboard repeat_rate 25 && swaymsg input type:keyboard repeat_delay 300"
+
+alias watch="watch -c -n 1 "
+
+alias batworld="sed \"s/.*\///g\" /var/lib/portage/world | sort | bat"
+
+alias qemu-boot-bios="qemu-system-x86_64 -enable-kvm -cpu host -smp 12 -m 8G -vga virtio --display gtk,full-screen=on,show-cursor=on"
+alias qemu-boot="qemu-boot-bios -drive if=pflash,format=raw,unit=0,readonly=on,file=/usr/share/edk2-ovmf/OVMF_CODE.fd -drive if=pflash,format=raw,unit=1,file=OVMF_VARS.fd"
+
+# PROMPT
+PROMPT=$'\n'"%F{6}%~%f"$'\n'"%B%(#.%F{1}.%F{2})%# %f%b"

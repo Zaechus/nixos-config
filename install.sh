@@ -1,8 +1,7 @@
 #!/bin/sh -e
 
 confirm_password () {
-    while :
-    do
+    while :; do
         printf "$1: " >&2 && read -rs pass1 && printf "\n" >&2
         printf "confirm $1: " >&2 && read -rs pass2 && printf "\n" >&2
         [[ $pass1 == $pass2 && $pass2 ]] && break
@@ -11,8 +10,7 @@ confirm_password () {
 }
 
 # Choose disk
-while :
-do
+while :; do
     lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS
     printf "\nDisk (e.g. /dev/sda): " && read my_disk
     [[ -b $my_disk ]] && break
@@ -63,7 +61,7 @@ swapon /dev/mapper/swap
 
 # NixOS
 nixos-generate-config --root /mnt
-cp configuration.nix /mnt/etc/nixos/configuration.nix
-printf "{ config, ... }:\n\n{\n  boot.initrd.luks.devices.\"swap\".device = \"/dev/disk/by-uuid/$(blkid $part2 -o value -s UUID)\";\n}\n" > /mnt/etc/nixos/swap-configuration.nix
+printf "{ config, ... }: { boot.initrd.luks.devices.\"swap\".device = \"/dev/disk/by-uuid/$(blkid $part2 -o value -s UUID)\"; }\n" > /mnt/etc/nixos/swap-configuration.nix
+sed -i '/\/etc\/nixos\/hardware-configuration.nix/ s/$/ \/etc\/nixos\/swap-configuration.nix/' /mnt/etc/nixos/configuration.nix
 
 nixos-install
