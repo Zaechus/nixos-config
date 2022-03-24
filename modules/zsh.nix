@@ -13,6 +13,12 @@
     enable = true;
     defaultKeymap = "viins";
 
+    profileExtra = ''
+      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+        sway
+      fi
+    '';
+
     initExtra = ''
       path+=("$HOME/.cargo/bin")
       path+=("$HOME/.local/bin")
