@@ -1,17 +1,19 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
     [
       ../../modules/common.nix
+      #../../modules/home.nix
     ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "zaechus";
   home.homeDirectory = "/home/zaechus";
 
-  # Use system's sway package
+  # Use system package for Alacritty and Sway
   wayland.windowManager.sway.package = null;
+  wayland.windowManager.sway.config.terminal = lib.mkOverride 10 "/usr/bin/alacritty";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

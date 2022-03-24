@@ -20,7 +20,7 @@
     '';
 
     envExtra = ''
-      . .cargo/env
+      . $HOME/.cargo/env
     '';
 
     initExtra = ''

@@ -7,13 +7,17 @@
       output = {
         eDP-1 = { bg = "${./background.jpg} fill"; };
       };
+
+      menu = "bemenu-run";
+      terminal = "alacritty";
+
       modifier = "Mod4";
       floating.modifier = "Mod4";
       keybindings =
         let mod = config.wayland.windowManager.sway.config.modifier;
         in {
-        "${mod}+Return" = "exec alacritty";
-        "${mod}+d" = "exec bemenu-run";
+        "${mod}+Return" = "exec ${config.wayland.windowManager.sway.config.terminal}";
+        "${mod}+d" = "exec ${config.wayland.windowManager.sway.config.menu}";
 
         "${mod}+Shift+q" = "kill";
         "${mod}+Shift+e" = "exec swaymsg exit";
