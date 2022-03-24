@@ -1,9 +1,32 @@
 { config, pkgs, ... }:
 
 {
+  systemd.user.sessionVariables = rec {
+    EDITOR = "nvim";
+    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+    PAGER = "bat";
+    XDG_CURRENT_DESKTOP = "sway";
+    MOZ_ENABLE_WAYLAND = 1;
+  };
+
   programs.zsh = {
     enable = true;
     defaultKeymap = "viins";
+
+    initExtra = ''
+      path+=("$HOME/.cargo/bin")
+      path+=("$HOME/.local/bin")
+
+      lt() {
+          exa --icons --color=always --git-ignore -TL $1 $2 | bat -p
+      }
+      lta() {
+          exa --icons --color=always -aT $1 | bat -p
+      }
+
+      PROMPT=$'\n'"%F{6}%~%f"$'\n'"%B%(#.%F{1}.%F{2})%# %f%b"
+    '';
+
     shellAliases = {
       btm = "btm --battery -R";
       diff = "diff --color";

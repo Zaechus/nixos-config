@@ -155,17 +155,6 @@ in
   nixpkgs.config.allowUnfree = true;
 
   # Shell
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      doas = "sudo";
-      ll = "exa -aalg";
-      pp = "ping 1.1.1.1";
-    };
-    promptInit = ''
-      PROMPT=$'\n'"%F{6}%~%f"$'\n'"%B%(#.%F{1}.%F{2})%# %f%b"
-    '';
-  };
   users.defaultUserShell = pkgs.zsh;
 
   # Sway
