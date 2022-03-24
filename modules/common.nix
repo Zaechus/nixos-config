@@ -3,7 +3,8 @@
 {
   imports =
     [
-      ./sway/sway.nix
+      ./git.nix
+      ./sway/default.nix
       ./zsh.nix
     ];
 }

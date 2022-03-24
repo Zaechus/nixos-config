@@ -19,6 +19,10 @@
       fi
     '';
 
+    envExtra = ''
+      . .cargo/env
+    '';
+
     initExtra = ''
       path+=("$HOME/.cargo/bin")
       path+=("$HOME/.local/bin")

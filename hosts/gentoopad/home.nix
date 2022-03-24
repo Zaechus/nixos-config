@@ -10,6 +10,9 @@
   home.username = "zaechus";
   home.homeDirectory = "/home/zaechus";
 
+  # Use system's sway package
+  wayland.windowManager.sway.package = null;
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
