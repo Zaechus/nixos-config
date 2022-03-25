@@ -5,7 +5,7 @@
     [
       ./alacritty.nix
       ./git.nix
-      ./neovim.nix
+      ./neovim/default.nix
       ./sway/default.nix
       ./zsh.nix
     ];

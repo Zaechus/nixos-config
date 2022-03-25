@@ -11,8 +11,17 @@
   home.homeDirectory = "/home/zaechus";
 
   # Use system package for Alacritty and Sway
-  wayland.windowManager.sway.package = null;
-  wayland.windowManager.sway.config.terminal = lib.mkOverride 10 "/usr/bin/alacritty";
+  wayland.windowManager.sway = {
+    package = null;
+    config.terminal = lib.mkOverride 10 "/usr/bin/alacritty";
+  };
+
+  # Gentoo-specific aliases
+  programs.zsh.shellAliases = {
+    batworld = ''
+      sed 's~.*/~~' /var/lib/portage/world | sort | bat
+    '';
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

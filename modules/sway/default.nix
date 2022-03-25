@@ -26,6 +26,10 @@
 
       keybindings =
         let mod = config.wayland.windowManager.sway.config.modifier;
+            left = config.wayland.windowManager.sway.config.left;
+            down = config.wayland.windowManager.sway.config.down;
+            up = config.wayland.windowManager.sway.config.up;
+            right = config.wayland.windowManager.sway.config.right;
         in {
         "${mod}+Return" = "exec ${config.wayland.windowManager.sway.config.terminal}";
         "${mod}+d" = "exec ${config.wayland.windowManager.sway.config.menu}";
@@ -38,15 +42,25 @@
         "${mod}+s" = "layout stacking";
         "${mod}+w" = "layout tabbed";
 
-        "${mod}+Up" = "focus up";
-        "${mod}+Down" = "focus down";
         "${mod}+Left" = "focus left";
+        "${mod}+Down" = "focus down";
+        "${mod}+Up" = "focus up";
         "${mod}+Right" = "focus right";
 
-        "${mod}+Shift+Up" = "move up";
-        "${mod}+Shift+Down" = "move down";
+        "${mod}+${left}" = "focus left";
+        "${mod}+${down}" = "focus down";
+        "${mod}+${up}" = "focus up";
+        "${mod}+${right}" = "focus right";
+
         "${mod}+Shift+Left" = "move left";
+        "${mod}+Shift+Down" = "move down";
+        "${mod}+Shift+Up" = "move up";
         "${mod}+Shift+Right" = "move right";
+
+        "${mod}+Shift+${left}" = "move left";
+        "${mod}+Shift+${down}" = "move down";
+        "${mod}+Shift+${up}" = "move up";
+        "${mod}+Shift+${right}" = "move right";
 
         "${mod}+1" = "workspace number 1";
         "${mod}+2" = "workspace number 2";

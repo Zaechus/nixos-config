@@ -3,21 +3,31 @@
 {
   programs.neovim = {
     enable = true;
+
+    plugins = with pkgs.vimPlugins; [
+      vim-gitgutter tokyonight-nvim lightline-vim vim-nix
+    ];
+
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+
     extraConfig = ''
+      filetype plugin on
+      syntax enable
+
       set number
-
-      set cursorline
-      hi cursorline cterm=none ctermbg=8
-      set colorcolumn=80
-
       set nowrap
 
       set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
       set noea
 
-      syntax enable
-      filetype plugin on
+      colorscheme tokyonight
+      set cursorline
+      set colorcolumn=100
+
+      let g:lightline = {'colorscheme': 'tokyonight'}
 
       let mapleader = " "
 
