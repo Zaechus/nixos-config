@@ -8,11 +8,22 @@
         eDP-1 = { bg = "${./background.jpg} fill"; };
       };
 
+      defaultWorkspace = "Workspace number 1";
+
+      focus.forceWrapping = true;
+
+      gaps.smartBorders = "on";
+
       menu = "bemenu-run";
       terminal = "alacritty";
 
       modifier = "Mod4";
       floating.modifier = "Mod4";
+      left = "h";
+      down = "j";
+      up = "k";
+      right = "l";
+
       keybindings =
         let mod = config.wayland.windowManager.sway.config.modifier;
         in {
@@ -24,8 +35,8 @@
 
         "${mod}+f" = "fullscreen";
         "${mod}+e" = "layout toggle split";
-        "${mod}+w" = "layout tabbed";
         "${mod}+s" = "layout stacking";
+        "${mod}+w" = "layout tabbed";
 
         "${mod}+Up" = "focus up";
         "${mod}+Down" = "focus down";
@@ -78,13 +89,11 @@
         "${mod}+v" = "splitv";
 
         "${mod}+Shift+space" = "floating toggle";
-
         "${mod}+space" = "focus mode_toggle";
 
         "${mod}+a" = "focus parent";
 
         "${mod}+Shift+minus" = "move scratchpad";
-
         "${mod}+minus" = "scratchpad show";
 
         "${mod}+r" = ''mode "resize"'';
@@ -105,9 +114,20 @@
         "Escape" = ''mode "default"'';
       };};
 
+      fonts = {
+        names = [ "FiraCode" ];
+        style = "Retina";
+        size = 9.0;
+      };
+
       bars = [{
         position = "top";
         statusCommand = "while sh ${./status.sh}; do sleep 1; done";
+        fonts = {
+          names = [ "FiraCode" ];
+          style = "Retina";
+          size = 10.0;
+        };
         colors = {
           statusline = "#ffffff";
           background = "#323232";
