@@ -11,7 +11,7 @@
         eDP-1 = { bg = "${./background.jpg} fill"; };
       };
 
-      defaultWorkspace = "Workspace number 1";
+      defaultWorkspace = "workspace number 1";
 
       focus.forceWrapping = true;
 
@@ -171,8 +171,8 @@
       };
 
       startup = [
-        #exec sudo cpufreq schedutil
-        #exec screen -S weechat -d -m weechat
+        #{ command = "exec sudo cpufreq schedutil"; }
+        #{ command = "exec screen -S weechat -d -m weechat"; }
       ];
     };
   };
