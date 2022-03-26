@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  wayland.windowManager.sway = {
+  wayland.windowManager.sway =
+    let tnBg = "#24283b";
+        tnBlue = "#4770c4";
+  in {
     enable = true;
     config = {
       output = {
@@ -143,15 +146,29 @@
           size = 10.0;
         };
         colors = {
-          statusline = "#ffffff";
+          statusline = "#eeeeee";
           background = "#323232";
+          focusedWorkspace = {
+            background = "${tnBlue}";
+            border = "${tnBlue}";
+            text = "#ffffff";
+          };
           inactiveWorkspace = {
-            background = "#32323200";
-            border = "#32323200";
+            background = "${tnBg}";
+            border = "${tnBg}";
             text = "#5c5c5c";
           };
         };
       }];
+      colors = {
+        focused = {
+          background = "${tnBlue}";
+          border = "${tnBlue}";
+          childBorder = "${tnBlue}";
+          indicator = "#2e9ef4";
+          text = "#ffffff";
+        };
+      };
 
       startup = [
         #exec sudo cpufreq schedutil
