@@ -3,7 +3,10 @@
 {
   wayland.windowManager.sway =
     let tnBg = "#24283b";
+        tnFg = "#c0caf5";
         tnBlue = "#4770c4";
+        tnBlack = "#1D202F";
+        gray = "#5c5c5c";
   in {
     enable = true;
     config = {
@@ -146,8 +149,8 @@
           size = 10.0;
         };
         colors = {
-          statusline = "#eeeeee";
-          background = "#323232";
+          statusline = "${tnFg}";
+          background = "${tnBg}";
           focusedWorkspace = {
             background = "${tnBlue}";
             border = "${tnBlue}";
@@ -156,7 +159,7 @@
           inactiveWorkspace = {
             background = "${tnBg}";
             border = "${tnBg}";
-            text = "#5c5c5c";
+            text = "${gray}";
           };
         };
       }];
@@ -165,12 +168,20 @@
           background = "${tnBlue}";
           border = "${tnBlue}";
           childBorder = "${tnBlue}";
-          indicator = "#2e9ef4";
+          indicator = "${tnBlue}";
           text = "#ffffff";
+        };
+        unfocused = {
+          background = "${tnBlack}";
+          border = "${tnBlack}";
+          childBorder = "${tnBlack}";
+          indicator = "${tnBlack}";
+          text = "${gray}";
         };
       };
 
       startup = [
+        { command = "swaymsg input type:touchpad events disabled"; }
         #{ command = "exec sudo cpufreq schedutil"; }
         #{ command = "exec screen -S weechat -d -m weechat"; }
       ];
