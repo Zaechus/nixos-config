@@ -5,6 +5,7 @@
     let tnBg = "#24283b";
         tnFg = "#c0caf5";
         tnBlue = "#4770c4";
+        tnBlueFg = "#7aa2f7";
         tnBlack = "#1D202F";
         gray = "#5c5c5c";
   in {
@@ -20,7 +21,9 @@
 
       gaps.smartBorders = "on";
 
-      menu = "bemenu-run";
+      menu = ''
+        bemenu-run --fn 'FiraCode Retina 12' --tb \${tnBg} --fb \${tnBg} --nb \${tnBg} --hb \${tnBg} --sb \${tnBg} --tf \${tnBlueFg} --hf \${tnBlueFg} --nf \${tnFg}
+      '';
       terminal = "alacritty";
 
       modifier = "Mod4";
