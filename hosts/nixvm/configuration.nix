@@ -17,8 +17,9 @@ in
 {
   imports =
     [
+      /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
       (import "${home-manager}/nixos")
-      ../../modules/common.nix
+      ./vm.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -62,9 +63,6 @@ in
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
@@ -73,14 +71,12 @@ in
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.jane = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  # };
   users.users.zaechus = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
   };
+
+  home-manager.users.zaechus = (import ../../modules/common.nix);
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -89,7 +85,6 @@ in
     bat exa fd ripgrep
     neovim
     git
-    neofetch
     bottom
     rustup gcc
     ungoogled-chromium

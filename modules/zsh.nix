@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   systemd.user.sessionVariables = rec {
     EDITOR = "nvim";
@@ -17,10 +15,6 @@
       if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
         sway
       fi
-    '';
-
-    envExtra = ''
-      . $HOME/.cargo/env
     '';
 
     initExtra = ''

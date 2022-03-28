@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   programs.alacritty = {
     enable = true;
@@ -7,9 +5,7 @@
       font = {
         normal = {
           family = "FiraCode";
-
-          style = "Retina";
-
+          #style = "Retina";
           size = 11.0;
         };
       };

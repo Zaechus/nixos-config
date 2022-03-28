@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   wayland.windowManager.sway =
@@ -22,7 +22,7 @@
       gaps.smartBorders = "on";
 
       menu = ''
-        bemenu-run --fn 'FiraCode Retina 12' --tb \${tnBg} --fb \${tnBg} --nb \${tnBg} --hb \${tnBg} --sb \${tnBg} --tf \${tnBlueFg} --hf \${tnBlueFg} --nf \${tnFg}
+        bemenu-run --fn 'FiraCode 12' --tb \${tnBg} --fb \${tnBg} --nb \${tnBg} --hb \${tnBg} --sb \${tnBg} --tf \${tnBlueFg} --hf \${tnBlueFg} --nf \${tnFg}
       '';
       terminal = "alacritty";
 
@@ -139,7 +139,7 @@
 
       fonts = {
         names = [ "FiraCode" ];
-        style = "Retina";
+        #style = "Retina";
         size = 9.0;
       };
 
@@ -148,7 +148,7 @@
         statusCommand = "while sh ${./status.sh}; do sleep 1; done";
         fonts = {
           names = [ "FiraCode" ];
-          style = "Retina";
+          #style = "Retina";
           size = 10.0;
         };
         colors = {
