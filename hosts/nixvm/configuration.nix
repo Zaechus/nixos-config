@@ -19,6 +19,7 @@ in
     [
       /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
       (import "${home-manager}/nixos")
+      ../../modules/chromium/default.nix
       ./vm.nix
     ];
 
@@ -87,7 +88,6 @@ in
     git
     bottom
     rustup gcc
-    ungoogled-chromium
     lutris papirus-icon-theme
   ];
   
