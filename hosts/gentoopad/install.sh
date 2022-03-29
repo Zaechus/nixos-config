@@ -64,7 +64,7 @@ swapon /dev/mapper/swap
 # Stage 3
 ntpd -q -g
 
-cp iamchroot.sh /mnt/gentoo/
+cp src/iamchroot.sh /mnt/gentoo/
 mv stage3-amd64-desktop-systemd-*.tar.xz /mnt/gentoo/
 
 cd /mnt/gentoo
@@ -100,4 +100,4 @@ mount --bind /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run
 
 my_disk=$my_disk chroot /mnt/gentoo /bin/bash -c 'sh /iamchroot.sh; rm /iamchroot.sh'
-./umount.sh
+./src/umount.sh
