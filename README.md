@@ -11,5 +11,5 @@ sudo ./install.sh
 
 ### Configuration Setup
 ```
-sudo ./setup.sh <HOSTNAME>
+sudo ./setup.sh $HOST
 ```

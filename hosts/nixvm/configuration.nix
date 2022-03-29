@@ -24,7 +24,7 @@ in
       ./vm.nix
     ];
 
-  home-manager.users.zaechus = (import ../../modules/common);
+  home-manager.users.zaechus = (import ../../common);
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

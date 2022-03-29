@@ -10,6 +10,7 @@
         gray = "#5c5c5c";
   in {
     enable = true;
+    package = null;
     config = {
       output = {
         eDP-1 = { bg = "${./background.jpg} fill"; };

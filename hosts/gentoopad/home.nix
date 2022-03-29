@@ -3,7 +3,8 @@
 {
   imports =
     [
-      ../../modules/common
+      ../../common
+      ../../common/laptop.nix
     ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -12,8 +13,7 @@
 
   # Use system packages
   wayland.windowManager.sway = {
-    package = null;
-    config.terminal = lib.mkOverride 10 "/usr/bin/alacritty";
+    config.terminal = lib.mkOverride 0 "/usr/bin/alacritty";
   };
 
   # Gentoo-specific aliases

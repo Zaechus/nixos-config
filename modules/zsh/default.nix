@@ -32,7 +32,7 @@
     '';
 
     shellAliases = {
-      btm = "btm --battery -R";
+      btm = "btm -R";
       diff = "diff --color";
       doas = "sudo";
       l = "exa --icons --color=always";

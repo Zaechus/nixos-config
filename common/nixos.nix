@@ -1,7 +1,9 @@
+{ pkgs, ... }:
+
 {
   imports = [
-    ../fonts
-    ../sway/nixos.nix
+    ../modules/fonts
+    ../modules/sway/nixos.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
