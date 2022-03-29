@@ -4,4 +4,8 @@ Various different machines running NixOS or using Nix.
 
 ## gentoopad
 
-A Lenovo Thinkpad T14 Gen 2 AMD running Gentoo (default/linux/amd64/17.1/desktop/systemd) with Nix
+A Lenovo Thinkpad T14 Gen 2 AMD running Gentoo (default/linux/amd64/17.1/desktop/systemd) with Nix.
+
+## gantrithor
+
+A Lenovo Thinkpad T430 running NixOS. This laptop has previously used Arch, Manjaro, Artix, Gentoo, and Alpine under various hostnames including the current one.
