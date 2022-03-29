@@ -19,7 +19,7 @@ in
     [
       /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
       (import "${home-manager}/nixos")
-      ../../modules/chromium/default.nix
+      ../../modules/chromium
       ./vm.nix
     ];
 

@@ -10,7 +10,7 @@
   home.username = "zaechus";
   home.homeDirectory = "/home/zaechus";
 
-  # Use system package for Alacritty and Sway
+  # Use system packages
   wayland.windowManager.sway = {
     package = null;
     config.terminal = lib.mkOverride 10 "/usr/bin/alacritty";
