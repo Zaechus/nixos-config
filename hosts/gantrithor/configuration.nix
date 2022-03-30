@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 let
@@ -36,12 +32,6 @@ in {
   #   keyMap = "us";
   # };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.layout = "us";
-
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -71,4 +61,3 @@ in {
 
   system.stateVersion = "21.11"; # Did you read the comment?
 }
-
