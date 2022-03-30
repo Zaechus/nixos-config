@@ -5,16 +5,16 @@
 { config, pkgs, ... }:
 
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-21.11.tar.gz";
 in {
   imports = [
     /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
-    (import "${home-manager}/nixos")
     ../../modules
     ../../modules/desktop.nix
     ../../modules/laptop.nix
     ../../modules/wired.nix
     ../../modules/wireless.nix
+    (import "${home-manager}/nixos")
     ./users/zaechus.nix
   ];
 
