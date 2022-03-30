@@ -17,12 +17,12 @@ in {
   imports = [
     /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
     (import "${home-manager}/nixos")
-    ../../common/nixos.nix
+    ../../modules
     ../../modules/chromium
     ./vm.nix
   ];
 
-  home-manager.users.zaechus = (import ../../common);
+  home-manager.users.zaechus = (import ../../modules);
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

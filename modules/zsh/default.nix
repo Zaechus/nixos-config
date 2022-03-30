@@ -1,21 +1,15 @@
 {
   systemd.user.sessionVariables = rec {
-    EDITOR = "nvim";
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     PAGER = "bat";
-    XDG_CURRENT_DESKTOP = "sway";
-    MOZ_ENABLE_WAYLAND = 1;
   };
 
   programs.zsh = {
     enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    enableSyntaxHighlighting = true;
     defaultKeymap = "viins";
-
-    profileExtra = ''
-      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        sway
-      fi
-    '';
 
     initExtra = ''
       path+=("$HOME/.cargo/bin")
@@ -39,8 +33,6 @@
       ll = "l -aalg";
       lisosort = "exa -lRs size --no-permissions --no-user --no-time ~/images/disk/**/*.iso";
       pp = "ping 1.1.1.1";
-      sc2cfg = "swaymsg input type:keyboard repeat_rate 150 && swaymsg input type:keyboard repeat_delay 150";
-      unsc2 = "swaymsg input type:keyboard repeat_rate 25 && swaymsg input type:keyboard repeat_delay 300";
       termcolors = ''
         for cmd in sgr0 bold; do; tput $cmd; for i in $(seq 0 7); do; for j in $(seq 0 7); do; tput setaf $i; tput setab $j; echo -n " $i,$j "; done; tput sgr0; echo; tput $cmd; done; done
       '';
