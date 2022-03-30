@@ -7,6 +7,7 @@
     imports = [
       ../../../modules/home.nix
       ../../../modules/desktop-home.nix
+      ../../../modules/laptop-home.nix
     ];
 
     wayland.windowManager.sway.config.output = {
