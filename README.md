@@ -4,6 +4,12 @@
 
 My NixOS config
 
+
+## [NixOS Installation](https://nixos.org/download.html#nixos-iso)
+```
+sudo ./install.sh
+```
+
 ### Get Without Git
 ```
 curl -OL https://github.com/zaechus/nixos-config/archive/main.tar.gz
@@ -11,13 +17,13 @@ tar xzf main.tar.gz
 cd nixos-config-main
 ```
 
-## [NixOS Installation](https://nixos.org/download.html#nixos-iso)
-```
-sudo ./install.sh
-```
-
 ### Configuration Setup
 ```
 sudo ./setup.sh $HOST
 passwd $USER
+```
+
+## [Nix](https://nixos.org/download.html#nix-install-linux) + [Home Manager](https://nix-community.github.io/home-manager/index.html#sec-install-standalone)
+```
+./nix.sh $HOST
 ```

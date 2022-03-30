@@ -9,5 +9,6 @@ export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/
 nix-shell '<home-manager>' -A install
 
 script_path=$(dirname $(realpath $0))
-ln -sf $script_path/home.nix ~/.config/nixpkgs/home.nix
+config_path=$(ls $script_path/hosts/$1/home.nix)
+ln -sf $config_path ~/.config/nixpkgs/home.nix
 home-manager switch
