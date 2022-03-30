@@ -13,9 +13,12 @@
   home.username = "zaechus";
   home.homeDirectory = "/home/zaechus";
 
-  # Use system packages
-  wayland.windowManager.sway = {
-    config.terminal = lib.mkOverride 0 "/usr/bin/alacritty";
+  wayland.windowManager.sway.config = {
+    terminal = lib.mkOverride 0 "/usr/bin/alacritty"; # opengl issue
+
+    output = {
+      eDP-1 = { bg = "${../../modules/sway/background.jpg} fill"; };
+    };
   };
 
   # Gentoo-specific aliases

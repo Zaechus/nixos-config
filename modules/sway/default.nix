@@ -12,10 +12,6 @@
     enable = true;
     package = null;
     config = {
-      output = {
-        eDP-1 = { bg = "${./background.jpg} fill"; };
-      };
-
       defaultWorkspace = "workspace number 1";
 
       focus.forceWrapping = true;
