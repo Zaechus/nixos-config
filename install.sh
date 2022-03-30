@@ -62,6 +62,7 @@ swapon /dev/mapper/swap
 # NixOS
 nixos-generate-config --root /mnt
 printf "{ boot.initrd.luks.devices.\"swap\".device = \"/dev/disk/by-uuid/$(blkid $part2 -o value -s UUID)\"; }\n" > /mnt/etc/nixos/swap-configuration.nix
+sed -i 's/.*hardware-configuration.nix.*/    \/etc\/nixos\/hardware-configuration.nix/' /mnt/etc/nixos/configuration.nix
 sed -i '/\/etc\/nixos\/hardware-configuration.nix/ s/$/ \/etc\/nixos\/swap-configuration.nix/' /mnt/etc/nixos/configuration.nix
 
 nixos-install

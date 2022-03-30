@@ -13,16 +13,14 @@ let
       ${pkgs.shadow}/bin/login;
     fi
   '';
-in
-{
-  imports =
-    [
-      /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
-      (import "${home-manager}/nixos")
-      ../../common/nixos.nix
-      ../../modules/chromium
-      ./vm.nix
-    ];
+in {
+  imports = [
+    /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
+    (import "${home-manager}/nixos")
+    ../../common/nixos.nix
+    ../../modules/chromium
+    ./vm.nix
+  ];
 
   home-manager.users.zaechus = (import ../../common);
 
