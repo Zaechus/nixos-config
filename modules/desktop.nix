@@ -5,11 +5,12 @@
     ../modules/fonts
   ];
 
-  hardware.opengl.enable = true;
-
   environment.systemPackages = with pkgs; [
     imv
   ];
+
+  # Wayland
+  hardware.opengl.enable = true;
 
   programs.sway = {
     enable = true;
@@ -19,5 +20,10 @@
     ];
   };
 
-  #xdg.portal.wlr.enable = true;
+  xdg.portal.wlr.enable = true;
+
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+  services.pipewire.enable = true;
 }
