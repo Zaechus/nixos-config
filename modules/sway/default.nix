@@ -181,7 +181,6 @@
       };
 
       startup = [
-        { command = "swaymsg input type:touchpad events disabled"; }
         #{ command = "exec sudo cpufreq schedutil"; }
         #{ command = "exec screen -S weechat -d -m weechat"; }
       ];
