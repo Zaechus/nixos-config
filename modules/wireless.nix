@@ -1,25 +1,21 @@
 {
-  networking = {
-    useNetworkd = true;
-    wireless.iwd.enable = true;
+  imports = [
+    ./internet.nix
+  ];
 
-    useDHCP = false;
-  };
+  networking.wireless.iwd.enable = true;
 
-  systemd = {
-    network.networks = {
-      "20-wireless" = {
-        enable = true;
-        name = "wl*";
-        DHCP = "yes";
-        dhcpV4Config = {
-          RouteMetric = 20;
-        };
-        dhcpV6Config = {
-          RouteMetric = 20;
-        };
+  systemd.network.networks = {
+    "20-wireless" = {
+      enable = true;
+      name = "wl*";
+      DHCP = "yes";
+      dhcpV4Config = {
+        RouteMetric = 20;
+      };
+      dhcpV6Config = {
+        RouteMetric = 20;
       };
     };
-    services."systemd-networkd-wait-online".enable = false;
   };
 }
