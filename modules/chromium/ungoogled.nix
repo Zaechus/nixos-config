@@ -3,9 +3,10 @@
 {
   programs.chromium = {
     enable = true;
-    package = pkgs.brave;
+    package = pkgs.ungoogled-chromium;
     extensions = [
       "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # Ublock Origin
     ];
   };
 
