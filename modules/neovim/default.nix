@@ -5,7 +5,7 @@
     enable = true;
 
     plugins = with pkgs.vimPlugins; [
-      vim-gitgutter tokyonight-nvim lightline-vim vim-nix
+      vim-gitgutter lightline-vim vim-nix
     ];
 
     viAlias = true;

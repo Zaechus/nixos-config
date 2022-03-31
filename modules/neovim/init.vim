@@ -8,11 +8,8 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 set noea
 
-colorscheme tokyonight
 set cursorline
 set colorcolumn=100
-
-let g:lightline = {'colorscheme': 'tokyonight'}
 
 let mapleader = " "
 

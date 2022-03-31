@@ -2,8 +2,9 @@
 
 {
   imports = [
-    ../modules/neovim
-    ../modules/zsh
+    ../themes/tokyonight.nix
+    ./neovim
+    ./zsh
   ];
 
   programs.git.enable = true;

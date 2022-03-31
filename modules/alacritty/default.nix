@@ -10,7 +10,6 @@
         };
       };
 
-      # https://github.com/folke/tokyonight.nvim/blob/main/extras/alacritty_tokyonight_storm.yml
       colors = {
         primary = {
           background = "0x24283b";
