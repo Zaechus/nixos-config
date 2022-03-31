@@ -6,8 +6,8 @@ in {
   imports = [
     /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
     ../../modules
-    ../../modules/desktop.nix
-    ../../modules/laptop.nix
+    ../../modules/graphical.nix
+    ../../modules/thinkpad.nix
     ../../modules/wired.nix
     ../../modules/wireless.nix
     (import "${home-manager}/nixos")

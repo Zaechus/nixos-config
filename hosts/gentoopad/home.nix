@@ -4,7 +4,7 @@
   imports =
     [
       ../../modules/home.nix
-      ../../modules/desktop-home.nix
+      ../../modules/graphical-home.nix
       ../../modules/git
       ../../modules/thinkpad-home.nix
     ];

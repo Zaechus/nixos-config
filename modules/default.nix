@@ -1,3 +1,7 @@
+# The base configuration
+#
+# The default module includes basic system utilities that should be present on all systems.
+
 { config, pkgs, ... }:
 
 {

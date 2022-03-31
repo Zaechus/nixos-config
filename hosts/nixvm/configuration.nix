@@ -14,7 +14,7 @@ in {
     /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
     ../../modules
     ../../modules/wired.nix
-    ../../modules/desktop.nix
+    ../../modules/graphical.nix
     (import "${home-manager}/nixos")
     ./users/zaechus.nix
   ];
