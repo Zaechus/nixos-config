@@ -1,5 +1,5 @@
 {
-  systemd.user.sessionVariables = rec {
+  home.sessionVariables = {
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     PAGER = "bat";
   };
@@ -12,7 +12,7 @@
     defaultKeymap = "viins";
 
     initExtra = ''
-      path+=("$HOME/.cargo/bin")
+      path=("$HOME/.cargo/bin" $path)
       path+=("$HOME/.local/bin")
 
       lt() {
