@@ -8,8 +8,8 @@ and should be placed into user imports.
 ## NixOS Modules
 
 ### Default
-`default.nix` and `home.nix` basic functionality/configuration that should be
-shared by all systems and users.
+`default.nix` and `home.nix` contain basic functionality/configuration that should
+be shared by all systems and users.
 
 ### Wired & Wireless
 Provides networking functionality for wired and wireless connecetions respectively.
