@@ -31,7 +31,7 @@
     whiteBright = "#fbf1c7"; # fg0
 
     gray = "#928374";
-    color = "#665c54"; # bg3
+    color = "#504945"; # bg2
     colorFg = "#a89984"; # fg4
   };
 
