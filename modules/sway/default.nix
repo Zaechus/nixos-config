@@ -137,7 +137,6 @@
 
       fonts = {
         names = [ "FiraCode" ];
-        #style = "Retina";
         size = 9.0;
       };
 
@@ -146,7 +145,6 @@
         statusCommand = "while sh ${./status.sh}; do sleep 1; done";
         fonts = {
           names = [ "FiraCode" ];
-          #style = "Retina";
           size = 10.0;
         };
         colors = {

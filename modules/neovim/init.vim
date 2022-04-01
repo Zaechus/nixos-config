@@ -9,7 +9,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set noea
 
 set cursorline
-set colorcolumn=100
+"set colorcolumn=100
 
 let mapleader = " "
 
@@ -23,7 +23,7 @@ map <F5> :vsp +term<CR> <leader>w i
 set splitbelow
 map <F6> :sp +term<CR> :res 16<CR> <leader>w i
 
-" cargo fmt
+" cargo
 map <leader>f :wa<CR> :!cargo fmt<CR><CR> :windo e<CR>
 map <leader>c :wa<CR> :!cargo c<CR>
 map <leader>r :wa<CR> <F6>cargo r<CR>

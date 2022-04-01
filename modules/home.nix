@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../themes/tokyonight.nix
+    ../themes/gruvbox.nix
     ./neovim
     ./zsh
   ];

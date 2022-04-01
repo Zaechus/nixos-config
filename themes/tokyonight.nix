@@ -22,12 +22,12 @@
     white = "#a9b1d6";
 
     blackBright = "#414868";
-    redBright = "#f7768e";
-    greenBright = "#9ece6a";
-    yellowBright = "#e0af68";
-    blueBright = "#7aa2f7";
-    magentaBright = "#bb9af7";
-    cyanBright = "#7dcfff";
+    redBright = config.theme.red;
+    greenBright = config.theme.green;
+    yellowBright = config.theme.yellow;
+    blueBright = config.theme.blue;
+    magentaBright = config.theme.magenta;
+    cyanBright = config.theme.cyan;
     whiteBright = "#c0caf5";
 
     gray = "#5c5c5c";
@@ -46,10 +46,13 @@
     '';
   };
 
-  programs.alacritty.settings.colors = {
-    indexed_colors = [
-      { index = 16; color = "#ff9e64"; }
-      { index = 17; color = "#db4b4b"; }
-    ];
+  programs.alacritty.settings = {
+    colors = {
+      indexed_colors = [
+        { index = 16; color = "#ff9e64"; }
+        { index = 17; color = "#db4b4b"; }
+      ];
+    };
+    background_opacity = 0.8;
   };
 }
