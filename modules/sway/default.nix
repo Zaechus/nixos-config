@@ -1,14 +1,7 @@
-{ config, ... }:
+{ config, options, ... }:
 
 {
-  wayland.windowManager.sway =
-    let tnBg = "#24283b";
-        tnFg = "#c0caf5";
-        tnBlue = "#4770c4";
-        tnBlueFg = "#7aa2f7";
-        tnBlack = "#1D202F";
-        gray = "#5c5c5c";
-  in {
+  wayland.windowManager.sway = {
     enable = true;
     package = null;
     config = {
@@ -19,7 +12,15 @@
       gaps.smartBorders = "on";
 
       menu = ''
-        bemenu-run --fn 'FiraCode 12' --tb \${tnBg} --fb \${tnBg} --nb \${tnBg} --hb \${tnBg} --sb \${tnBg} --tf \${tnBlueFg} --hf \${tnBlueFg} --nf \${tnFg}
+        bemenu-run --fn 'FiraCode 12' \
+          --tb \${config.theme.bg} \
+          --fb \${config.theme.bg} \
+          --nb \${config.theme.bg} \
+          --hb \${config.theme.bg} \
+          --sb \${config.theme.bg} \
+          --tf \${config.theme.colorFg} \
+          --hf \${config.theme.colorFg} \
+          --nf \${config.theme.fg}
       '';
       terminal = "alacritty";
 
@@ -149,34 +150,34 @@
           size = 10.0;
         };
         colors = {
-          statusline = "${tnFg}";
-          background = "${tnBg}";
+          statusline = "${config.theme.fg}";
+          background = "${config.theme.bg}";
           focusedWorkspace = {
-            background = "${tnBlue}";
-            border = "${tnBlue}";
+            background = "${config.theme.color}";
+            border = "${config.theme.color}";
             text = "#ffffff";
           };
           inactiveWorkspace = {
-            background = "${tnBg}";
-            border = "${tnBg}";
-            text = "${gray}";
+            background = "${config.theme.bg}";
+            border = "${config.theme.bg}";
+            text = "${config.theme.gray}";
           };
         };
       }];
       colors = {
         focused = {
-          background = "${tnBlue}";
-          border = "${tnBlue}";
-          childBorder = "${tnBlue}";
-          indicator = "${tnBlue}";
+          background = "${config.theme.color}";
+          border = "${config.theme.color}";
+          childBorder = "${config.theme.color}";
+          indicator = "${config.theme.color}";
           text = "#ffffff";
         };
         unfocused = {
-          background = "${tnBlack}";
-          border = "${tnBlack}";
-          childBorder = "${tnBlack}";
-          indicator = "${tnBlack}";
-          text = "${gray}";
+          background = "${config.theme.black}";
+          border = "${config.theme.black}";
+          childBorder = "${config.theme.black}";
+          indicator = "${config.theme.black}";
+          text = "${config.theme.gray}";
         };
       };
 

@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   programs.alacritty = {
     enable = true;
@@ -12,36 +14,31 @@
 
       colors = {
         primary = {
-          background = "0x24283b";
-          foreground = "0xc0caf5";
+          background = config.theme.bg;
+          foreground = config.theme.fg;
         };
 
         normal = {
-          black = "0x1D202F";
-          red = "0xf7768e";
-          green = "0x9ece6a";
-          yellow = "0xe0af68";
-          blue = "0x7aa2f7";
-          magenta = "0xbb9af7";
-          cyan = "0x7dcfff";
-          white = "0xa9b1d6";
+          black = config.theme.black;
+          red = config.theme.red;
+          green = config.theme.green;
+          yellow = config.theme.yellow;
+          blue = config.theme.blue;
+          magenta = config.theme.magenta;
+          cyan = config.theme.cyan;
+          white = config.theme.white;
         };
 
         bright = {
-          black = "0x414868";
-          red = "0xf7768e";
-          green = "0x9ece6a";
-          yellow = "0xe0af68";
-          blue = "0x7aa2f7";
-          magenta = "0xbb9af7";
-          cyan = "0x7dcfff";
-          white = "0xc0caf5";
+          black = config.theme.blackBright;
+          red = config.theme.redBright;
+          green = config.theme.greenBright;
+          yellow = config.theme.yellowBright;
+          blue = config.theme.blueBright;
+          magenta = config.theme.magentaBright;
+          cyan = config.theme.cyanBright;
+          white = config.theme.whiteBright;
         };
-
-        indexed_colors = [
-          { index = 16; color = "0xff9e64"; }
-          { index = 17; color = "0xdb4b4b"; }
-        ];
       };
 
       #window = {

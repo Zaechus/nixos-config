@@ -1,15 +1,40 @@
 # https://github.com/folke/tokyonight.nvim
 # https://github.com/folke/tokyonight.nvim/blob/main/extras/alacritty_tokyonight_storm.yml
 
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
-let tnBg = "#24283b";
-    tnFg = "#c0caf5";
-    tnBlue = "#4770c4";
-    tnBlueFg = "#7aa2f7";
-    tnBlack = "#1D202F";
+{
+  imports = [
+    ./theme.nix
+  ];
+
+  theme = {
+    bg = "#24283b";
+    fg = "#c0caf5";
+
+    black = "#1D202F";
+    red = "#f7768e";
+    green = "#9ece6a";
+    yellow = "#e0af68";
+    blue = "#7aa2f7";
+    magenta = "#bb9af7";
+    cyan = "#7dcfff";
+    white = "#a9b1d6";
+
+    blackBright = "#414868";
+    redBright = "#f7768e";
+    greenBright = "#9ece6a";
+    yellowBright = "#e0af68";
+    blueBright = "#7aa2f7";
+    magentaBright = "#bb9af7";
+    cyanBright = "#7dcfff";
+    whiteBright = "#c0caf5";
+
     gray = "#5c5c5c";
-in {
+    color = "#4770c4"; # blue
+    colorFg = config.theme.blue;
+  };
+
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       tokyonight-nvim
@@ -19,5 +44,12 @@ in {
       colorscheme tokyonight
       let g:lightline = {'colorscheme': 'tokyonight'}
     '';
+  };
+
+  programs.alacritty.settings.colors = {
+    indexed_colors = [
+      { index = 16; color = "#ff9e64"; }
+      { index = 17; color = "#db4b4b"; }
+    ];
   };
 }
