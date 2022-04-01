@@ -21,14 +21,16 @@
     cyan = "#7dcfff";
     white = "#a9b1d6";
 
-    blackBright = "#414868";
-    redBright = config.theme.red;
-    greenBright = config.theme.green;
-    yellowBright = config.theme.yellow;
-    blueBright = config.theme.blue;
-    magentaBright = config.theme.magenta;
-    cyanBright = config.theme.cyan;
-    whiteBright = "#c0caf5";
+    bright = {
+      black = "#414868";
+      red = config.theme.red;
+      green = config.theme.green;
+      yellow = config.theme.yellow;
+      blue = config.theme.blue;
+      magenta = config.theme.magenta;
+      cyan = config.theme.cyan;
+      white = "#c0caf5";
+    };
 
     gray = "#5c5c5c";
     color = "#4770c4"; # blue

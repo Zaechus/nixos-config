@@ -30,14 +30,14 @@
         };
 
         bright = {
-          black = config.theme.blackBright;
-          red = config.theme.redBright;
-          green = config.theme.greenBright;
-          yellow = config.theme.yellowBright;
-          blue = config.theme.blueBright;
-          magenta = config.theme.magentaBright;
-          cyan = config.theme.cyanBright;
-          white = config.theme.whiteBright;
+          black = config.theme.bright.black;
+          red = config.theme.bright.red;
+          green = config.theme.bright.green;
+          yellow = config.theme.bright.yellow;
+          blue = config.theme.bright.blue;
+          magenta = config.theme.bright.magenta;
+          cyan = config.theme.bright.cyan;
+          white = config.theme.bright.white;
         };
       };
 

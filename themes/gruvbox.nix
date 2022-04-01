@@ -21,14 +21,16 @@
     cyan = "#689d6a"; # aqua
     white = "#d5c4a1"; # fg2
 
-    blackBright = "#504945"; # bg2
-    redBright = "#fb4934";
-    greenBright = "#b8bb26";
-    yellowBright = "#fabd2f";
-    blueBright = "#83a598";
-    magentaBright = "#d3869b"; # purple
-    cyanBright = "#8ec07c"; # aqua
-    whiteBright = "#fbf1c7"; # fg0
+    bright = {
+      black = "#504945"; # bg2
+      red = "#fb4934";
+      green = "#b8bb26";
+      yellow = "#fabd2f";
+      blue = "#83a598";
+      magenta = "#d3869b"; # purple
+      cyan = "#8ec07c"; # aqua
+      white = "#fbf1c7"; # fg0
+    };
 
     gray = "#928374";
     color = "#504945"; # bg2
