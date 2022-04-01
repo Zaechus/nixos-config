@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../themes/gruvbox.nix
     ./neovim
     ./zsh
   ];

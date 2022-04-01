@@ -7,7 +7,7 @@ in {
     /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
     ../../modules
     ../../modules/graphical.nix
-    ../../modules/thinkpad.nix
+    ../../modules/laptop.nix
     ../../modules/wired.nix
     ../../modules/wireless.nix
     (import "${home-manager}/nixos")
