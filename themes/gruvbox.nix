@@ -32,7 +32,6 @@
       white = "#fbf1c7"; # fg0
     };
 
-    gray = "#928374";
     color = "#504945"; # bg2
     colorFg = "#a89984"; # fg4
   };

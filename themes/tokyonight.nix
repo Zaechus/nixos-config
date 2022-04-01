@@ -32,7 +32,6 @@
       white = "#c0caf5";
     };
 
-    gray = "#5c5c5c";
     color = "#4770c4"; # blue
     colorFg = config.theme.blue;
   };

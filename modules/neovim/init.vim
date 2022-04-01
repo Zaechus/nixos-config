@@ -21,7 +21,7 @@ map <leader>n :set number<CR> :set nowrap<CR>
 set splitright
 map <F5> :vsp +term<CR> <leader>w i
 set splitbelow
-map <F6> :sp +term<CR> :res 16<CR> <leader>w i
+map <F6> :sp +term<CR> :res 13<CR> <leader>w i
 
 " cargo
 map <leader>f :wa<CR> :!cargo fmt<CR><CR> :windo e<CR>
@@ -31,7 +31,7 @@ map <leader>t :wa<CR> :!cargo t<CR>
 
 " Open netrw in left-side window
 let g:netrw_list_hide = '^\.'
-map <F4> :set nosplitright<CR> :vsp .<CR> :vert res 24<CR> :set splitright<CR>
+map <F4> :set nosplitright<CR> :vsp .<CR> :vert res 22<CR> :set splitright<CR>
 
 " Alt+<arrow> to switch windows in any mode
 map <A-Left> <C-w>h

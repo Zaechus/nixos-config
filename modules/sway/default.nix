@@ -155,7 +155,7 @@
           inactiveWorkspace = {
             background = "${config.theme.bg}";
             border = "${config.theme.bg}";
-            text = "${config.theme.gray}";
+            text = "${config.theme.fg}";
           };
         };
       }];
@@ -172,7 +172,7 @@
           border = "${config.theme.black}";
           childBorder = "${config.theme.black}";
           indicator = "${config.theme.black}";
-          text = "${config.theme.gray}";
+          text = "${config.theme.fg}";
         };
       };
 
