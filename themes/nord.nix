@@ -47,4 +47,6 @@
       let g:lightline = {'colorscheme': 'nord'}
     '';
   };
+
+  programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
 }
