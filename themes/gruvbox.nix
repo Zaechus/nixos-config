@@ -4,12 +4,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./theme.nix
-  ];
+  imports = [ ./theme.nix ];
 
   theme = {
-    bg = "#262626"; # bg - 2
+    bg = "#282828"; # bg
     fg = "#ebdbb2";
 
     black = "#3c3836"; # bg1
