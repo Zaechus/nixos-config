@@ -42,12 +42,10 @@
   };
 
   programs.alacritty.settings = {
-    colors = {
-      indexed_colors = [
-        { index = 16; color = "#ff9e64"; }
-        { index = 17; color = "#db4b4b"; }
-      ];
-    };
+    colors.indexed_colors = [
+      { index = 16; color = "#ff9e64"; }
+      { index = 17; color = "#db4b4b"; }
+    ];
     background_opacity = 0.9;
   };
 
