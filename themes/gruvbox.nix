@@ -1,4 +1,5 @@
 # https://github.com/morhetz/gruvbox
+# https://github.com/gruvbox-community/gruvbox
 # https://camo.githubusercontent.com/410b3ab80570bcd5b470a08d84f93caa5b4962ccd994ebceeb3d1f78364c2120/687474703a2f2f692e696d6775722e636f6d2f776136363678672e706e67
 
 { config, pkgs, ... }:
@@ -10,7 +11,7 @@
     bg = "#282828";
     fg = "#ebdbb2";
 
-    black = "#504945"; # bg2
+    black = "#3c3836"; # bg1
     red = "#cc241d";
     green = "#98971a";
     yellow = "#d79921";
@@ -30,11 +31,11 @@
       white = "#fbf1c7"; # fg0
     };
 
-    #color = "#7c6f64"; # bg4
-    color = "#766c64"; # bg3 + 101010
+    color = config.theme.bright.black;
     colorFg = "#fe8019"; # orange 208
   };
 
+  # https://github.com/ellisonleao/gruvbox.nvim
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       gruvbox-nvim lualine-nvim
@@ -56,4 +57,6 @@
     ];
     background_opacity = 0.9;
   };
+
+  programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 }
