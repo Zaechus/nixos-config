@@ -26,7 +26,7 @@
       white = "#c0caf5";
     };
 
-    color = "#4770c4"; # blue
+    color = "#475fc4"; # blue
     colorFg = config.theme.blue;
   };
 
@@ -48,7 +48,7 @@
         { index = 17; color = "#db4b4b"; }
       ];
     };
-    background_opacity = 0.8;
+    background_opacity = 0.9;
   };
 
   #programs.chromium.extensions = [ "enpfonmmpgoinjpglildebkaphbhndek" ];
