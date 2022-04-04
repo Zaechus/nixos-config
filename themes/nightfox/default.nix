@@ -30,18 +30,20 @@
       white = "#e4e4e5";
     };
 
-    color = "#608bc5"; # blue
+    color = "#4f7ab4"; # blue
     colorFg = config.theme.blue;
   };
 
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      nightfox-nvim
+      nightfox-nvim lualine-nvim
     ];
 
     extraConfig = ''
       colorscheme nightfox
-      let g:lightline = {'colorscheme': 'nightfox'}
+      lua << END
+      require('lualine').setup()
+      END
     '';
   };
 

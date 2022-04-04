@@ -32,12 +32,14 @@
 
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      tokyonight-nvim
+      tokyonight-nvim lualine-nvim
     ];
 
     extraConfig = ''
       colorscheme tokyonight
-      let g:lightline = {'colorscheme': 'tokyonight'}
+      lua << END
+      require('lualine').setup()
+      END
     '';
   };
 

@@ -39,7 +39,7 @@
 
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      nord-vim
+      nord-vim lightline-vim
     ];
 
     extraConfig = ''

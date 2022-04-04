@@ -5,7 +5,7 @@
     [
       ../../modules/home.nix
       #../../themes/tokyonight.nix
-      ../../themes/nightfox/duskfox.nix
+      ../../themes/gruvbox.nix
       ../../modules/graphical-home.nix
       ../../modules/git
       ../../modules/thinkpad-home.nix

@@ -25,7 +25,7 @@
 
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      everforest
+      everforest lightline-vim
     ];
 
     extraConfig = ''

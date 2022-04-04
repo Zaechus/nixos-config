@@ -4,9 +4,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./theme.nix
-  ];
+  imports = [ ./theme.nix ];
 
   theme = {
     bg = "#282a36";
@@ -38,7 +36,7 @@
 
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      dracula-vim
+      dracula-vim lightline-vim
     ];
 
     extraConfig = ''

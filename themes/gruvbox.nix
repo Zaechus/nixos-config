@@ -7,10 +7,10 @@
   imports = [ ./theme.nix ];
 
   theme = {
-    bg = "#282828"; # bg
+    bg = "#282828";
     fg = "#ebdbb2";
 
-    black = "#3c3836"; # bg1
+    black = "#504945"; # bg2
     red = "#cc241d";
     green = "#98971a";
     yellow = "#d79921";
@@ -20,7 +20,7 @@
     white = "#d5c4a1"; # fg2
 
     bright = {
-      black = "#504945"; # bg2
+      black = "#665c54"; # bg3
       red = "#fb4934";
       green = "#b8bb26";
       yellow = "#fabd2f";
@@ -30,18 +30,30 @@
       white = "#fbf1c7"; # fg0
     };
 
-    color = "#504945"; # bg2
-    colorFg = "#a89984"; # fg4
+    #color = "#7c6f64"; # bg4
+    color = "#766c64"; # bg3 + 101010
+    colorFg = "#fe8019"; # orange 208
   };
 
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      gruvbox
+      gruvbox-nvim lualine-nvim
     ];
 
     extraConfig = ''
       colorscheme gruvbox
-      let g:lightline = {'colorscheme': 'gruvbox'}
+      lua << END
+      require('lualine').setup()
+      END
     '';
+  };
+
+  programs.alacritty.settings = {
+    # https://github.com/eddyekofo94/gruvbox-flat.nvim/blob/master/extras/alacritty_gruvbox_.yml
+    colors.indexed_colors = [
+      { index = 16; color = "#ff9e64"; }
+      { index = 17; color = "#db4b4b"; }
+    ];
+    background_opacity = 0.9;
   };
 }

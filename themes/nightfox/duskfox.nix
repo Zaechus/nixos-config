@@ -36,12 +36,14 @@
 
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      nightfox-nvim
+      nightfox-nvim lualine-nvim
     ];
 
     extraConfig = ''
       colorscheme duskfox
-      let g:lightline = {'colorscheme': 'nightfox'}
+      lua << END
+      require('lualine').setup()
+      END
     '';
   };
 

@@ -41,7 +41,6 @@
 
   #  extraConfig = ''
   #    colorscheme melange
-  #    let g:lightline = {'colorscheme': 'melange'}
   #  '';
   #};
 
