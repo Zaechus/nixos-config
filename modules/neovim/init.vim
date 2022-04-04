@@ -11,6 +11,10 @@ set noea
 set cursorline
 "set colorcolumn=100
 
+if has('termguicolors')
+  set termguicolors
+endif
+
 let mapleader = " "
 
 " Enable/disable numbers+nowrap for copying

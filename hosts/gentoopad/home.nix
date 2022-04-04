@@ -4,7 +4,7 @@
   imports =
     [
       ../../modules/home.nix
-      ../../themes/nord.nix
+      ../../themes/tokyonight.nix
       ../../modules/graphical-home.nix
       ../../modules/git
       ../../modules/thinkpad-home.nix
@@ -19,6 +19,11 @@
 
     output = {
       eDP-1 = { bg = "${../../modules/sway/background.jpg} fill"; };
+    };
+
+    keybindings = {
+      "XF86MonBrightnessUp" = lib.mkOverride 0 "exec light -A 5%";
+      "XF86MonBrightnessDown" = lib.mkOverride 0 "exec light -U 5%";
     };
   };
 

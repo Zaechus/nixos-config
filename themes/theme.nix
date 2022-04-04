@@ -4,17 +4,17 @@ with lib;
 
 {
   options.theme = {
-    bg = mkOption { type = types.str; default = "#24283b"; };
-    fg = mkOption { type = types.str; default = "#c0caf5"; };
+    bg = mkOption { type = types.str; default = "#191919"; };
+    fg = mkOption { type = types.str; default = "#cccccc"; };
 
-    black = mkOption { type = types.str; default = "#1D202F"; };
-    red = mkOption { type = types.str; default = "#f7768e"; };
-    green = mkOption { type = types.str; default = "#9ece6a"; };
-    yellow = mkOption { type = types.str; default = "#e0af68"; };
-    blue = mkOption { type = types.str; default = "#7aa2f7"; };
-    magenta = mkOption { type = types.str; default = "#bb9af7"; };
-    cyan = mkOption { type = types.str; default = "#7dcfff"; };
-    white = mkOption { type = types.str; default = "#a9b1d6"; };
+    black = mkOption { type = types.str; default = "#111111"; };
+    red = mkOption { type = types.str; default = "#ff0000"; };
+    green = mkOption { type = types.str; default = "#00ff00"; };
+    yellow = mkOption { type = types.str; default = "#ffff00"; };
+    blue = mkOption { type = types.str; default = "#0000ff"; };
+    magenta = mkOption { type = types.str; default = "#ff00ff"; };
+    cyan = mkOption { type = types.str; default = "#00ffff"; };
+    white = mkOption { type = types.str; default = "#eeeeee"; };
 
     bright = {
       black = mkOption { type = types.str; default = config.theme.black; };
@@ -27,7 +27,7 @@ with lib;
       white = mkOption { type = types.str; default = config.theme.white; };
     };
 
-    color = mkOption { type = types.str; default = "#4770c4"; };
-    colorFg = mkOption { type = types.str; default = config.theme.blue; };
+    color = mkOption { type = types.str; default = config.theme.blue; };
+    colorFg = mkOption { type = types.str; default = config.theme.cyan; };
   };
 }

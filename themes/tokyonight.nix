@@ -23,12 +23,6 @@
 
     bright = {
       black = "#414868";
-      red = config.theme.red;
-      green = config.theme.green;
-      yellow = config.theme.yellow;
-      blue = config.theme.blue;
-      magenta = config.theme.magenta;
-      cyan = config.theme.cyan;
       white = "#c0caf5";
     };
 
@@ -56,4 +50,6 @@
     };
     background_opacity = 0.8;
   };
+
+  #programs.chromium.extensions = [ "enpfonmmpgoinjpglildebkaphbhndek" ];
 }

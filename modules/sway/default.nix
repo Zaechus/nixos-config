@@ -145,34 +145,34 @@
           size = 10.0;
         };
         colors = {
-          statusline = "${config.theme.fg}";
-          background = "${config.theme.bg}";
+          statusline = config.theme.fg;
+          background = config.theme.bg;
           focusedWorkspace = {
-            background = "${config.theme.color}";
-            border = "${config.theme.color}";
+            background = config.theme.color;
+            border = config.theme.color;
             text = "#ffffff";
           };
           inactiveWorkspace = {
-            background = "${config.theme.bg}";
-            border = "${config.theme.bg}";
-            text = "${config.theme.fg}";
+            background = config.theme.bg;
+            border = config.theme.bg;
+            text = config.theme.fg;
           };
         };
       }];
       colors = {
         focused = {
-          background = "${config.theme.color}";
-          border = "${config.theme.color}";
-          childBorder = "${config.theme.color}";
-          indicator = "${config.theme.color}";
+          background = config.theme.color;
+          border = config.theme.color;
+          childBorder = config.theme.color;
+          indicator = config.theme.color;
           text = "#ffffff";
         };
         unfocused = {
-          background = "${config.theme.black}";
-          border = "${config.theme.black}";
-          childBorder = "${config.theme.black}";
-          indicator = "${config.theme.black}";
-          text = "${config.theme.fg}";
+          background = config.theme.black;
+          border = config.theme.black;
+          childBorder = config.theme.black;
+          indicator = config.theme.black;
+          text = config.theme.fg;
         };
       };
 
