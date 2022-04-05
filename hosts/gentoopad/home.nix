@@ -4,7 +4,7 @@
   imports =
     [
       ../../modules/home.nix
-      ../../themes/gruvbox.nix
+      ../../themes/tokyonight.nix
       ../../modules/graphical-home.nix
       ../../modules/git
       ../../modules/thinkpad-home.nix

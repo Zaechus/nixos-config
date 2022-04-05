@@ -40,7 +40,6 @@
     ];
 
     extraConfig = ''
-      set termguicolors
       colorscheme dracula
       let g:lightline = {'colorscheme': 'dracula'}
       "hi Normal guibg=${config.theme.bg}

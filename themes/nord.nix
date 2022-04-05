@@ -27,26 +27,31 @@
       red = config.theme.red;
       green = config.theme.green;
       yellow = config.theme.yellow;
-      blue = "#81A1C1"; # nord9
+      blue = config.theme.blue;
       magenta = config.theme.magenta;
       cyan = "#8FBCBB"; # nord7
       white = "#ECEFF4"; # nord6
     };
 
     color = "#5E81AC"; # nord10
-    colorFg = config.theme.bright.cyan;
+    colorFg = config.theme.cyan;
   };
 
+  # https://github.com/shaunsingh/nord.nvim/
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      nord-vim lightline-vim
+      nord-nvim lualine-nvim
     ];
 
     extraConfig = ''
       colorscheme nord
-      let g:lightline = {'colorscheme': 'nord'}
+      lua << END
+      require('lualine').setup()
+      END
     '';
   };
+
+  programs.alacritty.settings.background_opacity = 0.9;
 
   programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
 }
