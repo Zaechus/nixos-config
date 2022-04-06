@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./theme.nix ];
+  imports = [ ../theme.nix ];
 
   theme = {
     bg = "#282828";
@@ -21,7 +21,7 @@
     white = "#d5c4a1"; # fg2
 
     bright = {
-      black = "#665c54"; # bg3
+      black = "#504945"; # bg2
       red = "#fb4934";
       green = "#b8bb26";
       yellow = "#fabd2f";
@@ -31,7 +31,7 @@
       white = "#fbf1c7"; # fg0
     };
 
-    color = config.theme.bright.black;
+    color = "#665c54"; # bg3
     colorFg = "#fe8019"; # orange 208
   };
 
