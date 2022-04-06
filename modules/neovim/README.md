@@ -4,13 +4,13 @@
 
 ```
 let
-  tokyonight = pkgs.vimUtils.buildVimPlugin {
-    name = "tokyonight";
+  melange = pkgs.vimUtils.buildVimPlugin {
+    name = "melange";
     src = pkgs.fetchFromGitHub {
-      owner = "folke";
-      repo = "tokyonight.nvim";
-      rev = "8223c970677e4d88c9b6b6d81bda23daf11062bb";
-      sha256 = "1rzg0h0ab3jsfrimdawh8vlxa6y3j3rmk57zyapnmzpzllcswj0i";
+      owner = "savq";
+      repo = "melange";
+      rev = "ede563c0ed19c821d42006bdacdbb3515620865e";
+      sha256 = "1v0arh3cr1bqzipv8pgn9vknnsrd6cv9k2kvzcsdwdfqaw1pnlx1";
     };
   };
 in

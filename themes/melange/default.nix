@@ -30,19 +30,22 @@
       white = "#C1A78E";
     };
 
-    color = config.theme.blue;
-    colorFg = config.theme.blue;
+    color = config.theme.bright.black;
+    colorFg = "#fe8019"; # gruvbox orange 208
   };
 
   #programs.neovim = {
   #  plugins = with pkgs.vimPlugins; [
-  #    melange
+  #    melange lualine-nvim
   #  ];
 
   #  extraConfig = ''
   #    colorscheme melange
+  #    lua << END
+  #    require('lualine').setup()
+  #    END
   #  '';
   #};
 
-  #programs.alacritty.settings.background_opacity = 0.8;
+  programs.alacritty.settings.background_opacity = 0.9;
 }
