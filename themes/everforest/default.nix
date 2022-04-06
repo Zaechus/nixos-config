@@ -4,7 +4,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./theme.nix ];
+  imports = [ ../theme.nix ];
 
   theme = {
     fg = "#d3c6aa";
