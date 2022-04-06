@@ -1,5 +1,15 @@
+" barbar
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.auto_hide = v:true
+let bufferline.closable = v:false
+let bufferline.icons = v:false
+
 filetype plugin on
 syntax enable
+
+if has('termguicolors')
+  set termguicolors
+endif
 
 set number
 set nowrap
@@ -10,10 +20,6 @@ set noea
 
 set cursorline
 "set colorcolumn=100
-
-if has('termguicolors')
-  set termguicolors
-endif
 
 let mapleader = " "
 
@@ -55,8 +61,20 @@ nnoremap <A-Down> <C-w>j
 nnoremap <A-Up> <C-w>k
 nnoremap <A-Right> <C-w>l
 
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
 " Alt+e to expand current window into a tab in any mode
-map <A-e> :tab split<CR>
-tnoremap <A-e> <C-\><C-N>:tab split<CR>
-inoremap <A-e> <C-\><C-N>:tab split<CR>
-nnoremap <A-e> :tab split<CR>
+map <leader>e :tab split<CR>
+tnoremap <leader>e <C-\><C-N>:tab split<CR>
+inoremap <leader>e <C-\><C-N>:tab split<CR>
+nnoremap <leader>e :tab split<CR>
