@@ -24,5 +24,8 @@ passwd $USER
 
 ## [Nix](https://nixos.org/download.html#nix-install-linux) + [Home Manager](https://nix-community.github.io/home-manager/index.html#sec-install-standalone)
 ```
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+```
 ./nix.sh $HOST
 ```
