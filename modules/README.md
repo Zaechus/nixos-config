@@ -9,7 +9,7 @@ and should be placed into user imports.
 
 ### Default
 `default.nix` and `home.nix` contain basic functionality/configuration that should
-be shared by all systems and users.
+be shared by most systems and users.
 
 ### Wired & Wireless
 Provides networking functionality for wired and wireless connecetions respectively.
@@ -22,7 +22,7 @@ Enables the use of swaywm, an internet browser, and other graphical utilities.
 Packages needed for software development.
 
 ### Gaming
-A superset of the graphical module, it provides extra packages needed for gaming
+A superset of the graphical module, it provides extra packages for gaming
 
 ### Laptop
 Enables additional packages and settings for laptop computers.

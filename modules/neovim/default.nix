@@ -5,7 +5,8 @@
     enable = true;
 
     plugins = with pkgs.vimPlugins; [
-      vim-gitgutter nvim-tree-lua barbar-nvim vim-nix
+      vim-gitgutter vim-nix
+      nvim-tree-lua
     ];
 
     viAlias = true;
