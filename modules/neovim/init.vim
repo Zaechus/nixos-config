@@ -1,15 +1,15 @@
-" barbar
-let bufferline = get(g:, 'bufferline', {})
-let bufferline.auto_hide = v:true
-let bufferline.closable = v:false
-let bufferline.icons = v:false
-
 filetype plugin on
 syntax enable
 
 if has('termguicolors')
   set termguicolors
 endif
+
+" barbar
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.auto_hide = v:true
+let bufferline.closable = v:false
+let bufferline.icons = v:false
 
 set number
 set nowrap
@@ -39,9 +39,10 @@ map <leader>c :wa<CR> :!cargo c<CR>
 map <leader>r :wa<CR> <F6>cargo r<CR>
 map <leader>t :wa<CR> :!cargo t<CR>
 
-" Open netrw in left-side window
+" tree
 let g:netrw_list_hide = '^\.'
-map <F4> :set nosplitright<CR> :vsp .<CR> :vert res 22<CR> :set splitright<CR>
+"map <F4> :set nosplitright<CR> :vsp .<CR> :vert res 22<CR> :set splitright<CR>
+nnoremap <F4> :NvimTreeToggle<CR>
 
 " Alt+<arrow> to switch windows in any mode
 map <A-Left> <C-w>h
@@ -74,7 +75,7 @@ noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
 " Alt+e to expand current window into a tab in any mode
-map <leader>e :tab split<CR>
-tnoremap <leader>e <C-\><C-N>:tab split<CR>
-inoremap <leader>e <C-\><C-N>:tab split<CR>
-nnoremap <leader>e :tab split<CR>
+map <A-e> :tab split<CR>
+tnoremap <A-e> <C-\><C-N>:tab split<CR>
+inoremap <A-e> <C-\><C-N>:tab split<CR>
+nnoremap <A-e> :tab split<CR>

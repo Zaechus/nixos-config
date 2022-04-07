@@ -1,4 +1,11 @@
-# Neovim
+# [Neovim](https://neovim.io/)
+
+## Plugins
+- [barbar](https://github.com/romgrk/barbar.nvim)
+- [lualine](https://github.com/nvim-lualine/lualine.nvim)
+- [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua/)
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+- [vim-nix](https://github.com/LnL7/vim-nix)
 
 ## Use plugins from GitHub
 
