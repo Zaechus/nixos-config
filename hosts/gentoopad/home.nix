@@ -17,10 +17,6 @@
   wayland.windowManager.sway.config = {
     terminal = lib.mkOverride 0 "/usr/bin/alacritty"; # opengl issue
 
-    output = {
-      eDP-1 = { bg = "${../../modules/sway/background.jpg} fill"; };
-    };
-
     keybindings = {
       "XF86MonBrightnessUp" = lib.mkOverride 0 "exec light -A 5%";
       "XF86MonBrightnessDown" = lib.mkOverride 0 "exec light -U 5%";

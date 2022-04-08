@@ -11,6 +11,10 @@
 
       gaps.smartBorders = "on";
 
+      output = {
+        "*" = { bg = "${./background.jpg} fill"; };
+      };
+
       menu = ''
         bemenu-run --fn 'FiraCode 12' \
           --tb \${config.theme.bg} \
