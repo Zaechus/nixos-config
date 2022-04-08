@@ -59,20 +59,26 @@ tnoremap <A-e> <C-\><C-N>:tab split<CR>
 inoremap <A-e> <C-\><C-N>:tab split<CR>
 
 " Switch tabs
-nnoremap <A-,> gT
-nnoremap <A-.> gt
-nnoremap <A-1> 1gt
-nnoremap <A-2> 2gt
-nnoremap <A-3> 3gt
-nnoremap <A-4> 4gt
-nnoremap <A-5> 5gt
-nnoremap <A-6> 6gt
-nnoremap <A-7> 7gt
-nnoremap <A-8> 8gt
-nnoremap <A-9> 9gt
-nnoremap <A-0> :tablast<CR>
+nnoremap <silent><A-0>           :tablast<CR>
+tnoremap <silent><A-0> <C-\><C-N>:tablast<CR>
+inoremap <silent><A-0> <C-\><C-N>:tablast<CR>
+
+nnoremap <A-,>           gT
+nnoremap <A-.>           gt
+inoremap <A-,> <C-\><C-N>gT
+inoremap <A-.> <C-\><C-N>gt
 tnoremap <A-,> <C-\><C-N>gT
 tnoremap <A-.> <C-\><C-N>gt
+
+nnoremap <A-1>           1gt
+nnoremap <A-2>           2gt
+nnoremap <A-3>           3gt
+nnoremap <A-4>           4gt
+nnoremap <A-5>           5gt
+nnoremap <A-6>           6gt
+nnoremap <A-7>           7gt
+nnoremap <A-8>           8gt
+nnoremap <A-9>           9gt
 tnoremap <A-1> <C-\><C-N>1gt
 tnoremap <A-2> <C-\><C-N>2gt
 tnoremap <A-3> <C-\><C-N>3gt
@@ -82,9 +88,6 @@ tnoremap <A-6> <C-\><C-N>6gt
 tnoremap <A-7> <C-\><C-N>7gt
 tnoremap <A-8> <C-\><C-N>8gt
 tnoremap <A-9> <C-\><C-N>9gt
-tnoremap <A-0> <C-\><C-N>:tablast<CR>
-inoremap <A-,> <C-\><C-N>gT
-inoremap <A-.> <C-\><C-N>gt
 inoremap <A-1> <C-\><C-N>1gt
 inoremap <A-2> <C-\><C-N>2gt
 inoremap <A-3> <C-\><C-N>3gt
@@ -94,4 +97,3 @@ inoremap <A-6> <C-\><C-N>6gt
 inoremap <A-7> <C-\><C-N>7gt
 inoremap <A-8> <C-\><C-N>8gt
 inoremap <A-9> <C-\><C-N>9gt
-inoremap <A-0> <C-\><C-N>:tablast<CR>

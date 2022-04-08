@@ -5,8 +5,11 @@
     enable = true;
 
     plugins = with pkgs.vimPlugins; [
-      vim-gitgutter vim-nix
+      vim-nix
+      vim-gitgutter
       nvim-tree-lua
+      lualine-nvim
+      bufferline-nvim nvim-web-devicons
     ];
 
     viAlias = true;

@@ -11,13 +11,13 @@
 
 ```
 let
-  melange = pkgs.vimUtils.buildVimPlugin {
-    name = "melange";
+  bufferline-nvim-git = pkgs.vimUtils.buildVimPlugin {
+    name = "bufferline-nvim-git";
     src = pkgs.fetchFromGitHub {
-      owner = "savq";
-      repo = "melange";
-      rev = "ede563c0ed19c821d42006bdacdbb3515620865e";
-      sha256 = "1v0arh3cr1bqzipv8pgn9vknnsrd6cv9k2kvzcsdwdfqaw1pnlx1";
+      owner = "akinsho";
+      repo = "bufferline.nvim";
+      rev = "874f869a24e568980294b3200fc9dd842db65a36";
+      sha256 = "0b8fryf9cfcsg50r0cvwxrmcn6ip8r365nmdgd9qa1vaz2yx53dw";
     };
   };
 in

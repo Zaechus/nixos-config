@@ -37,21 +37,18 @@
 
   # https://github.com/ellisonleao/gruvbox.nvim
   programs.neovim = {
-    plugins = with pkgs.vimPlugins; [
-      gruvbox-nvim lualine-nvim
-    ];
+    plugins = with pkgs.vimPlugins; [ gruvbox-nvim ];
 
     extraConfig = ''
       colorscheme gruvbox
-      lua << END
-      require('lualine').setup()
-      require'nvim-tree'.setup()
-      END
-    '';
+      lua << EOF
+      '' +
+      builtins.readFile ../../modules/neovim/setup.lua +
+      ''
+      EOF'';
   };
 
   programs.alacritty.settings = {
-    # https://github.com/eddyekofo94/gruvbox-flat.nvim/blob/master/extras/alacritty_gruvbox_.yml
     colors.indexed_colors = [
       { index = 16; color = "#ff9e64"; }
       { index = 17; color = "#db4b4b"; }
