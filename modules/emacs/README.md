@@ -1,4 +1,4 @@
-# [emacs](https://github.com/hlissner/doom-emacs#install)
+# [emacs](https://github.com/hlissner/doom-emacs)
 
 ```
   But before you doom yourself, here are some things you should know:
