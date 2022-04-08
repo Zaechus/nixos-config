@@ -15,6 +15,8 @@ set noea
 set cursorline
 "set colorcolumn=100
 
+set mouse=a
+
 let mapleader = " "
 
 " Enable/disable numbers+nowrap for copying
@@ -97,3 +99,14 @@ inoremap <A-6> <C-\><C-N>6gt
 inoremap <A-7> <C-\><C-N>7gt
 inoremap <A-8> <C-\><C-N>8gt
 inoremap <A-9> <C-\><C-N>9gt
+
+" Replace with buffer
+nnoremap <leader>1 :BufferLineGoToBuffer1<CR>
+nnoremap <leader>2 :BufferLineGoToBuffer2<CR>
+nnoremap <leader>3 :BufferLineGoToBuffer3<CR>
+nnoremap <leader>4 :BufferLineGoToBuffer4<CR>
+nnoremap <leader>5 :BufferLineGoToBuffer5<CR>
+nnoremap <leader>6 :BufferLineGoToBuffer6<CR>
+nnoremap <leader>7 :BufferLineGoToBuffer7<CR>
+nnoremap <leader>8 :BufferLineGoToBuffer8<CR>
+nnoremap <leader>9 :BufferLineGoToBuffer9<CR>
