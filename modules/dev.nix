@@ -1,5 +1,5 @@
 {
   environment.systemPackages = with pkgs; [
-    rustup gcc tokei
+    rustup gcc tokei rust-analyzer
   ];
 }

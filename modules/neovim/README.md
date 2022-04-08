@@ -1,7 +1,7 @@
 # [Neovim](https://neovim.io/)
 
 ## Plugins
-- [barbar](https://github.com/romgrk/barbar.nvim)
+- [bufferline](https://github.com/akinsho/bufferline.nvim)
 - [lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua/)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
