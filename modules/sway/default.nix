@@ -144,6 +144,7 @@
           names = [ "FiraCode" ];
           size = 10.0;
         };
+        # bar colors
         colors = {
           statusline = config.theme.fg;
           background = config.theme.bg;
@@ -159,6 +160,7 @@
           };
         };
       }];
+      # window colors
       colors = {
         focused = {
           background = config.theme.color;
@@ -175,11 +177,6 @@
           text = config.theme.fg;
         };
       };
-
-      startup = [
-        #{ command = "exec sudo cpufreq schedutil"; }
-        #{ command = "exec screen -S weechat -d -m weechat"; }
-      ];
     };
   };
 
