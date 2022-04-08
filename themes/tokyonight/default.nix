@@ -36,9 +36,10 @@
     extraConfig = ''
       colorscheme tokyonight
       lua << END
-      require('lualine').setup()
-      END
-    '';
+      '' +
+      builtins.readFile ../../modules/neovim/setup.lua +
+      ''
+      END'';
   };
 
   programs.alacritty.settings = {
