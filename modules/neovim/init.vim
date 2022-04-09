@@ -17,6 +17,8 @@ set cursorline
 
 set mouse=a
 
+set clipboard=unnamedplus
+
 let mapleader = " "
 
 " Split a terminal vertically or horizontally
