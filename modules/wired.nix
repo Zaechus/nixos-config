@@ -3,12 +3,6 @@
     ./internet.nix
   ];
 
-  networking = {
-    useNetworkd = true;
-
-    useDHCP = false;
-  };
-
   systemd.network.networks = {
     "10-wired" = {
       enable = true;
