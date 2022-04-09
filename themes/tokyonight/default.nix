@@ -51,4 +51,7 @@
   };
 
   #programs.chromium.extensions = [ "enpfonmmpgoinjpglildebkaphbhndek" ];
+
+  # https://github.com/folke/tokyonight.nvim/blob/main/extras/tmux_tokyonight_storm.tmux
+  programs.tmux.extraConfig = builtins.readFile ./tmux_tokyonight_storm.tmux;
 }

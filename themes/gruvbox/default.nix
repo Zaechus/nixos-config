@@ -45,7 +45,7 @@
       '' +
       builtins.readFile ../../modules/neovim/setup.lua +
       ''
-      EOF'';
+    EOF'';
   };
 
   programs.alacritty.settings = {
@@ -57,4 +57,6 @@
   };
 
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
+
+  programs.tmux.plugins = with pkgs.tmuxPlugins; [ gruvbox ];
 }

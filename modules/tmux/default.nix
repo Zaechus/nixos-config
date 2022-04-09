@@ -9,7 +9,6 @@
 
     plugins = with pkgs.tmuxPlugins; [
       sensible
-      gruvbox
     ];
   };
 }
