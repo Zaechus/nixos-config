@@ -19,10 +19,6 @@ set mouse=a
 
 let mapleader = " "
 
-" Enable/disable numbers+nowrap for copying
-map <silent> <leader>w :set nonumber<CR> :set wrap<CR> :set nocursorline<CR> :GitGutterDisable<CR>
-map <silent> <leader>n :set number<CR> :set nowrap<CR> :set cursorline<CR> :GitGutterEnable<CR>
-
 " Split a terminal vertically or horizontally
 set splitright
 set splitbelow
