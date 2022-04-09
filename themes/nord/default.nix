@@ -37,19 +37,20 @@
 
   # https://github.com/shaunsingh/nord.nvim/
   programs.neovim = {
-    plugins = with pkgs.vimPlugins; [
-      nord-nvim lualine-nvim
-    ];
+    plugins = with pkgs.vimPlugins; [ nord-nvim ];
 
     extraConfig = ''
       colorscheme nord
       lua << END
-      require('lualine').setup()
-      END
-    '';
+      '' +
+      builtins.readFile ../../modules/neovim/setup.lua +
+      ''
+    END'';
   };
 
   programs.alacritty.settings.background_opacity = 0.9;
 
   programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
+
+  programs.tmux.plugins = with pkgs.tmuxPlugins; [ nord ];
 }

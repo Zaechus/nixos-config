@@ -29,9 +29,7 @@
   };
 
   programs.neovim = {
-    plugins = with pkgs.vimPlugins; [
-      tokyonight-nvim lualine-nvim
-    ];
+    plugins = with pkgs.vimPlugins; [ tokyonight-nvim ];
 
     extraConfig = ''
       colorscheme tokyonight
@@ -39,7 +37,7 @@
       '' +
       builtins.readFile ../../modules/neovim/setup.lua +
       ''
-      END'';
+    END'';
   };
 
   programs.alacritty.settings = {

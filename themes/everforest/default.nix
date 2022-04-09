@@ -19,21 +19,22 @@
     cyan = "#83c092";
     white = "#d3c6aa";
 
-    color = config.theme.cyan; # green
-    colorFg = config.theme.green;
+    color = "#508759"; # green
+    colorFg = config.theme.cyan;
   };
 
   programs.neovim = {
-    plugins = with pkgs.vimPlugins; [
-      everforest lightline-vim
-    ];
+    plugins = with pkgs.vimPlugins; [ everforest ];
 
     extraConfig = ''
       let g:everforest_background = 'medium'
       colorscheme everforest
-      let g:lightline = {'colorscheme': 'everforest'}
-    '';
+      lua << EOF
+      '' +
+      builtins.readFile ../../modules/neovim/setup.lua +
+      ''
+    EOF'';
   };
 
-  #programs.alacritty.settings.background_opacity = 0.8;
+  programs.alacritty.settings.background_opacity = 0.9;
 }
