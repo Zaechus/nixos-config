@@ -21,9 +21,6 @@ Enables the use of swaywm, an internet browser, and other graphical utilities.
 ### Dev
 Packages needed for software development.
 
-### Gaming
-A superset of the graphical module, it provides extra packages for gaming
-
 ### Laptop
 Enables additional packages and settings for laptop computers.
 
