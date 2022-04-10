@@ -125,6 +125,8 @@
         "${mod}+i" = "exec sudo cpufreq schedutil";
         "${mod}+o" = "exec sudo cpufreq ondemand";
         "${mod}+p" = "exec sudo cpufreq performance";
+
+        "${mod}+n" = "exec ${config.wayland.windowManager.sway.config.terminal} -e sh -c 'sleep .02 && nvim'";
       };
       modes = { resize = {
         "Left" = "resize shrink width 10px";
