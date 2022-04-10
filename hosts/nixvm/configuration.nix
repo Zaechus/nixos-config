@@ -40,7 +40,7 @@ in {
     lutris
   ];
 
-  environment.sessionVariables = rec {
+  environment.sessionVariables = {
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
   };
 

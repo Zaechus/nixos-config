@@ -4,7 +4,7 @@
 { lib, ... }:
 
 {
-  programs.zsh.shellAliases = {
+  home.shellAliases = {
     btm = lib.mkOverride 1 "btm -R --battery";
   };
 
