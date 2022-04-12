@@ -5,7 +5,6 @@
     coc.enable = true;
 
     plugins = with pkgs.vimPlugins; [
-      toggleterm-nvim
       rust-tools-nvim coc-rust-analyzer coc-nvim nvim-lspconfig
     ];
 

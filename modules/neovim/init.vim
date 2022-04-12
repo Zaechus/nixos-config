@@ -13,13 +13,12 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set noea
 
 set cursorline
-"set colorcolumn=100
 
 set mouse=a
 
 set clipboard=unnamedplus
 
-let mapleader = " "
+let mapleader = ' '
 
 " Save and quit session
 noremap <silent> <C-X> :wa<CR> :mksession!<CR> :qa<CR>
@@ -27,9 +26,14 @@ noremap <silent> <C-X> :wa<CR> :mksession!<CR> :qa<CR>
 " Split a terminal vertically or horizontally
 set splitright
 set splitbelow
+map <silent> <F4> :sp +term<CR> :res 13<CR> <leader>w i
 map <silent> <F5> :vsp +term<CR> <leader>w i
-map <silent> <F6> :sp +term<CR> :res 13<CR> <leader>w i
-map <silent> <F7> :tabnew +term<CR> <leader>w i
+map <silent> <F6> :tabnew +term<CR> <leader>w i
+
+" toggleterm
+noremap  <silent> <C-_>           :ToggleTerm<CR>
+tnoremap <silent> <C-_> <C-\><C-N>:ToggleTerm<CR>
+inoremap <silent> <C-_> <C-\><C-N>:ToggleTerm<CR>
 
 " tree
 let g:netrw_list_hide = '^\.'
@@ -104,12 +108,12 @@ nnoremap <silent> <leader>. :BufferLineCycleNext<CR>
 nnoremap <silent> <leader>< :BufferLineMovePrev<CR>
 nnoremap <silent> <leader>> :BufferLineMoveNext<CR>
 
-nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
-nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
-nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
-nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
-nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
-nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
-nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
-nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
-nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
+nnoremap <silent> <leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent> <leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent> <leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent> <leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent> <leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent> <leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent> <leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent> <leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent> <leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
