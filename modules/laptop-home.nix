@@ -1,12 +1,10 @@
 # Extra packages/configuration for laptop devices which extra requirments such
 # as brightness control and batteries
 
-{ lib, ... }:
+{ config, lib, ... }:
 
 {
-  home.shellAliases = {
-    btm = lib.mkOverride 1 "btm -R --battery";
-  };
+  alias.btm = "btm -R --battery";
 
   wayland.windowManager.sway.config.keybindings = {
     "XF86MonBrightnessUp" = "exec brightnessctl s +5%";
