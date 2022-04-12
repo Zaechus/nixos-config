@@ -21,17 +21,20 @@ set clipboard=unnamedplus
 
 let mapleader = " "
 
+" Save and quit session
+noremap <silent> <C-X> :wa<CR> :mksession!<CR> :qa<CR>
+
 " Split a terminal vertically or horizontally
 set splitright
 set splitbelow
-map <silent> <F3> :vsp +term<CR> <leader>w i
+map <silent> <F5> :vsp +term<CR> <leader>w i
 map <silent> <F6> :sp +term<CR> :res 13<CR> <leader>w i
 map <silent> <F7> :tabnew +term<CR> <leader>w i
 
 " tree
 let g:netrw_list_hide = '^\.'
 "map <F4> :set nosplitright<CR> :vsp .<CR> :vert res 22<CR> :set splitright<CR>
-nnoremap <silent> <F4> :NvimTreeToggle<CR>
+nnoremap <silent> <F3> :NvimTreeToggle<CR>
 
 " Alt+<arrow> to switch windows in any mode
 noremap  <A-Left>  <C-w>h
@@ -92,9 +95,21 @@ inoremap <A-7> <C-\><C-N>7gt
 inoremap <A-8> <C-\><C-N>8gt
 inoremap <A-9> <C-\><C-N>9gt
 
-" Cycle/move buffers
+" bufferline
+nnoremap <silent> <leader>a :BufferLineSortByTabs<CR>
+
 nnoremap <silent> <leader>, :BufferLineCyclePrev<CR>
 nnoremap <silent> <leader>. :BufferLineCycleNext<CR>
 
 nnoremap <silent> <leader>< :BufferLineMovePrev<CR>
 nnoremap <silent> <leader>> :BufferLineMoveNext<CR>
+
+nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>

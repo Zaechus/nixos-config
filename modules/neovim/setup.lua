@@ -8,6 +8,6 @@ require'bufferline'.setup {
     --mode = 'tabs',
     numbers = 'buffer_id',
     always_show_bufferline = false,
-    sort_by = 'tabs';
+    --sort_by = 'tabs';
   }
 }
