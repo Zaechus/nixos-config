@@ -1,4 +1,5 @@
 map <silent> <leader>d :CocDiagnostics<CR>
+map <silent> <leader>o :CocOutline<CR>
 
 " cargo
 map <silent> <leader>f :wa<CR> :!cargo fmt<CR><CR> :windo e<CR>
