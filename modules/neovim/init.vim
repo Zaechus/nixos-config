@@ -24,16 +24,9 @@ let mapleader = " "
 " Split a terminal vertically or horizontally
 set splitright
 set splitbelow
-map <silent> <F5> :vsp +term<CR> <leader>w i
+map <silent> <F3> :vsp +term<CR> <leader>w i
 map <silent> <F6> :sp +term<CR> :res 13<CR> <leader>w i
 map <silent> <F7> :tabnew +term<CR> <leader>w i
-
-" cargo
-map <silent> <leader>f :wa<CR> :!cargo fmt<CR><CR> :windo e<CR>
-map <silent> <leader>c :wa<CR> :!cargo c<CR>
-map <silent> <leader>r :wa<CR> <F6>cargo r<CR>
-map <silent> <leader>t :wa<CR> :!cargo t<CR>
-map <silent> <leader>d :CocDiagnostics<CR>
 
 " tree
 let g:netrw_list_hide = '^\.'
