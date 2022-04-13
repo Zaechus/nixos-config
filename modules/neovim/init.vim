@@ -36,8 +36,6 @@ tnoremap <silent> <C-_> <C-\><C-N>:ToggleTerm<CR>
 inoremap <silent> <C-_> <C-\><C-N>:ToggleTerm<CR>
 
 " tree
-let g:netrw_list_hide = '^\.'
-"map <F4> :set nosplitright<CR> :vsp .<CR> :vert res 22<CR> :set splitright<CR>
 nnoremap <silent> <F3> :NvimTreeToggle<CR>
 
 " Alt+<arrow> to switch windows in any mode
