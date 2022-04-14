@@ -10,6 +10,9 @@ with lib;
   ];
 
   config = {
+    programs.bat.enable = true;
+    programs.git.enable = true;
+
     home.sessionVariables = {
       MANPAGER = "sh -c 'col -bx | bat -l man -p'";
       PAGER = "bat";
@@ -30,8 +33,6 @@ with lib;
       qemu-boot-bios = "qemu-system-x86_64 -enable-kvm -cpu host -smp 12 -m 8G -vga virtio --display gtk,full-screen=on,show-cursor=on";
       qemu-boot = "qemu-boot-bios -drive if=pflash,format=raw,unit=0,readonly=on,file=/usr/share/edk2-ovmf/OVMF_CODE.fd -drive if=pflash,format=raw,unit=1,file=OVMF_VARS.fd";
     };
-
-    programs.git.enable = true;
   };
 
   options.alias.btm = mkOption { type = types.str; default = "btm -R"; };

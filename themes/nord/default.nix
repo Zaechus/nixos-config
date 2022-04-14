@@ -48,6 +48,8 @@
     END'';
   };
 
+  programs.bat.config.theme = "Nord";
+
   programs.alacritty.settings.background_opacity = 0.9;
 
   programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];

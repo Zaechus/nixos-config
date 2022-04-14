@@ -8,7 +8,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    bat exa fd ripgrep
+    exa fd ripgrep
     bottom
     git
   ];

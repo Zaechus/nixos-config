@@ -48,6 +48,8 @@
     EOF'';
   };
 
+  programs.bat.config.theme = "gruvbox-dark";
+
   programs.alacritty.settings = {
     colors.indexed_colors = [
       { index = 16; color = "#ff9e64"; }

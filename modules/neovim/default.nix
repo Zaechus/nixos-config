@@ -11,6 +11,7 @@
       toggleterm-nvim
       lualine-nvim
       bufferline-nvim nvim-web-devicons
+      markdown-preview-nvim
     ];
 
     viAlias = true;
