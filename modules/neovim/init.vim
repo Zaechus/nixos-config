@@ -52,11 +52,6 @@ inoremap <A-Down>  <C-\><C-N><C-w>j
 inoremap <A-Up>    <C-\><C-N><C-w>k
 inoremap <A-Right> <C-\><C-N><C-w>l
 
-" Alt+e to expand current window into a tab in any mode
-noremap  <silent> <A-e> :tab split<CR>
-tnoremap <silent> <A-e> <C-\><C-N>:tab split<CR>
-inoremap <silent> <A-e> <C-\><C-N>:tab split<CR>
-
 " Switch tabs
 noremap  <silent> <A-0>           :tablast<CR>
 tnoremap <silent> <A-0> <C-\><C-N>:tablast<CR>
@@ -99,6 +94,9 @@ inoremap <A-9> <C-\><C-N>9gt
 
 " bufferline
 nnoremap <silent> <leader>a :BufferLineSortByTabs<CR>
+
+nnoremap <silent> <leader>b :BufferLinePick<CR>
+nnoremap <silent> <leader>B :BufferLinePickClose<CR>
 
 nnoremap <silent> <leader>, :BufferLineCyclePrev<CR>
 nnoremap <silent> <leader>. :BufferLineCycleNext<CR>
