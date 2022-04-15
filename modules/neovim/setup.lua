@@ -9,4 +9,6 @@ require'bufferline'.setup {
     always_show_bufferline = false,
   }
 }
-require'colorizer'.setup()
+require'colorizer'.setup({'*'}, {
+  names = false,
+})
