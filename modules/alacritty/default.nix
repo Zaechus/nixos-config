@@ -5,11 +5,8 @@
     enable = true;
     settings = {
       font = {
-        normal = {
-          family = "FiraCode";
-          #style = "Retina";
-          size = 11.0;
-        };
+        normal.family = "FiraCode";
+        size = 11.0;
       };
 
       colors = {
@@ -41,9 +38,7 @@
         };
       };
 
-      #window = {
-      #  opacity = 0.8;
-      #};
+      #window.opacity = 0.9;
     };
   };
 }

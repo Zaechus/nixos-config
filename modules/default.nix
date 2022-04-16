@@ -7,6 +7,8 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  powerManagement.cpuFreqGovernor = "schedutil";
+
   environment.systemPackages = with pkgs; [
     exa fd ripgrep
     bottom
