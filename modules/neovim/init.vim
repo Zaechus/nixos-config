@@ -1,39 +1,57 @@
+" I think these need to be enabled for certain plugins
 filetype plugin on
 syntax enable
 
+" Set termguicolors if it is available
+" Needed for themes to use 256-color
 if has('termguicolors')
   set termguicolors
 endif
 
+" Show line numbers disable text wrapping on normal windows
 set number
 set nowrap
 
+" Use tabs as four spaces by default
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
+" Lightly highlight the current line
 set cursorline
 
+" Enable mouse support in all modes
 set mouse=a
 
+" Make no distinction between copy registers
+" In other words, enable yanking to the system clipboard
 set clipboard+=unnamedplus
 
+" Prevents hidden buffers from being abandoned
+" Specifically set to let ToggleTerm keep sessions alive
+set hidden
+
+" Create splits to the right and below, makes more sense to my brain
+set splitright
+set splitbelow
+
+" Set the <leader> key to the spacebar
 let mapleader = ' '
+
+" KEYBINDS
 
 " Save and quit session
 noremap <silent> <C-X> :wa<CR> :mksession!<CR> :qa<CR>
 
-" Split a terminal vertically or horizontally
-set splitright
-set splitbelow
+" Split a new terminal to the bottom, a vertical split, or a new tabpage
 map <silent> <F4> :sp +term<CR> :res 13<CR> <leader>w i
 map <silent> <F5> :vsp +term<CR> <leader>w i
 map <silent> <F6> :tabnew +term<CR> <leader>w i
 
-" toggleterm
+" Toggle a terminal at the bottom with Ctrl+/
 noremap  <silent> <C-_>           :ToggleTerm<CR>
 tnoremap <silent> <C-_> <C-\><C-N>:ToggleTerm<CR>
 inoremap <silent> <C-_> <C-\><C-N>:ToggleTerm<CR>
 
-" tree
+" Toggle the file tree on the left
 nnoremap <silent> <F3> :NvimTreeToggle<CR>
 
 " Alt+<arrow> to switch windows in any mode
@@ -50,7 +68,7 @@ inoremap <A-Down>  <C-\><C-N><C-w>j
 inoremap <A-Up>    <C-\><C-N><C-w>k
 inoremap <A-Right> <C-\><C-N><C-w>l
 
-" Switch tabs
+" Switch tabpages in any mode
 noremap  <silent> <A-0>           :tablast<CR>
 tnoremap <silent> <A-0> <C-\><C-N>:tablast<CR>
 inoremap <silent> <A-0> <C-\><C-N>:tablast<CR>
@@ -90,7 +108,7 @@ inoremap <A-7> <C-\><C-N>7gt
 inoremap <A-8> <C-\><C-N>8gt
 inoremap <A-9> <C-\><C-N>9gt
 
-" bufferline
+" bufferline keybinds
 nnoremap <silent> <leader>a :BufferLineSortByTabs<CR>
 
 nnoremap <silent> <leader>b :BufferLinePick<CR>
