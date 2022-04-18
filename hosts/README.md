@@ -4,14 +4,12 @@ Various different machines running NixOS or using Nix.
 
 ## cybros 💻🔴
 
-![](https://img.shields.io/badge/OS-Gentoo-54487A?logo=Gentoo)
-![](https://img.shields.io/badge/Nix-gray?logo=NixOS)
+![](https://img.shields.io/badge/OS-NixOS-6e9bcb?logo=NixOS)
 
 A Lenovo Thinkpad T14 Gen 2 AMD running NixOS.
 
 ## gantrithor 💻🔴
 
-![](https://img.shields.io/badge/OS-NixOS-6e9bcb?logo=NixOS)
 
 A Lenovo Thinkpad T430 running NixOS. This laptop has previously used Arch, Manjaro, Artix, Gentoo, and Alpine under various hostnames including the current one.
 
