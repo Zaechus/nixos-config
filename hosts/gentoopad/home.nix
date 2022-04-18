@@ -1,17 +1,16 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =
-    [
-      ../../modules/home.nix
-      ../../themes/gruvbox
-      ../../modules/graphical-home.nix
-      ../../modules/git
-      ../../modules/thinkpad-home.nix
-      ../../modules/dev-home.nix
+  imports = [
+    ../../modules/home.nix
+    ../../themes/gruvbox
+    ../../modules/graphical-home.nix
+    ../../modules/git
+    ../../modules/thinkpad-home.nix
+    ../../modules/dev-home.nix
 
-      ../../modules/nushell
-    ];
+    ../../modules/nushell
+  ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "zaechus";
