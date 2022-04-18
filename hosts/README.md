@@ -2,12 +2,12 @@
 
 Various different machines running NixOS or using Nix.
 
-## gentoopad 💻🔴
+## cybros 💻🔴
 
 ![](https://img.shields.io/badge/OS-Gentoo-54487A?logo=Gentoo)
 ![](https://img.shields.io/badge/Nix-gray?logo=NixOS)
 
-A Lenovo Thinkpad T14 Gen 2 AMD running Gentoo (default/linux/amd64/17.1/desktop/systemd) with Nix.
+A Lenovo Thinkpad T14 Gen 2 AMD running NixOS.
 
 ## gantrithor 💻🔴
 

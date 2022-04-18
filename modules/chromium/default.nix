@@ -6,6 +6,7 @@
     package = pkgs.brave;
     extensions = [
       "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
+      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
     ];
   };
 

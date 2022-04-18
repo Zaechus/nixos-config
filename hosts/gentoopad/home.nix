@@ -8,8 +8,6 @@
     ../../modules/git
     ../../modules/thinkpad-home.nix
     ../../modules/dev-home.nix
-
-    ../../modules/nushell
   ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
