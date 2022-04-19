@@ -7,5 +7,6 @@
     ../modules/sway
   ];
 
+  gtk.enable = true;
   xdg.enable = true;
 }

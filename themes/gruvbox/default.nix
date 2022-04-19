@@ -51,12 +51,25 @@
 
   programs.bat.config.theme = "gruvbox-dark";
 
+  programs.bottom.settings.flags.color = "gruvbox";
+
   programs.alacritty.settings = {
     colors.indexed_colors = [
       { index = 16; color = "#ff9e64"; }
       { index = 17; color = "#db4b4b"; }
     ];
     background_opacity = 0.9;
+  };
+
+  gtk = {
+    iconTheme = {
+      package = pkgs.gruvbox-dark-icons-gtk;
+      name = "oomox-gruvbox-dark";
+    };
+    theme = {
+      package = pkgs.gruvbox-dark-gtk;
+      name = "gruvbox-dark";
+    };
   };
 
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];

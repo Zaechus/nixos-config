@@ -11,8 +11,6 @@
 
   environment.systemPackages = with pkgs; [
     exa fd ripgrep
-    bottom
-    git
   ];
 
   users.defaultUserShell = pkgs.zsh;

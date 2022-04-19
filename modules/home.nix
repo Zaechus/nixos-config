@@ -11,6 +11,7 @@ with lib;
 
   config = {
     programs.bat.enable = true;
+    programs.bottom.enable = true;
     programs.git.enable = true;
 
     home.sessionVariables = {
