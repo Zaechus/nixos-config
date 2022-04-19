@@ -4,6 +4,7 @@
   wayland.windowManager.sway = {
     enable = true;
     package = null;
+    wrapperFeatures.gtk = true;
     config = {
       defaultWorkspace = "workspace number 1";
 
@@ -195,12 +196,12 @@
     unsc2 = "swaymsg input type:keyboard repeat_rate 25 && swaymsg input type:keyboard repeat_delay 300";
   };
 
-  programs.nushell.settings.startup = [ ''if (tty) =~ "/dev/tty1" { sway } {}'' ];
+  programs.nushell.settings.startup = [ ''if (tty) =~ "/dev/tty1" { exec sway } {}'' ];
 
   programs.zsh = {
     profileExtra = ''
       if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        sway
+        exec sway
       fi
     '';
   };

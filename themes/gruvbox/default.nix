@@ -41,6 +41,7 @@
 
     extraConfig = ''
       colorscheme gruvbox
+      hi Normal guibg=${config.theme.bg}
       lua << EOF
       '' +
       builtins.readFile ../../modules/neovim/setup.lua +
