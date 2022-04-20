@@ -16,6 +16,7 @@
       ../../../modules/nushell
       ../../../modules/tmux
       ../../../modules/emacs
+      ../../../modules/qutebrowser
     ];
 
     wayland.windowManager.sway.config.output.eDP-1.subpixel = "rgb";
