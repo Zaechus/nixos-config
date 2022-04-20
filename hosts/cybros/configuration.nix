@@ -6,10 +6,11 @@ in {
   imports = [
     /etc/nixos/hardware-configuration.nix
     ../../modules
-    ../../modules/graphical.nix
-    ../../modules/laptop.nix
     ../../modules/wired.nix
     ../../modules/wireless.nix
+    ../../modules/laptop.nix
+    ../../modules/graphical.nix
+    ../../modules/dev.nix
     (import "${home-manager}/nixos")
     ./users/zaechus.nix
   ];

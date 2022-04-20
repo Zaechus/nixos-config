@@ -14,4 +14,6 @@
   ];
 
   users.defaultUserShell = pkgs.zsh;
+
+  boot.loader.timeout = 1;
 }
