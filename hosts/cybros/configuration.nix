@@ -11,6 +11,9 @@ in {
     ../../modules/laptop.nix
     ../../modules/graphical.nix
     ../../modules/dev.nix
+
+    ../../modules/virt-manager
+
     (import "${home-manager}/nixos")
     ./users/zaechus.nix
   ];
