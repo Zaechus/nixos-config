@@ -6,7 +6,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    imv
+    imv mpv
     xdg-utils
   ];
 
