@@ -10,8 +10,13 @@
     xdg-utils
   ];
 
-  # Wayland
-  hardware.opengl.enable = true;
+  hardware.opengl = {
+    # Wayland
+    enable = true;
+    # Vulkan
+    driSupport = true;
+    driSupport32Bit = true; # needed for some games
+  };
 
   programs.sway = {
     enable = true;
