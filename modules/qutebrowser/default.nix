@@ -17,6 +17,11 @@
       c.colors.tabs.even.bg = '${config.theme.bg}'
 
       c.colors.webpage.bg = '${config.theme.bg}'
+
+      c.colors.statusbar.normal.bg = '${config.theme.black}'
+      c.colors.statusbar.normal.fg = '${config.theme.fg}'
+      c.colors.statusbar.insert.bg = '${config.theme.bright.blue}'
+      c.colors.statusbar.command.fg = '${config.theme.fg}'
     '';
   };
 }
