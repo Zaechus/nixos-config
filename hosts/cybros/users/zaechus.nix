@@ -13,6 +13,8 @@
       ../../../modules/thinkpad-home.nix
       ../../../modules/dev-home.nix
 
+      ../../../modules/polymc
+
       ../../../modules/nushell
       ../../../modules/tmux
       ../../../modules/emacs
