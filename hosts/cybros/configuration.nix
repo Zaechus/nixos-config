@@ -10,7 +10,8 @@ in {
     ../../modules/wireless.nix
     ../../modules/laptop.nix
     ../../modules/graphical.nix
-    ../../modules/dev.nix
+    ../../modules/dev
+    ../../modules/dev/rust
 
     ../../modules/virt-manager
 
