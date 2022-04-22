@@ -24,6 +24,9 @@ in {
     efi.canTouchEfiVariables = true;
   };
 
+  # AMD
+  boot.initrd.kernelModules = [ "amdgpu" ];
+
   # Swap
   swapDevices = [ { device = "/var/swapfile"; } ];
 
@@ -36,7 +39,7 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    lutris
+    lutris unzip
   ];
 
   # List services that you want to enable:

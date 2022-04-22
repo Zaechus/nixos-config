@@ -8,6 +8,11 @@ if has('termguicolors')
   set termguicolors
 endif
 
+" MarkdownPreview
+let g:mkdp_preview_options = {
+    \ 'disable_filename': 1
+    \ }
+
 " Show line numbers disable text wrapping on normal windows
 set number
 set nowrap
