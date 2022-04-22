@@ -13,7 +13,7 @@
       gaps.smartBorders = "on";
 
       output = {
-        "*" = { bg = "${./background.jpg} fill"; };
+        "*" = { bg = "${../../assets/background.jpg} fill"; };
       };
 
       menu = ''

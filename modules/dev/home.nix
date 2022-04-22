@@ -8,6 +8,6 @@
       coc-nvim nvim-lspconfig
     ];
 
-    extraConfig = builtins.readFile ./neovim/dev.vim;
+    extraConfig = builtins.readFile ../neovim/dev.vim;
   };
 }
