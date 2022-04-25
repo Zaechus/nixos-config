@@ -13,6 +13,7 @@ in {
     ../../modules/dev
     ../../modules/dev/rust
 
+    ../../modules/angband
     ../../modules/virt-manager
 
     (import "${home-manager}/nixos")
@@ -40,6 +41,7 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    aria2
     lutris unzip
   ];
 
