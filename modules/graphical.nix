@@ -20,7 +20,7 @@
 
   programs.sway = {
     enable = true;
-    wrapperFeatures.gtk = true;
+    wrapperFeatures.gtk = true; # apparently improves gtk
     extraPackages = with pkgs; [
       bemenu grim slurp swaylock wl-clipboard
     ];

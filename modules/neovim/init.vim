@@ -47,9 +47,10 @@ let mapleader = ' '
 noremap <silent> <C-X> :wa<CR> :mksession!<CR> :qa<CR>
 
 " Split a new terminal to the bottom, a vertical split, or a new tabpage
-map <silent> <F4> :sp +term<CR> :res 13<CR> <leader>w i
-map <silent> <F5> :vsp +term<CR> <leader>w i
-map <silent> <F6> :tabnew +term<CR> <leader>w i
+map <silent> <F4> :ToggleTerm direction=horizontal<CR>
+map <silent> <F5> :ToggleTerm direction=vertical size=64<CR>
+map <silent> <F6> :ToggleTerm direction=float<CR>
+map <silent> <F7> :ToggleTerm direction=tab<CR>
 
 " Toggle a terminal at the bottom with Ctrl+/
 noremap  <silent> <C-_>           :ToggleTerm<CR>
