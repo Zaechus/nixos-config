@@ -29,6 +29,10 @@ in {
   # AMD
   boot.initrd.kernelModules = [ "amdgpu" ];
 
+  # Enforce btrfs zstd compression in fstab
+  fileSystems."/".options = [ "compress=zstd" ];
+  fileSystems."/home".options = [ "compress=zstd" ];
+
   # Swap
   swapDevices = [ { device = "/var/swapfile"; } ];
 

@@ -20,6 +20,10 @@ in {
     efi.canTouchEfiVariables = true;
   };
 
+  # Enforce btrfs zstd compression in fstab
+  fileSystems."/".options = [ "compress=zstd" ];
+  fileSystems."/home".options = [ "compress=zstd" ];
+
   # Set your time zone.
   time.timeZone = "America/Denver";
 
