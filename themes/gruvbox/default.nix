@@ -72,6 +72,8 @@
     };
   };
 
+  programs.i3status-rust.bars.top.theme = "gruvbox-dark";
+
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 
   programs.tmux.plugins = with pkgs.tmuxPlugins; [ gruvbox ];

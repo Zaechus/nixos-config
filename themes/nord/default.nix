@@ -65,6 +65,8 @@
     };
   };
 
+  programs.i3status-rust.bars.top.theme = "nord-dark";
+
   programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
 
   programs.tmux.plugins = with pkgs.tmuxPlugins; [ nord ];

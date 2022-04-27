@@ -22,7 +22,9 @@
     enable = true;
     wrapperFeatures.gtk = true; # apparently improves gtk
     extraPackages = with pkgs; [
-      bemenu grim slurp swaylock wl-clipboard
+      bemenu swaylock wl-clipboard
+      grim slurp # screenshot selection
+      lm_sensors # for i3statur-rust temperature block
     ];
   };
 

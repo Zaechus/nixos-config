@@ -46,6 +46,8 @@
         "${mod}+Return" = "exec ${config.wayland.windowManager.sway.config.terminal}";
         "${mod}+d" = "exec ${config.wayland.windowManager.sway.config.menu}";
 
+        "${mod}+Shift+c" = "reload";
+
         "${mod}+Shift+q" = "kill";
         "${mod}+Shift+e" = "exec swaymsg exit";
 
@@ -140,15 +142,15 @@
       };};
 
       fonts = {
-        names = [ "FiraCode" ];
+        names = [ "FiraCode Nerd Font" ];
         size = 9.0;
       };
 
       bars = [{
         position = "top";
-        statusCommand = "while sh ${./status.sh}; do sleep 1; done";
+        statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
         fonts = {
-          names = [ "FiraCode" ];
+          names = [ "FiraCode Nerd Font" ];
           size = 10.0;
         };
         # bar colors
@@ -183,6 +185,25 @@
           indicator = config.theme.black;
           text = config.theme.fg;
         };
+      };
+    };
+  };
+
+  programs.i3status-rust = {
+    enable = true;
+    bars.top = {
+      blocks = [
+        { block = "disk_space"; }
+        { block = "cpu"; icons_format = ""; }
+        { block = "temperature"; format = "{max}"; }
+        { block = "memory"; format_mem = "{mem_used}"; format_swap = "{swap_used}"; }
+        { block = "battery"; format = " {percentage}"; }
+        { block = "time"; }
+      ];
+      icons = "awesome5";
+      settings.theme = {
+        name = "gruvbox-dark";
+        overrides.separator = "<span font='13.5'></span>";
       };
     };
   };
