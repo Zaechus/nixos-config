@@ -1,19 +1,23 @@
 # The base configuration
 #
-# The default module includes basic system utilities that should be present on all systems.
+# The default module includes basic system utilities and configuration that
+# should be present on all systems.
 
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
-
+  boot.loader.timeout = 1;
   powerManagement.cpuFreqGovernor = "schedutil";
 
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     exa fd ripgrep
   ];
 
+  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-
-  boot.loader.timeout = 1;
+  environment.shellAliases = {
+    l = "exa --icons --color=always";
+    ll = "l -aalg";
+  };
 }
