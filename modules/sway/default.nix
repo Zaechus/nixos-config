@@ -189,12 +189,14 @@
     };
   };
 
+  # https://github.com/greshake/i3status-rust
   programs.i3status-rust = {
     enable = true;
     bars.top = {
+      # https://github.com/greshake/i3status-rust/blob/master/doc/blocks.md
       blocks = [
-        { block = "disk_space"; }
-        { block = "cpu"; icons_format = ""; }
+        { block = "net"; format = "<span> </span>"; format_alt = "{ssid} {signal_strength}"; }
+        { block = "cpu"; icons_format = " "; }
         { block = "temperature"; format = "{max}"; }
         { block = "memory"; format_mem = "{mem_used}"; format_swap = "{swap_used}"; }
         { block = "battery"; format = " {percentage}"; }
