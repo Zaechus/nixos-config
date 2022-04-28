@@ -72,7 +72,10 @@
     };
   };
 
-  programs.i3status-rust.bars.top.theme = "gruvbox-dark";
+  programs.i3status-rust.bars.top.settings.theme = {
+    name = "gruvbox-dark";
+    overrides.separator = "<span font='13.5'></span>";
+  };
 
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 

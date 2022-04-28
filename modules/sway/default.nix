@@ -201,10 +201,6 @@
         { block = "time"; }
       ];
       icons = "awesome5";
-      settings.theme = {
-        name = "gruvbox-dark";
-        overrides.separator = "<span font='13.5'></span>";
-      };
     };
   };
 
