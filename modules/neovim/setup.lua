@@ -18,7 +18,7 @@ require'toggleterm'.setup {
     end
   end,
 
-  open_mapping = [[<c-_>]],
+  open_mapping = [[<c-\>]],
   insert_mappings = true,
   terminal_mappings = true,
 
