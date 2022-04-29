@@ -48,14 +48,9 @@ noremap <silent> <C-X> :wa<CR> :mksession!<CR> :qa<CR>
 
 " Split a new terminal to the bottom, a vertical split, or a new tabpage
 map <silent> <F4> :ToggleTerm direction=horizontal<CR>
-map <silent> <F5> :ToggleTerm direction=vertical size=64<CR>
+map <silent> <F5> :ToggleTerm direction=vertical<CR>
 map <silent> <F6> :ToggleTerm direction=float<CR>
 map <silent> <F7> :ToggleTerm direction=tab<CR>
-
-" Toggle a terminal at the bottom with Ctrl+/
-noremap  <silent> <C-_>           :ToggleTerm<CR>
-tnoremap <silent> <C-_> <C-\><C-N>:ToggleTerm<CR>
-inoremap <silent> <C-_> <C-\><C-N>:ToggleTerm<CR>
 
 " Toggle the file tree on the left
 nnoremap <silent> <F3> :NvimTreeToggle<CR>

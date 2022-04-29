@@ -3,18 +3,10 @@ set nowrap
 
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-set noea
-
 set splitright
 set splitbelow
 
 colorscheme desert
 
 " tree
-let g:netrw_list_hide = '^\.'
 map <F3> :set nosplitright<CR> :vsp .<CR> :vert res 22<CR> :set splitright<CR>
-
-" Split a new terminal to the bottom, a vertical split, or a new tabpage
-"map <silent> <F4> :sp +term<CR> :res 13<CR> i
-"map <silent> <F5> :vsp +term<CR> i
-"map <silent> <F6> :tabnew +term<CR> i
