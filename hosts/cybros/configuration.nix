@@ -50,10 +50,12 @@ in {
     lutris unzip
   ];
 
+  programs.steam.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  #services.openssh.enable = true;
+  services.fstrim.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
