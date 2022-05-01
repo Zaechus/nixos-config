@@ -34,7 +34,7 @@ in {
   fileSystems."/home".options = [ "compress=zstd" ];
 
   # Swap
-  swapDevices = [ { device = "/var/swapfile"; } ];
+  swapDevices = [ { device = "/swap/swapfile"; } ];
 
   # Set your time zone.
   time.timeZone = "America/Denver";

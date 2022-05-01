@@ -41,24 +41,26 @@ mkdir -p /mnt
 mount /dev/mapper/root /mnt
 btrfs subvolume create /mnt/root
 btrfs subvolume create /mnt/home
+btrfs subvolume create /mnt/swap
 umount /mnt
 
 # Mount
 mount -o compress=zstd,subvol=root /dev/mapper/root /mnt
 mkdir /mnt/home
+mkdir /mnt/swap
 mount -o compress=zstd,subvol=home /dev/mapper/root /mnt/home
+mount -o               subvol=swap /dev/mapper/root /mnt/swap
 
 mkdir /mnt/boot
 mount $part1 /mnt/boot
 
 # Swapfile
-mkdir /mnt/var
-truncate -s 0 /mnt/var/swapfile
-chattr +C /mnt/var/swapfile
-btrfs property set /mnt/var/swapfile compression none
-fallocate -l 4G /mnt/var/swapfile
-chmod 0600 /mnt/var/swapfile
-mkswap /mnt/var/swapfile
+truncate -s 0 /mnt/swap/swapfile
+chattr +C /mnt/swap/swapfile
+btrfs property set /mnt/swap/swapfile compression none
+fallocate -l 4G /mnt/swap/swapfile
+chmod 0600 /mnt/swap/swapfile
+mkswap /mnt/swap/swapfile
 
 # NixOS
 nixos-generate-config --root /mnt
