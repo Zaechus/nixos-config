@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     imv mpv
     xdg-utils
+    alsa-utils # alsamixer, amixer
   ];
 
   hardware.opengl = {
@@ -24,14 +25,18 @@
     extraPackages = with pkgs; [
       bemenu swaylock wl-clipboard
       grim slurp # screenshot selection
-      lm_sensors # for i3statur-rust temperature block
+      lm_sensors # for i3status-rust temperature block
     ];
   };
 
   xdg.portal.wlr.enable = true;
 
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  services.pipewire.enable = true;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 }
