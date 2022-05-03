@@ -29,9 +29,11 @@ in {
   # AMD
   boot.initrd.kernelModules = [ "amdgpu" ];
 
-  # Enforce btrfs zstd compression in fstab
+  # Enforce fstab options
   fileSystems."/".options = [ "compress=zstd" ];
   fileSystems."/home".options = [ "compress=zstd" ];
+  fileSystems."/nix".options = [ "compress=zstd" "noatime" ];
+  fileSystems."/swap".options = [ "noatime" ];
 
   # Swap
   swapDevices = [ { device = "/swap/swapfile"; } ];
@@ -53,7 +55,7 @@ in {
     zinfo
   ];
 
-  programs.steam.enable = true; # includes steam-run dumb binaries
+  programs.steam.enable = true; # includes steam-run for dumb binaries
 
   # List services that you want to enable:
 

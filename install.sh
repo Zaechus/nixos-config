@@ -41,15 +41,16 @@ mkdir -p /mnt
 mount /dev/mapper/root /mnt
 btrfs subvolume create /mnt/root
 btrfs subvolume create /mnt/home
+btrfs subvolume create /mnt/nix
 btrfs subvolume create /mnt/swap
 umount /mnt
 
 # Mount
-mount -o compress=zstd,subvol=root /dev/mapper/root /mnt
-mkdir /mnt/home
-mkdir /mnt/swap
-mount -o compress=zstd,subvol=home /dev/mapper/root /mnt/home
-mount -o               subvol=swap /dev/mapper/root /mnt/swap
+mount -o compress=zstd,subvol=root              /dev/mapper/root /mnt
+mkdir /mnt/{home,nix,swap}
+mount -o compress=zstd,subvol=home              /dev/mapper/root /mnt/home
+mount -o noatime,compress=zstd,subvol=nix       /dev/mapper/root /mnt/nix
+mount -o noatime,subvol=swap                    /dev/mapper/root /mnt/swap
 
 mkdir /mnt/boot
 mount $part1 /mnt/boot
