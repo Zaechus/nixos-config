@@ -53,18 +53,11 @@ in {
     zinfo
   ];
 
-  programs.steam.enable = true;
+  programs.steam.enable = true; # includes steam-run dumb binaries
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
   services.fstrim.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   system.stateVersion = "21.11"; # Did you read the comment?
 }
