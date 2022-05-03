@@ -9,6 +9,8 @@
   boot.loader.timeout = 1;
   powerManagement.cpuFreqGovernor = "schedutil";
 
+  nix.autoOptimiseStore = true;
+
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     exa fd ripgrep
