@@ -26,6 +26,10 @@ in {
     efi.canTouchEfiVariables = true;
   };
 
+   # Enable trim
+  boot.initrd.luks.devices."root".allowDiscards = true;
+  services.fstrim.enable = true;
+
   # AMD
   boot.initrd.kernelModules = [ "amdgpu" ];
 
@@ -58,8 +62,6 @@ in {
   programs.steam.enable = true; # includes steam-run for dumb binaries
 
   # List services that you want to enable:
-
-  services.fstrim.enable = true;
 
   system.stateVersion = "21.11"; # Did you read the comment?
 }
