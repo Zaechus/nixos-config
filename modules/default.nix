@@ -21,5 +21,6 @@
   environment.shellAliases = {
     l = "exa --icons --color=always";
     ll = "l -aalg";
+    nix-query = "nix-store -q --references /run/current-system/sw | rg -v man | sed 's/^[^-]*-//g' | sed 's/-[0-9].*//g' | rg -v '^nix' | sort -u | $PAGER";
   };
 }
