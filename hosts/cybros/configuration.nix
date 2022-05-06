@@ -37,7 +37,7 @@ in {
   fileSystems."/".options = [ "compress=zstd" ];
   fileSystems."/home".options = [ "compress=zstd" ];
   fileSystems."/nix".options = [ "compress=zstd" "noatime" ];
-  fileSystems."/swap".options = [ "compress=no" "noatime" ];
+  fileSystems."/swap".options = [ "noatime" ];
 
   # Swap
   swapDevices = [ { device = "/swap/swapfile"; } ];
