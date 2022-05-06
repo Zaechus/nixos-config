@@ -7,7 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     imv mpv
-    xdg-utils
+    xdg-utils # need this for copy/paste images and other stuff
     alsa-utils # alsamixer, amixer
   ];
 
@@ -29,7 +29,23 @@
     ];
   };
 
-  xdg.portal.wlr.enable = true;
+  xdg = {
+    # Make things like screen capture work
+    portal = {
+      enable = true;
+      gtkUsePortal = true;
+      wlr.enable = true;
+    };
+
+    mime = {
+      enable = true;
+      defaultApplications = {
+        "image/jpg" = "imv.desktop";
+        "image/jpeg" = "imv.desktop";
+        "image/png" = "imv.desktop";
+      };
+    };
+  };
 
   # Enable sound.
   security.rtkit.enable = true;

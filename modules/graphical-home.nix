@@ -8,5 +8,4 @@
   ];
 
   gtk.enable = true;
-  xdg.enable = true;
 }
