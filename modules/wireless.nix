@@ -1,6 +1,6 @@
 {
   imports = [
-    ./internet.nix
+    ./network.nix
   ];
 
   networking.wireless.iwd.enable = true;

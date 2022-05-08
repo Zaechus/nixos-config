@@ -1,6 +1,6 @@
 {
   imports = [
-    ./internet.nix
+    ./network.nix
   ];
 
   systemd.network.networks = {

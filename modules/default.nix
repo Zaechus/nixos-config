@@ -3,7 +3,7 @@
 # The default module includes basic system utilities and configuration that
 # should be present on all systems.
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   boot.loader.timeout = 1;
@@ -23,4 +23,9 @@
     ll = "l -aalg";
     nix-query = "nix-store -q --references /run/current-system/sw | rg -v man | sed 's/^[^-]*-//g' | sed 's/-[0-9].*//g' | rg -v '^nix' | sort -u | $PAGER";
   };
+
+  services.getty = {
+    helpLine = lib.mkForce "";
+  };
+  users.motd = "\nHello, sailor!\n\n";
 }
