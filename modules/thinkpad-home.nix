@@ -7,6 +7,7 @@
     ./laptop-home.nix
   ];
 
+  # disable the touchpad by default since I use the TrackPoint on Thinkpads
   wayland.windowManager.sway.config.input = {
     "type:touchpad" = { events = "disabled"; };
   };
