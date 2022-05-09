@@ -48,6 +48,12 @@
     background_opacity = 0.9;
   };
 
+  programs.i3status-rust.bars.top.settings.theme = {
+    name = "modern";
+    overrides.idle_bg = config.theme.bg;
+    overrides.separator = "<span font='13.5'></span>";
+  };
+
   #programs.chromium.extensions = [ "enpfonmmpgoinjpglildebkaphbhndek" ];
 
   # https://github.com/folke/tokyonight.nvim/blob/main/extras/tmux_tokyonight_storm.tmux
