@@ -25,6 +25,7 @@
   };
 
   services.getty = {
+    greetingLine = "NixOS ${builtins.substring 0 5 config.system.nixos.label} (\\m) - \\l";
     helpLine = lib.mkForce "";
   };
   users.motd = "\nHello, sailor!\n\n";
