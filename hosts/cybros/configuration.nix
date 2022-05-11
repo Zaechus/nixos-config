@@ -34,10 +34,12 @@ in {
   boot.initrd.kernelModules = [ "amdgpu" ];
 
   # Enforce fstab options
-  fileSystems."/".options = [ "compress=zstd" ];
-  fileSystems."/home".options = [ "compress=zstd" ];
-  fileSystems."/nix".options = [ "compress=zstd" "noatime" ];
-  fileSystems."/swap".options = [ "noatime" ];
+  fileSystems = {
+    "/".options = [ "compress=zstd" ];
+    "/home".options = [ "compress=zstd" ];
+    "/nix".options = [ "compress=zstd" "noatime" ];
+    "/swap".options = [ "noatime" ];
+  };
 
   # Swap
   swapDevices = [ { device = "/swap/swapfile"; } ];
