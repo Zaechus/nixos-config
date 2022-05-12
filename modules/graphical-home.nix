@@ -8,4 +8,9 @@
   ];
 
   gtk.enable = true;
+  xdg = {
+    enable = true;
+    mime.enable = true;
+    mimeApps.enable = true;
+  };
 }

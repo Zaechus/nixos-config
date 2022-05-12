@@ -18,7 +18,6 @@
 
       ../../../modules/nushell
       ../../../modules/tmux
-      ../../../modules/emacs
       ../../../modules/qutebrowser
     ];
 
