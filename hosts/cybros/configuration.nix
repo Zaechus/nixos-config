@@ -15,6 +15,7 @@ in {
 
     ../../modules/angband
     ../../modules/virt-manager
+    ../../modules/wf-recorder
 
     (import "${home-manager}/nixos")
     ./users/zaechus.nix
