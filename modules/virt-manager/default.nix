@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    onBoot = "ignore";
+  };
   programs.dconf.enable = true;
   environment.systemPackages = with pkgs; [ virt-manager ];
 
