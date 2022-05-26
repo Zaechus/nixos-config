@@ -10,6 +10,7 @@ in {
     ../../modules/wireless.nix
     ../../modules/laptop.nix
     ../../modules/graphical.nix
+    ../../modules/bluetooth.nix
     ../../modules/dev
     ../../modules/dev/rust
 
