@@ -7,4 +7,10 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
   ];
+
+  services.logind = {
+    lidSwitch = "suspend";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "suspend";
+  };
 }
