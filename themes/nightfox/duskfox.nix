@@ -47,11 +47,8 @@
     '';
   };
 
-  programs.alacritty.settings = {
-    colors.indexed_colors = [
-      { index = 16; color = "0xea9a97"; }
-      { index = 17; color = "0xeb98c3"; }
-    ];
-    background_opacity = 0.9;
-  };
+  programs.alacritty.settings.colors.indexed_colors = [
+    { index = 16; color = "0xea9a97"; }
+    { index = 17; color = "0xeb98c3"; }
+  ];
 }

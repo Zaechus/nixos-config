@@ -35,6 +35,4 @@
       ''
     EOF'';
   };
-
-  programs.alacritty.settings.background_opacity = 0.9;
 }

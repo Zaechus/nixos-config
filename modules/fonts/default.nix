@@ -14,7 +14,7 @@
       defaultFonts = {
         monospace = [ "FiraCode Nerd Font" ];
       };
-      subpixel.lcdfilter = "light";
+      subpixel.lcdfilter = "light"; # fix the bar in lualine
     };
   };
 }

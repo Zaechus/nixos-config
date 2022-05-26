@@ -52,8 +52,6 @@
 
   programs.bottom.settings.flags.color = "nord";
 
-  programs.alacritty.settings.background_opacity = 0.9;
-
   gtk = {
     iconTheme = {
       package = pkgs.numix-icon-theme;

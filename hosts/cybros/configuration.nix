@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-21.11.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz";
 in {
   imports = [
     /etc/nixos/hardware-configuration.nix
@@ -57,7 +57,6 @@ in {
   environment.systemPackages = let
     zinfo = pkgs.callPackage ../../pkgs/zinfo {};
   in with pkgs; [
-    links
     aria2
     lutris unzip
     zinfo
