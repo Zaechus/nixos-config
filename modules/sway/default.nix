@@ -17,7 +17,7 @@
       };
 
       menu = ''
-        bemenu-run --fn 'FiraCode 12' \
+        bemenu-run --fn 'FiraCode 14' \
           --tb \${config.theme.bg} \
           --fb \${config.theme.bg} \
           --nb \${config.theme.bg} \
