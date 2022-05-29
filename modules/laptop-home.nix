@@ -1,7 +1,7 @@
 # Extra packages/configuration for laptop devices which extra requirments such
 # as brightness control and batteries
 
-{ config, lib, ... }:
+{ config, lib, options, ... }:
 
 {
   alias.btm = "btm -R --battery";

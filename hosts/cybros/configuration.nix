@@ -59,6 +59,7 @@ in {
   in with pkgs; [
     aria2
     lutris unzip
+    polymc
     zinfo
   ];
 

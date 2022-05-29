@@ -4,13 +4,13 @@
       ../../themes/gruvbox
       ../../modules/neovim
       ../../modules/laptop-home.nix
-
-      ../../modules/polymc
     ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "lizzie";
   home.homeDirectory = "/home/lizzie";
+
+  home.packages = with pkgs; [ polymc ];
 
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version

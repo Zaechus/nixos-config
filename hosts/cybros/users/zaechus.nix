@@ -14,8 +14,6 @@
       ../../../modules/dev/home.nix
       ../../../modules/dev/rust/home.nix
 
-      ../../../modules/polymc
-
       ../../../modules/nushell
       ../../../modules/tmux
       ../../../modules/qutebrowser
