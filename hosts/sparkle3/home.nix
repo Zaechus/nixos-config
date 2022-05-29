@@ -1,6 +1,9 @@
+{ pkgs, ... }:
+
 {
   imports =
     [
+      ../../modules/home.nix
       ../../themes/gruvbox
       ../../modules/neovim
       ../../modules/laptop-home.nix
