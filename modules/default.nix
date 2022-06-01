@@ -9,7 +9,14 @@
   boot.loader.timeout = 1;
   powerManagement.cpuFreqGovernor = "schedutil";
 
-  nix.autoOptimiseStore = true;
+  nix = {
+    autoOptimiseStore = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 64d";
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
