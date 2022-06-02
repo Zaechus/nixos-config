@@ -11,4 +11,6 @@
   };
 
   nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+
+  xdg.mimeApps.defaultApplications = { "text/html" = "brave-browser.desktop"; }; # for some reason this isn't a default
 }
