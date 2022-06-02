@@ -109,6 +109,7 @@
         "XF86AudioRaiseVolume" = "exec amixer set Master 5%+";
         "XF86AudioLowerVolume" = "exec amixer set Master 5%-";
         "XF86AudioMute" = "exec amixer set Master toggle";
+        "XF86AudioMicMute" = "exec amixer -c 1 set Capture toggle";
 
         "${mod}+b" = "splith";
         "${mod}+v" = "splitv";
