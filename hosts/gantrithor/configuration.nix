@@ -4,7 +4,7 @@ let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz";
 in {
   imports = [
-    /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     ../../modules
     ../../modules/laptop.nix
     ../../modules/wired.nix
