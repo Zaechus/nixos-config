@@ -6,10 +6,10 @@ in {
   imports = [
     /etc/nixos/hardware-configuration.nix /etc/nixos/swap-configuration.nix
     ../../modules
-    ../../modules/graphical.nix
     ../../modules/laptop.nix
     ../../modules/wired.nix
     ../../modules/wireless.nix
+    ../../modules/graphical.nix
     (import "${home-manager}/nixos")
     ./users/zaechus.nix
   ];
@@ -20,9 +20,16 @@ in {
     efi.canTouchEfiVariables = true;
   };
 
-  # Enforce btrfs zstd compression in fstab
-  fileSystems."/".options = [ "compress=zstd" ];
-  fileSystems."/home".options = [ "compress=zstd" ];
+  # Enforce fstab options
+  fileSystems = {
+    "/".options = [ "compress=zstd" ];
+    "/home".options = [ "compress=zstd" ];
+    "/nix".options = [ "compress=zstd" "noatime" ];
+    "/swap".options = [ "noatime" ];
+  };
+
+  # Swap
+  swapDevices = [ { device = "/swap/swapfile"; } ];
 
   # Set your time zone.
   time.timeZone = "America/Denver";
