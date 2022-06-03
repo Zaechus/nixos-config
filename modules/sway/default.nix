@@ -12,6 +12,8 @@
 
       gaps.smartBorders = "on";
 
+      input."type:touchpad" = { tap = "enabled"; };
+
       output = {
         "*" = { bg = "${../../assets/background.jpg} fill"; };
       };
