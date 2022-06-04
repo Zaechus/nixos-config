@@ -77,4 +77,6 @@
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 
   programs.tmux.plugins = with pkgs.tmuxPlugins; [ gruvbox ];
+
+  programs.helix.settings.theme = "gruvbox";
 }

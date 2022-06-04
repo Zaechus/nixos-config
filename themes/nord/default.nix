@@ -71,4 +71,6 @@
   programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
 
   programs.tmux.plugins = with pkgs.tmuxPlugins; [ nord ];
+
+  programs.helix.settings.theme = "nord";
 }
