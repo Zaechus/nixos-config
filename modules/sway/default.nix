@@ -1,4 +1,4 @@
-{ config, options, ... }:
+{ config, lib, options, ... }:
 
 {
   wayland.windowManager.sway = {
@@ -198,6 +198,7 @@
     bars.top = {
       # https://github.com/greshake/i3status-rust/blob/master/doc/blocks.md
       blocks = [
+        (lib.mkIf config.bt.enable { block = "bluetooth"; mac = config.bt.mac; format = "{label}"; })
         { block = "net"; format = "<span> </span>"; format_alt = "{ssid} {signal_strength}"; }
         { block = "cpu"; icons_format = " "; }
         { block = "temperature"; format = "{max}"; }

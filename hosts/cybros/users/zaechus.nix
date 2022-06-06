@@ -21,5 +21,10 @@
     ];
 
     wayland.windowManager.sway.config.output.eDP-1.subpixel = "rgb";
+
+    bt = {
+      enable = true;
+      mac = "F4:0E:11:5E:16:14";
+    };
   };
 }
