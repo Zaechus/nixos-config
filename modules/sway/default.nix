@@ -120,6 +120,7 @@
         "${mod}+space" = "focus mode_toggle";
 
         "${mod}+a" = "focus parent";
+        "${mod}+c" = "focus child";
 
         "${mod}+Shift+minus" = "move scratchpad";
         "${mod}+minus" = "scratchpad show";
