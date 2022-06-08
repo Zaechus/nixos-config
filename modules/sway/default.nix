@@ -204,7 +204,7 @@
         { block = "cpu"; icons_format = " "; }
         { block = "temperature"; format = "{max}"; }
         { block = "memory"; format_mem = "{mem_used}"; format_swap = "{swap_used}"; }
-        { block = "battery"; format = " {percentage}"; }
+        { block = "battery"; format = " {percentage}"; hide_missing = true; }
         { block = "time"; }
       ];
       icons = "awesome5";
