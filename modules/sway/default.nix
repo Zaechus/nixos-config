@@ -115,6 +115,7 @@
 
         "${mod}+b" = "splith";
         "${mod}+v" = "splitv";
+        "${mod}+x" = "split none";
 
         "${mod}+Shift+space" = "floating toggle";
         "${mod}+space" = "focus mode_toggle";
@@ -127,13 +128,7 @@
 
         "${mod}+r" = ''mode "resize"'';
 
-        "${mod}+y" = "exec sudo cpufreq powersave";
-        "${mod}+u" = "exec sudo cpufreq conservative";
-        "${mod}+i" = "exec sudo cpufreq schedutil";
-        "${mod}+o" = "exec sudo cpufreq ondemand";
-        "${mod}+p" = "exec sudo cpufreq performance";
-
-        "${mod}+n" = "exec ${config.wayland.windowManager.sway.config.terminal} -e sh -c 'sleep .02 && nvim'";
+        "${mod}+n" = "exec ${config.wayland.windowManager.sway.config.terminal} -e sh -c 'sleep .03 && nvim'";
       };
       modes = { resize = {
         "Left" = "resize shrink width 10px";
