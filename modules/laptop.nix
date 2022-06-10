@@ -13,4 +13,6 @@
     lidSwitchDocked = "ignore";
     lidSwitchExternalPower = "suspend";
   };
+
+  services.tlp.enable = true;
 }
