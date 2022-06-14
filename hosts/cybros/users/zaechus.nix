@@ -20,10 +20,7 @@
       ../../../modules/helix
     ];
 
-    wayland.windowManager.sway.config = {
-      output.eDP-1.subpixel = "rgb";
-      input."2:10:TPPS/2_Elan_TrackPoint".pointer_accel = "0.19";
-    };
+    wayland.windowManager.sway.config.output.eDP-1.subpixel = "rgb";
 
     bt = {
       enable = true;
