@@ -7,10 +7,18 @@
     ./laptop-home.nix
   ];
 
-  # disable the touchpad by default since I use the TrackPoint on Thinkpads
   wayland.windowManager.sway.config.input = {
-    "2:10:TPPS/2_IBM_TrackPoint".pointer_accel = "1";
-    "2:10:TPPS/2_Elan_TrackPoint".pointer_accel = "1";
-    "type:touchpad" = { events = "disabled"; };
+    # match on old and new TrackPoint names
+    # flat good adaptive trash
+    "2:10:TPPS/2_IBM_TrackPoint" = {
+      pointer_accel = "1";
+      accel_profile = "flat";
+    };
+    "2:10:TPPS/2_Elan_TrackPoint" = {
+      pointer_accel = "1";
+      accel_profile = "flat";
+    };
+    # disable the touchpad by default since I use the TrackPoint on Thinkpads
+    "type:touchpad".events = "disabled";
   };
 }

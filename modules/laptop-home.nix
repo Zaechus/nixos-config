@@ -6,8 +6,11 @@
 {
   alias.btm = "btm -R --battery";
 
-  wayland.windowManager.sway.config.keybindings = {
-    "XF86MonBrightnessUp" = "exec brightnessctl s +5%";
-    "XF86MonBrightnessDown" = "exec brightnessctl s 5%-";
+  wayland.windowManager.sway.config = {
+    keybindings = {
+      "XF86MonBrightnessUp" = "exec brightnessctl s +5%";
+      "XF86MonBrightnessDown" = "exec brightnessctl s 5%-";
+    };
+    input."type:touchpad".pointer_accel = "0.4";
   };
 }
