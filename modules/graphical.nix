@@ -47,7 +47,8 @@
     };
   };
 
-  # Enable sound.
+  # Enable sound
+  sound.enable = true; # saves sound state in alsamixer
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
