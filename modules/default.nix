@@ -18,8 +18,7 @@
     };
     # for nix search
     extraOptions = ''
-      experimental-features = nix-command
-      extra-experimental-features = flakes
+      experimental-features = nix-command flakes
     '';
   };
 
