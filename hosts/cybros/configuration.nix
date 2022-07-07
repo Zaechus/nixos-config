@@ -53,7 +53,7 @@ in {
   networking.hostName = "cybros";
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # $ nix search nixpkgs wget
   environment.systemPackages = let
     zinfo = pkgs.callPackage ../../pkgs/zinfo {};
   in with pkgs; [

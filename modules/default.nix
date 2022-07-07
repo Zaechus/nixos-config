@@ -16,6 +16,11 @@
       dates = "weekly";
       options = "--delete-older-than 64d";
     };
+    # for nix search
+    extraOptions = ''
+      experimental-features = nix-command
+      extra-experimental-features = flakes
+    '';
   };
 
   nixpkgs.config.allowUnfree = true;
