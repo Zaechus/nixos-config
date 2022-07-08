@@ -62,7 +62,6 @@
         "${mod}+Down" = "focus down";
         "${mod}+Up" = "focus up";
         "${mod}+Right" = "focus right";
-
         "${mod}+${left}" = "focus left";
         "${mod}+${down}" = "focus down";
         "${mod}+${up}" = "focus up";
@@ -72,7 +71,6 @@
         "${mod}+Shift+Down" = "move down";
         "${mod}+Shift+Up" = "move up";
         "${mod}+Shift+Right" = "move right";
-
         "${mod}+Shift+${left}" = "move left";
         "${mod}+Shift+${down}" = "move down";
         "${mod}+Shift+${up}" = "move up";
@@ -128,7 +126,7 @@
 
         "${mod}+r" = ''mode "resize"'';
 
-        "${mod}+n" = "exec ${config.wayland.windowManager.sway.config.terminal} -e sh -c 'sleep .03 && nvim'";
+        "${mod}+n" = "exec ${config.wayland.windowManager.sway.config.terminal} -e sh -c 'sleep .03 && $EDITOR'";
       };
       modes = { resize = {
         "Left" = "resize shrink width 10px";

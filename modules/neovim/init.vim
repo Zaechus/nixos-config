@@ -8,6 +8,9 @@ if has('termguicolors')
   set termguicolors
 endif
 
+" Disable optional Perl provider
+let g:loaded_perl_provider = 0
+
 " MarkdownPreview
 let g:mkdp_preview_options = {
     \ 'disable_filename': 1

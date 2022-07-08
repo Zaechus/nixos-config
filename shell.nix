@@ -5,6 +5,6 @@ pkgs.mkShell {
     inxi dmidecode smartmontools glxinfo file
   ];
   shellHook = ''
-    sudo inxi -c2Fzv8 | bat
+    sudo inxi -c2Fzv8 | $PAGER
   '';
 }

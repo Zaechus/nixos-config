@@ -1,0 +1,3 @@
+{
+  programs.micro.enable = true;
+}

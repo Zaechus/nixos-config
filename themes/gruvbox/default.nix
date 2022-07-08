@@ -79,4 +79,6 @@
   programs.tmux.plugins = with pkgs.tmuxPlugins; [ gruvbox ];
 
   programs.helix.settings.theme = "gruvbox";
+
+  #programs.micro.settings.colorscheme = "gruvbox";
 }
