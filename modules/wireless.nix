@@ -12,9 +12,11 @@
       DHCP = "yes";
       dhcpV4Config = {
         RouteMetric = 20;
+        UseDNS = false;
       };
       dhcpV6Config = {
         RouteMetric = 20;
+        UseDNS = false;
       };
     };
   };

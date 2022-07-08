@@ -1,7 +1,7 @@
 {
   networking = {
     useNetworkd = true;
-    useDHCP = false;
+    useDHCP = false; # disable the default dhcp solution so networkd can configure it
 
     nameservers = [
       "1.1.1.1"
