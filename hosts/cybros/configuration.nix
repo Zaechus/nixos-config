@@ -14,7 +14,8 @@ in {
     ../../modules/dev
     ../../modules/dev/rust
 
-    ../../modules/angband
+    ../../modules/games/angband
+    ../../modules/games/minecraft
     ../../modules/virt-manager
     ../../modules/wf-recorder
 
@@ -59,7 +60,6 @@ in {
   in with pkgs; [
     aria2
     lutris unzip
-    polymc
     zinfo
   ];
 
