@@ -12,7 +12,10 @@
 
       gaps.smartBorders = "on";
 
-      input."type:touchpad" = { tap = "enabled"; };
+      input."type:keyboard" = {
+        repeat_delay = "175";
+        repeat_rate = "32";
+      };
 
       output = {
         "*" = { bg = "${../../assets/background.jpg} fill"; };
