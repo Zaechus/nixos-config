@@ -13,8 +13,8 @@
       gaps.smartBorders = "on";
 
       input."type:keyboard" = {
-        repeat_delay = "175";
-        repeat_rate = "32";
+        repeat_delay = "256";
+        repeat_rate = "30";
       };
 
       output = {
