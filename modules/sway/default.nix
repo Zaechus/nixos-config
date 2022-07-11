@@ -216,10 +216,7 @@
     XDG_CURRENT_DESKTOP = "sway";
   };
 
-  home.shellAliases = {
-    sc2cfg = "swaymsg input type:keyboard repeat_rate 150 && swaymsg input type:keyboard repeat_delay 150";
-    unsc2 = "swaymsg input type:keyboard repeat_rate 25 && swaymsg input type:keyboard repeat_delay 300";
-  };
+  home.shellAliases.sc2cfg = "swaymsg input type:keyboard repeat_rate 150 && swaymsg input type:keyboard repeat_delay 150";
 
   programs.zsh.profileExtra = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
