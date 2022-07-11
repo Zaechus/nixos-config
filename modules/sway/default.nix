@@ -18,6 +18,10 @@
         "*" = { bg = "${../../assets/background.jpg} fill"; };
       };
 
+      startup = [
+        { command = "amixer set Capture cap && amixer -c 1 set Capture cap"; }
+      ];
+
       menu = ''
         bemenu-run --fn 'FiraCode 14' \
           --tb \${config.theme.bg} \
@@ -213,13 +217,9 @@
     unsc2 = "swaymsg input type:keyboard repeat_rate 25 && swaymsg input type:keyboard repeat_delay 300";
   };
 
-  #programs.nushell.settings.startup = [ ''if (tty) =~ "/dev/tty1" { exec sway } {}'' ];
-
-  programs.zsh = {
-    profileExtra = ''
-      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        exec sway
-      fi
-    '';
-  };
+  programs.zsh.profileExtra = ''
+    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+      exec sway
+    fi
+  '';
 }
