@@ -25,7 +25,5 @@
     extraConfig = builtins.readFile ./init.vim;
   };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables.EDITOR = "nvim";
 }

@@ -7,4 +7,6 @@
       };
     };
   };
+
+  home.sessionVariables.EDITOR = "hx";
 }

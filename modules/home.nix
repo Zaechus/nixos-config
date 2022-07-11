@@ -4,7 +4,7 @@
   imports = [
     ./options.nix
     ../themes/theme.nix
-    ./neovim
+    ./helix
     ./zsh
   ];
 

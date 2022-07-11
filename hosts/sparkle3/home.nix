@@ -5,7 +5,6 @@
     [
       ../../modules/home.nix
       ../../themes/gruvbox
-      ../../modules/neovim
       ../../modules/laptop-home.nix
     ];
   # Home Manager needs a bit of information about you and the
