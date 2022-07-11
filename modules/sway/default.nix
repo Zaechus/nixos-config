@@ -22,7 +22,8 @@
       };
 
       startup = [
-        { command = "amixer set Capture cap && amixer -c 1 set Capture cap"; }
+        { command = "amixer set Capture cap && amixer -c 1 set Capture cap";
+          always = true; }
       ];
 
       menu = ''
