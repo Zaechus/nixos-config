@@ -13,18 +13,13 @@
       gaps.smartBorders = "on";
 
       input."type:keyboard" = {
-        repeat_delay = "256";
-        repeat_rate = "30";
+        repeat_delay = "300";
+        repeat_rate = "25";
       };
 
       output = {
         "*" = { bg = "${../../assets/background.jpg} fill"; };
       };
-
-      startup = [
-        { command = "amixer set Capture cap && amixer -c 1 set Capture cap";
-          always = true; }
-      ];
 
       menu = ''
         bemenu-run --fn 'FiraCode 14' \
@@ -117,7 +112,7 @@
         "XF86AudioRaiseVolume" = "exec amixer set Master 5%+";
         "XF86AudioLowerVolume" = "exec amixer set Master 5%-";
         "XF86AudioMute" = "exec amixer set Master toggle";
-        "XF86AudioMicMute" = "exec 'amixer set Capture toggle && amixer -c 1 set Capture toggle'";
+        "XF86AudioMicMute" = "exec 'amixer set Capture toggle && amixer -c 1 set Capture nocap'";
 
         "${mod}+b" = "splith";
         "${mod}+v" = "splitv";
