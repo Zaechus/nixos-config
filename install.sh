@@ -27,7 +27,7 @@ else
 fi
 
 # Partition
-printf "label: gpt\n,550M,U\n,,L\n" | sfdisk $my_disk
+printf "label: gpt\n,550M,U\n,,\n" | sfdisk $my_disk
 
 # Encrypt
 yes $cryptpass | cryptsetup -q luksFormat $part2
