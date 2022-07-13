@@ -21,6 +21,7 @@
     btm = config.alias.btm;
     diff = "diff --color";
     doas = "sudo";
+    ip = "ip -c";
     l = "exa --icons --color=always";
     ll = "l -aalg";
     lisosort = "exa -lRs size --no-permissions --no-user --no-time ~/images/disk/**/*.iso";
