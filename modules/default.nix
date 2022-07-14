@@ -14,7 +14,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 64d";
+      options = "--delete-older-than 32d";
     };
     # for nix search
     extraOptions = ''
