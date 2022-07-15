@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz";
-in {
+{
   imports = [
     /etc/nixos/hardware-configuration.nix
     ../../modules
@@ -10,7 +8,7 @@ in {
     ../../modules/wired.nix
     ../../modules/wireless.nix
     ../../modules/graphical.nix
-    (import "${home-manager}/nixos")
+
     ./users/zaechus.nix
   ];
 
