@@ -1,12 +1,9 @@
 #!/bin/sh -e
 
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
-nix-channel --update
-export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+sed -i "/^experimental-features.*/d" | /etc/nix/nix.conf
+printf "experimental-features = nix-command flakes\n" >> /etc/nix/nix.conf
 
-nix-shell '<home-manager>' -A install
+nix build --no-link ".#homeConfigurations.$1.activationPackage"
+"$(nix path-info .\#homeConfigurations.$1.activationPackage)"/activate
 
-script_path=$(dirname $(realpath $0))
-
-ln -sf $script_path/hosts/$1/home.nix ~/.config/nixpkgs/home.nix
 home-manager switch --flake ".#$1"
