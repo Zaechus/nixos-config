@@ -18,6 +18,8 @@
       ../../../modules/tmux
     ];
 
+    home.stateVersion = "21.11";
+
     wayland.windowManager.sway.config.output.eDP-1.subpixel = "rgb";
 
     bt = {

@@ -4,13 +4,13 @@
   imports = [
     ./options.nix
     ../themes/theme.nix
+    ./git
     ./helix
     ./zsh
   ];
 
   programs.bat.enable = true;
   programs.bottom.enable = true;
-  programs.git.enable = true;
 
   home.sessionVariables = {
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";

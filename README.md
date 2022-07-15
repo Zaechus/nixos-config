@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/badge/OS-NixOS-6e9bcb?logo=NixOS)](https://nixos.org)
 
-My NixOS config
+My NixOS configuration
 
 ## [NixOS Installation](https://nixos.org/download.html#nixos-iso)
 ```

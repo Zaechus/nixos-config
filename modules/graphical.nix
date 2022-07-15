@@ -33,7 +33,6 @@
     # Make things like screen capture work
     portal = {
       enable = true;
-      gtkUsePortal = true;
       wlr.enable = true;
     };
 
