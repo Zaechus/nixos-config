@@ -18,7 +18,7 @@ cd nixos-config-main
 
 ### Configuration Setup
 ```
-sudo ./setup.sh $HOST
+./setup.sh $HOST
 passwd $USER
 ```
 
