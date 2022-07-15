@@ -37,6 +37,7 @@
     };
 
     homeConfigurations.sparkle3 = home-manager.lib.homeManagerConfiguration {
+      system = "x86_64-linux";
       modules = [
         ./hosts/sparkle3/home.nix
       ];
