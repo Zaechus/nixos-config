@@ -36,11 +36,16 @@
       };
     };
 
-    homeConfigurations.sparkle3 = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."sparkle3@lizzie" = home-manager.lib.homeManagerConfiguration {
       system = "x86_64-linux";
-      modules = [
-        ./hosts/sparkle3/home.nix
-      ];
+      homeDirectory = "/home/lizzie";
+      username = "lizzie";
+      stateVersion = "21.11";
+      configuration = {
+        imports = [
+          ./hosts/sparkle3/lizzie/home.nix
+        ];
+      };
     };
   };
 }

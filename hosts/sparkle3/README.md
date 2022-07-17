@@ -1,3 +1,3 @@
 ## sparkle3
 
-A Lenovo Legion 5 running openSUSE Leap with Nix. My fiance's laptop.
+A Lenovo Legion 5 running openSUSE Tumbleweed with Nix. My fiance's laptop.
