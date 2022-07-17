@@ -2,8 +2,6 @@
 
 (set-face-attribute 'default nil :height 110)
 
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Maxwell Anderson"
       user-mail-address "maxwell.anderson.public@protonmail.com")
 

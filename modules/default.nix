@@ -26,6 +26,10 @@
   environment.systemPackages = with pkgs; [
     exa fd ripgrep
   ];
+  environment.defaultPackages = [ pkgs.helix ];
+  environment.variables = {
+    EDITOR = "hx";
+  };
 
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;

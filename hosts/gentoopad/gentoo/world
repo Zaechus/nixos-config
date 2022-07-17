@@ -6,7 +6,6 @@ app-emulation/qemu
 app-emulation/wine-gecko
 app-emulation/wine-mono
 app-eselect/eselect-repository
-app-misc/screen
 app-portage/eix
 app-portage/gentoolkit
 app-portage/mirrorselect
