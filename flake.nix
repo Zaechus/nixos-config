@@ -36,7 +36,7 @@
       };
     };
 
-    homeConfigurations."sparkle3@lizzie" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."lizzie@sparkle3" = home-manager.lib.homeManagerConfiguration {
       system = "x86_64-linux";
       homeDirectory = "/home/lizzie";
       username = "lizzie";

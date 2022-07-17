@@ -3,9 +3,9 @@
 {
   imports =
     [
-      ../../modules/home.nix
-      ../../themes/gruvbox
-      ../../modules/laptop-home.nix
+      ../../../modules/home.nix
+      ../../../themes/gruvbox
+      ../../../modules/laptop-home.nix
     ];
 
   # Let Home Manager install and manage itself.
