@@ -11,8 +11,8 @@
       ../../../themes/gruvbox
       ../../../modules/graphical-home.nix
       ../../../modules/thinkpad-home.nix
-      # ../../../modules/dev/home.nix
-      # ../../../modules/dev/rust/home.nix
+      ../../../modules/dev/home.nix
+      ../../../modules/dev/rust/home.nix
 
       ../../../modules/nushell
       ../../../modules/tmux

@@ -6,7 +6,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    imv mpv
+    imv mpv wf-recorder
     xdg-utils # need this for copy/paste images and other stuff
     alsa-utils # alsamixer, amixer
   ];

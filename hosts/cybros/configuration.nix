@@ -15,7 +15,6 @@
     ../../modules/games/angband
     ../../modules/games/minecraft
     ../../modules/virt-manager
-    ../../modules/wf-recorder
 
     ./users/zaechus.nix
   ];

@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    rustup gcc rust-analyzer nodejs
+    rustup gcc rust-analyzer
   ];
 }
