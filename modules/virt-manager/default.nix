@@ -6,7 +6,7 @@
     onBoot = "ignore";
   };
   programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [ virt-manager ];
+  environment.systemPackages = with pkgs; [ virt-manager virt-viewer ];
 
   environment.shellAliases = {
     qemu-boot-bios = "qemu-system-x86_64 -enable-kvm -cpu host -smp $(($(nproc)-4)) -m $(($(free -m | awk 'NR==2 { print $2 }')/2))M -vga virtio --display gtk,full-screen=on,show-cursor=on";
