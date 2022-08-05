@@ -15,7 +15,6 @@
       ../../../modules/dev/rust/home.nix
 
       ../../../modules/nushell
-      ../../../modules/zellij
     ];
 
     home.stateVersion = "21.11";

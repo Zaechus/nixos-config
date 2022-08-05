@@ -6,6 +6,7 @@
     ../themes/theme.nix
     ./git
     ./helix
+    ./zoxide
     ./zsh
   ];
 

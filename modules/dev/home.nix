@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ../zellij
+  ];
+
   programs.neovim = {
     coc.enable = true;
 
