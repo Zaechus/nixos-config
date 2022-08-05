@@ -2,6 +2,10 @@
   programs.zellij = {
     enable = true;
 
-    settings.scrollback-editor = "$EDITOR";
+    settings = {
+      simplified_ui = true;
+      pane_frames = false;
+      scrollback_editor = "$EDITOR";
+    };
   };
 }
