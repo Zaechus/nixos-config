@@ -14,7 +14,7 @@
 
     ../../modules/games/angband
     ../../modules/games/minecraft
-    ../../modules/virt-manager
+    ../../modules/virt
 
     ./users/zaechus.nix
   ];

@@ -80,5 +80,24 @@
 
   programs.helix.settings.theme = "gruvbox";
 
+  programs.zellij.settings = {
+    theme = "gruvbox";
+
+    # https://github.com/zellij-org/zellij/blob/main/example/themes/gruvbox-dark.yaml
+    themes.gruvbox = {
+      bg = [40 40 40];
+      red = [204 36 29];
+      green = [152 151 26];
+      yellow = [215 153 33];
+      blue = [69 133 136];
+      magenta = [177 98 134];
+      orange = [214 93 14];
+      fg = [213 196 161];
+      cyan = [104 157 106];
+      black = [60 56 54];
+      white = [251 241 199];
+    };
+  };
+
   #programs.micro.settings.colorscheme = "gruvbox";
 }

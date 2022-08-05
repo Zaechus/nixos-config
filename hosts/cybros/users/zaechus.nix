@@ -15,7 +15,7 @@
       ../../../modules/dev/rust/home.nix
 
       ../../../modules/nushell
-      ../../../modules/tmux
+      ../../../modules/zellij
     ];
 
     home.stateVersion = "21.11";
