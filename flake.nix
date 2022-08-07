@@ -3,14 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-22.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, unstable, home-manager, ... }@attrs: {
+  outputs = { self, nixpkgs, home-manager, ... }@attrs: {
     nixosConfigurations = {
       cybros = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
