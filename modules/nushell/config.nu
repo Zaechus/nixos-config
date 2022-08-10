@@ -1,4 +1,7 @@
-let $config = {
-  edit_mode: vi;
-  prompt: STARSHIP_SHELL="nu" starship prompt;
+let-env config = {
+  edit_mode: vi
 }
+
+# sources
+source ~/.cache/zoxide/init.nu
+source ~/.cache/starship/init.nu

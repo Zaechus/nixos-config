@@ -4,7 +4,7 @@
 { config, lib, ... }:
 
 {
-  alias.btm = "btm -R --battery";
+  programs.bottom.settings.flags.battery = true;
 
   wayland.windowManager.sway.config = {
     keybindings = {
