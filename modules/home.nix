@@ -7,8 +7,8 @@
     ./bottom
     ./git
     ./helix
+    ./nushell
     ./zoxide
-    ./zsh
   ];
 
   programs.bat.enable = true;

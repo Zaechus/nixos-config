@@ -31,8 +31,8 @@
     EDITOR = "hx";
   };
 
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.nushell;
+
   environment.shellAliases = {
     l = "exa --icons --color=always";
     ll = "l -aalg";

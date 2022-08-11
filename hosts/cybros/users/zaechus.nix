@@ -13,8 +13,6 @@
       ../../../modules/thinkpad-home.nix
       ../../../modules/dev/home.nix
       ../../../modules/dev/rust/home.nix
-
-      ../../../modules/nushell
     ];
 
     home.stateVersion = "21.11";

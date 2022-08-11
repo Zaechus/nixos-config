@@ -24,7 +24,7 @@
   };
 
   # Gentoo-specific aliases
-  programs.zsh.shellAliases = {
+  home.shellAliases = {
     batworld = ''
       sed 's~.*/~~' /var/lib/portage/world | sort | bat
     '';
