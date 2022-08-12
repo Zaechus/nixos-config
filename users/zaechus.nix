@@ -6,6 +6,6 @@
 
   users.users.zaechus = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" ];
+    extraGroups = [ "wheel" ];
   };
 }
