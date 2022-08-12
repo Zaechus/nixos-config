@@ -8,5 +8,7 @@
     # };
   };
 
+  programs.zellij.settings.scrollback_editor = "hx";
+
   home.sessionVariables.EDITOR = "hx";
 }
