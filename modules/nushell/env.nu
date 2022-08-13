@@ -1,3 +1,4 @@
+let-env EDITOR = "hx"
 let-env MANPAGER = "sh -c 'col -bx | bat -l man -p'"
 let-env PAGER = "bat"
 
