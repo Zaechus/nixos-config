@@ -128,8 +128,6 @@
         "${mod}+minus" = "scratchpad show";
 
         "${mod}+r" = ''mode "resize"'';
-
-        "${mod}+n" = "exec ${config.wayland.windowManager.sway.config.terminal} -e sh -c 'sleep .03 && $EDITOR'";
       };
       modes = { resize = {
         "Left" = "resize shrink width 10px";
@@ -210,6 +208,7 @@
   home.sessionVariables.XDG_CURRENT_DESKTOP = "sway";
 
   home.shellAliases.sc2cfg = "swaymsg input type:keyboard repeat_rate 150 && swaymsg input type:keyboard repeat_delay 150";
+  nu.startup = "\nif (tty) =~ \"/dev/tty1\" { exec sway }\n";
 
   programs.zsh.profileExtra = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then

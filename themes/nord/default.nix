@@ -92,4 +92,6 @@
       orange = [208 135 112]; #D08770
     };
   };
+
+  nu.LS_COLORS = "let-env LS_COLORS = (vivid generate nord | str trim)\n";
 }

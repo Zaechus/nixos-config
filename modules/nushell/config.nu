@@ -14,3 +14,5 @@ alias pp = ping 1.1.1.1
 # sources
 source ~/.cache/zoxide/init.nu
 source ~/.cache/starship/init.nu
+
+# config.nu.startup

@@ -32,6 +32,7 @@
   };
 
   users.defaultUserShell = pkgs.nushell;
+  environment.shells = [ pkgs.nushell ];
 
   environment.shellAliases = {
     l = "exa --icons --color=always";

@@ -99,5 +99,7 @@
     };
   };
 
-  #programs.micro.settings.colorscheme = "gruvbox";
+  nu.LS_COLORS = "let-env LS_COLORS = (vivid generate gruvbox-dark | str trim)\n";
+
+  programs.micro.settings.colorscheme = "gruvbox";
 }
