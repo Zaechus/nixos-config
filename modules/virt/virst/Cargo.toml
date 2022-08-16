@@ -1,0 +1,12 @@
+[package]
+name = "virst"
+version = "0.1.0"
+edition = "2021"
+authors = ["Maxwell Anderson <maxwell.anderson.public@protonmail.com>"]
+description = "A helper utility for libvirt and virt-manager"
+
+[dependencies]
+clap = { version = "3.2.17", features = ["derive"] }
+
+[profile.release]
+strip = true

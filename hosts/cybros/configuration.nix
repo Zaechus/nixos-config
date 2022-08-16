@@ -55,7 +55,7 @@
     zinfo = pkgs.callPackage ../../pkgs/zinfo {};
   in with pkgs; [
     aria2
-    lutris unzip
+    lutris
     zinfo
   ];
 

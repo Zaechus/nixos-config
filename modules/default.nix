@@ -24,7 +24,7 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    exa fd ripgrep
+    exa fd ouch ripgrep
   ];
   environment.defaultPackages = [ pkgs.helix ];
   environment.variables = {
