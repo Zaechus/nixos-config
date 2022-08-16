@@ -52,11 +52,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs wget
   environment.systemPackages = let
-    zinfo = pkgs.callPackage ../../pkgs/zinfo {};
   in with pkgs; [
     aria2
     lutris
-    zinfo
   ];
 
   programs.steam.enable = true; # includes steam-run for dumb binaries
