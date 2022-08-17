@@ -1,4 +1,5 @@
 use std::{
+    fs,
     io::{self, Write},
     process::Command,
 };
@@ -22,6 +23,11 @@ enum Commands {
     },
     /// List all VMs
     List,
+    /// Open an ISO with qemu-kvm
+    Live {
+        /// Path to ISO file
+        iso_file: String,
+    },
     /// Launch a VM
     Start {
         /// Name of VM
@@ -48,7 +54,7 @@ fn main() -> io::Result<()> {
     match Cli::parse().command {
         Commands::New { iso_file } => {
             let name = prompt("Name: ");
-            let cores = prompt_or_default("Cores: ", "8");
+            let cores = prompt_or_default("Cores: ", "12");
             let mem = prompt_or_default("Memory (MiB): ", "7444");
             let size = format!("size={}", prompt_or_default("Disk size (GiB): ", "20"));
             println!(
@@ -64,9 +70,39 @@ fn main() -> io::Result<()> {
             );
         }
         Commands::List => println!("{}", get_output("virsh", &["list", "--all"])?),
+        Commands::Live { iso_file } => {
+            fs::copy("/etc/ovmf/OVMF_VARS.fd", "/tmp/OVMF_VARS.fd")?;
+            let mut perms = fs::metadata("/tmp/OVMF_VARS.fd")?.permissions();
+            perms.set_readonly(false);
+            fs::set_permissions("/tmp/OVMF_VARS.fd", perms)?;
+            println!(
+                "{}",
+                get_output(
+                    "qemu-kvm",
+                    &[
+                        "-cpu",
+                        "host",
+                        "-smp",
+                        "12",
+                        "-m",
+                        "7444",
+                        "-vga",
+                        "virtio",
+                        "-full-screen",
+                        "-drive",
+                        "if=pflash,format=raw,unit=0,readonly=on,file=/etc/ovmf/OVMF_CODE.fd",
+                        "-drive",
+                        "if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.fd",
+                        "-cdrom",
+                        &iso_file
+                    ]
+                )?
+            );
+            fs::remove_file("/tmp/OVMF_VARS.fd")?;
+        }
         Commands::Start { domain } => {
             println!("{}", get_output("virsh", &["start", &domain])?);
-            println!("{}", get_output("virt-viewer", &[&domain])?);
+            println!("{}", get_output("virt-viewer", &["-f", &domain])?);
         }
         Commands::Stop { domain } => {
             println!("{}", get_output("virsh", &["shutdown", &domain])?)
