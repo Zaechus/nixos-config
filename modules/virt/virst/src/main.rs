@@ -58,7 +58,7 @@ fn main() -> io::Result<()> {
                     &[
                         "--vcpus", &cores, "--memory", &mem, "--disk", &size, "--name", &name,
                         "--boot", "loader=/etc/ovmf/OVMF_CODE.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/etc/ovmf/OVMF_VARS.fd,loader_secure=no",
-                        "--cdrom", &iso_file,
+                        "--osinfo", "detect=on,name=generic", "--cdrom", &iso_file,
                     ],
                 )?
             );
