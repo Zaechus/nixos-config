@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   virtualisation.libvirtd = {
@@ -11,6 +11,11 @@
   in with pkgs; [
     virst virt-manager virt-viewer
   ];
+
+  environment.etc = {
+    "ovmf/OVMF_CODE.fd".source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-code.fd";
+    "ovmf/OVMF_VARS.fd".source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-i386-vars.fd";
+  };
 
   environment.shellAliases = {
     qemu-boot-bios = "qemu-system-x86_64 -enable-kvm -cpu host -smp $(($(nproc)-4)) -m $(($(free -m | awk 'NR==2 { print $2 }')/2))M -vga virtio --display gtk,full-screen=on,show-cursor=on";

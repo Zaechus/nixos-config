@@ -22,8 +22,18 @@ enum Commands {
     },
     /// List all VMs
     List,
-    /// Stop a running VM
+    /// Launch a VM
+    Start {
+        /// Name of VM
+        domain: String,
+    },
+    /// Shutdown a running VM
     Stop {
+        /// Name of VM
+        domain: String,
+    },
+    /// Immediately stop a running VM
+    Destroy {
         /// Name of VM
         domain: String,
     },
@@ -47,18 +57,31 @@ fn main() -> io::Result<()> {
                     "virt-install",
                     &[
                         "--vcpus", &cores, "--memory", &mem, "--disk", &size, "--name", &name,
+                        "--boot", "loader=/etc/ovmf/OVMF_CODE.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/etc/ovmf/OVMF_VARS.fd,loader_secure=no",
                         "--cdrom", &iso_file,
                     ],
                 )?
             );
         }
         Commands::List => println!("{}", get_output("virsh", &["list", "--all"])?),
-        Commands::Stop { domain } => println!("{}", get_output("virsh", &["destroy", &domain])?),
+        Commands::Start { domain } => {
+            println!("{}", get_output("virsh", &["start", &domain])?);
+            println!("{}", get_output("virt-viewer", &[&domain])?);
+        }
+        Commands::Stop { domain } => {
+            println!("{}", get_output("virsh", &["shutdown", &domain])?)
+        }
+        Commands::Destroy { domain } => {
+            println!("{}", get_output("virsh", &["destroy", &domain])?)
+        }
         Commands::Delete { domain } => {
             println!("{}", get_output("virsh", &["destroy", &domain])?);
             println!(
                 "{}",
-                get_output("virsh", &["undefine", &domain, "--remove-all-storage"])?
+                get_output(
+                    "virsh",
+                    &["undefine", &domain, "--remove-all-storage", "--keep-nvram"]
+                )?
             )
         }
     };
