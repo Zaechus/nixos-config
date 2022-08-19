@@ -29,3 +29,11 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 ./nix.sh $USER@$HOST
 ```
+
+## [WSL](https://nixos.org/download.html#nix-install-windows)
+```
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+```
+```
+./nix.sh wsl
+```

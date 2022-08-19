@@ -39,15 +39,29 @@
       };
     };
 
-    homeConfigurations."lizzie@sparkle3" = home-manager.lib.homeManagerConfiguration {
-      system = "x86_64-linux";
-      homeDirectory = "/home/lizzie";
-      username = "lizzie";
-      stateVersion = "21.11";
-      configuration = {
-        imports = [
-          ./hosts/sparkle3/lizzie/home.nix
-        ];
+    homeConfigurations = {
+      "lizzie@sparkle3" = home-manager.lib.homeManagerConfiguration {
+        system = "x86_64-linux";
+        homeDirectory = "/home/lizzie";
+        username = "lizzie";
+        stateVersion = "21.11";
+        configuration = {
+          imports = [
+            ./hosts/sparkle3/lizzie/home.nix
+          ];
+        };
+      };
+
+      wsl = home-manager.lib.homeManagerConfiguration {
+        system = "x86_64-linux";
+        homeDirectory = "/home/wsl";
+        username = "wsl";
+        stateVersion = "22.11";
+        configuration = {
+          imports = [
+            ./users/wsl.nix
+          ];
+        };
       };
     };
   };
