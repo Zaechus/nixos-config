@@ -21,6 +21,8 @@ def lt [dir: string = ., level?: int] {
     exa -TL $level $dir | bat -p
   }
 }
+
+# Display file tree with hidden files
 def lta [dir: string = ., level?: int] {
   if ($level == null) {
     exa -aT $dir | bat -p
@@ -30,8 +32,8 @@ def lta [dir: string = ., level?: int] {
 }
 
 # Run nixpkgs binary without installing
-def , [pkg: string] {
-  nix run $"nixpkgs#($pkg)"
+def , [pkg: string, args: string = ""] {
+  nix run $"nixpkgs#($pkg)" -- ($args | split row " ")
 }
 
 # sources
