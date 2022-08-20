@@ -2,6 +2,7 @@
 
 {
   programs.neovim.plugins = with pkgs.vimPlugins; [
-    rust-tools-nvim coc-rust-analyzer
+    rust-tools-nvim
+    coc-rust-analyzer
   ];
 }

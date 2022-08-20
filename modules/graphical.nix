@@ -6,7 +6,9 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    imv mpv wf-recorder
+    imv
+    mpv
+    wf-recorder
     xdg-utils # need this for copy/paste images and other stuff
     alsa-utils # alsamixer, amixer
   ];
@@ -23,8 +25,11 @@
     enable = true;
     wrapperFeatures.gtk = true; # apparently improves gtk
     extraPackages = with pkgs; [
-      bemenu swaylock wl-clipboard
-      grim slurp # screenshot selection
+      bemenu
+      swaylock
+      wl-clipboard
+      grim
+      slurp # screenshot selection
       lm_sensors # for i3status-rust temperature block
     ];
   };

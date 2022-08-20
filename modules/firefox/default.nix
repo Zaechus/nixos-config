@@ -7,7 +7,7 @@
       name = "default";
       isDefault = true;
 
-      bookmarks = {};
+      bookmarks = { };
 
       settings = {
         "app.update.auto" = false;

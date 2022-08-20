@@ -27,7 +27,7 @@
   };
 
   # Swap
-  swapDevices = [ { device = "/swap/swapfile"; } ];
+  swapDevices = [{ device = "/swap/swapfile"; }];
 
   # Set your time zone.
   time.timeZone = "America/Denver";

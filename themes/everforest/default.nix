@@ -30,10 +30,10 @@
       let g:everforest_background = 'medium'
       colorscheme everforest
       lua << EOF
-      '' +
-      builtins.readFile ../../modules/neovim/setup.lua +
-      ''
-    EOF'';
+    '' +
+    builtins.readFile ../../modules/neovim/setup.lua +
+    ''
+      EOF'';
   };
 
   programs.helix.settings.theme = "everforest_dark";

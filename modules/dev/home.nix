@@ -9,7 +9,8 @@
     coc.enable = true;
 
     plugins = with pkgs.vimPlugins; [
-      coc-nvim nvim-lspconfig
+      coc-nvim
+      nvim-lspconfig
     ];
 
     extraConfig = builtins.readFile ../neovim/dev.vim;

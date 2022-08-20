@@ -15,12 +15,15 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, ... }: {
+    formatter.x86_64-linux = nixpkgs-unstable.legacyPackages.x86_64-linux.nixpkgs-fmt;
+
     nixosConfigurations = {
       cybros = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/cybros/configuration.nix
-          home-manager-unstable.nixosModules.home-manager {
+          home-manager-unstable.nixosModules.home-manager
+          {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
           }
@@ -31,7 +34,8 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/gantrithor/configuration.nix
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
           }

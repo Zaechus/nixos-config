@@ -15,5 +15,5 @@
 
   home.packages = with pkgs; [ vivid ];
 
-  programs.helix.settings.editor.shell = ["nu" "-c"];
+  programs.helix.settings.editor.shell = [ "nu" "-c" ];
 }

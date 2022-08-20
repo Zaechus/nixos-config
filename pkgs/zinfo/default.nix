@@ -1,6 +1,6 @@
 { pkgs, lib, rustPlatform, fetchCrate, ... }:
 
-with import <nixpkgs> {};
+with import <nixpkgs> { };
 
 rustPlatform.buildRustPackage rec {
   pname = "zinfo";

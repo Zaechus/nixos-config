@@ -36,7 +36,8 @@
 
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      nightfox-nvim lualine-nvim
+      nightfox-nvim
+      lualine-nvim
     ];
 
     extraConfig = ''

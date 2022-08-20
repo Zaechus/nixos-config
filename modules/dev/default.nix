@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    hyperfine tokei
+    hyperfine
+    tokei
   ];
 }

@@ -1,6 +1,6 @@
 {
   home-manager.users.zaechus.programs.git = {
-    userName  = "Zaechus";
+    userName = "Zaechus";
     userEmail = "maxwell.anderson.public@protonmail.com";
   };
 
