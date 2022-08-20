@@ -17,9 +17,7 @@
         repeat_rate = "25";
       };
 
-      output = {
-        "*" = { bg = "${../../assets/background.jpg} fill"; };
-      };
+      output."*".bg = "${../../assets/background.jpg} fill";
 
       menu = ''
         bemenu-run --fn 'FiraCode 14' \
@@ -129,15 +127,24 @@
 
         "${mod}+r" = ''mode "resize"'';
       };
-      modes = { resize = {
+      modes.resize = let
+        left = config.wayland.windowManager.sway.config.left;
+        down = config.wayland.windowManager.sway.config.down;
+        up = config.wayland.windowManager.sway.config.up;
+        right = config.wayland.windowManager.sway.config.right;
+      in {
         "Left" = "resize shrink width 10px";
         "Down" = "resize grow height 10px";
         "Up" = "resize shrink height 10px";
         "Right" = "resize grow width 10px";
+        "${left}" = "resize shrink width 10px";
+        "${down}" = "resize grow height 10px";
+        "${up}" = "resize shrink height 10px";
+        "${right}" = "resize grow width 10px";
 
         "Return" = ''mode "default"'';
         "Escape" = ''mode "default"'';
-      };};
+      };
 
       fonts = {
         names = [ "FiraCode Nerd Font" ];

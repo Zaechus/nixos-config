@@ -51,9 +51,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs wget
-  environment.systemPackages = let
-  in with pkgs; [
-    aria2
+  environment.systemPackages = with pkgs; [
     lutris
   ];
 
