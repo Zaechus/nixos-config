@@ -6,6 +6,7 @@
     ../modules/helix
     ../modules/nushell
     ../modules/zoxide
+    ../modules/zellij
     ../themes/tokyonight
   ];
 
