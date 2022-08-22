@@ -99,7 +99,8 @@
     };
   };
 
-  nu.LS_COLORS = "let-env LS_COLORS = (vivid generate gruvbox-dark | str trim)\n";
+  home.packages = with pkgs; [ vivid ];
+  nu.LS_COLORS = "let-env LS_COLORS = (vivid generate gruvbox-dark | str trim)";
 
   programs.micro.settings.colorscheme = "gruvbox";
 }

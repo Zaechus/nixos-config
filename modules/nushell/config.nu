@@ -35,9 +35,3 @@ def lta [dir: string = ., level?: int] {
 def , [pkg: string, args: string = ""] {
   nix run $"nixpkgs#($pkg)" -- ($args | split row " ")
 }
-
-# sources
-source ~/.cache/zoxide/init.nu
-source ~/.cache/starship/init.nu
-
-# config.nu.startup

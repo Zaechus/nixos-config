@@ -56,16 +56,11 @@
         };
       };
 
-      wsl = home-manager.lib.homeManagerConfiguration {
-        system = "x86_64-linux";
-        homeDirectory = "/home/wsl";
-        username = "wsl";
-        stateVersion = "22.05";
-        configuration = {
-          imports = [
-            ./users/wsl.nix
-          ];
-        };
+      wsl = home-manager-unstable.lib.homeManagerConfiguration {
+        pkgs = nixpkgs-unstable.legacyPackages."x86_64-linux";
+        modules = [
+          ./users/wsl.nix
+        ];
       };
     };
   };

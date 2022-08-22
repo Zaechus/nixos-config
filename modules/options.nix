@@ -11,11 +11,16 @@ with lib;
     };
     nu = {
       # set a nushell env var for LS_COLORS with vivid
-      LS_COLORS = mkOption {
-        type = types.str;
-        default = "let-env LS_COLORS = (vivid generate ayu | str trim)\n";
-      };
+      LS_COLORS = mkOption { type = types.str; default = ""; };
       startup = mkOption { type = types.str; default = ""; };
+    };
+    starship = {
+      init = mkOption { type = types.str; default = ""; };
+      source = mkOption { type = types.str; default = ""; };
+    };
+    z = {
+      init = mkOption { type = types.str; default = ""; };
+      source = mkOption { type = types.str; default = ""; };
     };
   };
 }

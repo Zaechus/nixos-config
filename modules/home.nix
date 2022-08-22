@@ -8,6 +8,7 @@
     ./git
     ./helix
     ./nushell
+    ./starship
     ./zoxide
   ];
 
