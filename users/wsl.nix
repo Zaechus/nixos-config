@@ -1,7 +1,7 @@
 {
-  home-manager.users.wsl = {
-    imports = [
-      ../modules/helix
-    ];
-  }
-    }
+  imports = [
+    ../modules/home.nix
+  ];
+
+  programs.home-manager.enable = true;
+}

@@ -60,7 +60,7 @@
         system = "x86_64-linux";
         homeDirectory = "/home/wsl";
         username = "wsl";
-        stateVersion = "22.11";
+        stateVersion = "22.05";
         configuration = {
           imports = [
             ./users/wsl.nix
