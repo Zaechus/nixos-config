@@ -1,11 +1,11 @@
 {
   imports = [
-    ./options.nix
+    ../modules/options.nix
     ../themes/theme.nix
-    ./bottom
-    ./helix
-    ./nushell
-    ./zoxide
+    ../modules/bottom
+    ../modules/helix
+    ../modules/nushell
+    ../modules/zoxide
     ../themes/tokyonight
   ];
 
