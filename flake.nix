@@ -55,13 +55,6 @@
           ];
         };
       };
-
-      wsl = home-manager-unstable.lib.homeManagerConfiguration {
-        pkgs = nixpkgs-unstable.legacyPackages."x86_64-linux";
-        modules = [
-          ./users/wsl.nix
-        ];
-      };
     };
   };
 }
