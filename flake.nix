@@ -44,16 +44,11 @@
     };
 
     homeConfigurations = {
-      "lizzie@sparkle3" = home-manager.lib.homeManagerConfiguration {
-        system = "x86_64-linux";
-        homeDirectory = "/home/lizzie";
-        username = "lizzie";
-        stateVersion = "21.11";
-        configuration = {
-          imports = [
-            ./hosts/sparkle3/lizzie/home.nix
-          ];
-        };
+      "lizzie@sparkle3" = home-manager-unstable.lib.homeManagerConfiguration {
+        pkgs = nixpkgs-unstable.legacyPackages."x86_64-linux";
+        modules = [
+          ./hosts/sparkle3/lizzie/home.nix
+        ];
       };
     };
   };
