@@ -3,7 +3,9 @@
 {
   environment.systemPackages = with pkgs; [
     rustup
-    gcc
+    clang
+    llvmPackages.bintools
     rust-analyzer
+    vscode-extensions.llvm-org.lldb-vscode
   ];
 }
