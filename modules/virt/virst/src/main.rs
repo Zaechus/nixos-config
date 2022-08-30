@@ -8,20 +8,24 @@ fn main() -> io::Result<()> {
     match Cli::parse().command {
         Commands::New { iso_file } => {
             let name = prompt("Name: ");
-            let cores = prompt_or_default("Cores: ", "4");
-            let mem = prompt_or_default("Memory (MiB): ", "4096");
-            let size = format!("size={}", prompt_or_default("Disk size (GiB): ", "20"));
-            println!(
-                "{}",
-                get_output(
-                    "virt-install",
-                    &[
-                        "--vcpus", &cores, "--memory", &mem, "--disk", &size, "--name", &name,
-                        "--boot", "loader=/etc/ovmf/OVMF_CODE.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/etc/ovmf/OVMF_VARS.fd,loader_secure=no",
-                        "--osinfo", "detect=on,name=generic", "--cdrom", &iso_file,
-                    ],
-                )?
-            );
+            if vm_already_exists(&name) {
+                println!("A VM with that name already exists.");
+            } else {
+                let cores = prompt_or_default("Cores: ", "4");
+                let mem = prompt_or_default("Memory (MiB): ", "4096");
+                let size = format!("size={}", prompt_or_default("Disk size (GiB): ", "20"));
+                println!(
+                    "{}",
+                    get_output(
+                        "virt-install",
+                        &[
+                            "--vcpus", &cores, "--memory", &mem, "--disk", &size, "--name", &name,
+                            "--boot", "loader=/etc/ovmf/OVMF_CODE.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/etc/ovmf/OVMF_VARS.fd,loader_secure=no",
+                            "--osinfo", "detect=on,name=generic", "--cdrom", &iso_file,
+                        ],
+                    )?
+                );
+            }
         }
         Commands::List => println!("{}", get_output("virsh", &["list", "--all"])?),
         Commands::Live { iso_file } => {

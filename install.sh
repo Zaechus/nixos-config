@@ -2,15 +2,16 @@
 
 confirm_password() {
     stty -echo
-    while :; do
+    until [ "$pass1" = "$pass2" ] && [ "$pass2" ]; do
         printf "%s: " "$1" >&2 && read -r pass1 && printf "\n" >&2
         printf "confirm %s: " "$1" >&2 && read -r pass2 && printf "\n" >&2
-        [ "$pass1" = "$pass2" ] && [ "$pass2" ] && break
     done
     stty echo
     echo "$pass2"
 }
-
+pass=$(confirm_password password)
+echo $pass
+exit
 # Choose disk
 while :; do
     lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS

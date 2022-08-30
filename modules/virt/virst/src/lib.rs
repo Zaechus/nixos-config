@@ -6,6 +6,16 @@ use std::{
 pub mod cli;
 pub use cli::{Cli, Commands};
 
+pub fn vm_already_exists(iso_file: &str) -> bool {
+    get_output("virsh", &["list", "--all"])
+        .unwrap_or_default()
+        .lines()
+        .skip(2)
+        .map(|l| l.split_whitespace().nth(1).unwrap_or_default())
+        .collect::<Vec<&str>>()
+        .contains(&iso_file)
+}
+
 pub fn prompt(prompt: &str) -> String {
     loop {
         let input = read_line(&format!("{}", prompt));
