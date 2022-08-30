@@ -9,9 +9,7 @@ confirm_password() {
     stty echo
     echo "$pass2"
 }
-pass=$(confirm_password password)
-echo $pass
-exit
+
 # Choose disk
 while :; do
     lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS
