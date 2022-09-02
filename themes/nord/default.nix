@@ -50,6 +50,8 @@
 
   programs.bat.config.theme = "Nord";
 
+  programs.git.delta.options.syntax-theme = "Nord";
+
   programs.bottom.settings.flags.color = "nord";
 
   gtk = {

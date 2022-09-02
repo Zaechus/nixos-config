@@ -51,6 +51,8 @@
 
   programs.bat.config.theme = "gruvbox-dark";
 
+  programs.git.delta.options.syntax-theme = "gruvbox-dark";
+
   programs.bottom.settings.flags.color = "gruvbox";
 
   programs.alacritty.settings.colors.indexed_colors = [

@@ -23,6 +23,9 @@
           { key = [{ Ctrl = "f"; }]; action = [{ SwitchToMode = "Pane"; }]; }
           { key = [{ Ctrl = "x"; }]; action = [{ SwitchToMode = "Scroll"; }]; }
         ];
+        scroll = [
+          { key = [{ Char = "i"; }]; action = [{ SwitchToMode = "Normal"; }]; }
+        ];
         session = [
           { key = [{ Char = "x"; }]; action = [ "Quit" ]; }
         ];
