@@ -14,20 +14,26 @@ alias exa = exa --icons --color=always
 alias pp = ping 1.1.1.1
 
 # Display file tree
-def lt [dir: string = ., level?: int] {
-  if ($level == null) {
-    exa -T $dir | bat -p
+def lt [
+  dir: string = .,
+  -l: int
+] {
+  if $l != null {
+    exa --git-ignore -TL $l $dir | bat -p
   } else {
-    exa -TL $level $dir | bat -p
+    exa --git-ignore -T $dir | bat -p
   }
 }
 
 # Display file tree with hidden files
-def lta [dir: string = ., level?: int] {
-  if ($level == null) {
-    exa -aT $dir | bat -p
+def lta [
+  dir: string = .,
+  -l: int
+] {
+  if $l != null {
+    exa -aTL $l $dir | bat -p
   } else {
-    exa -aTL $level $dir | bat -p
+    exa -aT $dir | bat -p
   }
 }
 
