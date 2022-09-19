@@ -101,6 +101,15 @@
           "${mod}+Shift+9" = "move container to workspace number 9";
           "${mod}+Shift+0" = "move container to workspace number 10";
 
+          "${mod}+n" = "focus output left";
+          "${mod}+m" = "focus output right";
+
+          "${mod}+Shift+n" = "move output left";
+          "${mod}+Shift+m" = "move output right";
+
+          "${mod}+Tab" = "move workspace to output right";
+          "${mod}+Shift+Tab" = "move workspace to output left";
+
           "${mod}+Print" = "exec grim - | wl-copy";
           "${mod}+Shift+g" = ''exec grim -g "$(slurp)" - | wl-copy'';
 

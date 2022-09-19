@@ -31,5 +31,6 @@
     '';
   };
 
+  # I don't remember why but this needs to be here
   systemd.services."systemd-networkd-wait-online".enable = false;
 }
