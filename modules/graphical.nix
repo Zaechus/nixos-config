@@ -8,7 +8,6 @@
   environment.systemPackages = with pkgs; [
     imv
     mpv
-    wf-recorder
     xdg-utils # need this for copy/paste images and other stuff
     alsa-utils # alsamixer, amixer
   ];
@@ -27,8 +26,10 @@
     extraPackages = with pkgs; [
       bemenu
       swaylock
+      wf-recorder
       wl-clipboard
-      grim
+      wl-mirror # for output mirroring
+      grim # screenshotting
       slurp # screenshot selection
       lm_sensors # for i3status-rust temperature block
     ];
