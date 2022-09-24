@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ../../modules
@@ -9,12 +7,15 @@
     ../../modules/laptop.nix
     ../../modules/graphical.nix
     ../../modules/bluetooth.nix
+
     ../../modules/dev
     ../../modules/dev/rust
 
+    ../../modules/virt
+
+    ../../modules/games
     ../../modules/games/angband
     ../../modules/games/minecraft
-    ../../modules/virt
 
     ./users/zaechus.nix
   ];
@@ -50,12 +51,8 @@
   networking.hostName = "cybros";
 
   # List packages installed in system profile. To search, run:
-  # $ nix search nixpkgs wget
-  environment.systemPackages = with pkgs; [
-    lutris
-  ];
-
-  programs.steam.enable = true; # includes steam-run for dumb binaries
+  # $ nix search nixpkgs ripgrep
+  # environment.systemPackages = with pkgs; [];
 
   # List services that you want to enable:
 
