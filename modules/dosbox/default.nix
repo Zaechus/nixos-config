@@ -3,5 +3,5 @@
     dosbox-staging
   ];
 
-  home.file.".config/dosbox-staging/dosbox-staging.conf".source = ./dosbox-staging.conf;
+  home.file.".config/dosbox/dosbox-staging.conf".source = ./dosbox-staging.conf;
 }
