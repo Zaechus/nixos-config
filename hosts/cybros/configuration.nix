@@ -53,7 +53,6 @@
   # $ nix search nixpkgs wget
   environment.systemPackages = with pkgs; [
     lutris
-    dosbox-staging
   ];
 
   programs.steam.enable = true; # includes steam-run for dumb binaries
