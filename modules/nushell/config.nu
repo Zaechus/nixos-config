@@ -16,7 +16,7 @@ alias pp = ping 1.1.1.1
 
 # Display file tree
 def lt [
-  dir: string = .,
+  dir: string = .
   -l: int
 ] {
   if $l != null {
@@ -28,7 +28,7 @@ def lt [
 
 # Display file tree with hidden files
 def lta [
-  dir: string = .,
+  dir: string = .
   -l: int
 ] {
   if $l != null {
@@ -39,6 +39,16 @@ def lta [
 }
 
 # Run nixpkgs binary without installing
-def , [pkg: string, args: string = ""] {
-  nix run $"nixpkgs#($pkg)" -- ($args | split row " ")
+def , [
+  pkg: string # Nix package to run
+  args: string = "" # argument list as a string
+] {
+  nix run $"nixpkgs#($pkg)" -- ($args | split row ' ')
+}
+
+# Create a shell with a set of available temporary packages
+def ,, [
+  ...packages: string # packages to include
+] {
+  nix shell ($packages | each { |p| $"nixpkgs#($p)" })
 }
