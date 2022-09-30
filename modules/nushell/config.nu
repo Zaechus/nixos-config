@@ -6,12 +6,12 @@ let-env config = {
 # aliases
 alias diff = diff --color
 alias doas = sudo
+alias exa = exa --icons --color=always
 alias ip = ip -c
 alias l = ls
 alias la = ls -a
 alias ll = ls -l
 alias lal = ls -al
-alias exa = exa --icons --color=always
 alias pp = ping 1.1.1.1
 
 # Display file tree
