@@ -53,4 +53,6 @@
     helpLine = lib.mkForce "";
   };
   users.motd = "\nHello, sailor!\n\n";
+
+  services.udisks2.enable = true;
 }
