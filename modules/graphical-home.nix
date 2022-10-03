@@ -11,7 +11,14 @@
   xdg = {
     enable = true;
     mime.enable = true;
-    mimeApps.enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "image/jpg" = "imv.desktop";
+        "image/jpeg" = "imv.desktop";
+        "image/png" = "imv.desktop";
+      };
+    };
   };
 
   # blue light filter

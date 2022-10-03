@@ -4,39 +4,22 @@ let-env config = {
 }
 
 # aliases
-alias diff = diff --color
 alias doas = sudo
+
+alias diff = diff --color
 alias exa = exa --icons --color=always
 alias ip = ip -c
+
 alias l = ls
-alias la = ls -a
-alias ll = ls -l
-alias lal = ls -al
+alias la = l -a
+alias lal = l -al
+alias ll = l -l
+alias lt = exa --git-ignore -T
+alias lta = exa -aT
+alias lx = exa
+
 alias pp = ping 1.1.1.1
-
-# Display file tree
-def lt [
-  dir: string = .
-  -l: int
-] {
-  if $l != null {
-    exa --git-ignore -TL $l $dir | bat -p
-  } else {
-    exa --git-ignore -T $dir | bat -p
-  }
-}
-
-# Display file tree with hidden files
-def lta [
-  dir: string = .
-  -l: int
-] {
-  if $l != null {
-    exa -aTL $l $dir | bat -p
-  } else {
-    exa -aT $dir | bat -p
-  }
-}
+alias x = xdg-open
 
 # Run nixpkgs binary without installing
 def , [
