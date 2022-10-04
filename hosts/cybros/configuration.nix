@@ -52,7 +52,11 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
-  # environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+    aria2
+    bchunk
+    p7zip
+  ];
 
   # List services that you want to enable:
 

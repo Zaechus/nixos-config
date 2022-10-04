@@ -7,6 +7,6 @@
 
   # open blizzard ports
   networking.firewall.allowedUDPPortRanges = [
-    { from = 6112; to = 6119; }
+    { from = 6110; to = 6120; }
   ];
 }
