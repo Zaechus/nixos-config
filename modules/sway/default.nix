@@ -111,7 +111,9 @@
           "${mod}+Shift+Tab" = "move workspace to output left";
 
           "${mod}+Print" = "exec grim - | wl-copy";
-          "${mod}+Shift+g" = ''exec grim -g "$(slurp)" - | wl-copy'';
+          "${mod}+g" = ''exec grim -g "$(slurp)" - | wl-copy'';
+          "${mod}+Shift+g" = ''exec grim -g "$(slurp)"'';
+          "${mod}+Shift+Print" = "exec grim";
 
           "${mod}+Shift+s" = "exec swaylock -c 000000";
 
