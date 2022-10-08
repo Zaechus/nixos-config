@@ -7,7 +7,7 @@ let-env config = {
 alias doas = sudo
 
 alias diff = diff --color
-alias exa = exa --icons --color=always
+alias exa = exa --icons --color always
 alias ip = ip -c
 
 alias l = ls

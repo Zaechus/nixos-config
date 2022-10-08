@@ -10,7 +10,6 @@
   powerManagement.cpuFreqGovernor = "schedutil";
 
   nix = {
-    package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
