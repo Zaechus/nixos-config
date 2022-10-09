@@ -19,6 +19,7 @@ alias lta = exa -aT
 alias lx = exa
 
 alias pp = ping 1.1.1.1
+alias sc2cfg = (swaymsg input type:keyboard repeat_rate 88; swaymsg input type:keyboard repeat_delay 150)
 alias x = xdg-open
 
 # Run nixpkgs binary without installing
