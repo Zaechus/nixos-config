@@ -3,7 +3,7 @@
 {
   imports = [
     ../modules/alacritty
-    ../modules/chromium
+    ../modules/chromium/brave.nix
     ../modules/sway
   ];
 
