@@ -4,6 +4,9 @@ let-env config = {
 }
 
 # aliases
+alias cp = cp -i
+alias mv = mv -i
+
 alias doas = sudo
 
 alias diff = diff --color
