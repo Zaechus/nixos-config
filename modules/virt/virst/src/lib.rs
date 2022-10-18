@@ -12,39 +12,37 @@ pub fn vm_already_exists(iso_file: &str) -> bool {
         .lines()
         .skip(2)
         .map(|l| l.split_whitespace().nth(1).unwrap_or_default())
-        .collect::<Vec<&str>>()
-        .contains(&iso_file)
+        .any(|x| x == iso_file)
 }
 
-pub fn prompt(prompt: &str) -> String {
+pub fn prompt(prompt: &str) -> io::Result<String> {
     loop {
-        let input = read_line(&format!("{}", prompt));
+        let input = read_line(prompt)?;
 
         if !input.is_empty() && input.len() < 64 {
-            return input;
+            return Ok(input);
         }
     }
 }
 
-pub fn prompt_or_default(prompt: &str, default: &str) -> String {
-    let input = read_line(&format!("{}", prompt));
+pub fn prompt_or_default(prompt: &str, default: &str) -> io::Result<String> {
+    let input = read_line(prompt)?;
 
     if !input.is_empty() && input.len() < 64 {
-        input
+        Ok(input)
     } else {
-        default.to_owned()
+        Ok(default.to_owned())
     }
 }
 
-pub fn read_line(prompt: &str) -> String {
+pub fn read_line(prompt: &str) -> io::Result<String> {
     print!("{}", prompt);
-    io::stdout().flush().expect("Error flushing stdout");
+    io::stdout().flush()?;
 
     let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Error reading stdin");
-    input.trim().to_owned()
+    io::stdin().read_line(&mut input)?;
+
+    Ok(input.trim().to_owned())
 }
 
 pub fn get_output(command: &str, args: &[&str]) -> io::Result<String> {

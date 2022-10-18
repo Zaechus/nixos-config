@@ -7,13 +7,13 @@ use virst::*;
 fn main() -> io::Result<()> {
     match Cli::parse().command {
         Commands::New { iso_file } => {
-            let name = prompt("Name: ");
+            let name = prompt("Name: ")?;
             if vm_already_exists(&name) {
                 println!("A VM with that name already exists.");
             } else {
-                let cores = prompt_or_default("Cores: ", "4");
-                let mem = prompt_or_default("Memory (MiB): ", "4096");
-                let size = format!("size={}", prompt_or_default("Disk size (GiB): ", "20"));
+                let cores = prompt_or_default("Cores: ", "4")?;
+                let mem = prompt_or_default("Memory (MiB): ", "4096")?;
+                let size = format!("size={}", prompt_or_default("Disk size (GiB): ", "20")?);
                 println!(
                     "{}",
                     get_output(
