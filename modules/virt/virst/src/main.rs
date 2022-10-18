@@ -72,10 +72,7 @@ fn main() -> io::Result<()> {
             println!("{}", get_output("virsh", &["destroy", &domain])?);
             println!(
                 "{}",
-                get_output(
-                    "virsh",
-                    &["undefine", &domain, "--remove-all-storage", "--keep-nvram"]
-                )?
+                get_output("virsh", &["undefine", &domain, "--remove-all-storage"])?
             )
         }
     };
