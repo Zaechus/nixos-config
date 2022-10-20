@@ -4,8 +4,8 @@
     ../../modules
     ../../modules/wired.nix
     ../../modules/wireless.nix
-    ../../modules/laptop.nix
-    ../../modules/graphical.nix
+    ../../modules/laptop
+    ../../modules/graphical
     ../../modules/bluetooth.nix
 
     ../../modules/dev

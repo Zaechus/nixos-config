@@ -1,10 +1,10 @@
-# A superset of the laptop configuration, the thinkpad-home module additionally
+# A superset of the laptop configuration, the thinkpad module additionally
 # disables the touchpad in sway by default, due to the existence of the TrackPoint
 # on Thinkpad laptops.
 
 {
   imports = [
-    ./laptop-home.nix
+    ./home.nix
   ];
 
   wayland.windowManager.sway.config.input = {

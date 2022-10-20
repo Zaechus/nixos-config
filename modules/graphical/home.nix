@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ../modules/alacritty
-    ../modules/chromium/brave.nix
-    ../modules/sway
+    ../alacritty
+    ../chromium/brave.nix
+    ../sway
   ];
 
   gtk.enable = true;

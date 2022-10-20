@@ -9,8 +9,8 @@
     imports = [
       ../../../modules/home.nix
       ../../../themes/gruvbox
-      ../../../modules/graphical-home.nix
-      ../../../modules/thinkpad-home.nix
+      ../../../modules/graphical/home.nix
+      ../../../modules/laptop/thinkpad.nix
       ../../../modules/dev/home.nix
       ../../../modules/dev/rust/home.nix
       ../../../modules/games/dosbox

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../modules/fonts
+    ../fonts
   ];
 
   environment.systemPackages = with pkgs; [

@@ -4,10 +4,10 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules
-    ../../modules/laptop.nix
+    ../../modules/laptop
     ../../modules/wired.nix
     ../../modules/wireless.nix
-    ../../modules/graphical.nix
+    ../../modules/graphical
 
     ./users/zaechus.nix
   ];
