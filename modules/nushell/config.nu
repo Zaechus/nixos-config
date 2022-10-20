@@ -4,6 +4,7 @@ let-env config = {
 }
 
 # aliases
+alias angband = angband -dpref=/etc/angband/customize -mgcu
 alias cp = cp -i
 alias mv = mv -i
 
