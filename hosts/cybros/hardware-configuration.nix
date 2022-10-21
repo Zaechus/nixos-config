@@ -30,12 +30,6 @@
       options = [ "subvol=nix" ];
     };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/655D-D8BD";
-      fsType = "vfat";
-    };
-
   fileSystems."/home" =
     {
       device = "/dev/disk/by-uuid/6ac71b2f-5058-4908-949f-4e2a7db59119";
@@ -50,16 +44,14 @@
       options = [ "subvol=swap" ];
     };
 
+  fileSystems."/boot" =
+    {
+      device = "/dev/disk/by-uuid/655D-D8BD";
+      fsType = "vfat";
+    };
+
   swapDevices = [ ];
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp2s0f0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
-
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    # prismlauncher
+    prismlauncher
   ];
 
   networking.firewall.allowedTCPPortRanges = [
