@@ -2,11 +2,11 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules
-    ../../modules/wired.nix
-    ../../modules/wireless.nix
+    ../../modules/network/wired.nix
+    ../../modules/network/wireless.nix
     ../../modules/laptop
     ../../modules/graphical
-    ../../modules/bluetooth.nix
+    ../../modules/network/bluetooth.nix
 
     ../../modules/dev
     ../../modules/dev/rust

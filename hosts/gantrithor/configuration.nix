@@ -5,8 +5,8 @@
     ./hardware-configuration.nix
     ../../modules
     ../../modules/laptop
-    ../../modules/wired.nix
-    ../../modules/wireless.nix
+    ../../modules/network/wired.nix
+    ../../modules/network/wireless.nix
     ../../modules/graphical
 
     ./users/zaechus.nix
