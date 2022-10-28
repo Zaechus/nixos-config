@@ -5,6 +5,9 @@
     enable = true;
     envFile.text =
       config.nu.LS_COLORS + "\n" +
+      "let-env BROWSER = \"" + config.home.sessionVariables.BROWSER + "\"\n" +
+      "let-env EDITOR = \"" + config.home.sessionVariables.EDITOR + "\"\n" +
+      "let-env VISUAL = \"" + config.home.sessionVariables.VISUAL + "\"\n" +
       builtins.readFile ./env.nu + "\n" +
       config.starship.init + "\n" +
       config.z.init + "\n";
