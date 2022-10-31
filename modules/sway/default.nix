@@ -229,7 +229,6 @@
 
   home.sessionVariables.XDG_CURRENT_DESKTOP = "sway";
 
-  home.shellAliases.sc2cfg = "swaymsg input type:keyboard repeat_rate 150 && swaymsg input type:keyboard repeat_delay 150";
   nu.startup = "if (tty) =~ \"/dev/tty1\" { exec sway }";
 
   programs.zsh.profileExtra = ''

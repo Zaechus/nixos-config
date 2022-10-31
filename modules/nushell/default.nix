@@ -1,13 +1,17 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  varStr = lib.concatStringsSep "\n"
+    (lib.mapAttrsToList (k: v: "let-env ${k} = \"${v}\"")
+      config.home.sessionVariables) + "\n";
+  LS_COLORS = if (builtins.stringLength config.nu.LS_COLORS) > 0 then "let-env LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n" else "";
+in
 {
   programs.nushell = {
     enable = true;
     envFile.text =
-      config.nu.LS_COLORS + "\n" +
-      "let-env BROWSER = \"" + config.home.sessionVariables.BROWSER + "\"\n" +
-      "let-env EDITOR = \"" + config.home.sessionVariables.EDITOR + "\"\n" +
-      "let-env VISUAL = \"" + config.home.sessionVariables.VISUAL + "\"\n" +
+      varStr +
+      LS_COLORS +
       builtins.readFile ./env.nu + "\n" +
       config.starship.init + "\n" +
       config.z.init + "\n";

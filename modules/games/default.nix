@@ -1,7 +1,9 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    heroic # GOG
-    lutris # bottles still too buggy; lutris is good
+    bottles # Wine
+    # heroic # GOG
+    innoextract # extract GOG offline installers
+    lutris # everything
     (retroarch.override {
       cores = with libretro; [
         # beetle-saturn # saturn

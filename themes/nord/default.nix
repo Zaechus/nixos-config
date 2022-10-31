@@ -96,5 +96,5 @@
   };
 
   home.packages = with pkgs; [ vivid ];
-  nu.LS_COLORS = "let-env LS_COLORS = (vivid generate nord | str trim)";
+  nu.LS_COLORS = "nord";
 }
