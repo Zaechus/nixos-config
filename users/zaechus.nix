@@ -1,7 +1,7 @@
 {
   home-manager.users.zaechus.programs.git = {
     userName = "Zaechus";
-    userEmail = "maxwell.anderson.public@protonmail.com";
+    userEmail = "zaechus@proton.me";
   };
 
   users.users.zaechus = {
