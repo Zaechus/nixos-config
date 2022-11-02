@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    bottles # Wine
+    # bottles # Wine (if it wasn't so broken)
     # heroic # GOG
     innoextract # extract GOG offline installers
     lutris # everything
