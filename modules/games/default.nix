@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    # bottles # Wine (if it wasn't so broken)
-    # heroic # GOG
+    # bottles # Wine (not on par with lutris)
+    # heroic # GOG (also breaks)
     innoextract # extract GOG offline installers
     lutris # everything
     (retroarch.override {
