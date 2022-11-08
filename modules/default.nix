@@ -23,15 +23,12 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages =
-    let
-      zinfo = pkgs.callPackage ../pkgs/zinfo { };
-    in
     with pkgs; [
       exa
       fd
       ouch
       ripgrep
-      zinfo
+      (callPackage ../pkgs/zinfo {})
     ];
   environment.defaultPackages = [ pkgs.helix ];
   environment.variables = {
