@@ -55,10 +55,8 @@
   environment.systemPackages = with pkgs; [
     aria2
     p7zip
-    (pkgs.callPackage ../../pkgs/ultimatedoombuilder {})
+    (callPackage ../../pkgs/ultimatedoombuilder {})
   ];
 
-  # List services that you want to enable:
-
-  system.stateVersion = "21.11"; # Did you read the comment?
+  system.stateVersion = "21.11";
 }

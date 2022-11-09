@@ -1,17 +1,15 @@
-{ pkgs, lib, rustPlatform, fetchCrate, ... }:
-
-with import <nixpkgs> { };
+{ lib, rustPlatform, fetchCrate }:
 
 rustPlatform.buildRustPackage rec {
   pname = "zinfo";
-  version = "0.2.4";
+  version = "0.2.5";
 
   src = fetchCrate {
     inherit pname version;
-    sha256 = "sha256-iL0+PimZFa3LHqbJk80FH3j2i2BQCmfgQd7V72zrHFo=";
+    sha256 = "sha256-7NE3awQkt3wWHsJ9BymUkmbzWjAhbsCckjB7UVRSEiM=";
   };
 
-  cargoHash = "sha256-Xbgrb3LGH1JvZpMgE9idUcC0dvgRs80Cstngr9zUf8I=";
+  cargoHash = "sha256-blhjz1qyr9rH6W4Umzn6DFHYs0lC4U6tEEQ8GhByyN0=";
 
   doCheck = false; # skip tests
 
