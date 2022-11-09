@@ -14,13 +14,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, ... }: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, ... }: 
+  let
+    overlay-my = import ./pkgs;
+  in {
     formatter.x86_64-linux = nixpkgs-unstable.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
     nixosConfigurations = {
       cybros = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ({ ... }: { nixpkgs.overlays = [ overlay-my ]; })
           ./hosts/cybros/configuration.nix
           home-manager-unstable.nixosModules.home-manager
           {

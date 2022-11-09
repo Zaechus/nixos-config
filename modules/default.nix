@@ -28,7 +28,7 @@
       fd
       ouch
       ripgrep
-      (callPackage ../pkgs/zinfo {})
+      my.zinfo
     ];
   environment.defaultPackages = [ pkgs.helix ];
   environment.variables = {
