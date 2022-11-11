@@ -19,6 +19,10 @@
         "image/png" = "imv.desktop";
       };
     };
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
   };
 
   # blue light filter
