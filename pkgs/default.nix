@@ -1,6 +1,6 @@
 final: prev: {
   my = {
-    ultimatedoombuilder = final.callPackage ./ultimatedoombuilder {};
-    zinfo = final.callPackage ./zinfo {};
+    ultimatedoombuilder = final.callPackage ./ultimatedoombuilder { };
+    zinfo = final.callPackage ./zinfo { };
   };
 }

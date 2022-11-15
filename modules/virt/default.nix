@@ -8,7 +8,7 @@
   programs.dconf.enable = true;
 
   environment.systemPackages = with pkgs; [
-    (callPackage ./virst {})
+    (callPackage ./virst { })
     virt-manager
     virt-viewer
   ];

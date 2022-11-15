@@ -3,9 +3,6 @@ let-env config = {
   edit_mode: vi
 }
 
-let-env PROMPT_INDICATOR_VI_INSERT = ": "
-let-env PROMPT_INDICATOR_VI_NORMAL = ") "
-
 # aliases
 alias angband = angband -dpref=/etc/angband/customize -mgcu
 alias cp = cp -i
