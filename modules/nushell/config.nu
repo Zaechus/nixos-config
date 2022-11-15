@@ -8,8 +8,6 @@ alias angband = angband -dpref=/etc/angband/customize -mgcu
 alias cp = cp -i
 alias mv = mv -i
 
-alias doas = sudo
-
 alias diff = diff --color
 alias exa = exa --icons --color always
 alias ip = ip -c
@@ -22,6 +20,7 @@ alias lt = exa --git-ignore -T
 alias lta = exa -aT
 alias lx = exa
 
+alias doas = sudo
 alias pp = ping 1.1.1.1
 alias sc2cfg = (swaymsg input type:keyboard repeat_rate 88; swaymsg input type:keyboard repeat_delay 150)
 alias x = xdg-open
