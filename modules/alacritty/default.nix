@@ -9,6 +9,10 @@
         size = 11.0;
       };
 
+      cursor.style = {
+        shape = "Block";
+      };
+
       colors = {
         primary = {
           background = config.theme.bg;
