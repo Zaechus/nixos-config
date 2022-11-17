@@ -4,7 +4,7 @@
 
     settings = {
       pane_frames = false;
-      default_layout = ./layout.yaml;
+      default_layout = ./layout.kdl;
 
       keybinds = {
         unbind = [
