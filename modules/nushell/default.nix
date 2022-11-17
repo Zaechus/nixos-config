@@ -4,7 +4,7 @@ let
   PROMPT =
     if config.programs.starship.enable == false then ''
       def create_left_prompt [] {
-        $"\n(ansi blue_bold)($env.PWD | str replace /home/zaechus ~)(ansi reset)(ansi green_bold)\n〉"
+        $"\n(ansi blue_bold)($env.PWD | str replace $env.HOME ~)(ansi reset)(ansi green_bold)\n〉"
       }
 
       let-env PROMPT_COMMAND = { create_left_prompt }
