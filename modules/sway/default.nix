@@ -4,7 +4,9 @@
   wayland.windowManager.sway = {
     enable = true;
     package = null;
+    systemdIntegration = true;
     wrapperFeatures.gtk = true;
+    xwayland = true;
     config = {
       defaultWorkspace = "workspace number 1";
 

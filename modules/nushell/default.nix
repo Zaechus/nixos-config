@@ -8,12 +8,11 @@ let
       }
 
       let-env PROMPT_COMMAND = { create_left_prompt }
-      let-env PROMPT_COMMAND_RIGHT = {""}
+      let-env PROMPT_COMMAND_RIGHT = { "" }
 
       let-env PROMPT_INDICATOR = { "" }
       let-env PROMPT_INDICATOR_VI_INSERT = { ": " }
       let-env PROMPT_INDICATOR_VI_NORMAL = { ") " }
-      # let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
     '' else "";
   varStr = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (k: v: "let-env ${k} = \"${v}\"")
