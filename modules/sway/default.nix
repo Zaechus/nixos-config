@@ -26,6 +26,7 @@
           --nb \${config.theme.bg} \
           --hb \${config.theme.bg} \
           --sb \${config.theme.bg} \
+          --ab \${config.theme.bg} \
           --tf \${config.theme.colorFg} \
           --hf \${config.theme.colorFg} \
           --nf \${config.theme.fg}
