@@ -1,6 +1,20 @@
 let-env config = {
   show_banner: false
   edit_mode: vi
+  keybindings: [
+    {
+      name: completion_menu
+      modifier: none
+      keycode: tab
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        until: [
+          { send: menu name: completion_menu }
+          { send: menunext }
+        ]
+      }
+    }
+  ]
 }
 
 # aliases
