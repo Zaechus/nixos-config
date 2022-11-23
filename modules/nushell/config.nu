@@ -18,13 +18,11 @@ let-env config = {
 }
 
 # aliases
+alias exa = exa --icons --color always
+
 alias angband = angband -dpref=/etc/angband/customize -mgcu
 alias cp = cp -i
 alias mv = mv -i
-
-alias diff = diff --color
-alias exa = exa --icons --color always
-alias ip = ip -c
 
 alias l = ls
 alias la = l -a
@@ -34,10 +32,7 @@ alias lt = exa --git-ignore -T
 alias lta = exa -aT
 alias lx = exa
 
-alias doas = sudo
-alias pp = ping 1.1.1.1
 alias sc2cfg = (swaymsg input type:keyboard repeat_rate 88; swaymsg input type:keyboard repeat_delay 150)
-alias x = xdg-open
 
 # Run nixpkgs binary without installing
 def , [

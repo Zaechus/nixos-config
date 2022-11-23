@@ -14,10 +14,32 @@ let
       let-env PROMPT_INDICATOR_VI_INSERT = { ": " }
       let-env PROMPT_INDICATOR_VI_NORMAL = { ") " }
     '' else "";
+  aliasStr = lib.concatStringsSep "\n"
+    (lib.mapAttrsToList (k: v: "alias ${k} = ${v}")
+      config.home.shellAliases) + "\n";
   varStr = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (k: v: "let-env ${k} = \"${v}\"")
       config.home.sessionVariables) + "\n";
-  LS_COLORS = if (builtins.stringLength config.nu.LS_COLORS) > 0 then "let-env LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n" else "";
+  LS_COLORS = if (builtins.stringLength config.nu.LS_COLORS) > 0 then
+    "let-env LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n"
+    else "";
+  starship_init = if config.programs.starship.enable then ''
+    mkdir ~/.cache/starship
+    starship init nu | save ~/.cache/starship/init.nu
+    sed -i 's/term size -c | get columns/(term size).columns/g' ~/.cache/starship/init.nu
+  '' else "";
+  starship_source = if config.programs.starship.enable then ''
+    let-env PROMPT_INDICATOR_VI_INSERT = ": "
+    let-env PROMPT_INDICATOR_VI_NORMAL = ") "
+    source ~/.cache/starship/init.nu
+  '' else "";
+  zoxide_init = if config.programs.zoxide.enable then ''
+    mkdir .cache/zoxide
+    zoxide init nushell --hook prompt | save .cache/zoxide/init.nu
+  '' else "";
+  zoxide_source = if config.programs.zoxide.enable then ''
+    source .cache/zoxide/init.nu
+  '' else "";
 in
 {
   programs.nushell = {
@@ -26,14 +48,15 @@ in
       PROMPT +
       varStr +
       LS_COLORS +
-      builtins.readFile ./env.nu + "\n" +
-      config.starship.init + "\n" +
-      config.z.init + "\n";
+      "\n" + builtins.readFile ./env.nu + "\n" +
+      starship_init +
+      zoxide_init;
     configFile.text =
       builtins.readFile ./config.nu + "\n" +
-      config.z.source + "\n" +
-      config.starship.source + "\n" +
-      config.nu.startup + "\n";
+      aliasStr + "\n" +
+      zoxide_source +
+      starship_source +
+      "\n" + config.nu.startup + "\n";
   };
 
   programs.helix.settings.editor.shell = [ "nu" "-c" ];

@@ -21,18 +21,10 @@
     '';
   };
 
-  home.sessionVariables = {
-    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
-  };
+  programs.zoxide.enableZshIntegration = true;
 
   home.shellAliases = {
-    diff = "diff --color";
-    doas = "sudo";
-    ip = "ip -c";
     l = "exa --icons --color=always";
     ll = "l -aalg";
-    lisosort = "exa -lRs size --no-permissions --no-user --no-time ~/images/disk/**/*.iso";
-    pp = "ping 1.1.1.1";
-    watch = "watch -c -n 1 ";
   };
 }
