@@ -19,20 +19,13 @@ let
       config.home.shellAliases) + "\n";
   varStr = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (k: v: "let-env ${k} = \"${v}\"")
-      config.home.sessionVariables) + "\n";
+      config.home.sessionVariables) + "\n" + ''
+    let-env PATH = ($env.PATH | split row ':') # convert PATH to table
+    let-env PATH = ($env.PATH | prepend $"($env.HOME)/.cargo/bin")
+  '' + "\n";
   LS_COLORS = if (builtins.stringLength config.nu.LS_COLORS) > 0 then
     "let-env LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n"
     else "";
-  starship_init = if config.programs.starship.enable then ''
-    mkdir ~/.cache/starship
-    starship init nu | save ~/.cache/starship/init.nu
-    sed -i 's/term size -c | get columns/(term size).columns/g' ~/.cache/starship/init.nu
-  '' else "";
-  starship_source = if config.programs.starship.enable then ''
-    let-env PROMPT_INDICATOR_VI_INSERT = ": "
-    let-env PROMPT_INDICATOR_VI_NORMAL = ") "
-    source ~/.cache/starship/init.nu
-  '' else "";
   zoxide_init = if config.programs.zoxide.enable then ''
     mkdir .cache/zoxide
     zoxide init nushell --hook prompt | save .cache/zoxide/init.nu
@@ -44,18 +37,15 @@ in
 {
   programs.nushell = {
     enable = true;
-    envFile.text =
+    extraEnv =
       PROMPT +
       varStr +
       LS_COLORS +
-      "\n" + builtins.readFile ./env.nu + "\n" +
-      starship_init +
       zoxide_init;
-    configFile.text =
-      builtins.readFile ./config.nu + "\n" +
+    configFile.source = ./config.nu;
+    extraConfig =
       aliasStr + "\n" +
       zoxide_source +
-      starship_source +
       "\n" + config.nu.startup + "\n";
   };
 

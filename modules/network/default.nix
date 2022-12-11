@@ -19,5 +19,5 @@
   };
 
   # this needs to be here
-  systemd.services."systemd-networkd-wait-online".enable = false;
+  systemd.network.wait-online.enable = false;
 }

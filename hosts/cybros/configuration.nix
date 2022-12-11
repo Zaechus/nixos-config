@@ -55,7 +55,7 @@
   environment.systemPackages = with pkgs; [
     aria2
     p7zip
-    my.ultimatedoombuilder
+    # my.ultimatedoombuilder
   ];
 
   system.stateVersion = "21.11";
