@@ -22,7 +22,7 @@ let
     if (builtins.stringLength config.nu.LS_COLORS) > 0 then
       "let-env LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n"
     else "";
-  zoxide_init =
+  zoxide_init = # TODO
     if config.programs.zoxide.enable then ''
       zoxide init nushell | save -f .zoxide.nu
       sed -i "s/&&/and/g" .zoxide.nu
