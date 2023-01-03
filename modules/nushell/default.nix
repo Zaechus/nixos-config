@@ -24,12 +24,13 @@ let
     else "";
   zoxide_init =
     if config.programs.zoxide.enable then ''
-      mkdir .cache/zoxide
-      zoxide init nushell --hook prompt | save .cache/zoxide/init.nu
+      zoxide init nushell | save -f .zoxide.nu
+      sed -i "s/&&/and/g" .zoxide.nu
+      sed -i "s/||/or/g" .zoxide.nu
     '' else "";
   zoxide_source =
     if config.programs.zoxide.enable then ''
-      source .cache/zoxide/init.nu
+      source .zoxide.nu
     '' else "";
 in
 {
