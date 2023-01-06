@@ -224,7 +224,7 @@
         { block = "temperature"; format = "{max}"; }
         { block = "memory"; format_mem = "{mem_used}"; format_swap = "{swap_used}"; }
         { block = "battery"; format = " {percentage}"; hide_missing = true; }
-        { block = "time"; }
+        { block = "time"; format = "%a %F %R"; }
       ];
       icons = "awesome5";
     };
