@@ -1,6 +1,11 @@
 let-env config = {
   show_banner: false
   edit_mode: vi
+  # cursor_shape: {
+  #   vi_insert: block
+  #   vi_normal: block
+  #   emacs: line
+  # }
   keybindings: [
     {
       name: completion_menu
