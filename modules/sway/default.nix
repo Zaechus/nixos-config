@@ -11,6 +11,7 @@
       defaultWorkspace = "workspace number 1";
 
       focus.forceWrapping = true;
+      # focus.wrapping = "force";
 
       gaps.smartBorders = "on";
 
