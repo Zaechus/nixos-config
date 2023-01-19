@@ -8,6 +8,12 @@
 
 stdenv.mkDerivation rec {
   name = "ultimatedoombuilder";
+  src = fetchFromGitHub {
+    owner = "jewalky";
+    repo = "UltimateDoomBuilder";
+    rev = "5cf8ed914abf6a0cebd7b21ad0f2bcdc74df0a40";
+    sha256 = "sha256-xGhTsHzaqXViddFo2FsThHk0YKQjy6K1XgAEcHu/D2Y=";
+  };
   nativeBuildInputs = [
     libGL
     libX11
@@ -16,12 +22,6 @@ stdenv.mkDerivation rec {
   buildInputs = [
     mono
   ];
-  src = fetchFromGitHub {
-    owner = "jewalky";
-    repo = "UltimateDoomBuilder";
-    rev = "204982e5f884a2ed94cf8b46960007c1538c3ebf";
-    sha256 = "1d4hc6lp4zxqv387vzf0cxryqx2g0036rxp6vah2vqnwi5isxl58";
-  };
   installPhase = ''
     mkdir -p $out/bin
     mkdir -p $out/opt
