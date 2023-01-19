@@ -24,13 +24,13 @@ let
     else "";
   zoxide_init = # TODO
     if config.programs.zoxide.enable then ''
-      zoxide init nushell | save -f .zoxide.nu
+      zoxide init nushell | save -f ~/.zoxide.nu
       sed -i "s/&&/and/g" .zoxide.nu
       sed -i "s/||/or/g" .zoxide.nu
     '' else "";
   zoxide_source =
     if config.programs.zoxide.enable then ''
-      source .zoxide.nu
+      source ~/.zoxide.nu
     '' else "";
 in
 {
