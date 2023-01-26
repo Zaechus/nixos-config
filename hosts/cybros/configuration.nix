@@ -10,8 +10,9 @@
 
     ../../modules/dev
     ../../modules/dev/rust
-
     ../../modules/virt
+
+    ../../modules/slade
 
     ../../modules/games
     ../../modules/games/angband
@@ -55,7 +56,6 @@
   environment.systemPackages = with pkgs; [
     aria2
     p7zip
-    # my.ultimatedoombuilder
   ];
 
   system.stateVersion = "21.11";
