@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     crispyDoom
-    slade
+    sladeUnstable
     zdbsp
   ];
 }

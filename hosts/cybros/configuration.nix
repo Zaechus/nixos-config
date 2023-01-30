@@ -56,6 +56,7 @@
   environment.systemPackages = with pkgs; [
     aria2
     p7zip
+    my.RBDOOM-3-BFG
   ];
 
   system.stateVersion = "21.11";
