@@ -1,7 +1,7 @@
 final: prev: {
   my = {
     RBDOOM-3-BFG = final.callPackage ./RBDOOM-3-BFG { };
-    ultimatedoombuilder = final.callPackage ./ultimatedoombuilder { };
+    UltimateDoomBuilder = final.callPackage ./UltimateDoomBuilder { };
     zinfo = final.callPackage ./zinfo { };
   };
 }

@@ -7,7 +7,7 @@
 }:
 
 stdenv.mkDerivation rec {
-  name = "ultimatedoombuilder";
+  name = "UltimateDoomBuilder";
   src = fetchFromGitHub {
     owner = "jewalky";
     repo = "UltimateDoomBuilder";
