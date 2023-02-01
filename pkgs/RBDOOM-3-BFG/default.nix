@@ -2,12 +2,10 @@
 , fetchFromGitHub
 , cmake
 , directx-shader-compiler
-, ffmpeg
 , libGLU
 , openal
 , SDL2
 , vulkan-headers
-, vulkan-loader
 }:
 
 stdenv.mkDerivation rec {
@@ -27,14 +25,12 @@ stdenv.mkDerivation rec {
     openal
     SDL2
     vulkan-headers
-    vulkan-loader
   ];
 
   configurePhase = ''
     mkdir build
     cd build
-    ls /build/source/neo/extern
-    cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DFFMPEG=OFF -DBINKDEC=ON ../neo
+    cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DONATIVE=ON -DFFMPEG=OFF -DBINKDEC=ON ../neo
   '';
 
   enableParallelBuilding = true;
