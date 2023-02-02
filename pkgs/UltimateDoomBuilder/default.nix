@@ -1,25 +1,26 @@
 { stdenv
 , fetchFromGitHub
+, msbuild
 , libGL
 , libX11
 , mono
-, msbuild
 }:
 
 stdenv.mkDerivation rec {
-  name = "UltimateDoomBuilder";
+  pname = "UltimateDoomBuilder";
+  version = "3.0.0.3274";
   src = fetchFromGitHub {
     owner = "jewalky";
-    repo = "UltimateDoomBuilder";
-    rev = "5cf8ed914abf6a0cebd7b21ad0f2bcdc74df0a40";
-    sha256 = "sha256-xGhTsHzaqXViddFo2FsThHk0YKQjy6K1XgAEcHu/D2Y=";
+    repo = pname;
+    rev = "eb974fcaf08d54c20ddc697d04f4eca84e805016";
+    hash = "sha256-vl3w1q5ssOPpPxkwmq4hKgJkA7oe8W53IYXrN4ezX7c=";
   };
   nativeBuildInputs = [
-    libGL
-    libX11
     msbuild
   ];
   buildInputs = [
+    libGL
+    libX11
     mono
   ];
   installPhase = ''
