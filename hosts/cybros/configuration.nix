@@ -18,6 +18,7 @@
 
     ../../modules/games
     ../../modules/games/angband
+    ../../modules/games/doom
     ../../modules/games/minecraft
 
     ./users/zaechus.nix
