@@ -5,6 +5,9 @@
     ../../../users/zaechus.nix
   ];
 
+  # they finally fixed it
+  # services.getty.autologinUser = "zaechus";
+
   home-manager.users.zaechus = {
     imports = [
       ../../../modules/home.nix

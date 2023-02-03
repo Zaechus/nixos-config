@@ -13,7 +13,7 @@
     bindsTo = [ "sys-subsystem-net-devices-wg0.device" "systemd-networkd.service" ];
     serviceConfig = {
       Type = "oneshot";
-      RemainAfterExit="yes";
+      RemainAfterExit = "yes";
       ExecStart = "${pkgs.wireguard-tools}/bin/wg-quick up wg0";
       ExecStartPost = "resolvectl dnsovertls wg0 no";
       ExecStop = "${pkgs.wireguard-tools}/bin/wg-quick down wg0";
