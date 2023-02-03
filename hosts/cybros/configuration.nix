@@ -9,6 +9,7 @@
     ../../modules/laptop
     ../../modules/graphical
     ../../modules/network/bluetooth.nix
+    ../../modules/network/wireguard.nix
 
     ../../modules/dev
     ../../modules/dev/rust
@@ -60,7 +61,6 @@
     aria2
     p7zip
     my.RBDOOM-3-BFG
-    # my.UltimateDoomBuilder
   ];
 
   system.stateVersion = "21.11";
