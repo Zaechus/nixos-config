@@ -7,6 +7,7 @@
 
   # https://github.com/WireGuard/wireguard-tools/blob/master/src/systemd/wg-quick%40.service
   systemd.services.wg-quick = {
+    description = "WireGuard via wg-quick(8) for wg0";
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
     wants = [ "network-online.target" ];
