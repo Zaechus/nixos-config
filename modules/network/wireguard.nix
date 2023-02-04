@@ -11,7 +11,7 @@
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
     wants = [ "network-online.target" ];
-    bindsTo = [ "sys-subsystem-net-devices-wg0.device" ];
+    bindsTo = [ "sys-subsystem-net-devices-wg0.device" "systemd-networkd.service" "systemd-resolved.service" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = "yes";
