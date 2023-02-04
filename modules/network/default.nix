@@ -18,6 +18,10 @@
     '';
   };
 
-  # this needs to be here
-  systemd.network.wait-online.enable = false;
+  systemd.network = {
+    enable = true;
+    wait-online = {
+      anyInterface = true;
+    };
+  };
 }
