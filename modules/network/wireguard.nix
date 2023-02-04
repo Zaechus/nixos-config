@@ -11,7 +11,7 @@
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
     wants = [ "network-online.target" ];
-    bindsTo = [ "sys-subsystem-net-devices-wg0.device" "systemd-networkd.service" ];
+    bindsTo = [ "sys-subsystem-net-devices-wg0.device" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = "yes";
@@ -20,6 +20,9 @@
       ExecStop = "${pkgs.wireguard-tools}/bin/wg-quick down wg0";
       ExecReload = "/usr/bin/env bash -c 'exec ${pkgs.wireguard-tools}/bin/wg syncconf wg0 <(exec ${pkgs.wireguard-tools}/bin/wg-quick strip wg0)'";
       Environment = "WG_ENDPOINT_RESOLUTION_RETRIES=infinity";
+    };
+    unitConfig = {
+      ConditionPathExists = "/etc/wireguard/wg0.conf";
     };
   };
 
@@ -32,16 +35,14 @@
   #       Name = "wg0";
   #     };
   #     wireguardConfig = {
-  #       # PrivateKeyFile = "/root/key";
+  #       # PrivateKeyFile = "";
   #       ListenPort = 51820;
-  #       FirewallMark = 42;
   #     };
   #     wireguardPeers = [{
   #       wireguardPeerConfig = {
   #         # Endpoint = "";
   #         # PublicKey = "";
-  #         # AllowedIPs = [ "" ];
-  #         PersistentKeepalive = 25;
+  #         AllowedIPs = [ "0.0.0.0/0" ];
   #       };
   #     }];
   #   };
@@ -54,6 +55,9 @@
   #         # Destination = "";
   #       };
   #     }];
+  #     extraConfig = ''
+  #       DNSOverTLS=no;
+  #     '';
   #   };
   # };
 }
