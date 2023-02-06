@@ -5,9 +5,39 @@
     wireguard-tools
   ];
 
-  # https://github.com/WireGuard/wireguard-tools/blob/master/src/systemd/wg-quick%40.service
-  systemd.services.wg-quick = {
-    description = "WireGuard via wg-quick(8) for wg0";
+  # broken due to "systemd-networkd: wg0: Failed to read private key from /root/key. Ignoring network device."
+  systemd.network = {
+    enable = true;
+    netdevs.wg0 = {
+      netdevConfig = {
+        Kind = "wireguard";
+        Name = "wg0";
+      };
+      wireguardConfig = {
+        PrivateKeyFile = "/root/key";
+        ListenPort = 51820;
+      };
+      wireguardPeers = [{
+        wireguardPeerConfig = {
+          Endpoint = "107.181.245.74:51820";
+          PublicKey = "fM5t18SNQhPw5zXr/6crLPu9KseB3/BeDF+McXoclmg=";
+          AllowedIPs = [ "0.0.0.0/0" ];
+        };
+      }];
+    };
+    networks.wg0 = {
+      matchConfig.Name = "wg0";
+      address = [ "10.2.0.2/32" ];
+      routes = [{
+        routeConfig = {
+          Gateway = "10.2.0.1";
+          Destination = "10.2.0.0/24";
+        };
+      }];
+    };
+  };
+
+  systemd.services.wireguard = {
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
     wants = [ "network-online.target" ];
@@ -15,49 +45,11 @@
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = "yes";
-      ExecStart = "${pkgs.wireguard-tools}/bin/wg-quick up wg0";
-      ExecStartPost = "resolvectl dnsovertls wg0 no";
-      ExecStop = "${pkgs.wireguard-tools}/bin/wg-quick down wg0";
-      ExecReload = "/usr/bin/env bash -c 'exec ${pkgs.wireguard-tools}/bin/wg syncconf wg0 <(exec ${pkgs.wireguard-tools}/bin/wg-quick strip wg0)'";
-      Environment = "WG_ENDPOINT_RESOLUTION_RETRIES=infinity";
+      ExecStart = "resolvectl dnsovertls wg0 no";
+      ExecReload = "resolvectl dnsovertls wg0 no";
     };
     unitConfig = {
-      ConditionPathExists = "/etc/wireguard/wg0.conf";
+      ConditionPathExists = "/sys/class/net/wg0";
     };
   };
-
-  # broken due to "systemd-networkd: wg0: Failed to read private key from /root/key. Ignoring network device."
-  # systemd.network = {
-  #   enable = true;
-  #   netdevs.wg0 = {
-  #     netdevConfig = {
-  #       Kind = "wireguard";
-  #       Name = "wg0";
-  #     };
-  #     wireguardConfig = {
-  #       # PrivateKeyFile = "";
-  #       ListenPort = 51820;
-  #     };
-  #     wireguardPeers = [{
-  #       wireguardPeerConfig = {
-  #         # Endpoint = "";
-  #         # PublicKey = "";
-  #         AllowedIPs = [ "0.0.0.0/0" ];
-  #       };
-  #     }];
-  #   };
-  #   networks.wg0 = {
-  #     matchConfig.Name = "wg0";
-  #     # address = [ "" ];
-  #     routes = [{
-  #       routeConfig = {
-  #         # Gateway = "";
-  #         # Destination = "";
-  #       };
-  #     }];
-  #     extraConfig = ''
-  #       DNSOverTLS=no;
-  #     '';
-  #   };
-  # };
 }
