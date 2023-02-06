@@ -9,6 +9,8 @@
   boot.loader.timeout = 1;
   powerManagement.cpuFreqGovernor = "schedutil";
 
+  # services.fwupd.enable = true;
+
   nix = {
     extraOptions = ''
       experimental-features = nix-command flakes
