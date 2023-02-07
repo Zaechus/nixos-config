@@ -1,9 +1,13 @@
-{ stdenv
+{ lib
+, stdenv
 , fetchFromGitHub
+
+, gtest
 , makeWrapper
 , meson
 , ninja
 , pkg-config
+
 , alsa-lib
 , fluidsynth
 , glib
@@ -31,6 +35,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
+    gtest
     makeWrapper
     meson
     ninja
@@ -58,24 +63,17 @@ stdenv.mkDerivation rec {
     "-I${SDL2_net}/include/SDL2"
   ];
 
-  configurePhase = ''
-    meson setup --wrap-mode=nodownload build/release
-  '';
-
   enableParallelBuilding = true;
-
-  buildPhase = ''
-    meson compile -C build/release
-  '';
-
-  installPhase = ''
-    meson install -C build/release --destdir $out
-    mkdir -p $out/bin
-    ln -s $out/usr/local/bin/dosbox $out/bin/dosbox
-  '';
 
   postFixup = ''
     mv $out/bin/dosbox $out/bin/${pname}
-    makeWrapper $out/bin/dosbox-staging $out/bin/dosbox
+    makeWrapper $out/bin/${pname} $out/bin/dosbox
   '';
+
+  meta = with lib; {
+    homepage = "https://dosbox-staging.github.io";
+    description = "A modernized DOS emulator";
+    license = licenses.gpl2Plus;
+    platforms = platforms.unix;
+  };
 }

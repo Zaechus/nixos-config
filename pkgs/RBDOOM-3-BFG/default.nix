@@ -1,4 +1,5 @@
-{ stdenv
+{ lib
+, stdenv
 , fetchFromGitHub
 , cmake
 , directx-shader-compiler
@@ -9,12 +10,12 @@
 }:
 
 stdenv.mkDerivation rec {
-  name = "RBDOOM-3-BFG";
+  pname = "RBDOOM-3-BFG";
   version = "1.4.0";
   src = fetchFromGitHub {
     owner = "RobertBeckebans";
-    repo = "RBDOOM-3-BFG";
-    rev = "f81a8c1dd9b762774a233ba071837b2c7a374751";
+    repo = pname;
+    rev = "v${version}";
     sha256 = "sha256-r/dvTirgFXdBJ+Gjl6zpHoGCTPoo0tRmOCV9oCdnltI=";
     fetchSubmodules = true;
   };
@@ -27,6 +28,7 @@ stdenv.mkDerivation rec {
     vulkan-headers
   ];
 
+  # https://github.com/RobertBeckebans/RBDOOM-3-BFG/blob/master/neo/cmake-linux-release.sh
   configurePhase = ''
     mkdir build
     cd build
@@ -39,4 +41,11 @@ stdenv.mkDerivation rec {
     mkdir -p $out/bin
     install RBDoom3BFG $out/bin/RBDoom3BFG
   '';
+
+  meta = with lib; {
+    homepage = "https://github.com/RobertBeckebans/RBDOOM-3-BFG";
+    description = "Doom 3 BFG Edition with modern engine features";
+    license = licenses.gpl3Plus;
+    platforms = platforms.unix;
+  };
 }
