@@ -44,7 +44,11 @@ def , [
   pkg: string # Nix package to run
   args: string = "" # argument list as a string
 ] {
-  nix run $"nixpkgs#($pkg)" -- ($args | split row ' ')
+  if is-empty args {
+    nix run $"nixpkgs#($pkg)"
+  } else {
+    nix run $"nixpkgs#($pkg)" -- ($args | split row ' ')
+  }
 }
 
 # Create a shell with a set of available temporary packages
