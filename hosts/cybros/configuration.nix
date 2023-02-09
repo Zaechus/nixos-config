@@ -9,7 +9,7 @@
     ../../modules/laptop
     ../../modules/graphical
     ../../modules/network/bluetooth.nix
-    ../../modules/network/wg-quick.nix
+    ../../modules/network/wireguard.nix
 
     ../../modules/dev
     ../../modules/dev/rust
