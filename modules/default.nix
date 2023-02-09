@@ -46,6 +46,8 @@
     nix-query = "nix-store -q --references /run/current-system/sw | rg -v man | sed 's/^[^-]*-//g' | sed 's/-[0-9].*//g' | rg -v '^nix' | sort -u";
   };
 
+  security.sudo.execWheelOnly = true;
+
   services.getty = {
     greetingLine = "NixOS ${builtins.substring 0 5 config.system.nixos.label} (\\m) - \\l";
     helpLine = lib.mkForce "";
