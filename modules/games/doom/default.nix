@@ -3,7 +3,5 @@
     crispyDoom
   ];
 
-  networking.firewall.allowedUDPPorts = [
-    2342
-  ];
+  networking.firewall.allowedUDPPorts = [ 2342 ];
 }

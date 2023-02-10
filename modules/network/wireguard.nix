@@ -20,8 +20,8 @@
       };
       wireguardPeers = [{
         wireguardPeerConfig = {
-          Endpoint = "107.181.245.74:51820";
-          PublicKey = "fM5t18SNQhPw5zXr/6crLPu9KseB3/BeDF+McXoclmg=";
+          Endpoint = "174.127.84.35:51820";
+          PublicKey = "rVfgFG4lqBuuOmLUx/TiWd5IBOS7n0ejjSTW6MAEL0A=";
           AllowedIPs = [ "0.0.0.0/0" ];
           # PersistentKeepalive = 25;
         };
@@ -66,5 +66,10 @@
 
   boot.kernel.sysctl = {
     "net.ipv4.conf.all.src_valid_mark" = 1;
+  };
+
+  networking.firewall = {
+    checkReversePath = "loose";
+    # logReversePathDrops = true;
   };
 }
