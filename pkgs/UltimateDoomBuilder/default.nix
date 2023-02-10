@@ -15,14 +15,15 @@ stdenv.mkDerivation rec {
     rev = "eb974fcaf08d54c20ddc697d04f4eca84e805016";
     hash = "sha256-vl3w1q5ssOPpPxkwmq4hKgJkA7oe8W53IYXrN4ezX7c=";
   };
-  nativeBuildInputs = [
-    msbuild
-  ];
+
+  nativeBuildInputs = [ msbuild ];
+
   buildInputs = [
     libGL
     libX11
     mono
   ];
+
   installPhase = ''
     mkdir -p $out/bin
     mkdir -p $out/opt
@@ -31,4 +32,11 @@ stdenv.mkDerivation rec {
     substituteInPlace $out/opt/UltimateDoomBuilder/builder --replace Builder.exe $out/opt/UltimateDoomBuilder/Builder.exe
     ln -sf $out/opt/UltimateDoomBuilder/builder $out/bin/builder
   '';
+
+  meta = with lib; {
+    description = "Comprehensive map editor for Doom";
+    homepage = "http://doombuilder.com/";
+    license = licenses.gpl3Plus;
+    platforms = platforms.linux;
+  };
 }

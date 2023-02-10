@@ -60,8 +60,8 @@ python3Packages.buildPythonApplication rec {
     patchShebangs build-aux/meson/postinstall.py
 
     substituteInPlace bottles/backend/wine/winecommand.py --replace \
-        'self.__get_runner()' \
-        '"${steam-run}/bin/steam-run " + self.__get_runner()'
+      'self.__get_runner()' \
+      '"${steam-run}/bin/steam-run " + self.__get_runner()'
   '';
 
   nativeBuildInputs = [
