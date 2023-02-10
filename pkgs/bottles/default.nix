@@ -36,17 +36,12 @@
 , wrapGAppsHook
 , xdg-utils
 , xdpyinfo
-
-, bottlesExtraLibraries ? pkgs: [ ] # extra packages to add to steam.run multiPkgs
-, bottlesExtraPkgs ? pkgs: [ ] # extra packages to add to steam.run targetPkgs
 }:
 
 let
   steam-run = (steam.override {
-    extraLibraries = pkgs: with pkgs; [ libunwind libusb1 gnutls ]
-      ++ bottlesExtraLibraries pkgs;
-    extraPkgs = pkgs: [ ]
-      ++ bottlesExtraPkgs pkgs;
+    extraLibraries = pkgs: with pkgs; [ libunwind libusb1 gnutls ];
+    extraPkgs = pkgs: [ ];
   }).run;
 in
 python3Packages.buildPythonApplication rec {
@@ -64,10 +59,9 @@ python3Packages.buildPythonApplication rec {
     chmod +x build-aux/meson/postinstall.py
     patchShebangs build-aux/meson/postinstall.py
 
-    substituteInPlace bottles/backend/wine/winecommand.py \
-      --replace \
+    substituteInPlace bottles/backend/wine/winecommand.py --replace \
         'self.__get_runner()' \
-        '(lambda r: (f"${steam-run}/bin/steam-run {r}", r)[r == "wine" or r == "wine64"])(self.__get_runner())'
+        '"${steam-run}/bin/steam-run " + self.__get_runner()'
   '';
 
   nativeBuildInputs = [
