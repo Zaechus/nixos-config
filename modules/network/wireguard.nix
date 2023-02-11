@@ -28,7 +28,7 @@
       }];
     };
     networks.wg0 = {
-      matchConfig.Name = "wg0";
+      name = "wg0";
       address = [ "10.2.0.2/32" ];
       dns = [ "10.2.0.1" ];
       domains = [ "~." ];

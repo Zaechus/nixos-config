@@ -24,7 +24,7 @@
       anyInterface = true;
     };
     networks.all = {
-      matchConfig.Name = "en* wl*";
+      matchConfig.Name = [ "en*" "wl*" ];
       dhcpV4Config = {
         UseDNS = false;
       };
