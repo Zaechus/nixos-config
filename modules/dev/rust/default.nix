@@ -2,11 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
+    clang # cc
+    llvmPackages.bintools # lld
     rustup
-    clang
-    llvmPackages.bintools
     rust-analyzer
-    vscode-extensions.llvm-org.lldb-vscode
+    vscode-extensions.llvm-org.lldb-vscode # hx
   ];
 
   networking.firewall.allowedTCPPorts = [ 7878 ];
