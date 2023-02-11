@@ -1,13 +1,10 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    # bottles
-    my.bottles
-    # heroic # GOG (also breaks)
+    bottles
     innoextract # extract GOG offline installers
-    # (lutris.override {
-    #   extraPkgs = pkgs: [ opusfile SDL2_net ];
-    # })
-    my.lutris
+    (lutris.override {
+      extraPkgs = pkgs: [ opusfile SDL2_net ];
+    })
     (retroarch.override {
       cores = with libretro; [
         # beetle-saturn # saturn
