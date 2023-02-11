@@ -18,6 +18,9 @@
     efi.canTouchEfiVariables = true;
   };
 
+  # Intel
+  hardware.cpu.intel.updateMicrocode = true;
+
   # Enforce fstab options
   fileSystems = {
     "/".options = [ "compress=zstd" ];

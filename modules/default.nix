@@ -8,6 +8,7 @@
 {
   boot.loader.timeout = 1;
   powerManagement.cpuFreqGovernor = "schedutil";
+  boot.tmpOnTmpfs = true;
 
   # services.fwupd.enable = true;
 

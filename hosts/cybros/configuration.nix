@@ -31,12 +31,13 @@
     efi.canTouchEfiVariables = true;
   };
 
+  # AMD
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  hardware.cpu.amd.updateMicrocode = true;
+
   # Enable trim
   boot.initrd.luks.devices."root".allowDiscards = true;
   services.fstrim.enable = true;
-
-  # AMD
-  boot.initrd.kernelModules = [ "amdgpu" ];
 
   # Enforce fstab options
   fileSystems = {
