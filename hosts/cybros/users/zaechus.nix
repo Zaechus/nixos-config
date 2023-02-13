@@ -17,6 +17,8 @@
       ../../../modules/dev/home.nix
       ../../../modules/dev/rust/home.nix
       ../../../modules/games/dosbox
+
+      ../../../modules/tiny
     ];
 
     bt = {

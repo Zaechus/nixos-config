@@ -3,6 +3,7 @@ final: prev: {
     dosbox-staging = final.callPackage ./dosbox-staging { };
     iir1 = final.callPackage ./iir1 { }; # dosbox-staging
     RBDOOM-3-BFG = final.callPackage ./RBDOOM-3-BFG { };
+    tiny = final.callPackage ./tiny { };
     UltimateDoomBuilder = final.callPackage ./UltimateDoomBuilder { };
     zinfo = final.callPackage ./zinfo { };
   };
