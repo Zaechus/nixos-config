@@ -1,4 +1,5 @@
-{ stdenv
+{ lib
+, stdenv
 , fetchFromGitHub
 , msbuild
 , libGL
@@ -9,6 +10,7 @@
 stdenv.mkDerivation rec {
   pname = "UltimateDoomBuilder";
   version = "3.0.0.3274";
+
   src = fetchFromGitHub {
     owner = "jewalky";
     repo = pname;
@@ -35,7 +37,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Comprehensive map editor for Doom";
-    homepage = "http://doombuilder.com/";
+    homepage = "http://doombuilder.com";
     license = licenses.gpl3Plus;
     platforms = platforms.linux;
   };
