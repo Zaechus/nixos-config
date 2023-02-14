@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    crispyDoom
+    chocolateDoom
     sladeUnstable
     zdbsp
   ];
