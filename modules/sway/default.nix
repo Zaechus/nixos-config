@@ -1,9 +1,19 @@
-{ config, lib, options, ... }:
+{ config, lib, options, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    bemenu
+    swaylock
+    wf-recorder
+    wl-clipboard
+    wl-mirror # output mirroring
+    grim # screenshotting
+    slurp # screenshot selection
+    lm_sensors # i3status-rust temperature block
+  ];
+
   wayland.windowManager.sway = {
     enable = true;
-    package = null;
     systemdIntegration = true;
     wrapperFeatures.gtk = true;
     xwayland = true;
@@ -232,7 +242,7 @@
 
   home.sessionVariables.XDG_CURRENT_DESKTOP = "sway";
 
-  nu.startup = "if (tty) =~ \"/dev/tty1\" { exec sway }";
+  nu.startup = ''if (tty) =~ "/dev/tty1" { exec sway }'';
 
   programs.zsh.profileExtra = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then

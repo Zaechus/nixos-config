@@ -1,9 +1,10 @@
-# Extra packages/configuration for laptop devices which extra requirments such
-# as brightness control and batteries
-
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    brightnessctl
+  ];
+
   programs.bottom.settings.flags.battery = true;
 
   wayland.windowManager.sway.config = {

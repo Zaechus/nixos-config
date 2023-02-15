@@ -25,14 +25,13 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages =
-    with pkgs; [
-      exa
-      fd
-      ouch
-      ripgrep
-      my.zinfo
-    ];
+  environment.systemPackages = with pkgs; [
+    exa
+    fd
+    ouch
+    ripgrep
+    my.zinfo
+  ];
   environment.defaultPackages = [ pkgs.helix ];
   environment.variables = {
     EDITOR = "hx";

@@ -12,10 +12,8 @@
     ../../modules/network/wireguard.nix
 
     ../../modules/dev
-    ../../modules/dev/rust
-    ../../modules/virt
-
     ../../modules/slade
+    ../../modules/virt
 
     ../../modules/games
     ../../modules/games/angband

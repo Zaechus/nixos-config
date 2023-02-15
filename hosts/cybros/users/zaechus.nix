@@ -15,7 +15,7 @@
       ../../../modules/graphical/home.nix
       ../../../modules/laptop/thinkpad.nix
       ../../../modules/dev/home.nix
-      ../../../modules/dev/rust/home.nix
+      ../../../modules/dev/rust
       ../../../modules/games/dosbox
 
       ../../../modules/tiny

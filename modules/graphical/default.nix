@@ -6,10 +6,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    alsa-utils # alsamixer, amixer
     imv
     mpv
     xdg-utils # need this for copy/paste images and other stuff
-    alsa-utils # alsamixer, amixer
   ];
 
   hardware.opengl = {
@@ -20,20 +20,6 @@
     driSupport32Bit = true; # needed for some games
   };
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true; # apparently improves gtk
-    extraPackages = with pkgs; [
-      bemenu
-      swaylock
-      wf-recorder
-      wl-clipboard
-      wl-mirror # for output mirroring
-      grim # screenshotting
-      slurp # screenshot selection
-      lm_sensors # for i3status-rust temperature block
-    ];
-  };
 
   xdg = {
     # Make things like screen capture work
