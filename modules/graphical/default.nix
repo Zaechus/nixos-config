@@ -3,6 +3,7 @@
 {
   imports = [
     ../fonts
+    ../sway
   ];
 
   environment.systemPackages = with pkgs; [
@@ -19,7 +20,6 @@
     driSupport = true;
     driSupport32Bit = true; # needed for some games
   };
-
 
   xdg = {
     # Make things like screen capture work

@@ -4,7 +4,7 @@
   imports = [
     ../alacritty
     ../chromium/brave.nix
-    ../sway
+    ../sway/home.nix
   ];
 
   gtk.enable = true;
