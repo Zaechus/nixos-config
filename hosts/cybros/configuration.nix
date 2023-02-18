@@ -60,6 +60,7 @@
     aria2
     p7zip
     my.RBDOOM-3-BFG
+    my.TheForceEngine
   ];
 
   system.stateVersion = "21.11";

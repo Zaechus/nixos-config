@@ -12,6 +12,7 @@
 stdenv.mkDerivation rec {
   pname = "RBDOOM-3-BFG";
   version = "1.4.0";
+
   src = fetchFromGitHub {
     owner = "RobertBeckebans";
     repo = pname;
@@ -19,6 +20,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-r/dvTirgFXdBJ+Gjl6zpHoGCTPoo0tRmOCV9oCdnltI=";
     fetchSubmodules = true;
   };
+
   nativeBuildInputs = [
     cmake
     directx-shader-compiler
