@@ -29,4 +29,8 @@
   networking.firewall.allowedUDPPortRanges = [
     { from = 6110; to = 6120; }
   ];
+
+  environment.shellAliases = {
+    innoextract = "innoextract -m";
+  };
 }
