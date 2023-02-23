@@ -55,4 +55,6 @@
   users.motd = "\nHello, sailor!\n\n";
 
   services.udisks2.enable = true;
+
+  services.nscd.enableNsncd = true;
 }

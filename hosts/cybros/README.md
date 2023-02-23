@@ -2,7 +2,7 @@
 
 A Lenovo Thinkpad T14 Gen 2 AMD running NixOS.
 
-### sfdisk
+### `sfdisk --dump /dev/nvme0n1`
 ```
 label: gpt
 label-id: 4B26D3A4-36A2-D643-81AD-4EE0E614E0F3
