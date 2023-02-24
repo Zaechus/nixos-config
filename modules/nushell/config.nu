@@ -25,7 +25,6 @@ let-env config = {
 # aliases
 alias exa = exa --icons --color always
 
-alias angband = angband -dpref=/etc/angband/customize -mgcu
 alias cp = cp -i
 alias mv = mv -i
 

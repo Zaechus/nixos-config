@@ -16,7 +16,6 @@
     ../../modules/virt
 
     ../../modules/games
-    ../../modules/games/angband
     ../../modules/games/doom
     ../../modules/games/minecraft
 
@@ -59,6 +58,7 @@
   environment.systemPackages = with pkgs; [
     aria2
     p7zip
+    my.angband
     my.RBDOOM-3-BFG
     my.TheForceEngine
   ];

@@ -1,5 +1,6 @@
 final: prev: {
   my = {
+    angband = final.callPackage ./angband { };
     dosbox-staging = final.callPackage ./dosbox-staging { };
     iir1 = final.callPackage ./iir1 { }; # dosbox-staging
     RBDOOM-3-BFG = final.callPackage ./RBDOOM-3-BFG { };
