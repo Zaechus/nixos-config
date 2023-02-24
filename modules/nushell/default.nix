@@ -2,7 +2,7 @@
 
 let
   PROMPT =
-    if config.programs.starship.enable == false then ''
+    if !config.programs.starship.enable then ''
       def create_left_prompt [] {
         $"\n(ansi blue_bold)($env.PWD | str replace $env.HOME ~)(ansi reset)(ansi green_bold)\n〉"
       }

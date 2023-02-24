@@ -19,26 +19,12 @@
           foreground = config.theme.fg;
         };
 
-        normal = {
-          black = config.theme.black;
-          red = config.theme.red;
-          green = config.theme.green;
-          yellow = config.theme.yellow;
-          blue = config.theme.blue;
-          magenta = config.theme.magenta;
-          cyan = config.theme.cyan;
-          white = config.theme.white;
+        normal = with config.theme; {
+          inherit black red green yellow blue magenta cyan white;
         };
 
-        bright = {
-          black = config.theme.bright.black;
-          red = config.theme.bright.red;
-          green = config.theme.bright.green;
-          yellow = config.theme.bright.yellow;
-          blue = config.theme.bright.blue;
-          magenta = config.theme.bright.magenta;
-          cyan = config.theme.bright.cyan;
-          white = config.theme.bright.white;
+        bright = with config.theme.bright; {
+          inherit black red green yellow blue magenta cyan white;
         };
       };
 

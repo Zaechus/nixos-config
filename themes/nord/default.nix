@@ -20,13 +20,9 @@
     cyan = "#88C0D0"; # nord8
     white = "#E5E9F0"; # nord5
 
-    bright = {
+    bright = with config.theme; {
       black = "#4C566A"; # nord3
-      red = config.theme.red;
-      green = config.theme.green;
-      yellow = config.theme.yellow;
-      blue = config.theme.blue;
-      magenta = config.theme.magenta;
+      inherit red green yellow blue magenta;
       cyan = "#8FBCBB"; # nord7
       white = "#ECEFF4"; # nord6
     };

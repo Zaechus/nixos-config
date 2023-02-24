@@ -42,17 +42,17 @@
       up = "k";
       right = "l";
 
-      keybindings =
+      keybindings = with config.wayland.windowManager.sway.config;
         let
-          mod = config.wayland.windowManager.sway.config.modifier;
-          left = config.wayland.windowManager.sway.config.left;
-          down = config.wayland.windowManager.sway.config.down;
-          up = config.wayland.windowManager.sway.config.up;
-          right = config.wayland.windowManager.sway.config.right;
+          mod = modifier;
+          inherit left;
+          inherit down;
+          inherit up;
+          inherit right;
         in
         {
-          "${mod}+Return" = "exec ${config.wayland.windowManager.sway.config.terminal}";
-          "${mod}+d" = "exec ${config.wayland.windowManager.sway.config.menu}";
+          "${mod}+Return" = "exec ${terminal}";
+          "${mod}+d" = "exec ${menu}";
 
           "${mod}+Shift+c" = "reload";
 
@@ -143,12 +143,12 @@
 
           "${mod}+r" = ''mode "resize"'';
         };
-      modes.resize =
+      modes.resize = with config.wayland.windowManager.sway.config;
         let
-          left = config.wayland.windowManager.sway.config.left;
-          down = config.wayland.windowManager.sway.config.down;
-          up = config.wayland.windowManager.sway.config.up;
-          right = config.wayland.windowManager.sway.config.right;
+          inherit left;
+          inherit down;
+          inherit up;
+          inherit right;
         in
         {
           "Left" = "resize shrink width 10px";
@@ -218,7 +218,7 @@
     bars.top = {
       # https://github.com/greshake/i3status-rust/blob/master/doc/blocks.md
       blocks = [
-        (lib.mkIf config.bt.enable { block = "bluetooth"; mac = config.bt.mac; format_unavailable = "{label}"; })
+        (lib.mkIf config.bt.enable { block = "bluetooth"; inherit (config.bt) mac; format_unavailable = "{label}"; })
         { block = "net"; format = "<span> </span>"; format_alt = "{ssid} {signal_strength}"; }
         { block = "cpu"; icons_format = " "; }
         { block = "temperature"; format = "{max}"; }
