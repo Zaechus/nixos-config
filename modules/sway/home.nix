@@ -11,8 +11,8 @@
       defaultWorkspace = "workspace number 1";
 
       focus.wrapping = "force";
-
       gaps.smartBorders = "on";
+      window.hideEdgeBorders = "both";
 
       input."type:keyboard" = {
         repeat_delay = "300";
@@ -200,6 +200,13 @@
           childBorder = config.theme.color;
           indicator = config.theme.color;
           text = "#ffffff";
+        };
+        focusedInactive = {
+          background = config.theme.bright.black;
+          border = config.theme.bright.black;
+          childBorder = config.theme.bright.black;
+          indicator = config.theme.bright.black;
+          text = config.theme.fg;
         };
         unfocused = {
           background = config.theme.black;

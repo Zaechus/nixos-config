@@ -1,6 +1,6 @@
 # https://github.com/morhetz/gruvbox
 # https://github.com/gruvbox-community/gruvbox
-# https://camo.githubusercontent.com/410b3ab80570bcd5b470a08d84f93caa5b4962ccd994ebceeb3d1f78364c2120/687474703a2f2f692e696d6775722e636f6d2f776136363678672e706e67
+# https://raw.githubusercontent.com/wiki/gruvbox-community/gruvbox/images/gruvbox_palette_dark.png
 
 { config, pkgs, ... }:
 
@@ -76,6 +76,7 @@
     overrides.separator = "<span font='13.5'></span>";
   };
 
+  # https://chrome.google.com/webstore/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 
   programs.tmux.plugins = with pkgs.tmuxPlugins; [ gruvbox ];

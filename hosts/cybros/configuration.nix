@@ -58,6 +58,7 @@
   environment.systemPackages = with pkgs; [
     aria2
     p7zip
+    scummvm
     my.angband
     my.RBDOOM-3-BFG
     my.TheForceEngine
