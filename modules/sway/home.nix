@@ -10,9 +10,9 @@
     config = {
       defaultWorkspace = "workspace number 1";
 
+      focus.followMouse = "no";
       focus.wrapping = "force";
       gaps.smartBorders = "on";
-      window.hideEdgeBorders = "both";
 
       input."type:keyboard" = {
         repeat_delay = "300";
@@ -113,10 +113,9 @@
           "${mod}+Tab" = "move workspace to output right";
           "${mod}+Shift+Tab" = "move workspace to output left";
 
+          "Print" = "exec grim";
           "${mod}+Print" = "exec grim - | wl-copy";
           "${mod}+g" = ''exec grim -g "$(slurp)" - | wl-copy'';
-          "${mod}+Shift+g" = ''exec grim -g "$(slurp)"'';
-          "${mod}+Shift+Print" = "exec grim";
 
           "${mod}+Shift+s" = "exec swaylock -c 000000";
 
@@ -202,17 +201,17 @@
           text = "#ffffff";
         };
         focusedInactive = {
-          background = config.theme.bright.black;
-          border = config.theme.bright.black;
-          childBorder = config.theme.bright.black;
-          indicator = config.theme.bright.black;
-          text = config.theme.fg;
-        };
-        unfocused = {
           background = config.theme.black;
           border = config.theme.black;
           childBorder = config.theme.black;
           indicator = config.theme.black;
+          text = config.theme.fg;
+        };
+        unfocused = {
+          background = config.theme.bg;
+          border = config.theme.bg;
+          childBorder = config.theme.bg;
+          indicator = config.theme.bg;
           text = config.theme.fg;
         };
       };
