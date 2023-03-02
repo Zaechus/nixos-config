@@ -10,8 +10,8 @@
   ];
 
   home.file.".cargo/config.toml".text = ''
-    [build]
-    rustflags = ["-Clink-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
+    [target.x86_64-unknown-linux-gnu]
+    rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
   '';
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
