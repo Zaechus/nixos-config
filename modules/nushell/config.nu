@@ -43,7 +43,7 @@ def , [
   pkg: string # Nix package to run
   args: string = "" # argument list as a string
 ] {
-  if is-empty args {
+  if ($args | is-empty) {
     nix run $"nixpkgs#($pkg)"
   } else {
     nix run $"nixpkgs#($pkg)" -- ($args | split row ' ')
