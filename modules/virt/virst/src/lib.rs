@@ -6,13 +6,13 @@ use std::{
 pub mod cli;
 pub use cli::{Cli, Commands};
 
-pub fn vm_already_exists(iso_file: &str) -> bool {
+pub fn vm_already_exists(name: &str) -> bool {
     get_output("virsh", &["list", "--all"])
         .unwrap_or_default()
         .lines()
         .skip(2)
         .map(|l| l.split_whitespace().nth(1).unwrap_or_default())
-        .any(|x| x == iso_file)
+        .any(|x| x == name)
 }
 
 pub fn prompt(prompt: &str) -> io::Result<String> {
@@ -46,7 +46,8 @@ pub fn read_line(prompt: &str) -> io::Result<String> {
 }
 
 pub fn get_output(command: &str, args: &[&str]) -> io::Result<String> {
-    if let Ok(s) = String::from_utf8(Command::new(command).args(args).output()?.stdout) {
+    let res = Command::new(command).args(args).output()?;
+    if let Ok(s) = String::from_utf8([res.stdout, res.stderr].concat()) {
         Ok(s.trim().to_owned())
     } else {
         Err(io::Error::from(io::ErrorKind::InvalidData))

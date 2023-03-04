@@ -58,6 +58,9 @@ fn main() -> io::Result<()> {
             );
             fs::remove_file("/tmp/OVMF_VARS.fd")?;
         }
+        Commands::View { domain } => {
+            println!("{}", get_output("virt-viewer", &["-f", &domain])?);
+        }
         Commands::Start { domain } => {
             println!("{}", get_output("virsh", &["start", &domain])?);
             println!("{}", get_output("virt-viewer", &["-f", &domain])?);
@@ -72,7 +75,10 @@ fn main() -> io::Result<()> {
             println!("{}", get_output("virsh", &["destroy", &domain])?);
             println!(
                 "{}",
-                get_output("virsh", &["undefine", &domain, "--remove-all-storage"])?
+                get_output(
+                    "virsh",
+                    &["undefine", &domain, "--nvram", "--remove-all-storage"]
+                )?
             )
         }
     };

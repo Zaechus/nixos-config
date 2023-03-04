@@ -6,7 +6,7 @@ authors = ["Maxwell Anderson <zaechus@proton.me>"]
 description = "A helper utility for libvirt and virt-manager"
 
 [dependencies]
-clap = { version = "4.0", features = ["derive"] }
+clap = { version = "4.1", features = ["derive"] }
 
 [profile.release]
 panic = "abort"

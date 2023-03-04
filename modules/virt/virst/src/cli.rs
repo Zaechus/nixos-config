@@ -23,6 +23,11 @@ pub enum Commands {
         /// Path to ISO file
         iso_file: String,
     },
+    /// View a running VM
+    View {
+        /// Name of VM
+        domain: String,
+    },
     /// Launch a VM
     Start {
         /// Name of VM
