@@ -14,17 +14,30 @@ fn main() -> io::Result<()> {
                 let cores = prompt_or_default("Cores: ", "4")?;
                 let mem = prompt_or_default("Memory (MiB): ", "4096")?;
                 let size = format!("size={}", prompt_or_default("Disk size (GiB): ", "20")?);
-                println!(
-                    "{}",
-                    get_output(
-                        "virt-install",
-                        &[
-                            "--vcpus", &cores, "--memory", &mem, "--disk", &size, "--name", &name,
-                            "--boot", "loader=/etc/ovmf/OVMF_CODE.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/etc/ovmf/OVMF_VARS.fd,loader_secure=no",
-                            "--osinfo", "detect=on,name=generic", "--cdrom", &iso_file,
-                        ],
-                    )?
-                );
+                let uefi = prompt_or_default("UEFI? (Y/n): ", "y")?.to_lowercase();
+                let args = if uefi.starts_with("n") {
+                    vec![
+                        "--vcpus",
+                        &cores,
+                        "--memory",
+                        &mem,
+                        "--disk",
+                        &size,
+                        "--name",
+                        &name,
+                        "--osinfo",
+                        "detect=on,name=generic",
+                        "--cdrom",
+                        &iso_file,
+                    ]
+                } else {
+                    vec![
+                        "--vcpus", &cores, "--memory", &mem, "--disk", &size, "--name", &name,
+                        "--boot", "loader=/etc/ovmf/OVMF_CODE.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/etc/ovmf/OVMF_VARS.fd,loader_secure=no",
+                        "--osinfo", "detect=on,name=generic", "--cdrom", &iso_file,
+                    ]
+                };
+                println!("{}", get_output("virt-install", &args)?);
             }
         }
         Commands::List => println!("{}", get_output("virsh", &["list", "--all"])?),
