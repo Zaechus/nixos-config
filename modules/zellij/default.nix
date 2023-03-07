@@ -29,6 +29,7 @@
           { key = [{ Char = "i"; }]; action = [{ SwitchToMode = "Normal"; }]; }
         ];
         session = [
+          { key = [{ Ctrl = "q"; }]; action = [ "Detach" ]; }
           { key = [{ Char = "x"; }]; action = [ "Quit" ]; }
         ];
       };
