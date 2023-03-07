@@ -15,8 +15,8 @@ let
   varStr = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (k: v: "let-env ${k} = \"${v}\"")
       config.home.sessionVariables) + "\n" + ''
-    let-env PATH = ($env.PATH | split row ':') # convert PATH to table
-    let-env PATH = ($env.PATH | prepend $"($env.HOME)/.cargo/bin")
+    let-env PATH = ($env.PATH | split row ':')
+    let-env PATH = ($env.PATH | prepend $'($env.HOME)/.cargo/bin')
   '' + "\n";
   LS_COLORS =
     if (builtins.stringLength config.nu.LS_COLORS) > 0 then

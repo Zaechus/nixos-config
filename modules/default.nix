@@ -26,7 +26,6 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    exa
     fd
     ouch
     ripgrep
@@ -41,7 +40,6 @@
   environment.shells = [ pkgs.nushell ];
 
   environment.shellAliases = {
-    exa = "exa --icons --color=always";
     ll = "l -aalg";
     nix-query = "nix-store -q --references /run/current-system/sw | rg -v man | sed 's/^[^-]*-//g' | sed 's/-[0-9].*//g' | rg -v '^nix' | sort -u";
   };

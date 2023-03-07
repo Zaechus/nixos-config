@@ -22,31 +22,15 @@ let-env config = {
   ]
 }
 
-# aliases
-alias exa = exa --icons --color always
-
-alias cp = cp -i
-alias mv = mv -i
-
-alias l = ls
-alias la = l -a
-alias lal = l -al
-alias ll = l -l
-alias lt = exa --git-ignore -T
-alias lta = exa -aT
-alias lx = exa
-
-alias sc2cfg = (swaymsg input type:keyboard repeat_rate 88; swaymsg input type:keyboard repeat_delay 150)
-
 # Run nixpkgs binary without installing
 def , [
   pkg: string # Nix package to run
-  args: string = "" # argument list as a string
+  args: string = '' # argument list as a string
 ] {
   if ($args | is-empty) {
-    nix run $"nixpkgs#($pkg)"
+    nix run $'nixpkgs#($pkg)'
   } else {
-    nix run $"nixpkgs#($pkg)" -- ($args | split row ' ')
+    nix run $'nixpkgs#($pkg)' -- ($args | split row ' ')
   }
 }
 
@@ -55,4 +39,9 @@ def ,, [
   ...packages: string # packages to include
 ] {
   nix shell ($packages | each { |p| $"nixpkgs#($p)" })
+}
+
+def sc2cfg [] {
+  swaymsg input type:keyboard repeat_rate 88
+  swaymsg input type:keyboard repeat_delay 150
 }

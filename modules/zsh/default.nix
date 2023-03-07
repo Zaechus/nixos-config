@@ -13,9 +13,4 @@
       PROMPT=$'\n'"%F{6}%~%f"$'\n'"%B%(#.%F{1}.%F{2})%# %f%b"
     '';
   };
-
-  home.shellAliases = {
-    l = "exa --icons --color=always";
-    ll = "l -aalg";
-  };
 }
