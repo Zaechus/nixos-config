@@ -4,17 +4,12 @@
   ];
 
   wayland.windowManager.sway.config.input = {
-    # match on old and new TrackPoint names
-    # flat good adaptive trash
-    "2:10:TPPS/2_IBM_TrackPoint" = {
-      pointer_accel = "1";
-      accel_profile = "flat";
+    # adjust TrackPoint settings
+    "type:pointer" = {
+      pointer_accel = "0.63";
+      accel_profile = "flat"; # flat good adaptive trash
     };
-    "2:10:TPPS/2_Elan_TrackPoint" = {
-      pointer_accel = "1";
-      accel_profile = "flat";
-    };
-    # disable the touchpad by default since I use the TrackPoint on Thinkpads
+    # disable the touchpad by default
     "type:touchpad".events = "disabled";
   };
 }
