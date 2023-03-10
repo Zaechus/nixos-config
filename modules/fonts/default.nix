@@ -15,6 +15,7 @@
         monospace = [ "FiraCode Nerd Font" ];
       };
       hinting.enable = false;
+      subpixel.lcdfilter = "light"; # fix for status bar characters
     };
   };
 }
