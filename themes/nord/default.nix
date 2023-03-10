@@ -61,10 +61,7 @@
     };
   };
 
-  programs.i3status-rust.bars.top.settings.theme = {
-    name = "nord-dark";
-    overrides.separator = "<span font='13.5'></span>";
-  };
+  programs.i3status-rust.bars.top.settings.theme.name = "nord-dark";
 
   programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
 

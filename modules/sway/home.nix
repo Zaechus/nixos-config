@@ -232,7 +232,8 @@
         { block = "battery"; format = " {percentage}"; hide_missing = true; }
         { block = "time"; format = "%a %F %R"; }
       ];
-      icons = "awesome5";
+      icons = "awesome6";
+      settings.theme.overrides.separator = "<span font='13.5'></span>";
     };
   };
 

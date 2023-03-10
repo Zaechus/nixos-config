@@ -48,7 +48,6 @@
   programs.i3status-rust.bars.top.settings.theme = {
     name = "modern";
     overrides.idle_bg = config.theme.bg;
-    overrides.separator = "<span font='13.5'></span>";
   };
 
   #programs.chromium.extensions = [ "enpfonmmpgoinjpglildebkaphbhndek" ];
