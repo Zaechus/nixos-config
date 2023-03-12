@@ -7,7 +7,7 @@
   home-manager.users.zaechus = {
     programs.git = {
       userName = "Zaechus";
-      userEmail = "zaechus@proton.me";
+      userEmail = "zaechus@pm.me";
     };
 
     programs.tiny.settings = {

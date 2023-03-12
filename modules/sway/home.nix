@@ -19,6 +19,10 @@
         repeat_rate = "25";
       };
 
+      input."type:pointer" = {
+        accel_profile = "flat";
+      };
+
       output."*".bg = "${../../assets/background.jpg} fill";
 
       menu = ''
