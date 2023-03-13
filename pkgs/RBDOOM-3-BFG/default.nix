@@ -7,6 +7,7 @@
 , openal
 , SDL2
 , vulkan-headers
+, vulkan-loader
 }:
 
 stdenv.mkDerivation rec {
@@ -24,24 +25,35 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [
     cmake
     directx-shader-compiler
+  ];
+
+  buildInputs = [
     libGLU
     openal
     SDL2
     vulkan-headers
+    vulkan-loader
   ];
 
+  strictDeps = true;
+
   # https://github.com/RobertBeckebans/RBDOOM-3-BFG/blob/master/neo/cmake-linux-release.sh
-  configurePhase = ''
-    mkdir build
-    cd build
-    cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DONATIVE=ON -DFFMPEG=OFF -DBINKDEC=ON ../neo
-  '';
+  cmakeDir = "../neo";
+  cmakeFlags = [
+    "-DONATIVE=ON"
+    "-DFFMPEG=OFF"
+    "-DBINKDEC=ON"
+  ];
 
   enableParallelBuilding = true;
 
   installPhase = ''
+    runHook preInstall
+
     mkdir -p $out/bin
     install RBDoom3BFG $out/bin/RBDoom3BFG
+
+    runHook postInstall
   '';
 
   meta = with lib; {
