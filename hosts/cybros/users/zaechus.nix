@@ -1,5 +1,3 @@
-{ lib, ... }:
-
 {
   imports = [
     ../../../users/zaechus.nix

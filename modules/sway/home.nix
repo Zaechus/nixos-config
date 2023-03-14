@@ -1,4 +1,4 @@
-{ config, lib, options, pkgs, ... }:
+{ config, lib, ... }:
 
 {
   wayland.windowManager.sway = {
@@ -37,7 +37,6 @@
           --hf \${config.theme.colorFg} \
           --nf \${config.theme.fg}
       '';
-      terminal = "alacritty";
 
       modifier = "Mod4";
       floating.modifier = "Mod4";

@@ -31,4 +31,6 @@
       window.opacity = 0.9;
     };
   };
+
+  wayland.windowManager.sway.config.terminal = "alacritty msg create-window || alacritty";
 }
