@@ -35,8 +35,6 @@ stdenv.mkDerivation rec {
     vulkan-loader
   ];
 
-  strictDeps = true;
-
   # https://github.com/RobertBeckebans/RBDOOM-3-BFG/blob/master/neo/cmake-linux-release.sh
   cmakeDir = "../neo";
   cmakeFlags = [
@@ -44,8 +42,6 @@ stdenv.mkDerivation rec {
     "-DFFMPEG=OFF"
     "-DBINKDEC=ON"
   ];
-
-  enableParallelBuilding = true;
 
   installPhase = ''
     runHook preInstall
