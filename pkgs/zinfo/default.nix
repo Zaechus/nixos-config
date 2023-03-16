@@ -2,14 +2,14 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "zinfo";
-  version = "0.2.5";
+  version = "0.3.0";
 
   src = fetchCrate {
     inherit pname version;
-    hash = "sha256-7NE3awQkt3wWHsJ9BymUkmbzWjAhbsCckjB7UVRSEiM=";
+    hash = "sha256-KXE1/eBSpIWNUnD+e6cZdv0p/+VxWfgrH68KcnCfz3I=";
   };
 
-  cargoHash = "sha256-blhjz1qyr9rH6W4Umzn6DFHYs0lC4U6tEEQ8GhByyN0=";
+  cargoHash = "sha256-Gh5PVJkFkLgsRASinLeJoBlDjP3BFQABqMNvYZIv8vs=";
 
   doCheck = false;
 
