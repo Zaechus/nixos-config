@@ -61,7 +61,7 @@
     };
   };
 
-  programs.i3status-rust.bars.top.settings.theme.name = "nord-dark";
+  programs.i3status-rust.bars.top.settings.theme.theme = "nord-dark";
 
   programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
 

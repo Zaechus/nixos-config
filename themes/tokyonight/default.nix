@@ -46,7 +46,7 @@
   ];
 
   programs.i3status-rust.bars.top.settings.theme = {
-    name = "modern";
+    theme = "modern";
     overrides.idle_bg = config.theme.bg;
   };
 

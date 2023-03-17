@@ -18,19 +18,19 @@
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
   };
 
+  # FIXME: nushell broke same-name aliases
   home.shellAliases = {
-    cp = "cp -i";
-    diff = "diff --color";
+    # cp = "cp -i";
+    # diff = "diff --color";
     doas = "sudo";
-    ip = "ip -c";
-
+    # ip = "ip -c";
 
     l = "ls";
     la = "l -a";
     ll = "l -l";
     lal = "l -al";
 
-    mv = "mv -i";
+    # mv = "mv -i";
     pp = "ping 1.1.1.1";
     x = "xdg-open";
   };

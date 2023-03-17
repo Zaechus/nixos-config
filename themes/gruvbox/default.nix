@@ -68,7 +68,7 @@
     };
   };
 
-  programs.i3status-rust.bars.top.settings.theme.name = "gruvbox-dark";
+  programs.i3status-rust.bars.top.settings.theme.theme = "gruvbox-dark";
 
   # https://chrome.google.com/webstore/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];

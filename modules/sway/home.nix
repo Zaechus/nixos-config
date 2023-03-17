@@ -1,6 +1,10 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 {
+  imports = [
+    ./i3status-rust.nix
+  ];
+
   wayland.windowManager.sway = {
     enable = true;
     package = null;
@@ -218,25 +222,6 @@
           text = config.theme.fg;
         };
       };
-    };
-  };
-
-  # https://github.com/greshake/i3status-rust
-  programs.i3status-rust = {
-    enable = true;
-    bars.top = {
-      # https://github.com/greshake/i3status-rust/blob/master/doc/blocks.md
-      blocks = [
-        (lib.mkIf config.bt.enable { block = "bluetooth"; inherit (config.bt) mac; format_unavailable = "{label}"; })
-        { block = "net"; format = "<span> </span>"; format_alt = "{ssid} {signal_strength}"; }
-        { block = "cpu"; icons_format = " "; }
-        { block = "temperature"; format = "{max}"; }
-        { block = "memory"; format_mem = "{mem_used}"; format_swap = "{swap_used}"; }
-        { block = "battery"; format = " {percentage}"; hide_missing = true; }
-        { block = "time"; format = "%a %F %R"; }
-      ];
-      icons = "awesome6";
-      settings.theme.overrides.separator = "<span font='13.5'></span>";
     };
   };
 
