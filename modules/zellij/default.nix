@@ -13,7 +13,7 @@
 
     keybinds {
     	normal {
-    		unbind "Ctrl b" "Ctrl h" "Ctrl n" "Ctrl o" "Ctrl p" "Ctrl s" "Ctrl q"
+    		unbind "Ctrl b" "Ctrl h" "Ctrl n" "Ctrl o" "Ctrl p" "Ctrl s"
     		bind "Ctrl y" { SwitchToMode "Move"; }
     		bind "Ctrl b" { SwitchToMode "Resize"; }
     		bind "Ctrl q" { SwitchToMode "Session"; }
