@@ -1,33 +1,33 @@
 #!/bin/sh -e
 
 confirm_password() {
-    stty -echo
-    until [ "$pass1" = "$pass2" ] && [ "$pass2" ]; do
-        printf "%s: " "$1" >&2 && read -r pass1 && printf "\n" >&2
-        printf "confirm %s: " "$1" >&2 && read -r pass2 && printf "\n" >&2
-    done
-    stty echo
-    echo "$pass2"
+	stty -echo
+	until [ "$pass1" = "$pass2" ] && [ "$pass2" ]; do
+		printf "%s: " "$1" >&2 && read -r pass1 && printf "\n" >&2
+		printf "confirm %s: " "$1" >&2 && read -r pass2 && printf "\n" >&2
+	done
+	stty echo
+	echo "$pass2"
 }
 
 # Choose disk
 while :; do
-    lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS
-    printf "\nDisk (e.g. /dev/sda): " && read -r my_disk
-    [ -b "$my_disk" ] && break
+	lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS
+	printf "\nDisk (e.g. /dev/sda): " && read -r my_disk
+	[ -b "$my_disk" ] && break
 done
 
 cryptpass=$(confirm_password "encryption password")
 
 case "$my_disk" in
 *"nvme"*)
-    part1="$my_disk"p1
-    part2="$my_disk"p2
-    ;;
+	part1="$my_disk"p1
+	part2="$my_disk"p2
+	;;
 *)
-    part1="$my_disk"1
-    part2="$my_disk"2
-    ;;
+	part1="$my_disk"1
+	part2="$my_disk"2
+	;;
 esac
 
 # Partition
