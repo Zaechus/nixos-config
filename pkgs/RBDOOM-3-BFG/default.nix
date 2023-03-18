@@ -1,13 +1,18 @@
 { lib
 , stdenv
 , fetchFromGitHub
+, fetchpatch
 , cmake
 , directx-shader-compiler
 , libGLU
+, libpng
+, libjpeg_turbo
 , openal
+, rapidjson
 , SDL2
 , vulkan-headers
 , vulkan-loader
+, zlib
 }:
 
 stdenv.mkDerivation rec {
@@ -22,6 +27,14 @@ stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
+  patches = [
+    (fetchpatch {
+      name = "remove-jpeg_internals-define.patch";
+      url = "https://github.com/RobertBeckebans/RBDOOM-3-BFG/commit/de6ab9d31ffcd6eba26df69f8c77da38a0ab4722.diff";
+      hash = "sha256-3XbWmQtY/8a90IqDtN5TNT5EOa+i5mFOH+H9tuZqTmU=";
+    })
+  ];
+
   nativeBuildInputs = [
     cmake
     directx-shader-compiler
@@ -29,18 +42,26 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     libGLU
+    libpng
+    libjpeg_turbo
     openal
+    rapidjson
     SDL2
     vulkan-headers
     vulkan-loader
+    zlib
   ];
 
-  # https://github.com/RobertBeckebans/RBDOOM-3-BFG/blob/master/neo/cmake-linux-release.sh
   cmakeDir = "../neo";
   cmakeFlags = [
     "-DONATIVE=ON"
     "-DFFMPEG=OFF"
     "-DBINKDEC=ON"
+    "-DUSE_SYSTEM_LIBGLEW=ON"
+    "-DUSE_SYSTEM_LIBPNG=ON"
+    "-DUSE_SYSTEM_LIBJPEG=ON"
+    "-DUSE_SYSTEM_RAPIDJSON=ON"
+    "-DUSE_SYSTEM_ZLIB=ON"
   ];
 
   installPhase = ''
