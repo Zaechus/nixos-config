@@ -20,4 +20,27 @@
       settings.theme.overrides.separator = "<span font='13.5'></span>";
     };
   };
+
+  wayland.windowManager.sway.config.bars = [{
+    position = "top";
+    statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
+    fonts = {
+      names = [ "FiraCode Nerd Font" ];
+      size = 10.0;
+    };
+    colors = {
+      statusline = config.theme.fg;
+      background = config.theme.bg;
+      focusedWorkspace = {
+        background = config.theme.color;
+        border = config.theme.color;
+        text = "#ffffff";
+      };
+      inactiveWorkspace = {
+        background = config.theme.bg;
+        border = config.theme.bg;
+        text = config.theme.fg;
+      };
+    };
+  }];
 }

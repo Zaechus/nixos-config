@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./i3status-rust.nix
+    ./rustbar.nix
   ];
 
   wayland.windowManager.sway = {
@@ -175,29 +175,6 @@
         size = 9.0;
       };
 
-      bars = [{
-        position = "top";
-        statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
-        fonts = {
-          names = [ "FiraCode Nerd Font" ];
-          size = 10.0;
-        };
-        # bar colors
-        colors = {
-          statusline = config.theme.fg;
-          background = config.theme.bg;
-          focusedWorkspace = {
-            background = config.theme.color;
-            border = config.theme.color;
-            text = "#ffffff";
-          };
-          inactiveWorkspace = {
-            background = config.theme.bg;
-            border = config.theme.bg;
-            text = config.theme.fg;
-          };
-        };
-      }];
       # window colors
       colors = {
         focused = {
