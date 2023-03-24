@@ -28,7 +28,7 @@
         };
       };
 
-      window.opacity = 0.9;
+      # window.opacity = 0.9;
     };
   };
 
