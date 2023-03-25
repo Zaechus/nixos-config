@@ -1,15 +1,24 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.zellij.settings.scrollback_editor = lib.mkDefault "hx";
+  programs.zellij.settings = {
+    default_layout = "layout";
+    default_shell = lib.mkDefault "nu";
+    pane_frames = false;
+    scrollback_editor = lib.mkDefault "hx";
+    simplified_ui = true;
+  };
 
   home.packages = with pkgs; [ zellij ];
 
-  # FIXME
+  home.file.".config/zellij/layouts/layout.kdl".source = ./layout.kdl;
+
   home.file.".config/zellij/config.kdl".text = with config.programs.zellij.settings; ''
-    default_layout "layout"
-    pane_frames false
+    default_layout "${default_layout}"
+    default_shell "${default_shell}"
+    pane_frames ${if pane_frames then "true" else "false"}
     scrollback_editor "${scrollback_editor}"
+    simplified_ui ${if simplified_ui then "true" else "false"}
 
     keybinds {
     	normal {
@@ -47,6 +56,4 @@
     	}
     }
   '';
-
-  home.file.".config/zellij/layouts/layout.kdl".source = ./layout.kdl;
 }

@@ -48,4 +48,6 @@ in
   };
 
   programs.helix.settings.editor.shell = [ "nu" "-c" ];
+
+  programs.zellij.settings.default_shell = "nu";
 }
