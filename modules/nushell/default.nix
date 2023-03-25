@@ -47,7 +47,10 @@ in
       "\n" + config.nu.startup + "\n";
   };
 
-  programs.helix.settings.editor.shell = [ "nu" "-c" ];
+  programs.helix.settings = {
+    editor.shell = [ "nu" "-c" ];
+    keys.normal."C-z" = "no_op"; # nushell doesn't have suspend
+  };
 
   programs.zellij.settings.default_shell = "nu";
 }

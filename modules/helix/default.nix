@@ -1,15 +1,7 @@
 {
   programs.helix = {
     enable = true;
-
-    settings = {
-      editor = {
-        # bufferline = "multple";
-        color-modes = true;
-      };
-
-      keys.normal."C-z" = "no_op";
-    };
+    settings.editor.color-modes = true;
   };
 
   programs.zellij.settings.scrollback_editor = "hx";
