@@ -172,7 +172,7 @@
 
       fonts = {
         names = [ "FiraCode Nerd Font" ];
-        size = 10.0;
+        size = 9.0;
       };
 
       # window colors
