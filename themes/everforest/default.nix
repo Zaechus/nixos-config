@@ -19,8 +19,8 @@
     cyan = "#83c092";
     white = "#d3c6aa";
 
-    color = "#508759"; # green
-    colorFg = config.theme.cyan;
+    primary = "#508759"; # green
+    secondary = config.theme.cyan;
   };
 
   programs.neovim = {

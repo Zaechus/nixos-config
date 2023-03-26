@@ -8,18 +8,18 @@
       names = [ "FiraCode Nerd Font" ];
       size = 10.0;
     };
-    colors = {
-      statusline = config.theme.fg;
-      background = config.theme.bg;
+    colors = with config.theme; {
+      statusline = fg;
+      background = bg;
       focusedWorkspace = {
-        background = config.theme.color;
-        border = config.theme.color;
-        text = "#ffffff";
+        background = primary;
+        border = primary;
+        text = fg0;
       };
       inactiveWorkspace = {
-        background = config.theme.bg;
-        border = config.theme.bg;
-        text = config.theme.fg;
+        background = bg;
+        border = bg;
+        text = fg;
       };
     };
   }];

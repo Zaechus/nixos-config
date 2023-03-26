@@ -12,6 +12,9 @@
     bg = "#282828"; # bg 235
     fg = "#ebdbb2"; # fg 223
 
+    bg1 = "#3c3836"; # bg1 237
+    fg0 = "fbf1c7"; # fg0 229
+
     black = "#282828"; # bg 235
     red = "#cc241d"; # red 124
     green = "#98971a"; # green 106
@@ -32,8 +35,8 @@
       white = "#ebdbb2"; # fg 223
     };
 
-    color = "#665c54"; # bg3 241
-    colorFg = "#fe8019"; # orange 208
+    primary = "#665c54"; # bg3 241
+    secondary = "#fe8019"; # orange 208
   };
 
   # https://github.com/ellisonleao/gruvbox.nvim

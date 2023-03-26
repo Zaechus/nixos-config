@@ -1,7 +1,7 @@
 # https://github.com/savq/melange
 # https://github.com/savq/melange/blob/master/term/alacritty/melange_dark.yml
 
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   imports = [ ../theme.nix ];
@@ -30,20 +30,7 @@
       white = "#C1A78E";
     };
 
-    color = config.theme.bright.black;
-    colorFg = "#fe8019"; # gruvbox orange 208
+    primary = config.theme.bright.black;
+    secondary = "#fe8019"; # gruvbox orange 208
   };
-
-  #programs.neovim = {
-  #  plugins = with pkgs.vimPlugins; [
-  #    melange lualine-nvim
-  #  ];
-
-  #  extraConfig = ''
-  #    colorscheme melange
-  #    lua << END
-  #    require('lualine').setup()
-  #    END
-  #  '';
-  #};
 }

@@ -24,8 +24,8 @@
       white = "#c0caf5";
     };
 
-    color = "#475fc4"; # blue
-    colorFg = config.theme.blue;
+    primary = "#475fc4"; # blue
+    secondary = config.theme.blue;
   };
 
   programs.neovim = {

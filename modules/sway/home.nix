@@ -29,17 +29,17 @@
 
       output."*".bg = "${../../assets/background.jpg} fill";
 
-      menu = ''
+      menu = with config.theme; ''
         bemenu-run --fn 'FiraCode 14' \
-          --tb \${config.theme.bg} \
-          --fb \${config.theme.bg} \
-          --nb \${config.theme.bg} \
-          --hb \${config.theme.bg} \
-          --sb \${config.theme.bg} \
-          --ab \${config.theme.bg} \
-          --tf \${config.theme.colorFg} \
-          --hf \${config.theme.colorFg} \
-          --nf \${config.theme.fg}
+          --tb \${bg} \
+          --fb \${bg} \
+          --nb \${bg} \
+          --hb \${bg} \
+          --sb \${bg} \
+          --ab \${bg} \
+          --tf \${secondary} \
+          --hf \${secondary} \
+          --nf \${fg}
       '';
 
       modifier = "Mod4";
@@ -52,10 +52,6 @@
       keybindings = with config.wayland.windowManager.sway.config;
         let
           mod = modifier;
-          inherit left;
-          inherit down;
-          inherit up;
-          inherit right;
         in
         {
           "${mod}+Return" = "exec ${terminal}";
@@ -149,26 +145,19 @@
 
           "${mod}+r" = ''mode "resize"'';
         };
-      modes.resize = with config.wayland.windowManager.sway.config;
-        let
-          inherit left;
-          inherit down;
-          inherit up;
-          inherit right;
-        in
-        {
-          "Left" = "resize shrink width 10px";
-          "Down" = "resize grow height 10px";
-          "Up" = "resize shrink height 10px";
-          "Right" = "resize grow width 10px";
-          "${left}" = "resize shrink width 10px";
-          "${down}" = "resize grow height 10px";
-          "${up}" = "resize shrink height 10px";
-          "${right}" = "resize grow width 10px";
+      modes.resize = with config.wayland.windowManager.sway.config; {
+        "Left" = "resize shrink width 10px";
+        "Down" = "resize grow height 10px";
+        "Up" = "resize shrink height 10px";
+        "Right" = "resize grow width 10px";
+        "${left}" = "resize shrink width 10px";
+        "${down}" = "resize grow height 10px";
+        "${up}" = "resize shrink height 10px";
+        "${right}" = "resize grow width 10px";
 
-          "Return" = ''mode "default"'';
-          "Escape" = ''mode "default"'';
-        };
+        "Return" = ''mode "default"'';
+        "Escape" = ''mode "default"'';
+      };
 
       fonts = {
         names = [ "FiraCode Nerd Font" ];
@@ -176,27 +165,27 @@
       };
 
       # window colors
-      colors = {
+      colors = with config.theme; {
         focused = {
-          background = config.theme.color;
-          border = config.theme.color;
-          childBorder = config.theme.color;
-          indicator = config.theme.color;
-          text = "#ffffff";
+          background = primary;
+          border = primary;
+          childBorder = primary;
+          indicator = primary;
+          text = fg0;
         };
         focusedInactive = {
-          background = config.theme.black;
-          border = config.theme.black;
-          childBorder = config.theme.black;
-          indicator = config.theme.black;
-          text = config.theme.fg;
+          background = bg1;
+          border = bg1;
+          childBorder = bg1;
+          indicator = bg1;
+          text = fg;
         };
         unfocused = {
-          background = config.theme.bg;
-          border = config.theme.bg;
-          childBorder = config.theme.bg;
-          indicator = config.theme.bg;
-          text = config.theme.fg;
+          background = black;
+          border = black;
+          childBorder = black;
+          indicator = black;
+          text = fg;
         };
       };
     };

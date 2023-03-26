@@ -27,8 +27,8 @@
       white = "#ECEFF4"; # nord6
     };
 
-    color = "#5E81AC"; # nord10
-    colorFg = config.theme.cyan;
+    primary = "#5E81AC"; # nord10
+    secondary = config.theme.cyan;
   };
 
   # https://github.com/shaunsingh/nord.nvim/

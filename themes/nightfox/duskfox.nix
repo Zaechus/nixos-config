@@ -30,8 +30,8 @@
       white = "#e2e0f7";
     };
 
-    color = "#8063a3"; # purple
-    colorFg = config.theme.magenta;
+    primary = "#8063a3"; # purple
+    secondary = config.theme.magenta;
   };
 
   programs.neovim = {
