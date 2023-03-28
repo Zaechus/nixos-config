@@ -188,7 +188,15 @@
           text = fg;
         };
       };
+
+      assigns = {
+        "4" = [{ app_id = "lutris"; }];
+      };
     };
+
+    extraConfig = ''
+      no_focus [app_id="lutris"]
+    '';
   };
 
   home.sessionVariables.XDG_CURRENT_DESKTOP = "sway";
