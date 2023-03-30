@@ -10,23 +10,7 @@
     scrollback_editor = lib.mkDefault "hx";
     simplified_ui = true;
 
-    keybinds = ''
-      	normal {
-      		unbind "Ctrl h" "Ctrl n" "Ctrl o" "Ctrl p" "Ctrl s"
-      		bind "Ctrl y" { SwitchToMode "Move"; }
-      		bind "Ctrl b" { SwitchToMode "Resize"; }
-      		bind "Ctrl q" { SwitchToMode "Session"; }
-      		bind "Ctrl f" { SwitchToMode "Pane"; }
-      		bind "Ctrl x" { SwitchToMode "Scroll"; }
-      	}
-      	scroll {
-      		bind "i" { SwitchToMode "Normal"; }
-      	}
-      	session {
-      		bind "Ctrl q" { "Detach"; }
-      		bind "x" { "Quit"; }
-      	}
-    '';
+    keybinds = builtins.readFile ./keybinds.kdl;
   };
 
   home.file.".config/zellij/layouts/layout.kdl".source = ./layout.kdl;
