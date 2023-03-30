@@ -24,6 +24,3 @@ require'toggleterm'.setup {
 
   shade_terminals = false,
 }
-require'colorizer'.setup({'*'}, {
-  names = false,
-})

@@ -181,10 +181,10 @@
           text = fg;
         };
         unfocused = {
-          background = black;
-          border = black;
-          childBorder = black;
-          indicator = black;
+          background = bg;
+          border = bg;
+          childBorder = bg;
+          indicator = bg;
           text = fg;
         };
       };
