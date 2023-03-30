@@ -1,0 +1,29 @@
+themes {
+	gruvbox {
+		fg 213 196 161
+		bg 40 40 40
+		black 60 56 54
+		red 204 36 29
+		green 152 151 26
+		yellow 215 153 33
+		blue 69 133 136
+		magenta 177 98 134
+		cyan 104 157 106
+		white 251 241 199
+		orange 214 93 14
+	}
+
+	tokyonight-storm {
+		fg 169 177 214
+		bg 36 40 59
+		black 56 62 90
+		red 249 51 87
+		green 158 206 106
+		yellow 224 175 104
+		blue 122 162 247
+		magenta 187 154 247
+		cyan 42 195 222
+		white 192 202 245
+		orange 255 158 100
+	};
+}
