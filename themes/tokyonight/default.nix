@@ -50,7 +50,8 @@
     overrides.idle_bg = config.theme.bg;
   };
 
-  #programs.chromium.extensions = [ "enpfonmmpgoinjpglildebkaphbhndek" ];
+  # https://chrome.google.com/webstore/detail/tokyonight/enpfonmmpgoinjpglildebkaphbhndek
+  programs.chromium.extensions = [ "enpfonmmpgoinjpglildebkaphbhndek" ];
 
   # https://github.com/folke/tokyonight.nvim/blob/main/extras/tmux_tokyonight_storm.tmux
   programs.tmux.extraConfig = builtins.readFile ./tmux_tokyonight_storm.tmux;
