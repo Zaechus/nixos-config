@@ -13,3 +13,6 @@ session {
 	bind "Ctrl q" { "Detach"; }
 	bind "x" { "Quit"; }
 }
+tab {
+	unbind "Ctrl n"
+}
