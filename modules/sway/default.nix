@@ -12,7 +12,6 @@
       wl-mirror # output mirroring
       grim # screenshotting
       slurp # screenshot selection
-      lm_sensors # i3status-rust temperature block
     ];
   };
 }

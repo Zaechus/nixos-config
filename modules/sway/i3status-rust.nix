@@ -1,6 +1,8 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [ lm_sensors ];
+
   # https://github.com/greshake/i3status-rust
   programs.i3status-rust = {
     enable = true;
