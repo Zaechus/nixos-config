@@ -35,6 +35,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            nixpkgs.overlays = [ self.overlays.my ];
           }
           ./hosts/gantrithor/configuration.nix
         ];

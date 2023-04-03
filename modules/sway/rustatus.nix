@@ -1,9 +1,9 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   wayland.windowManager.sway.config.bars = [{
     position = "top";
-    statusCommand = "~/code/rustbar/target/release/rustbar";
+    statusCommand = "${pkgs.my.rustatus}/bin/rustatus";
     fonts = {
       names = [ "FiraCode Nerd Font" ];
       size = 10.0;

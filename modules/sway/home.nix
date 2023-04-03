@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./rustbar.nix
+    ./rustatus.nix
   ];
 
   wayland.windowManager.sway = {
