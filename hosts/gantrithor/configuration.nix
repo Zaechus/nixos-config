@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -8,6 +6,8 @@
     ../../modules/network/wired.nix
     ../../modules/network/wireless.nix
     ../../modules/graphical
+
+    ../../modules/ssh
 
     ./users/zaechus.nix
   ];
@@ -41,9 +41,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs wget
   #environment.systemPackages = with pkgs; [];
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   system.stateVersion = "21.11"; # Did you read the comment?
 }
