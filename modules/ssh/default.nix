@@ -1,8 +1,16 @@
 {
   services.openssh = {
     enable = true;
-    passwordAuthentication = false;
-    kbdInteractiveAuthentication = false;
-    permitRootLogin = "no";
+    settings = {
+      # PasswordAuthentication = false;
+      # KbdInteractiveAuthentication = false;
+      # PermitRootLogin = "no";
+      PermitRootLogin = "prohibit-password";
+      LogLevel = "VERBOSE";
+    };
+  };
+
+  services.fail2ban = {
+    enable = true;
   };
 }
