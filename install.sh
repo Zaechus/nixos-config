@@ -56,18 +56,13 @@ mkdir /mnt/nix
 mkdir /mnt/swap
 mount -o compress=zstd,subvol=home /dev/mapper/root /mnt/home
 mount -o compress=zstd,noatime,subvol=nix /dev/mapper/root /mnt/nix
-mount -o noatime,subvol=swap /dev/mapper/root /mnt/swap
+mount -o noatime,nodatacow,subvol=swap /dev/mapper/root /mnt/swap
 
 mkdir /mnt/boot
 mount "$part1" /mnt/boot
 
 # Swapfile
-truncate -s 0 /mnt/swap/swapfile
-chattr +C /mnt/swap/swapfile
-btrfs property set /mnt/swap/swapfile compression none
-dd if=/dev/zero of=/mnt/swap/swapfile bs=1M count=4096
-chmod 0600 /mnt/swap/swapfile
-mkswap /mnt/swap/swapfile
+btrfs filesystem mkswapfile -s 4G /mnt/swap/swapfile
 
 # NixOS
 nixos-generate-config --root /mnt
