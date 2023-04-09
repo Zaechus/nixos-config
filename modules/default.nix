@@ -43,11 +43,6 @@
   users.defaultUserShell = pkgs.nushell;
   environment.shells = [ pkgs.nushell ];
 
-  environment.shellAliases = {
-    ll = "l -aalg";
-    nix-query = "nix-store -q --references /run/current-system/sw | rg -v man | sed 's/^[^-]*-//g' | sed 's/-[0-9].*//g' | rg -v '^nix' | sort -u";
-  };
-
   security.sudo.execWheelOnly = true;
 
   services.getty = {
@@ -55,8 +50,6 @@
     helpLine = lib.mkForce "";
   };
   users.motd = "\nHello, sailor!\n\n";
-
-  services.udisks2.enable = true;
 
   services.nscd.enableNsncd = true;
 

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -12,6 +12,8 @@
     mpv
     xdg-utils # need this for copy/paste images and other stuff
   ];
+
+  services.udisks2.enable = true;
 
   hardware.opengl = {
     # Wayland
