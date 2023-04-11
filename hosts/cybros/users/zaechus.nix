@@ -1,6 +1,6 @@
 {
   imports = [
-    ../../../users/zaechus.nix
+    ../../../users/zaechus
   ];
 
   # they finally fixed it

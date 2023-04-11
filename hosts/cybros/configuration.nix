@@ -20,6 +20,7 @@
     ../../modules/games/minecraft
 
     ./users/zaechus.nix
+    ./users/lizzie.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

@@ -1,19 +1,15 @@
-{ lib, ... }:
-
 {
   imports = [
-    ../../../users/zaechus
+    ../../../users/lizzie
   ];
 
-  home-manager.users.zaechus = {
+  home-manager.users.lizzie = {
     imports = [
       ../../../modules/home.nix
       ../../../themes/tokyonight
-      ../../../modules/graphical/home.nix
       ../../../modules/laptop/thinkpad.nix
+      ../../../modules/graphical/home.nix
     ];
-
-    programs.alacritty.settings.font.size = lib.mkOverride 0 10.0;
 
     home.stateVersion = "21.11";
   };
