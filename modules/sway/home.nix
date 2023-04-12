@@ -201,7 +201,7 @@
 
   home.sessionVariables.XDG_CURRENT_DESKTOP = "sway";
 
-  nu.startup = ''if (tty) =~ "/dev/tty1" { exec sway }'';
+  nu.startup = "if (tty) =~ '/dev/tty1' { exec sway }";
 
   programs.zsh.profileExtra = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
