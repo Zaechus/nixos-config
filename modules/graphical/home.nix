@@ -29,4 +29,7 @@
     dawnTime = "05:30-06:30";
     duskTime = "20:30-21:30";
   };
+
+  # speaker pause/play button
+  services.mpris-proxy.enable = true;
 }
