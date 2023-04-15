@@ -107,11 +107,11 @@
           "${mod}+Shift+9" = "move container to workspace number 9";
           "${mod}+Shift+0" = "move container to workspace number 10";
 
-          "${mod}+n" = "focus output left";
-          "${mod}+m" = "focus output right";
+          "${mod}+z" = "focus output left";
+          "${mod}+x" = "focus output right";
 
-          "${mod}+Shift+n" = "move output left";
-          "${mod}+Shift+m" = "move output right";
+          "${mod}+Shift+z" = "move output left";
+          "${mod}+Shift+x" = "move output right";
 
           "${mod}+Tab" = "move workspace to output right";
           "${mod}+Shift+Tab" = "move workspace to output left";
@@ -132,7 +132,7 @@
 
           "${mod}+b" = "splith";
           "${mod}+v" = "splitv";
-          "${mod}+x" = "split none";
+          "${mod}+n" = "split none";
 
           "${mod}+Shift+space" = "floating toggle";
           "${mod}+space" = "focus mode_toggle";
@@ -193,10 +193,6 @@
         "4" = [{ app_id = "lutris"; }];
       };
     };
-
-    extraConfig = ''
-      no_focus [app_id="lutris"]
-    '';
   };
 
   home.sessionVariables.XDG_CURRENT_DESKTOP = "sway";

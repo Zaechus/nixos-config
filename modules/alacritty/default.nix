@@ -33,4 +33,6 @@
   };
 
   wayland.windowManager.sway.config.terminal = "alacritty msg create-window || alacritty";
+
+  home.shellAliases.peek = "alacritty msg config window.opacity=0.9";
 }
