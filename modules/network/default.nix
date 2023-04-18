@@ -20,9 +20,7 @@
 
   systemd.network = {
     enable = true;
-    wait-online = {
-      anyInterface = true;
-    };
+    wait-online.anyInterface = true;
     networks.all = {
       matchConfig.Name = [ "en*" "wl*" ];
       dhcpV4Config = {

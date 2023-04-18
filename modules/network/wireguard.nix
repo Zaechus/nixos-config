@@ -7,6 +7,7 @@
 
   systemd.network = {
     enable = true;
+    wait-online.ignoredInterfaces = [ "wg0" ];
     netdevs.wg0 = {
       netdevConfig = {
         Kind = "wireguard";
@@ -61,6 +62,9 @@
           };
         }
       ];
+      linkConfig = {
+        # ActivationPolicy = "down"; # disable wg0 by default
+      };
     };
   };
 
