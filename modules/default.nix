@@ -8,7 +8,10 @@
 {
   boot.loader.timeout = 1;
   powerManagement.cpuFreqGovernor = "schedutil";
-  boot.tmpOnTmpfs = true;
+  boot.tmp = {
+    useTmpfs = true;
+    cleanOnBoot = true;
+  };
   zramSwap = {
     enable = true;
     algorithm = "zstd";

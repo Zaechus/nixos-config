@@ -190,6 +190,7 @@
       };
 
       assigns = {
+        "2" = [{ title = "World of Warcraft"; }];
         "4" = [{ app_id = "lutris"; }];
       };
     };

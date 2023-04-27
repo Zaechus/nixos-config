@@ -1,7 +1,7 @@
 {
   users.users.zaechus = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" ];
   };
 
   home-manager.users.zaechus = {
