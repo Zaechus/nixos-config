@@ -22,12 +22,6 @@ let-env config = {
   ]
 }
 
-# FIXME: nushell broke same-name aliases
-old-alias cp = cp -i
-old-alias diff = diff --color
-old-alias ip = ip -c
-old-alias mv = mv -i
-
 # Run nixpkgs binary without installing
 def , [
   pkg: string # Nix package to run
