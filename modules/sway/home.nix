@@ -29,6 +29,10 @@
 
       output."*".bg = "${../../assets/background.jpg} fill";
 
+      # seat."*" = {
+      #   hide_cursor = "when-typing enable";
+      # };
+
       menu = with config.theme; ''
         bemenu-run --fn 'FiraCode 14' \
           --tb \${bg} \
@@ -190,8 +194,15 @@
       };
 
       assigns = {
-        "2" = [{ title = "World of Warcraft"; }];
-        "4" = [{ app_id = "lutris"; }];
+        "2" = [
+          { title = "StarCraft II"; }
+          { title = "World of Warcraft"; }
+        ];
+        "4" = [
+          { app_id = "lutris"; }
+          { title = "Battle.net"; }
+          { title = "Wine System Tray"; }
+        ];
       };
     };
   };
