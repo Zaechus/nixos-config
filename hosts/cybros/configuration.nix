@@ -17,7 +17,7 @@
 
     ../../modules/games
     ../../modules/games/doom
-    ../../modules/games/minecraft
+    # ../../modules/games/minecraft
 
     ./users/zaechus.nix
     ./users/lizzie.nix
