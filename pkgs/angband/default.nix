@@ -21,6 +21,7 @@ stdenv.mkDerivation rec {
 
   installFlags = [ "bindir=$(out)/bin" ];
 
+  # https://github.com/angband/angband/issues/5264
   postFixup = ''
     echo "" > $out/etc/angband/customize/keys-gcu.prf
   '';
