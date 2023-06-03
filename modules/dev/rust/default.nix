@@ -2,10 +2,12 @@
 
 {
   home.packages = with pkgs; [
+    cargo
     clang
     mold
-    rustup
     rust-analyzer
+    rustc
+    # rustup
     vscode-extensions.llvm-org.lldb-vscode # for hx
   ];
 
