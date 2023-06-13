@@ -7,6 +7,7 @@
     mold
     rust-analyzer
     rustc
+    rustfmt
     # rustup
     vscode-extensions.llvm-org.lldb-vscode # for hx
   ];
