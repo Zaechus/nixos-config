@@ -63,7 +63,7 @@
         }
       ];
       linkConfig = {
-        # ActivationPolicy = "down"; # disable wg0 by default
+        ActivationPolicy = "down"; # disable wg0 by default
       };
     };
   };
