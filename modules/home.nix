@@ -1,5 +1,3 @@
-{ config, ... }:
-
 {
   imports = [
     ./options.nix
@@ -15,7 +13,8 @@
   programs.bat.enable = true;
 
   home.sessionVariables = {
-    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+    # MANPAGER = "sh -c 'col -bx | bat -l man -p'"; # '-l man' broken for now
+    MANPAGER = "bat -p";
   };
 
   home.shellAliases = {
