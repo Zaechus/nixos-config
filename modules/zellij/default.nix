@@ -14,6 +14,7 @@
   };
 
   home.file.".config/zellij/layouts/layout.kdl".source = ./layout.kdl;
+  home.file.".config/zellij/layouts/layout.swap.kdl".source = ./layout.swap.kdl;
 
   home.file.".config/zellij/config.kdl".text = with config.programs.zellij.settings; ''
     default_layout "${default_layout}"
