@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     cargo
     clang
+    clippy
     mold
     rust-analyzer
     rustc
