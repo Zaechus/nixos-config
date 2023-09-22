@@ -27,7 +27,7 @@
     position = "top";
     statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
     fonts = {
-      names = [ "FiraCode Nerd Font" ];
+      names = [ "Fira Code" ];
       size = 10.0;
     };
     colors = with config.theme; {

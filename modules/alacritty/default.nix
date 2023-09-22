@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       font = {
-        normal.family = "FiraCode Nerd Font";
+        normal.family = "Fira Code";
         size = 11.0;
       };
 

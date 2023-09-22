@@ -6,14 +6,10 @@
       dejavu_fonts
       fira
       fira-code
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
-      noto-fonts-emoji
     ];
 
     fontconfig = {
-      defaultFonts = {
-        monospace = [ "FiraCode Nerd Font" ];
-      };
+      defaultFonts.monospace = [ "Fira Code" ];
       hinting.enable = false;
       subpixel.lcdfilter = "light"; # fix for status bar characters
     };

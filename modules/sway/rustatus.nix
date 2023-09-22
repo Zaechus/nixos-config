@@ -5,7 +5,7 @@
     position = "top";
     statusCommand = "${pkgs.my.rustatus}/bin/rustatus";
     fonts = {
-      names = [ "FiraCode Nerd Font" ];
+      names = [ "Fira Code" ];
       size = 10.0;
     };
     colors = with config.theme; {

@@ -33,7 +33,7 @@
       # };
 
       menu = with config.theme; ''
-        bemenu-run --fn 'FiraCode 14' \
+        bemenu-run --fn 'Fira Code 14' \
           --tb \${bg} \
           --fb \${bg} \
           --nb \${bg} \
@@ -163,7 +163,7 @@
       };
 
       fonts = {
-        names = [ "FiraCode Nerd Font" ];
+        names = [ "Fira Code" ];
         size = 9.0;
       };
 
