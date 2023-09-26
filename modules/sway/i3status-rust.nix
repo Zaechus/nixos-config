@@ -26,7 +26,7 @@
     position = "top";
     statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
     fonts = {
-      names = [ "Fira Code" ];
+      names = [ config.fonts.monospace ];
       size = 10.0;
     };
     colors = with config.theme; {

@@ -33,7 +33,7 @@
       # };
 
       menu = with config.theme; ''
-        bemenu-run --fn 'Fira Code 14' \
+        bemenu-run --fn '${config.fonts.monospace} 14' \
           --tb \${bg} \
           --fb \${bg} \
           --nb \${bg} \
@@ -163,7 +163,7 @@
       };
 
       fonts = {
-        names = [ "Fira Code" ];
+        names = [ config.fonts.monospace ];
         size = 9.0;
       };
 

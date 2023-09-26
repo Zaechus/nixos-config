@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       font = {
-        normal.family = "Fira Code";
+        normal.family = config.fonts.monospace;
         size = 11.0;
       };
 
