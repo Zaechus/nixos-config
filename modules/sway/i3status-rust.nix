@@ -9,7 +9,6 @@
     bars.top = {
       # https://greshake.github.io/i3status-rust/i3status_rs/blocks/index.html
       blocks = [
-        (lib.mkIf config.bt.enable { block = "bluetooth"; inherit (config.bt) mac; format = " $icon {$percentage|} "; disconnected_format = " $available$icon "; })
         # TODO: fix net block; maybe file an issue for how broken it is
         { block = "net"; device = "(en|wl).*"; format = " $icon  "; format_alt = " $icon{ $ssid $signal_strength|}  "; missing_format = ""; }
         { block = "cpu"; format = " $utilization "; }
