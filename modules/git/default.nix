@@ -1,7 +1,10 @@
 {
   programs.git = {
     enable = true;
-    extraConfig.init.defaultBranch = "main";
+    extraConfig = {
+      init.defaultBranch = "main";
+      pull.ff = "only";
+    };
 
     delta = {
       enable = true;
