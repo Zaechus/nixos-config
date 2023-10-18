@@ -28,9 +28,7 @@
 
       output."*".bg = "${../../assets/background.jpg} fill";
 
-      # seat."*" = {
-      #   hide_cursor = "when-typing enable";
-      # };
+      # seat."*".hide_cursor = "when-typing enable";
 
       menu = with config.theme; ''
         bemenu-run --fn '${config.fonts.monospace} 14' \
@@ -131,7 +129,7 @@
           "XF86AudioRaiseVolume" = "exec amixer set Master 5%+";
           "XF86AudioLowerVolume" = "exec amixer set Master 5%-";
           "XF86AudioMute" = "exec amixer set Master toggle";
-          "XF86AudioMicMute" = "exec 'amixer set Capture toggle && amixer -c 1 set Capture nocap'";
+          "XF86AudioMicMute" = "exec amixer set Capture toggle";
 
           "${mod}+b" = "splith";
           "${mod}+v" = "splitv";
