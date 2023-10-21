@@ -15,6 +15,7 @@
     dnssec = "true";
     extraConfig = ''
       DNSOverTLS=yes
+      MulticastDNS=yes;
     '';
   };
 
@@ -23,6 +24,12 @@
     wait-online.anyInterface = true;
     networks.all = {
       matchConfig.Name = [ "en*" "wl*" ];
+      networkConfig = {
+        MulticastDNS = true;
+      };
+      linkConfig = {
+        Multicast = true;
+      };
       dhcpV4Config = {
         UseDNS = false;
       };
@@ -31,4 +38,6 @@
       };
     };
   };
+
+  networking.firewall.allowedUDPPorts = [ 5353 ]; # mDNS
 }
