@@ -192,6 +192,7 @@
 
       assigns = {
         "2" = [
+          { title = "Cuphead"; }
           { title = "Hollow Knight"; }
           { title = "StarCraft II"; }
           { title = "WineDesktop - Wine desktop"; }

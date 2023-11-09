@@ -9,6 +9,7 @@
       cores = with libretro; [
         # beetle-saturn # saturn
         bsnes # snes
+        dolphin # gamecube
         freeintv # intellivision
         gambatte # game boy
         genesis-plus-gx # genesis
@@ -21,13 +22,17 @@
         stella # atari 2600
       ];
     })
+    ruffle # flash
   ];
 
   programs.steam.enable = true; # includes steam-run for dumb binaries
 
-  # open blizzard ports
+  # LAN game ports
   networking.firewall.allowedUDPPortRanges = [
-    { from = 6110; to = 6120; }
+    { from = 6110; to = 6120; } # blizzard
+  ];
+  networking.firewall.allowedUDPPorts = [
+    7551 # halo
   ];
 
   environment.shellAliases = {
