@@ -201,6 +201,7 @@
         "4" = [
           { app_id = "lutris"; }
           { title = "Battle.net"; }
+          { title = "Steam"; }
           { title = "Wine System Tray"; }
         ];
       };

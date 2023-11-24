@@ -8,7 +8,6 @@
     (retroarch.override {
       cores = with libretro; [
         # beetle-saturn # saturn
-        bsnes # snes
         dolphin # gamecube
         freeintv # intellivision
         gambatte # game boy
@@ -16,7 +15,6 @@
         mesen # nes
         mgba # game boy advanced
         mupen64plus # n64
-        nestopia # nes
         prosystem # atari 7800
         snes9x # snes
         stella # atari 2600
