@@ -2,7 +2,9 @@
   environment.systemPackages = with pkgs; [
     # bottles # broken on both upstream and downstream again lol
     innoextract # extract GOG offline installers
-    lutris
+    (lutris.override {
+      extraPkgs = pkgs: [ wine ]; # sigh: https://github.com/lutris/lutris/issues/512
+    })
     (retroarch.override {
       cores = with libretro; [
         # beetle-saturn # saturn
