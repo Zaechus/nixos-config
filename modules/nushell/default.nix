@@ -22,14 +22,6 @@ let
     if (builtins.stringLength config.nu.LS_COLORS) > 0 then
       "$env.LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n"
     else "";
-  zoxide_init =
-    if config.programs.zoxide.enable then ''
-      zoxide init nushell | save -f ~/.zoxide.nu
-    '' else "";
-  zoxide_source =
-    if config.programs.zoxide.enable then ''
-      source ~/.zoxide.nu
-    '' else "";
 in
 {
   programs.nushell = {
@@ -38,12 +30,10 @@ in
     extraEnv =
       PROMPT +
       varStr +
-      LS_COLORS +
-      zoxide_init;
+      LS_COLORS;
     configFile.source = ./config.nu;
     extraConfig =
       aliasStr + "\n" +
-      zoxide_source +
       "\n" + config.nu.startup + "\n";
   };
 
