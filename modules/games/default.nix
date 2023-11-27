@@ -32,8 +32,4 @@
   networking.firewall.allowedUDPPorts = [
     7551 # halo
   ];
-
-  environment.shellAliases = {
-    innoextract = "innoextract -m";
-  };
 }
