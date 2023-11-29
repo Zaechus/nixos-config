@@ -19,11 +19,7 @@
         system = "x86_64-linux";
         modules = [
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            nixpkgs.overlays = [ self.overlays.my ];
-          }
+          { nixpkgs.overlays = [ self.overlays.my ]; }
           ./hosts/cybros/configuration.nix
         ];
       };
@@ -32,11 +28,6 @@
         system = "x86_64-linux";
         modules = [
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            nixpkgs.overlays = [ self.overlays.my ];
-          }
           ./hosts/gantrithor/configuration.nix
         ];
       };
