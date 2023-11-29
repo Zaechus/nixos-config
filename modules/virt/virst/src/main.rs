@@ -1,4 +1,4 @@
-use std::{fs, io};
+use std::io;
 
 use clap::Parser;
 
@@ -14,38 +14,31 @@ fn main() -> io::Result<()> {
                 let cores = prompt_or_default("Cores: ", "4")?;
                 let mem = prompt_or_default("Memory (MiB): ", "4096")?;
                 let size = format!("size={}", prompt_or_default("Disk size (GiB): ", "20")?);
-                let uefi = prompt_or_default("UEFI? (Y/n): ", "y")?.to_lowercase();
-                let args = if uefi.starts_with("n") {
-                    vec![
-                        "--vcpus",
-                        &cores,
-                        "--memory",
-                        &mem,
-                        "--disk",
-                        &size,
-                        "--name",
-                        &name,
-                        "--osinfo",
-                        "detect=on,name=generic",
-                        "--cdrom",
-                        &iso_file,
-                    ]
+                let uefi = prompt_or_default("UEFI? (y/N): ", "n")?.to_lowercase();
+                let args = [
+                    "--vcpus",
+                    &cores,
+                    "--memory",
+                    &mem,
+                    "--disk",
+                    &size,
+                    "--name",
+                    &name,
+                    "--osinfo",
+                    "detect=on,name=generic",
+                    "--cdrom",
+                    &iso_file,
+                ];
+                let args = if uefi.starts_with("y") {
+                    [args.as_slice(), &["--boot", "loader=/etc/ovmf/OVMF_CODE.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/etc/ovmf/OVMF_VARS.fd,loader_secure=no"]].concat()
                 } else {
-                    vec![
-                        "--vcpus", &cores, "--memory", &mem, "--disk", &size, "--name", &name,
-                        "--boot", "loader=/etc/ovmf/OVMF_CODE.fd,loader.readonly=yes,loader.type=pflash,nvram.template=/etc/ovmf/OVMF_VARS.fd,loader_secure=no",
-                        "--osinfo", "detect=on,name=generic", "--cdrom", &iso_file,
-                    ]
+                    args.to_vec()
                 };
                 println!("{}", get_output("virt-install", &args)?);
             }
         }
         Commands::List => println!("{}", get_output("virsh", &["list", "--all"])?),
         Commands::Live { iso_file } => {
-            fs::copy("/etc/ovmf/OVMF_VARS.fd", "/tmp/OVMF_VARS.fd")?;
-            let mut perms = fs::metadata("/tmp/OVMF_VARS.fd")?.permissions();
-            perms.set_readonly(false);
-            fs::set_permissions("/tmp/OVMF_VARS.fd", perms)?;
             println!(
                 "{}",
                 get_output(
@@ -60,16 +53,11 @@ fn main() -> io::Result<()> {
                         "-vga",
                         "virtio",
                         "-full-screen",
-                        "-drive",
-                        "if=pflash,format=raw,unit=0,readonly=on,file=/etc/ovmf/OVMF_CODE.fd",
-                        "-drive",
-                        "if=pflash,format=raw,unit=1,file=/tmp/OVMF_VARS.fd",
                         "-cdrom",
                         &iso_file
                     ]
                 )?
             );
-            fs::remove_file("/tmp/OVMF_VARS.fd")?;
         }
         Commands::View { domain } => {
             println!("{}", get_output("virt-viewer", &["-f", &domain])?);
