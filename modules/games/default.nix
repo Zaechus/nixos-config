@@ -21,6 +21,7 @@
       ];
     })
     ruffle # flash
+    wineWowPackages.staging
   ];
 
   programs.steam.enable = true; # includes steam-run for dumb binaries
