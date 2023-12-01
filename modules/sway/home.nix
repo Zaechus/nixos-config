@@ -195,7 +195,7 @@
           { title = "Cuphead"; }
           { title = "Hollow Knight"; }
           { title = "StarCraft II"; }
-          { title = "WineDesktop - Wine desktop"; }
+          { title = "Wine desktop"; }
           { title = "World of Warcraft"; }
         ];
         "4" = [
