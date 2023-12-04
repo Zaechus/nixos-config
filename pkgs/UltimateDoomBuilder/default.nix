@@ -14,8 +14,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "jewalky";
     repo = pname;
-    rev = "eb974fcaf08d54c20ddc697d04f4eca84e805016";
-    hash = "sha256-vl3w1q5ssOPpPxkwmq4hKgJkA7oe8W53IYXrN4ezX7c=";
+    rev = "6d5098a075706e995105af50b6840fe53afb65bd";
+    hash = "sha256-yQ1dhWwpAT2awjp8oQFynjez+2mLWxS9eJ4Jva0pWEk=";
   };
 
   nativeBuildInputs = [ msbuild ];

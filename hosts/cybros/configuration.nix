@@ -63,6 +63,7 @@
     scummvm
     my.angband
     my.TheForceEngine
+    rbdoom-3-bfg
   ];
 
   system.stateVersion = "21.11";

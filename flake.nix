@@ -28,6 +28,7 @@
         system = "x86_64-linux";
         modules = [
           home-manager.nixosModules.home-manager
+          { nixpkgs.overlays = [ self.overlays.my ]; }
           ./hosts/gantrithor/configuration.nix
         ];
       };
