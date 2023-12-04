@@ -205,6 +205,17 @@
           { title = "Wine System Tray"; }
         ];
       };
+
+      startup = [
+        {
+          command = ''
+            swayidle -w timeout 300 'swaylock -fc 000000' \
+              timeout 600 'swaymsg output "*" power off' \
+                resume 'swaymsg output "*" power on' \
+              before-sleep 'swaylock -fc 000000'
+          '';
+        }
+      ];
     };
   };
 

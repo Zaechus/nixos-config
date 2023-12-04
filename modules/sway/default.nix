@@ -6,6 +6,7 @@
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       bemenu
+      swayidle
       swaylock
       wf-recorder
       wl-clipboard
