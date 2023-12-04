@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+
+{
   environment.systemPackages = with pkgs; [
     # bottles # broken on both upstream and downstream again lol
     innoextract # extract GOG offline installers
@@ -20,7 +22,6 @@
         stella # atari 2600
       ];
     })
-    ruffle # flash
     wineWowPackages.staging
     winetricks
   ];

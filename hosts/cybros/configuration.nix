@@ -14,9 +14,9 @@
     ../../modules/dev
     ../../modules/slade
     ../../modules/virt
-    # ../../modules/sway/wayvnc
 
     ../../modules/games
+    ../../modules/games/misc.nix
     ../../modules/games/doom
     # ../../modules/games/minecraft
 
