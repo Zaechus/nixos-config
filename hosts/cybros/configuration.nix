@@ -16,7 +16,7 @@
     ../../modules/virt
 
     ../../modules/games
-    ../../modules/games/misc.nix
+    ../../modules/games/misc
     ../../modules/games/doom
     # ../../modules/games/minecraft
 
