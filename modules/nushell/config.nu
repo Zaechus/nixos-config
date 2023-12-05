@@ -22,6 +22,8 @@ $env.config = {
   ]
 }
 
+alias innoextract = innoextract -gm
+
 # Run nixpkgs binary without installing
 def , [
   pkg: string # Nix package to run
@@ -44,13 +46,4 @@ def ,, [
 def sc2cfg [] {
   swaymsg input type:keyboard repeat_rate 88
   swaymsg input type:keyboard repeat_delay 150
-}
-
-def gogextract [file: string] {
-  let outdir = $file | str replace -r '^setup_' '' | str replace -r '_\(\w+\).exe$' ''
-  mkdir $outdir
-  innoextract -gm -d $outdir $file
-  cd $outdir
-  rm -r Customer_support.htm DOSBOX __redist __support app commonappdata goggame-*
-  cd ..
 }
