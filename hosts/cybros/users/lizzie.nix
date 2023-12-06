@@ -13,7 +13,7 @@
       ../../../modules/graphical/home.nix
     ];
 
-    nu.startup = lib.mkOverride 0 "if (tty) =~ '/dev/tty' { exec sway }";
+    programs.nushell.loginFile.text = lib.mkOverride 0 "if (tty) =~ '/dev/tty' { exec sway }";
 
     home.stateVersion = "21.11";
   };

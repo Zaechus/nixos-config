@@ -1,3 +1,6 @@
 {
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = false; # behind again
+  };
 }

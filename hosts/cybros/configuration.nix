@@ -22,6 +22,8 @@
 
     ./users/zaechus.nix
     ./users/lizzie.nix
+
+    ../../modules/nix-ld
   ];
 
   # Use the systemd-boot EFI boot loader.

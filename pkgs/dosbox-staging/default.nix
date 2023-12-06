@@ -11,6 +11,7 @@
 , alsa-lib
 , fluidsynth
 , glib
+, iir1
 , libmt32emu
 , libogg
 , libpng
@@ -20,7 +21,6 @@
 , SDL2_image
 , SDL2_net
 , speexdsp
-, my
 }:
 
 stdenv.mkDerivation rec {
@@ -55,7 +55,7 @@ stdenv.mkDerivation rec {
     SDL2_image
     SDL2_net
     speexdsp
-    my.iir1
+    iir1
   ];
 
   NIX_CFLAGS_COMPILE = [

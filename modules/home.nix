@@ -7,7 +7,7 @@
     ./helix
     ./nushell
     ./starship
-    # ./zoxide
+    ./zoxide
   ];
 
   programs.bat.enable = true;
