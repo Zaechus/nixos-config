@@ -1,6 +1,9 @@
 {
   programs.bottom = {
     enable = true;
-    settings.flags.regex = true;
+    settings.flags = {
+      battery = true;
+      regex = true;
+    };
   };
 }

@@ -6,6 +6,7 @@
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       bemenu
+      brightnessctl
       swayidle
       swaylock
       wf-recorder

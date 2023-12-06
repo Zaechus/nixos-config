@@ -26,6 +26,11 @@
         accel_profile = "flat";
       };
 
+      input."type:touchpad" = {
+        pointer_accel = "0.4";
+        natural_scroll = "enabled";
+      };
+
       output."*".bg = "${../../assets/background.jpg} fill";
 
       # seat."*".hide_cursor = "when-typing enable";
@@ -125,6 +130,9 @@
 
           "${mod}+t" = "input type:touchpad events disabled";
           "${mod}+Shift+t" = "input type:touchpad events enabled";
+
+          "XF86MonBrightnessUp" = "exec brightnessctl s +5%";
+          "XF86MonBrightnessDown" = "exec brightnessctl s 5%-";
 
           "XF86AudioRaiseVolume" = "exec amixer set Master 5%+";
           "XF86AudioLowerVolume" = "exec amixer set Master 5%-";

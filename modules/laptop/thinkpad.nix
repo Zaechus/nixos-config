@@ -1,12 +1,8 @@
 {
-  imports = [
-    ./home.nix
-  ];
-
   wayland.windowManager.sway.config.input =
     let
       pointer_accel = "0.63";
-      accel_profile = "flat"; # flat good adaptive trash
+      accel_profile = "flat"; # flat good, adaptive trash
     in
     {
       # older thinkpads

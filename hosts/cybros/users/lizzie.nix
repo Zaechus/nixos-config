@@ -9,7 +9,6 @@
     imports = [
       ../../../modules/home.nix
       ../../../themes/tokyonight
-      ../../../modules/laptop/home.nix
       ../../../modules/graphical/home.nix
     ];
 
