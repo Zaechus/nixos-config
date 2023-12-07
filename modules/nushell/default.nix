@@ -1,4 +1,4 @@
-{ config, lib, osConfig, ... }:
+{ config, lib, ... }:
 
 let
   PROMPT =
@@ -12,10 +12,6 @@ let
   aliases = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (k: v: "alias ${k} = ${v}")
       config.home.shellAliases) + "\n";
-  loginVars = "if $nu.is-login {\n" +
-    lib.concatStringsSep "\n"
-      (lib.mapAttrsToList (k: v: "  $env.${k} = \"${v}\"")
-        osConfig.environment.variables) + "\n}\n\n";
   vars =
     lib.concatStringsSep "\n"
       (lib.mapAttrsToList (k: v: "$env.${k} = \"${v}\"")
@@ -40,7 +36,6 @@ in
     envFile.source = ./env.nu;
     extraEnv =
       PROMPT +
-      loginVars +
       vars +
       LS_COLORS +
       zoxideEnv;
