@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, osConfig, ... }:
 
 let
   PROMPT =
@@ -9,18 +9,23 @@ let
 
       $env.PROMPT_COMMAND = { create_left_prompt }
     '' else "";
-  aliasStr = lib.concatStringsSep "\n"
+  aliases = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (k: v: "alias ${k} = ${v}")
       config.home.shellAliases) + "\n";
-  varStr = lib.concatStringsSep "\n"
-    (lib.mapAttrsToList (k: v: "$env.${k} = \"${v}\"")
-      config.home.sessionVariables) + "\n" + ''
+  loginVars = "if $nu.is-login {\n" +
+    lib.concatStringsSep "\n"
+      (lib.mapAttrsToList (k: v: "  $env.${k} = \"${v}\"")
+        osConfig.environment.variables) + "\n}\n\n";
+  vars =
+    lib.concatStringsSep "\n"
+      (lib.mapAttrsToList (k: v: "$env.${k} = \"${v}\"")
+        config.home.sessionVariables) + "\n\n" + ''
     $env.PATH = ($env.PATH | split row (char esep))
     $env.PATH = (if $'($env.HOME)/.cargo/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($env.HOME)/.cargo/bin' })
   '' + "\n";
   LS_COLORS =
     if (builtins.stringLength config.nu.LS_COLORS) > 0 then
-      "$env.LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n"
+      "\n$env.LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n"
     else "";
   zoxideEnv = if config.programs.zoxide.enable then ''
     zoxide init nushell | save -f ~/.zoxide.nu
@@ -35,12 +40,13 @@ in
     envFile.source = ./env.nu;
     extraEnv =
       PROMPT +
-      varStr +
+      loginVars +
+      vars +
       LS_COLORS +
       zoxideEnv;
     configFile.source = ./config.nu;
     extraConfig =
-      aliasStr +
+      aliases +
       zoxideConfig;
   };
 

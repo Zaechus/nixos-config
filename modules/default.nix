@@ -39,6 +39,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     fd
+    file
     ouch
     ripgrep
     my.zinfo

@@ -229,7 +229,7 @@
 
   home.sessionVariables.XDG_CURRENT_DESKTOP = "sway";
 
-  programs.nushell.loginFile.text = "if (tty) =~ '/dev/tty1' { exec sway }";
+  programs.nushell.extraLogin = "if (tty) =~ '/dev/tty1' { exec sway }";
 
   programs.zsh.profileExtra = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
