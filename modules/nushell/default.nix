@@ -16,19 +16,21 @@ let
     lib.concatStringsSep "\n"
       (lib.mapAttrsToList (k: v: "$env.${k} = \"${v}\"")
         config.home.sessionVariables) + "\n\n" + ''
-    $env.PATH = ($env.PATH | split row (char esep))
-    $env.PATH = (if $'($env.HOME)/.cargo/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($env.HOME)/.cargo/bin' })
-  '' + "\n";
+      $env.PATH = ($env.PATH | split row (char esep))
+      $env.PATH = (if $'($env.HOME)/.cargo/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($env.HOME)/.cargo/bin' })
+    '' + "\n";
   LS_COLORS =
     if (builtins.stringLength config.nu.LS_COLORS) > 0 then
-      "\n$env.LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n"
+      "\n$env.LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n\n"
     else "";
-  zoxideEnv = if config.programs.zoxide.enable then ''
-    zoxide init nushell | save -f ~/.zoxide.nu
-    open ~/.zoxide.nu | str replace -a 'def-env' 'def --env' | save -f ~/.zoxide.nu
-  '' else "";
-  zoxideConfig = if config.programs.zoxide.enable then
-    "\n" + "source ~/.zoxide.nu" + "\n" else "";
+  zoxideEnv =
+    if config.programs.zoxide.enable then ''
+      zoxide init nushell | save -f ~/.zoxide.nu
+      open ~/.zoxide.nu | str replace -a 'def-env' 'def --env' | save -f ~/.zoxide.nu
+    '' else "";
+  zoxideConfig =
+    if config.programs.zoxide.enable then
+      "\n" + "source ~/.zoxide.nu" + "\n" else "";
 in
 {
   programs.nushell = {

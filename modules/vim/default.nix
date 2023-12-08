@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 
 {
   programs.neovim.vimAlias = lib.mkOverride 1 false;
