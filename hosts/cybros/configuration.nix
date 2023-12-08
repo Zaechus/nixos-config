@@ -62,7 +62,6 @@
     p7zip
     scummvm
     my.angband
-    my.TheForceEngine
     rbdoom-3-bfg
   ];
 

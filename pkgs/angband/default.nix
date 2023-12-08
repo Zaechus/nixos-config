@@ -7,7 +7,7 @@
 
 stdenv.mkDerivation rec {
   pname = "angband";
-  version = "4.2.4";
+  version = "4.2.5";
 
   src = fetchFromGitHub {
     owner = pname;
