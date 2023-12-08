@@ -27,5 +27,5 @@ passwd $USER
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 ```
-./nix.sh $USER@$HOST
+./nix.sh $USER
 ```
