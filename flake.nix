@@ -35,6 +35,12 @@
     };
 
     homeConfigurations = {
+      zaechus = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        modules = [
+          ./users/zaechus/home.nix
+        ];
+      };
       "lizzie@sparkle3" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
