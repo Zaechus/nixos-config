@@ -227,7 +227,12 @@
     };
   };
 
-  home.sessionVariables.XDG_CURRENT_DESKTOP = "sway";
+  home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "sway";
+    NIXOS_OZONE_WL = "1";
+  };
+
+  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 
   programs.nushell.extraLogin = "if (tty) =~ '/dev/tty1' { exec sway }";
 

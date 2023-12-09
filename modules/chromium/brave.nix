@@ -1,21 +1,13 @@
 { pkgs, ... }:
 
 {
-  programs.chromium = {
-    enable = true;
-    package = pkgs.brave;
-    extensions = [
-      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
-      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
-    ];
-  };
+  imports = [
+    ./default.nix
+  ];
 
-  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+  programs.chromium.package = pkgs.brave;
 
-  home.sessionVariables = {
-    BROWSER = "brave";
-    NIXOS_OZONE_WL = "1";
-  };
+  home.sessionVariables.BROWSER = "brave";
 
   xdg.mimeApps.defaultApplications = {
     "text/html" = "brave-browser.desktop"; # for some reason this isn't a default

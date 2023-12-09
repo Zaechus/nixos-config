@@ -61,8 +61,9 @@
     aria2
     p7zip
     scummvm
-    my.angband
     rbdoom-3-bfg
+
+    my.angband
   ];
 
   system.stateVersion = "21.11";

@@ -1,14 +1,9 @@
 { pkgs, ... }:
 
 {
-  programs.chromium = {
-    enable = true;
-    package = pkgs.ungoogled-chromium;
-    extensions = [
-      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # Ublock Origin
-    ];
-  };
+  imports = [
+    ./default.nix
+  ];
 
-  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+  programs.chromium.package = pkgs.ungoogled-chromium;
 }
