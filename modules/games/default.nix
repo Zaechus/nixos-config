@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     innoextract # extract GOG offline installers
+    my.ley
     (retroarch.override {
       cores = with libretro; [
         # beetle-saturn # saturn
