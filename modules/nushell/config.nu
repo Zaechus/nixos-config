@@ -23,6 +23,7 @@ $env.config = {
 }
 
 alias innoextract = innoextract -gm
+alias scrcpy = scrcpy -KM --forward-all-clicks
 
 # Run nixpkgs binary without installing
 def , [
