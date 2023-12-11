@@ -22,7 +22,6 @@ $env.config = {
   ]
 }
 
-alias innoextract = innoextract -gm
 alias scrcpy = scrcpy -KM --forward-all-clicks
 
 # Run nixpkgs binary without installing
@@ -47,6 +46,14 @@ def ,, [
 def sc2cfg [] {
   swaymsg input type:keyboard repeat_rate 88
   swaymsg input type:keyboard repeat_delay 150
+}
+
+def gogextract [file: string] {
+  innoextract -gm -d ($file | str replace -ra '^setup_|\.exe$' '') $file
+}
+
+def gogclean [] {
+  rm -r goggame-*.* DOSBOX __redist __support app commonappdata Customer_support.htm
 }
 
 def setup_quake [] {
