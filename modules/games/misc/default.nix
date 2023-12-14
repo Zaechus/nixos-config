@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # appimage-run # mcpelauncher
     bchunk
     dhewm3 # doom 3
     # ecwolf # wolf3d

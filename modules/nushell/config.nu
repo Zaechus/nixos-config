@@ -1,6 +1,9 @@
 $env.config = {
   show_banner: false
   edit_mode: vi
+  ls: {
+    clickable_links: false
+  }
   cursor_shape: {
     vi_insert: block
     vi_normal: block
