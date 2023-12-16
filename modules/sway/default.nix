@@ -12,8 +12,9 @@
       wf-recorder
       wl-clipboard
       wl-mirror # output mirroring
-      grim # screenshotting
+      grim # screenshot
       slurp # screenshot selection
+      jq # parse outputs for screenshot
     ];
   };
 }

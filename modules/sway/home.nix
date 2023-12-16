@@ -33,8 +33,6 @@
 
       output."*".bg = "${../../assets/background.jpg} fill";
 
-      # seat."*".hide_cursor = "when-typing enable";
-
       menu = with config.theme; ''
         bemenu-run --fn '${config.fonts.monospace} 14' \
           --tb \${bg} \
@@ -123,7 +121,7 @@
           "${mod}+Shift+Tab" = "move workspace to output left";
 
           "Print" = "exec grim";
-          "${mod}+Print" = "exec grim - | wl-copy";
+          "${mod}+Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy";
           "${mod}+g" = ''exec grim -g "$(slurp)" - | wl-copy'';
 
           "${mod}+Shift+s" = "exec swaylock -c 000000";
