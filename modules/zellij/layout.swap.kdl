@@ -8,7 +8,7 @@ tab_template name="ui" {
    children
 }
 
-// an addition 2x2 layout
+// an additional 2x2 layout
 swap_tiled_layout name="grid" {
     ui exact_panes=5 {
         pane split_direction="vertical" {
@@ -16,6 +16,17 @@ swap_tiled_layout name="grid" {
             pane
         }
         pane split_direction="vertical" {
+            pane
+            pane
+        }
+    }
+}
+
+// an additional trifold layout
+swap_tiled_layout name="tri" {
+    ui exact_panes=4 split_direction="vertical" {
+        pane split_direction="vertical" {
+            pane
             pane
             pane
         }
