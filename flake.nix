@@ -48,5 +48,14 @@
         ];
       };
     };
+
+    devShells."x86_64-linux".python =
+      let pkgs = nixpkgs.legacyPackages."x86_64-linux"; in
+        pkgs.mkShell {
+          nativeBuildInputs = with pkgs; [
+            python3
+            python311Packages.pylsp-mypy
+          ];
+        };
   };
 }

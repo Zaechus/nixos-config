@@ -46,6 +46,16 @@ def ,, [
   nix shell ($packages | each { |p| $"nixpkgs#($p)" })
 }
 
+def "nix dev" [name: string, -c: string] {
+  let flake_path = ls -l /etc/nixos/flake.nix | get 0.target | str replace '/flake.nix' ''
+
+  if $c == null {
+    nix develop $'($flake_path)#($name)' -c nu
+  } else {
+    nix develop $'($flake_path)#($name)' -c nu -c $c
+  }
+}
+
 def sc2cfg [] {
   swaymsg input type:keyboard repeat_rate 88
   swaymsg input type:keyboard repeat_delay 150

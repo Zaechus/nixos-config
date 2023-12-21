@@ -45,9 +45,7 @@
     my.zinfo
   ];
   environment.defaultPackages = [ pkgs.helix ];
-  environment.variables = {
-    EDITOR = "hx";
-  };
+  environment.sessionVariables.EDITOR = "hx";
 
   users.defaultUserShell = pkgs.nushell;
   environment.shells = [ pkgs.nushell ];
