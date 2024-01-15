@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     # appimage-run # mcpelauncher
     bchunk
+    # cataclysmDDA.stable.curses # apparently this is separate and doesn't compile...
     dhewm3 # doom 3
     # ecwolf # wolf3d
     ironwail # quake

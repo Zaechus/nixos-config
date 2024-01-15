@@ -18,7 +18,7 @@
     ../../modules/games
     ../../modules/games/misc
     ../../modules/games/doom
-    # ../../modules/games/minecraft
+    ../../modules/games/minecraft
 
     ./users/zaechus.nix
     ./users/lizzie.nix
@@ -59,9 +59,12 @@
   # $ nix search nixpkgs ripgrep
   environment.systemPackages = with pkgs; [
     aria2
+    # infra-arcana
+    nethack
     p7zip
     scummvm
     rbdoom-3-bfg
+    rogue
 
     my.angband
   ];
