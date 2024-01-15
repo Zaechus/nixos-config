@@ -29,7 +29,4 @@
   networking.firewall.allowedUDPPortRanges = [
     { from = 6110; to = 6120; } # blizzard
   ];
-  networking.firewall.allowedUDPPorts = [
-    7551 # halo
-  ];
 }

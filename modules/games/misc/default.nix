@@ -12,6 +12,11 @@
     # scrcpy # android
   ];
 
+  networking.firewall.allowedUDPPorts = [
+    7551 # halo
+    24642 # Stardew Valley
+  ];
+
   programs.steam = {
     package = (pkgs.steam.override {
       extraPkgs = pkgs: with pkgs; [
