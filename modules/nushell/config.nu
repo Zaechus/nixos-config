@@ -35,7 +35,7 @@ def , [
   if ($args | is-empty) {
     nix run $'nixpkgs#($pkg)'
   } else {
-    nix run $'nixpkgs#($pkg)' -- ($args | split row ' ')
+    nix run $'nixpkgs#($pkg)' -- ...($args | split row ' ')
   }
 }
 
@@ -43,7 +43,7 @@ def , [
 def ,, [
   ...packages: string # packages to include
 ] {
-  nix shell ($packages | each { |p| $"nixpkgs#($p)" })
+  nix shell ...($packages | each { |p| $"nixpkgs#($p)" })
 }
 
 def "nix dev" [name: string, -c: string] {

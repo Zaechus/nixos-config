@@ -27,6 +27,7 @@ let
     if config.programs.zoxide.enable then ''
       zoxide init nushell | save -f ~/.zoxide.nu
       open ~/.zoxide.nu | str replace -a 'def-env' 'def --env' | save -f ~/.zoxide.nu
+      open ~/.zoxide.nu | str replace -a ' -- $rest ' ' -- ...$rest ' | save -f ~/.zoxide.nu
     '' else "";
   zoxideConfig =
     if config.programs.zoxide.enable then
