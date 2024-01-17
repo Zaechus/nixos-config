@@ -6,6 +6,7 @@
       tls = true;
       nicks = [ "Zaechus" ];
       realname = "Zaechus";
+      join = [];
       sasl = {
         username = "Zaechus";
         password.command = "cat /home/zaechus/.config/tiny/password";

@@ -3,6 +3,6 @@
 {
   programs.tiny = {
     enable = true;
-    package = pkgs.my.tiny;
+    # package = pkgs.my.tiny;
   };
 }
