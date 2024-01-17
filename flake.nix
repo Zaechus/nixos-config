@@ -49,13 +49,25 @@
       };
     };
 
-    devShells."x86_64-linux".python =
-      let pkgs = nixpkgs.legacyPackages."x86_64-linux"; in
-        pkgs.mkShell {
-          nativeBuildInputs = with pkgs; [
-            python3
-            python311Packages.pylsp-mypy
-          ];
-        };
+    devShells."x86_64-linux" =
+      let
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      in
+      {
+        python =
+          pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              python3
+              python311Packages.pylsp-mypy
+            ];
+          };
+        web =
+          pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              nodePackages.typescript-language-server
+              vscode-langservers-extracted # HTML, CSS
+            ];
+          };
+      };
   };
 }
