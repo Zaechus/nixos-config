@@ -59,6 +59,7 @@
   # $ nix search nixpkgs ripgrep
   environment.systemPackages = with pkgs; [
     aria2
+    imagemagick
     # infra-arcana
     nethack
     p7zip

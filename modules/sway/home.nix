@@ -135,7 +135,7 @@
           "XF86AudioRaiseVolume" = "exec amixer set Master 5%+";
           "XF86AudioLowerVolume" = "exec amixer set Master 5%-";
           "XF86AudioMute" = "exec amixer set Master toggle";
-          "XF86AudioMicMute" = "exec amixer set Capture toggle";
+          "XF86AudioMicMute" = "exec sh ${./micmute.sh}";
 
           "${mod}+b" = "splith";
           "${mod}+v" = "splitv";
@@ -213,6 +213,7 @@
       };
 
       startup = [
+        { command = "sh ${./micmute.sh}"; }
         {
           command = ''
             swayidle -w timeout 300 'swaylock -fc 000000' \
