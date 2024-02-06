@@ -28,31 +28,30 @@ $env.config = {
 alias scrcpy = scrcpy -KM --forward-all-clicks
 
 # Run nixpkgs binary without installing
-def , [
+def --wrapped , [
   pkg: string # Nix package to run
-  args: string = '' # argument list as a string
+  ...args: string # arguments
 ] {
-  if ($args | is-empty) {
-    nix run $'nixpkgs#($pkg)'
-  } else {
-    nix run $'nixpkgs#($pkg)' -- ...($args | split row ' ')
-  }
+  nix run $'nixpkgs#($pkg)' -- ...$args
 }
 
 # Create a shell with a set of available temporary packages
 def ,, [
   ...packages: string # packages to include
 ] {
-  nix shell ...($packages | each { |p| $"nixpkgs#($p)" })
+  nix shell ...($packages | each { |p| $'nixpkgs#($p)' })
 }
 
-def "nix dev" [name: string, -c: string] {
+def "nix dev" [
+  shell: string
+  -c: string
+] {
   let flake_path = ls -l /etc/nixos/flake.nix | get 0.target | str replace '/flake.nix' ''
 
   if $c == null {
-    nix develop $'($flake_path)#($name)' -c nu
+    nix develop $'($flake_path)#($shell)' -c nu
   } else {
-    nix develop $'($flake_path)#($name)' -c nu -c $c
+    nix develop $'($flake_path)#($shell)' -c nu -c $c
   }
 }
 
