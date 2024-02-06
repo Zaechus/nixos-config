@@ -59,6 +59,7 @@
   # $ nix search nixpkgs ripgrep
   environment.systemPackages = with pkgs; [
     aria2
+    # brogue-ce
     imagemagick
     # infra-arcana
     nethack

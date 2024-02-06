@@ -14,7 +14,12 @@
 
   networking.firewall.allowedUDPPorts = [
     7551 # halo
+    7777 # Terraria
     24642 # Stardew Valley
+  ];
+
+  networking.firewall.allowedTCPPorts = [
+    7777 # Terraria
   ];
 
   programs.steam = {
