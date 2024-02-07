@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./mdns.nix
+  ];
+
   networking = {
     useNetworkd = true;
 
@@ -15,29 +19,11 @@
     dnssec = "true";
     extraConfig = ''
       DNSOverTLS=yes
-      MulticastDNS=yes;
     '';
   };
 
   systemd.network = {
     enable = true;
     wait-online.anyInterface = true;
-    networks.all = {
-      matchConfig.Name = [ "en*" "wl*" ];
-      networkConfig = {
-        MulticastDNS = true;
-      };
-      linkConfig = {
-        Multicast = true;
-      };
-      dhcpV4Config = {
-        UseDNS = false;
-      };
-      dhcpV6Config = {
-        UseDNS = false;
-      };
-    };
   };
-
-  networking.firewall.allowedUDPPorts = [ 5353 ]; # mDNS
 }
