@@ -1,0 +1,21 @@
+OPTIONS=symset:curses
+
+# Disable autopickup
+OPTIONS=!autopickup
+
+OPTIONS=altmeta,number_pad:0,force_invmenu,lit_corridor,hitpointbar,hilite_pet
+
+# Add items to status line
+OPTIONS=showexp,time
+
+OPTIONS=vary_msgcount:2
+
+OPTIONS=menucolors
+MENUCOLOR=" blessed " = green
+MENUCOLOR=" holy " = green
+MENUCOLOR=" cursed " = red
+MENUCOLOR=" unholy " = red
+MENUCOLOR=" cursed .* (being worn)" = orange&underline
+
+# Fancier interface with multiple windows and more color
+#OPTIONS=windowtype:curses

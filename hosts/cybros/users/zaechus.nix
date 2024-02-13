@@ -12,6 +12,7 @@
       ../../../modules/dev/home.nix
       ../../../modules/dev/rust
       ../../../modules/games/dosbox
+      ../../../modules/games/nethack
 
       ../../../modules/tiny
     ];

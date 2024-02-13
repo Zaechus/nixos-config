@@ -1,7 +1,7 @@
 # https://github.com/morhetz/gruvbox
 # https://github.com/gruvbox-community/gruvbox
 # https://raw.githubusercontent.com/wiki/gruvbox-community/gruvbox/images/gruvbox_palette_dark.png
-# https://github.com/alacritty/alacritty-theme/blob/master/themes/gruvbox_dark.yaml
+# https://github.com/alacritty/alacritty-theme/blob/master/themes/gruvbox_dark.toml
 
 { config, pkgs, ... }:
 
@@ -83,7 +83,7 @@
   programs.zellij.settings = {
     theme = "gruvbox";
 
-    # https://github.com/zellij-org/zellij/blob/main/example/themes/gruvbox.kdl#L15-L27
+    # https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/themes/gruvbox.kdl
     themes.gruvbox = {
       fg = [ 213 196 161 ];
       bg = [ 40 40 40 ];
@@ -104,4 +104,12 @@
   nu.LS_COLORS = "gruvbox-dark";
 
   programs.micro.settings.colorscheme = "gruvbox";
+
+  programs.nushell.extraConfig = ''
+    def nethack [] {
+      printf '\e]4;0;#504945'
+      ^nethack
+      printf '\e]4;0;${config.theme.black}'
+    }
+  '';
 }

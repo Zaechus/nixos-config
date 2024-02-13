@@ -62,7 +62,6 @@
     # brogue-ce
     imagemagick
     # infra-arcana
-    nethack
     p7zip
     scummvm
     rbdoom-3-bfg
