@@ -3,7 +3,7 @@ OPTIONS=symset:curses
 # Disable autopickup
 OPTIONS=!autopickup
 
-OPTIONS=altmeta,number_pad:0,force_invmenu,lit_corridor,hitpointbar,hilite_pet
+OPTIONS=altmeta,number_pad:0,force_invmenu,lit_corridor,hitpointbar,hilite_pet,name:player,selectsaved
 
 # Add items to status line
 OPTIONS=showexp,time

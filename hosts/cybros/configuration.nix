@@ -60,6 +60,7 @@
   environment.systemPackages = with pkgs; [
     aria2
     # brogue-ce
+    ffmpeg
     imagemagick
     # infra-arcana
     p7zip

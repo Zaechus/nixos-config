@@ -106,9 +106,16 @@
   programs.micro.settings.colorscheme = "gruvbox";
 
   programs.nushell.extraConfig = ''
-    def nethack [] {
+    def --wrapped nethack [
+      --nao
+      ...args: string
+    ] {
       printf '\e]4;0;#504945'
-      ^nethack
+      if $nao {
+        ssh nethack@alt.org
+      } else {
+        ^nethack ...$args
+      }
       printf '\e]4;0;${config.theme.black}'
     }
   '';
