@@ -3,12 +3,23 @@ OPTIONS=symset:curses
 # Disable autopickup
 OPTIONS=!autopickup
 
-OPTIONS=altmeta,number_pad:0,force_invmenu,lit_corridor,hitpointbar,hilite_pet,name:player,selectsaved
+# Make commands that ask for an inventory item pop up a menu
+OPTIONS=force_invmenu
+
+# Disable numpad
+OPTIONS=number_pad:0
+
+# Allow multiple saves and character names other than $USER
+OPTIONS=name:player,selectsaved
+
+# Options
+OPTIONS=altmeta
+
+# Visual options
+OPTIONS=lit_corridor,hilite_pet,hilite_pile
 
 # Add items to status line
-OPTIONS=showexp,time
-
-OPTIONS=vary_msgcount:2
+OPTIONS=time,showexp
 
 OPTIONS=menucolors
 MENUCOLOR=" blessed " = green
@@ -16,6 +27,46 @@ MENUCOLOR=" holy " = green
 MENUCOLOR=" cursed " = red
 MENUCOLOR=" unholy " = red
 MENUCOLOR=" cursed .* (being worn)" = orange&underline
+
+# Status hilites
+OPTIONS=statushilites
+# HP
+OPTIONS=hitpointbar
+OPTIONS=hilite_status:hitpoints/100%/gray&normal
+OPTIONS=hilite_status:hitpoints/<100%/green&normal
+OPTIONS=hilite_status:hitpoints/<66%/yellow&normal
+OPTIONS=hilite_status:hitpoints/<50%/orange&normal
+OPTIONS=hilite_status:hitpoints/<33%/red&bold
+OPTIONS=hilite_status:hitpoints/<15%/red&inverse
+
+## Pw
+OPTIONS=hilite_status:power/100%/gray&normal
+OPTIONS=hilite_status:power/<100%/green&normal
+OPTIONS=hilite_status:power/<66%/yellow&normal
+OPTIONS=hilite_status:power/<50%/orange&normal
+OPTIONS=hilite_status:power/<33%/red&bold
+
+## Carry
+OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
+
+## Hunger
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
+
+## Mental
+OPTIONS=hilite_status:condition/hallu/yellow
+OPTIONS=hilite_status:condition/conf/orange
+OPTIONS=hilite_status:condition/stun/red&bold
+
+## Health
+OPTIONS=hilite_status:condition/termill/red&inverse
+OPTIONS=hilite_status:condition/foodpois/red&inverse
+OPTIONS=hilite_status:condition/slime/red&inverse
+
+# gold
+OPTIONS=hilite_status:gold/up/yellow/down/brown
+
+# St, Dx, Co, In, Wi, Ch
+OPTIONS=hilite_status:characteristics/up/green/down/red
 
 # Fancier interface with multiple windows and more color
 #OPTIONS=windowtype:curses
