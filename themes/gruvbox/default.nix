@@ -112,7 +112,7 @@
     ] {
       printf '\e]4;0;#504945'
       if $nao {
-        ssh nethack@alt.org
+        printf '\e]4;0;#504945'; ssh nethack@alt.org
       } else {
         ^nethack ...$args
       }

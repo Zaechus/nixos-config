@@ -13,7 +13,7 @@ OPTIONS=number_pad:0
 OPTIONS=name:player,selectsaved
 
 # Options
-OPTIONS=altmeta
+OPTIONS=altmeta,msg_window:reverse
 
 # Visual options
 OPTIONS=lit_corridor,hilite_pet,hilite_pile
