@@ -12,7 +12,7 @@
     ../../modules/network/wireguard.nix
 
     ../../modules/dev
-    ../../modules/slade
+    # ../../modules/slade
     ../../modules/virt
 
     ../../modules/games
@@ -59,7 +59,8 @@
   # $ nix search nixpkgs ripgrep
   environment.systemPackages = with pkgs; [
     aria2
-    # brogue-ce
+    brogue-ce
+    # crawl
     ffmpeg
     imagemagick
     # infra-arcana
@@ -67,6 +68,7 @@
     scummvm
     rbdoom-3-bfg
     rogue
+    umoria
 
     my.angband
   ];
