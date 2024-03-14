@@ -55,6 +55,10 @@ def "nix dev" [
   }
 }
 
+def "nix try" [] {
+  nix-build -E 'with import <nixpkgs> { }; callPackage ./default.nix { }'
+}
+
 def sc2cfg [] {
   swaymsg input type:keyboard repeat_rate 88
   swaymsg input type:keyboard repeat_delay 150

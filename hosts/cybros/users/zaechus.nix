@@ -15,6 +15,7 @@
       ../../../modules/games/nethack
 
       ../../../modules/tiny
+      ../../../modules/games/doomrl
     ];
 
     wayland.windowManager.sway.config.output.eDP-1.subpixel = "rgb";
