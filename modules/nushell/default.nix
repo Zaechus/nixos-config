@@ -20,8 +20,8 @@ let
       $env.PATH = (if $'($env.HOME)/.cargo/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($env.HOME)/.cargo/bin' })
     '' + "\n";
   LS_COLORS =
-    if (builtins.stringLength config.nu.LS_COLORS) > 0 then
-      "\n$env.LS_COLORS = (vivid generate ${config.nu.LS_COLORS} | str trim)\n\n"
+    if (builtins.stringLength config.vivid.theme) > 0 then
+      "\n$env.LS_COLORS = (vivid generate ${config.vivid.theme} | str trim)\n\n"
     else "";
   zoxideEnv =
     if config.programs.zoxide.enable then ''

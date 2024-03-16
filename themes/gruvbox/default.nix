@@ -101,7 +101,7 @@
   };
 
   home.packages = with pkgs; [ vivid ];
-  nu.LS_COLORS = "gruvbox-dark";
+  vivid.theme = "gruvbox-dark";
 
   programs.micro.settings.colorscheme = "gruvbox";
 

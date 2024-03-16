@@ -4,11 +4,6 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      font = {
-        normal.family = config.fonts.monospace;
-        size = 11.0;
-      };
-
       cursor.style = {
         shape = "Block";
       };

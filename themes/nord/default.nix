@@ -89,5 +89,5 @@
   };
 
   home.packages = with pkgs; [ vivid ];
-  nu.LS_COLORS = "nord";
+  vivid.theme = "nord";
 }

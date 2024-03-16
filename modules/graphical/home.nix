@@ -3,6 +3,7 @@
     ../alacritty
     ../chromium/brave.nix
     ../sway/home.nix
+    ../fonts/home.nix
   ];
 
   gtk.enable = true;
