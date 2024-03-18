@@ -13,7 +13,7 @@
         genesis-plus-gx # genesis
         mesen # nes
         mgba # game boy advanced
-        # mupen64plus # n64 # FIXME
+        mupen64plus # n64
         prosystem # atari 7800
         snes9x # snes
         stella # atari 2600
