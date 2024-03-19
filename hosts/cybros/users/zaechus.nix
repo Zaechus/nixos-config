@@ -16,6 +16,7 @@
 
       ../../../modules/tiny
       ../../../modules/games/doomrl
+      ../../../modules/games/dwarf-fortress
     ];
 
     wayland.windowManager.sway.config.output.eDP-1.subpixel = "rgb";
