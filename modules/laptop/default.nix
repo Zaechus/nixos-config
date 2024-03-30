@@ -1,3 +1,3 @@
 {
-  services.auto-cpufreq.enable = true;
+  # services.auto-cpufreq.enable = true; # FIXME
 }

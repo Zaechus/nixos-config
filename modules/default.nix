@@ -7,7 +7,7 @@
 
 {
   boot.loader.timeout = 1;
-  powerManagement.cpuFreqGovernor = "schedutil";
+  # powerManagement.cpuFreqGovernor = "schedutil"; # FIXME
   boot.tmp = {
     useTmpfs = true;
     cleanOnBoot = true;
