@@ -12,7 +12,6 @@
     ../../modules/network/wireguard.nix
 
     ../../modules/dev
-    # ../../modules/slade
     ../../modules/virt
 
     ../../modules/games
@@ -61,9 +60,11 @@
     aria2
     brogue-ce
     # crawl
+    du-dust
     ffmpeg
     imagemagick
     # infra-arcana
+    lftp
     p7zip
     scummvm
     rbdoom-3-bfg
