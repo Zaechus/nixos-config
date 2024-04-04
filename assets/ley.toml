@@ -1,0 +1,139 @@
+[albion-online]
+pre = "steam-run"
+dir = "~/Games/albiononline"
+exe = "./Albion-Online"
+
+[cuphead]
+prefix = "~/Games/cuphead"
+pre = "steam-run"
+runner = "~/.local/share/ley/lutris-GE-Proton8-25-x86_64/bin/wine"
+exe = "~/Games/cuphead/drive_c/Cuphead/Cuphead.exe"
+
+[diablo]
+dir = "~/Games/diablo/drive_c/GOG Games/Diablo"
+runner = "devilutionx"
+
+[diablo-hellfire]
+dir = "~/Games/diablo/drive_c/GOG Games/Diablo"
+runner = "devilutionx"
+args = ["--hellfire", "--data-dir", "~/Games/diablo/drive_c/GOG Games/Diablo/hellfire"]
+
+[doom2]
+dir = "~/dosgames/doom2"
+runner = "crispy-doom"
+
+[doom64]
+prefix = "~/Games/doom-64"
+pre = "steam-run"
+runner = "~/.local/share/ley/lutris-GE-Proton8-25-x86_64/bin/wine"
+exe = "~/Games/doom-64/drive_c/DOOM 64/DOOM64_x64.exe"
+args = ["-skipmovies"]
+
+[doomrl]
+pre = "steam-run"
+dir = "~/Games/doomrl-linux-x64-0997"
+exe = "~/Games/doomrl-linux-x64-0997/doomrl"
+
+[hollow-knight]
+pre = "steam-run"
+exe = "~/Games/hollow-knight/start.sh"
+
+[ihnm]
+dir = "~/Games/i-have-no-mouth-and-i-must-scream"
+runner = "scummvm"
+args = ["-c", "ihnm.ini", "--themepath=scummvm"]
+
+[ksp]
+pre = "steam-run"
+exe = "~/Games/kerbal-space-program/start.sh"
+
+[master]
+dir = "~/dosgames/master/wads"
+runner = "crispy-doom"
+args = ["-iwad", "~/dosgames/doom2/DOOM2.WAD"]
+
+[noita]
+prefix = "~/Games/noita"
+pre = "steam-run"
+runner = "~/.local/share/ley/lutris-GE-Proton8-25-x86_64/bin/wine"
+exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
+
+[plutonia]
+dir = "~/Games/final-doom/Plutonia"
+runner = "crispy-doom"
+
+[quake-enhanced]
+prefix = "~/Games/quake-enhanced"
+pre = "steam-run"
+runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+exe = "~/Games/quake-enhanced/drive_c/Quake Enhanced/Quake_Shipping_Playfab_GOG_x64.exe"
+args = ["+g_showintromovie", "0"]
+
+[quake-hipnotic]
+dir = "~/dosgames/quake"
+runner = "quake"
+args = ["-hipnotic"]
+
+[quake-rogue]
+dir = "~/dosgames/quake"
+runner = "quake"
+args = ["-rogue"]
+
+[quake]
+dir = "~/dosgames/quake"
+runner = "quake"
+
+[rimworld]
+pre = "steam-run"
+exe = "~/Games/rimworld/start.sh"
+
+[starcraft]
+prefix = "~/Games/starcraft"
+runner = "wine"
+exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
+res = "640x480"
+mouse_speed = "-0.55"
+
+[starcraft-remastered]
+pre = "steam-run"
+prefix = "~/Games/starcraft-remastered"
+runner = "wine"
+exe = "~/Games/starcraft-remastered/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe"
+
+[starcraft-ii]
+prefix = "~/Games/starcraft-ii"
+runner = "wine"
+exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II/StarCraft II.exe"
+# exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II/Support64/SC2Switcher_x64.exe"
+winetricks = ["arial", "tahoma"]
+
+[stardew-valley]
+dir = "~/Games/Stardew Valley"
+pre = "steam-run"
+runner = "sh"
+exe = "start.sh"
+
+[terraria]
+dir = "~/Games/Terraria"
+pre = "steam-run"
+runner = "sh"
+exe = "start.sh"
+
+[tnt]
+dir = "~/Games/final-doom/TNT"
+runner = "crispy-doom"
+
+[turtle-wow]
+prefix = "~/Games/turtle-wow"
+runner = "wine"
+exe = "~/Games/turtle-wow/drive_c/twmoa/VanillaFixes.exe"
+args = ["WoW_tweaked.exe"]
+
+[vvvvvv]
+pre = "steam-run"
+exe = "~/Games/VVVVVV/start.sh"
+
+[world-of-warcraft]
+prefix = "~/Games/world-of-warcraft"
+runner = "wine"
+exe = "~/Games/world-of-warcraft/drive_c/WoW/WoW.exe"

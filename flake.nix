@@ -61,6 +61,13 @@
               python311Packages.pylsp-mypy
             ];
           };
+        sh =
+          pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              shellcheck
+              shfmt
+            ];
+          };
         web =
           pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
