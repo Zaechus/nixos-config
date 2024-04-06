@@ -19,6 +19,8 @@
     ../../modules/games/doom
     ../../modules/games/minecraft
 
+    ../../modules/waydroid
+
     ./users/zaechus.nix
     ./users/lizzie.nix
   ];
