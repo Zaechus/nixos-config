@@ -69,7 +69,7 @@ def gogextract [file: string] {
 }
 
 def gogclean [] {
-  rm -r goggame-*.* DOSBOX __redist __support app commonappdata Customer_support.htm
+  rm -r goggame-*.* DOSBOX __redist app commonappdata
 }
 
 def setup_quake [] {
