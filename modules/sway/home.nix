@@ -216,6 +216,12 @@
         { command = "sh ${./micmute.sh}"; }
         {
           command = ''
+            for_window [class=".*"] inhibit_idle fullscreen
+            for_window [app_id=".*"] inhibit_idle fullscreen
+          '';
+        }
+        {
+          command = ''
             swayidle -w timeout 300 'swaylock -fc 000000' \
               timeout 600 'swaymsg output "*" power off' \
                 resume 'swaymsg output "*" power on' \

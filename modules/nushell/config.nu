@@ -64,14 +64,6 @@ def sc2cfg [] {
   swaymsg input type:keyboard repeat_delay 150
 }
 
-def gogextract [file: string] {
-  innoextract -gm -d ($file | str replace -ra '^setup_|\.exe$' '') $file
-}
-
-def gogclean [] {
-  rm -r goggame-*.* DOSBOX __redist app commonappdata
-}
-
 def setup_quake [] {
   mv id1/PAK0.PAK id1/pak0.pak
   mv id1/PAK1.PAK id1/pak1.pak

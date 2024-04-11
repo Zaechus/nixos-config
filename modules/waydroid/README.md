@@ -15,6 +15,5 @@ Use the string of numbers printed by the command to register the device on your 
 
 ## Usage
 ```
-waydroid session start
 waydroid show-full-ui
 ```
