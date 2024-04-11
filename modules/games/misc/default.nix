@@ -5,7 +5,7 @@
     # appimage-run # mcpelauncher
     bchunk
     # cataclysmDDA.stable.curses # apparently this is separate and doesn't compile...
-    devilutionx # diablo
+    my.devilutionx # diablo
     dhewm3 # doom 3
     # ecwolf # wolf3d
     ironwail # quake
@@ -14,12 +14,13 @@
   ];
 
   networking.firewall.allowedUDPPorts = [
-    7551 # halo
+    7551 # Halo
     7777 # Terraria
     24642 # Stardew Valley
   ];
 
   networking.firewall.allowedTCPPorts = [
+    6112 # Diablo
     7777 # Terraria
   ];
 

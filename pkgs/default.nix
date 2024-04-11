@@ -1,6 +1,7 @@
 final: prev: {
   my = {
     angband = final.callPackage ./angband { };
+    devilutionx = final.callPackage ./devilutionx { };
     dosbox-staging = final.callPackage ./dosbox-staging { };
     ley = final.callPackage ./ley { };
     RBDOOM-3-BFG = final.callPackage ./RBDOOM-3-BFG { };
