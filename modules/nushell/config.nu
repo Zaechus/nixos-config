@@ -46,7 +46,7 @@ def "nix dev" [
   shell: string
   -c: string
 ] {
-  let flake_path = ls -l /etc/nixos/flake.nix | get 0.target | str replace '/flake.nix' ''
+  let flake_path = ls -l /etc/nixos/flake.nix | get 0.target | path dirname
 
   if $c == null {
     nix develop $'($flake_path)#($shell)' -c nu

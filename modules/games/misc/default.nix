@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     # appimage-run # mcpelauncher
-    bchunk
+    bchunk # quake music tracks
     # cataclysmDDA.stable.curses # apparently this is separate and doesn't compile...
     my.devilutionx # diablo
     dhewm3 # doom 3

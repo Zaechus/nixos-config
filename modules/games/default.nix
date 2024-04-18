@@ -7,10 +7,11 @@
     (retroarch.override {
       cores = with libretro; [
         # beetle-saturn # saturn
-        dolphin # gamecube
+        # dolphin # gamecube
         freeintv # intellivision
         gambatte # game boy
         genesis-plus-gx # genesis
+        mame # arcade
         mesen # nes
         mgba # game boy advanced
         mupen64plus # n64

@@ -1,12 +1,17 @@
 [albion-online]
 pre = "steam-run"
-dir = "~/Games/albiononline"
-exe = "./Albion-Online"
+exe = "~/Games/albiononline/Albion-Online"
 
 [amnesia]
 pre = "steam-run"
 runner = "sh"
 exe = "~/Games/Amnesia The Dark Descent/start.sh"
+
+[battlefront]
+prefix = "~/Games/star-wars-battlefront"
+pre = "steam-run"
+runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+exe = "~/Games/star-wars-battlefront/drive_c/GOG Games/Star Wars - Battlefront/LaunchBF.exe"
 
 [cuphead]
 prefix = "~/Games/cuphead"
@@ -36,7 +41,6 @@ args = ["-skipmovies"]
 
 [doomrl]
 pre = "steam-run"
-dir = "~/Games/doomrl-linux-x64-0997"
 exe = "~/Games/doomrl-linux-x64-0997/doomrl"
 
 [hollow-knight]
