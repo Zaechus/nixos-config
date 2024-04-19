@@ -8,6 +8,7 @@
       cores = with libretro; [
         # beetle-saturn # saturn
         # dolphin # gamecube
+        fbneo # arcade
         freeintv # intellivision
         gambatte # game boy
         genesis-plus-gx # genesis

@@ -68,6 +68,8 @@
     # infra-arcana
     lftp
     p7zip
+    pciutils # lspci
+    poppler_utils # pdftotext
     scummvm
     rbdoom-3-bfg
     rogue
