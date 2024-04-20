@@ -31,4 +31,8 @@
   networking.firewall.allowedUDPPortRanges = [
     { from = 6110; to = 6120; } # blizzard
   ];
+
+  networking.firewall.allowedTCPPorts = [
+    55435 # retroarch netplay
+  ];
 }
