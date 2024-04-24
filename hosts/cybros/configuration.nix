@@ -64,9 +64,11 @@
     # crawl
     du-dust
     ffmpeg
+    # gimp
     imagemagick
     # infra-arcana
     lftp
+    # libwebp # dwebp
     p7zip
     pciutils # lspci
     poppler_utils # pdftotext
