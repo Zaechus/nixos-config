@@ -19,6 +19,15 @@ pre = "steam-run"
 runner = "~/.local/share/ley/lutris-GE-Proton8-25-x86_64/bin/wine"
 exe = "~/Games/cuphead/drive_c/Cuphead/Cuphead.exe"
 
+[dead-space]
+prefix = "~/Games/dead-space"
+pre = "steam-run"
+runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+exe = "~/Games/dead-space/drive_c/GOG Games/Dead Space/Dead Space.exe"
+winetricks = [
+  "grabfullscreen=y",
+]
+
 [diablo]
 dir = "~/Games/diablo/drive_c/GOG Games/Diablo"
 runner = "devilutionx"
@@ -42,6 +51,12 @@ args = ["-skipmovies"]
 [doomrl]
 pre = "steam-run"
 exe = "~/Games/doomrl-linux-x64-0997/doomrl"
+
+[heroes3]
+prefix = "~/Games/heroes-of-might-and-magic-3-complete"
+runner = "wine"
+exe = "~/Games/heroes-of-might-and-magic-3-complete/drive_c/GOG Games/HoMM 3 Complete/Heroes3.exe"
+res = "800x600"
 
 [hollow-knight]
 pre = "steam-run"
@@ -96,7 +111,6 @@ runner = "quake"
 pre = "steam-run"
 exe = "~/Games/rimworld/start.sh"
 
-# winecfg: capture mouse in fullscreen, virtual desktop
 [starcraft]
 prefix = "~/Games/starcraft"
 runner = "wine"
@@ -104,20 +118,30 @@ exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
 res = "640x480"
 scale = "2.25"
 mouse_speed = "-0.55"
+winetricks = [
+  "grabfullscreen=y",
+  "vd=640x480",
+  "winxp",
+]
 
-# winecfg: capture mouse in fullscreen
 [starcraft-remastered]
 pre = "steam-run"
 prefix = "~/Games/starcraft-remastered"
 runner = "wine"
 exe = "~/Games/starcraft-remastered/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe"
+winetricks = [
+  "grabfullscreen=y",
+]
 
-# winecfg: capture mouse in fullscreen
 [starcraft-ii]
 prefix = "~/Games/starcraft-ii"
 runner = "wine"
 exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II/StarCraft II.exe"
-winetricks = ["arial", "tahoma"]
+winetricks = [
+  "arial",
+  "tahoma",
+  "grabfullscreen=y",
+]
 
 [stardew-valley]
 dir = "~/Games/Stardew Valley"
