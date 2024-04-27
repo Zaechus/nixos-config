@@ -18,6 +18,7 @@ let
         config.home.sessionVariables) + "\n\n" + ''
       $env.PATH = ($env.PATH | split row (char esep))
       $env.PATH = (if $'($env.HOME)/.cargo/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($env.HOME)/.cargo/bin' })
+      $env.PATH = (if $'($env.HOME)/.local/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($env.HOME)/.local/bin' })
     '' + "\n";
   LS_COLORS =
     if (builtins.stringLength config.vivid.theme) > 0 then

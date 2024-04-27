@@ -50,6 +50,8 @@
   users.defaultUserShell = pkgs.nushell;
   environment.shells = [ pkgs.nushell ];
 
+  environment.localBinInPath = true;
+
   security.sudo.execWheelOnly = true;
 
   services.getty = {
