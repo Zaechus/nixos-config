@@ -13,6 +13,12 @@ pre = "steam-run"
 runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
 exe = "~/Games/star-wars-battlefront/drive_c/GOG Games/Star Wars - Battlefront/LaunchBF.exe"
 
+[battlefront-ii]
+prefix = "~/Games/star-wars-battlefront-ii"
+pre = "steam-run"
+runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+exe = "~/Games/star-wars-battlefront-ii/drive_c/GOG Games/Star Wars - Battlefront 2/SWB2Launcher.exe"
+
 [cuphead]
 prefix = "~/Games/cuphead"
 pre = "steam-run"
@@ -148,6 +154,16 @@ dir = "~/Games/Stardew Valley"
 pre = "steam-run"
 runner = "sh"
 exe = "start.sh"
+
+[sw-xvt]
+prefix = "~/Games/sw-xvt"
+runner = "wine"
+exe = "~/Games/sw-xvt/drive_c/GOG Games/Star Wars - XvT/XWINGTIE.EXE"
+res = "640x480"
+scale = "2.25"
+winetricks = [
+  "vd=640x480",
+]
 
 [terraria]
 dir = "~/Games/Terraria"
