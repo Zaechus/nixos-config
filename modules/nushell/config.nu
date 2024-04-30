@@ -37,9 +37,14 @@ def --wrapped , [
 
 # Create a shell with a set of available temporary packages
 def ,, [
+  --unfree
   ...packages: string # packages to include
 ] {
-  nix shell ...($packages | each { |p| $'nixpkgs#($p)' })
+  if ($unfree) {
+    NIXPKGS_ALLOW_UNFREE=1 nix shell --impure ...($packages | each { |p| $'nixpkgs#($p)' })
+  } else {
+    nix shell ...($packages | each { |p| $'nixpkgs#($p)' })
+  }
 }
 
 def "nix dev" [
