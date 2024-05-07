@@ -12,7 +12,7 @@
         freeintv # intellivision
         gambatte # game boy
         genesis-plus-gx # genesis
-        mame # arcade
+        # mame # arcade
         mesen # nes
         mgba # game boy advanced
         mupen64plus # n64

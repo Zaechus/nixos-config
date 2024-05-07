@@ -25,6 +25,14 @@ pre = "steam-run"
 runner = "~/.local/share/ley/lutris-GE-Proton8-25-x86_64/bin/wine"
 exe = "~/Games/cuphead/drive_c/Cuphead/Cuphead.exe"
 
+[dark-souls]
+prefix = "~/Games/dark-souls"
+runner = "wine"
+exe = "~/Games/dark-souls/drive_c/Dark Souls - Prepare to Die Edition/DARKSOULS.exe"
+winetricks = [
+  "grabfullscreen=y",
+]
+
 [dead-space]
 prefix = "~/Games/dead-space"
 pre = "steam-run"

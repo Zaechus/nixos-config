@@ -134,7 +134,7 @@
 
           "XF86AudioRaiseVolume" = "exec amixer set Master 5%+";
           "XF86AudioLowerVolume" = "exec amixer set Master 5%-";
-          "XF86AudioMute" = "exec amixer set Master toggle";
+          "XF86AudioMute" = "exec sh ${./mute.sh}";
           "XF86AudioMicMute" = "exec sh ${./micmute.sh}";
 
           "${mod}+b" = "splith";

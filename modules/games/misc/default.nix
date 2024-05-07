@@ -9,8 +9,11 @@
     dhewm3 # doom 3
     # ecwolf # wolf3d
     ironwail # quake
+    # minetest
     ruffle # flash
     # scrcpy # android
+    # wesnoth
+    # zeroad # 0ad
   ];
 
   networking.firewall.allowedUDPPorts = [
