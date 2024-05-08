@@ -28,7 +28,7 @@ exe = "~/Games/cuphead/drive_c/Cuphead/Cuphead.exe"
 [dark-souls]
 prefix = "~/Games/dark-souls"
 runner = "wine"
-exe = "~/Games/dark-souls/drive_c/Dark Souls - Prepare to Die Edition/DARKSOULS.exe"
+exe = "~/Games/dark-souls/drive_c/DarkSouls/DARKSOULS.exe"
 winetricks = [
   "grabfullscreen=y",
 ]
