@@ -23,6 +23,3 @@ Packages needed for software development.
 
 ### Laptop
 Enables additional packages and settings for laptop computers.
-
-### Thinkpad
-Thinkpad-specific configuration.
