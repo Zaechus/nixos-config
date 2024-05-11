@@ -16,11 +16,13 @@
 , libogg
 , libpng
 , libslirp
+, libXi
 , opusfile
 , SDL2
 , SDL2_image
 , SDL2_net
 , speexdsp
+, zlib-ng
 }:
 
 stdenv.mkDerivation rec {
@@ -46,24 +48,19 @@ stdenv.mkDerivation rec {
     alsa-lib
     fluidsynth
     glib
+    iir1
     libmt32emu
     libogg
     libpng
     libslirp
+    libXi
     opusfile
     SDL2
     SDL2_image
     SDL2_net
     speexdsp
-    iir1
+    zlib-ng
   ];
-
-  NIX_CFLAGS_COMPILE = [
-    "-I${SDL2_image}/include/SDL2"
-    "-I${SDL2_net}/include/SDL2"
-  ];
-
-  enableParallelBuilding = true;
 
   postFixup = ''
     mv $out/bin/dosbox $out/bin/${pname}

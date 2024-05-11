@@ -6,12 +6,13 @@
     my.ley
     (retroarch.override {
       cores = with libretro; [
+        # beetle-psx-hw # playstation
         # beetle-saturn # saturn
         # dolphin # gamecube
-        fbneo # arcade
+        # fbneo # arcade
         freeintv # intellivision
         gambatte # game boy
-        genesis-plus-gx # genesis
+        # genesis-plus-gx # genesis
         # mame # arcade
         mesen # nes
         mgba # game boy advanced
@@ -19,6 +20,7 @@
         prosystem # atari 7800
         snes9x # snes
         stella # atari 2600
+        swanstation # playstation
       ];
     })
     wineWowPackages.staging

@@ -163,16 +163,6 @@ pre = "steam-run"
 runner = "sh"
 exe = "start.sh"
 
-[sw-xvt]
-prefix = "~/Games/sw-xvt"
-runner = "wine"
-exe = "~/Games/sw-xvt/drive_c/GOG Games/Star Wars - XvT/XWINGTIE.EXE"
-res = "640x480"
-scale = "2.25"
-winetricks = [
-  "vd=640x480",
-]
-
 [terraria]
 dir = "~/Games/Terraria"
 pre = "steam-run"
@@ -197,3 +187,13 @@ exe = "~/Games/VVVVVV/start.sh"
 prefix = "~/Games/world-of-warcraft"
 runner = "wine"
 exe = "~/Games/world-of-warcraft/drive_c/WoW/WoW.exe"
+
+[xvt]
+prefix = "~/Games/sw-xvt"
+runner = "wine"
+exe = "~/Games/sw-xvt/drive_c/GOG Games/Star Wars - XvT/XWINGTIE.EXE"
+res = "640x480"
+scale = "2.25"
+winetricks = [
+  "vd=640x480",
+]
