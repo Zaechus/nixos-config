@@ -132,10 +132,10 @@
           "XF86MonBrightnessUp" = "exec brightnessctl s +5%";
           "XF86MonBrightnessDown" = "exec brightnessctl s 5%-";
 
-          "XF86AudioRaiseVolume" = "exec amixer set Master 5%+";
-          "XF86AudioLowerVolume" = "exec amixer set Master 5%-";
-          "XF86AudioMute" = "exec sh ${./mute.sh}";
-          "XF86AudioMicMute" = "exec sh ${./micmute.sh}";
+          "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+          "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+          "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          "XF86AudioMicMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
           "${mod}+b" = "splith";
           "${mod}+v" = "splitv";
@@ -213,7 +213,6 @@
       };
 
       startup = [
-        { command = "sh ${./micmute.sh}"; }
         {
           command = ''
             for_window [class=".*"] inhibit_idle fullscreen
