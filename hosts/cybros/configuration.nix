@@ -16,6 +16,7 @@
 
     ../../modules/games
     ../../modules/games/misc
+    ../../modules/games/misc/xvt.nix
     ../../modules/games/doom
     ../../modules/games/minecraft
 

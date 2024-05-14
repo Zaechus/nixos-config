@@ -96,6 +96,11 @@ pre = "steam-run"
 runner = "~/.local/share/ley/lutris-GE-Proton8-25-x86_64/bin/wine"
 exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
 
+[original-war]
+prefix = "~/Games/original-war"
+runner = "wine"
+exe = "~/Games/original-war/drive_c/GOG Games/Original War/OwarFull.exe"
+
 [plutonia]
 dir = "~/Games/final-doom/Plutonia"
 runner = "crispy-doom"
@@ -188,6 +193,20 @@ prefix = "~/Games/world-of-warcraft"
 runner = "wine"
 exe = "~/Games/world-of-warcraft/drive_c/WoW/WoW.exe"
 
+[x-wing-alliance]
+prefix = "~/Games/star-wars-x-wing-alliance"
+runner = "wine"
+exe = "~/Games/star-wars-x-wing-alliance/drive_c/GOG Games/Star Wars - X-Wing Alliance/Alliance.EXE"
+esync = false
+res = "800x600"
+scale = "1.8"
+winetricks = [
+  "directplay",
+  "grabfullscreen=y",
+  "vd=800x600",
+  "win7",
+]
+
 [xvt]
 prefix = "~/Games/sw-xvt"
 runner = "wine"
@@ -195,5 +214,7 @@ exe = "~/Games/sw-xvt/drive_c/GOG Games/Star Wars - XvT/XWINGTIE.EXE"
 res = "640x480"
 scale = "2.25"
 winetricks = [
+  "directplay",
   "vd=640x480",
+  "winxp",
 ]
