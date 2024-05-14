@@ -8,7 +8,7 @@
       ../../../modules/home.nix
       ../../../themes/gruvbox
       ../../../modules/graphical/home.nix
-      ../../../modules/laptop/thinkpad.nix
+      ../../../modules/laptop/thinkpad
       ../../../modules/dev/home.nix
       ../../../modules/dev/rust
       ../../../modules/games/dosbox

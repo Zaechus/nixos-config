@@ -7,7 +7,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # alsa-utils # alsamixer, amixer
     imv
     mpv
     xdg-utils # need this for copy/paste images and other stuff
@@ -48,7 +47,7 @@
   };
 
   # Enable sound
-  # sound.enable = true; # saves sound state in alsamixer
+  sound.enable = true; # alsamixer, amixer, speaker-test, saves sound state
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
