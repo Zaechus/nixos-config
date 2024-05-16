@@ -212,13 +212,22 @@
         ];
       };
 
-      startup = [
+      floating.criteria = [
+        { app_id = "brave-nngceckbapebfimnlniiiahkandclblb-Default"; } # Bitwarden
+      ];
+
+      window.commands = [
         {
-          command = ''
-            for_window [class=".*"] inhibit_idle fullscreen
-            for_window [app_id=".*"] inhibit_idle fullscreen
-          '';
+          criteria = { class = ".*"; };
+          command = "inhibit_idle fullscreen";
         }
+        {
+          criteria = { app_id = ".*"; };
+          command = "inhibit_idle fullscreen";
+        }
+      ];
+
+      startup = [
         {
           command = ''
             swayidle -w timeout 300 'swaylock -fc 000000' \
