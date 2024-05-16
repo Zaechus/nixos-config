@@ -64,6 +64,7 @@
     brogue-ce
     # crawl
     du-dust
+    eza # exa
     ffmpeg
     # gimp
     imagemagick

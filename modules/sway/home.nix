@@ -120,8 +120,8 @@
           "${mod}+Tab" = "move workspace to output right";
           "${mod}+Shift+Tab" = "move workspace to output left";
 
-          "Print" = "exec grim";
           "${mod}+Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy";
+          "${mod}+Shift+Print" = "exec grim";
           "${mod}+g" = ''exec grim -g "$(slurp)" - | wl-copy'';
 
           "${mod}+Shift+s" = "exec swaylock -c 000000";

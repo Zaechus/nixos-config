@@ -25,6 +25,14 @@ $env.config = {
   ]
 }
 
+alias lx = eza --color=always
+alias lxa = lx -a
+alias lxl = lx -l
+alias lxal = lx -aalg
+def --wrapped lt [...args: string] {
+  lx -T ...$args | bat -p
+}
+
 alias scrcpy = scrcpy -KM --forward-all-clicks
 
 # Run nixpkgs binary without installing

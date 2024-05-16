@@ -14,6 +14,8 @@
     ruffle # flash
     # scrcpy # android
     # wesnoth
+    # xemu # xbox
+    # my.xenia # TODO: xbox 360
     # zeroad # 0ad
   ];
 
