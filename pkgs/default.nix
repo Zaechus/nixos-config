@@ -10,6 +10,7 @@ final: prev: {
     TheForceEngine = final.callPackage ./TheForceEngine { };
     tiny = final.callPackage ./tiny { };
     UltimateDoomBuilder = final.callPackage ./UltimateDoomBuilder { };
+    xdvdfs-cli = final.callPackage ./xdvdfs-cli { };
     zinfo = final.callPackage ./zinfo { };
   };
 }

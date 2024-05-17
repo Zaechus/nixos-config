@@ -15,7 +15,6 @@
   home.sessionVariables = {
     # MANPAGER = "sh -c 'col -bx | bat -l man -p'"; # FIXME: '-l man' broken for now
     MANPAGER = "bat -p";
-    PAGER = "bat -p";
   };
 
   home.shellAliases = {

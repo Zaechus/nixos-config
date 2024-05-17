@@ -10,11 +10,12 @@
     # ecwolf # wolf3d
     ironwail # quake
     # minetest
-    my.rpcs3 # playstation 3
+    my.rpcs3 # playstation 3 (ps3)
     ruffle # flash
     # scrcpy # android
     # wesnoth
-    # xemu # xbox
+    # my.xdvdfs # pack xiso
+    # xemu # xbox BUG
     # my.xenia # TODO: xbox 360
     # zeroad # 0ad
   ];
