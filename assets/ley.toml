@@ -66,6 +66,17 @@ args = ["-skipmovies"]
 pre = "steam-run"
 exe = "~/Games/doomrl-linux-x64-0997/doomrl"
 
+[halo]
+prefix = "~/Games/halo"
+pre = "steam-run"
+runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+exe = "~/Games/halo/drive_c/Program Files (x86)/Microsoft Games/Halo/halo.exe"
+winetricks = [
+  "grabfullscreen=y",
+  "mfc42",
+  "winxp",
+]
+
 [heroes3]
 prefix = "~/Games/heroes-of-might-and-magic-3-complete"
 runner = "wine"
@@ -204,7 +215,7 @@ winetricks = [
   "directplay",
   "grabfullscreen=y",
   "vd=800x600",
-  "win7",
+  "winxp",
 ]
 
 [xvt]
@@ -215,6 +226,7 @@ res = "640x480"
 scale = "2.25"
 winetricks = [
   "directplay",
+  "grabfullscreen=y",
   "vd=640x480",
   "winxp",
 ]
