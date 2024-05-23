@@ -11,16 +11,16 @@
         # dolphin # gamecube
         # fbneo # arcade
         freeintv # intellivision
-        gambatte # game boy
+        gambatte # game boy / gbc
         # genesis-plus-gx # genesis
         # mame # arcade
         mesen # nes
-        mgba # game boy advanced
+        mgba # gba
         mupen64plus # n64
         prosystem # atari 7800
         snes9x # snes
         stella # atari 2600
-        swanstation # playstation
+        swanstation # ps1
       ];
     })
     wineWowPackages.staging

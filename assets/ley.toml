@@ -158,7 +158,7 @@ winetricks = [
 pre = "steam-run"
 prefix = "~/Games/starcraft-remastered"
 runner = "wine"
-exe = "~/Games/starcraft-remastered/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe"
+exe = "~/Games/starcraft-remastered/drive_c/Program Files (x86)/StarCraft/StarCraft Launcher.exe"
 winetricks = [
   "grabfullscreen=y",
 ]

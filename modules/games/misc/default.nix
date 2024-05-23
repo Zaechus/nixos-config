@@ -10,7 +10,7 @@
     # ecwolf # wolf3d
     ironwail # quake
     # minetest
-    my.rpcs3 # playstation 3 (ps3)
+    my.rpcs3 # ps3
     ruffle # flash
     # scrcpy # android
     # wesnoth

@@ -2,7 +2,7 @@
 name = "virst"
 version = "0.1.0"
 edition = "2021"
-authors = ["Maxwell Anderson <zaechus@proton.me>"]
+authors = ["Maxwell Anderson <zaechus@pm.me>"]
 description = "A helper utility for libvirt and virt-manager"
 
 [dependencies]
