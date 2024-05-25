@@ -83,6 +83,21 @@ runner = "wine"
 exe = "~/Games/heroes-of-might-and-magic-3-complete/drive_c/GOG Games/HoMM 3 Complete/Heroes3.exe"
 res = "800x600"
 
+[heroes-of-the-storm]
+prefix = "~/Games/heroes-of-the-storm"
+runner = "wine"
+exe = "~/Games/heroes-of-the-storm/drive_c/Program Files (x86)/Heroes of the Storm/Heroes of the Storm.exe"
+winetricks = [
+  "arial",
+  "d3dcompiler_43",
+  "d3dcompiler_47",
+  "d3dx11_42",
+  "d3dx9_42",
+  "dxvk_nvapi0061",
+  "ucrtbase2019",
+  "vkd3d",
+]
+
 [hollow-knight]
 pre = "steam-run"
 exe = "~/Games/hollow-knight/start.sh"
@@ -155,7 +170,6 @@ winetricks = [
 ]
 
 [starcraft-remastered]
-pre = "steam-run"
 prefix = "~/Games/starcraft-remastered"
 runner = "wine"
 exe = "~/Games/starcraft-remastered/drive_c/Program Files (x86)/StarCraft/StarCraft Launcher.exe"
@@ -169,8 +183,8 @@ runner = "wine"
 exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II/StarCraft II.exe"
 winetricks = [
   "arial",
-  "tahoma",
   "grabfullscreen=y",
+  "tahoma",
 ]
 
 [stardew-valley]

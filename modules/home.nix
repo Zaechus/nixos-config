@@ -18,7 +18,6 @@
   };
 
   home.shellAliases = {
-    cp = "cp -i";
     diff = "diff --color";
     doas = "sudo";
     ip = "ip -c";
@@ -28,7 +27,6 @@
     ll = "l -l";
     lal = "l -al";
 
-    mv = "mv -i";
     pp = "ping 1.1.1.1";
     x = "xdg-open";
   };

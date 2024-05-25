@@ -4,7 +4,7 @@ Suffix=_GLS
 
 [Hotkeys]
 PTT=0
-MenuAchievements=F1
+MenuAchievements=
 AlertRecall=Backspace
 ArmySelect=H
 CameraCenter=Control+C
