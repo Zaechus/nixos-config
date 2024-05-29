@@ -198,6 +198,7 @@
 
       assigns = {
         "2" = [
+          { class = "noita.exe"; }
           { title = "Cuphead"; }
           { title = "Default - Wine desktop"; }
           { title = "Hollow Knight"; }
@@ -206,6 +207,7 @@
         ];
         "4" = [
           { app_id = "lutris"; }
+          { class = "galaxyclient.exe"; }
           { title = "Battle.net"; }
           { title = "Steam"; }
           { title = "Wine System Tray"; }
@@ -214,6 +216,7 @@
 
       floating.criteria = [
         { app_id = "brave-nngceckbapebfimnlniiiahkandclblb-Default"; } # Bitwarden
+        { class = "galaxyclient.exe"; }
       ];
 
       window.commands = [

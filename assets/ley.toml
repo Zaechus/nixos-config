@@ -69,6 +69,13 @@ args = ["-skipmovies"]
 pre = "steam-run"
 exe = "~/Games/doomrl-linux-x64-0997/doomrl"
 
+[gog-galaxy]
+prefix = "~/Games/gog-galaxy"
+pre = "steam-run"
+runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+exe = "~/Games/gog-galaxy/drive_c/Program Files (x86)/GOG Galaxy/GalaxyClient.exe"
+args = ["/runWithoutUpdating", "/deelevated"]
+
 [halo]
 prefix = "~/Games/halo"
 pre = "steam-run"
