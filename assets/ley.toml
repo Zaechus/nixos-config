@@ -4,7 +4,6 @@ exe = "~/Games/albiononline/Albion-Online"
 
 [amnesia]
 pre = "steam-run"
-runner = "sh"
 exe = "~/Games/Amnesia The Dark Descent/start.sh"
 
 [battlefront]
@@ -54,6 +53,10 @@ args = ["--hellfire"]
 [doom2]
 dir = "~/dosgames/doom2"
 runner = "crispy-doom"
+
+[doom3]
+dir = "~/.local/share/dhewm3"
+runner = "dhewm3"
 
 [doom64]
 prefix = "~/Games/doom-64"
@@ -190,16 +193,12 @@ winetricks = [
 ]
 
 [stardew-valley]
-dir = "~/Games/Stardew Valley"
 pre = "steam-run"
-runner = "sh"
-exe = "start.sh"
+exe = "~/Games/Stardew Valley/start.sh"
 
 [terraria]
-dir = "~/Games/Terraria"
 pre = "steam-run"
-runner = "sh"
-exe = "start.sh"
+exe = "~/Games/Terraria/start.sh"
 
 [tnt]
 dir = "~/Games/final-doom/TNT"
