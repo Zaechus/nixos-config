@@ -43,13 +43,13 @@ winetricks = [
 ]
 
 [diablo]
-dir = "~/Games/diablo/drive_c/GOG Games/Diablo"
+dir = "~/.local/share/diasurgical/devilution"
 runner = "devilutionx"
 
 [diablo-hellfire]
-dir = "~/Games/diablo/drive_c/GOG Games/Diablo"
+dir = "~/.local/share/diasurgical/devilution/hellfire"
 runner = "devilutionx"
-args = ["--hellfire", "--data-dir", "~/Games/diablo/drive_c/GOG Games/Diablo/hellfire"]
+args = ["--hellfire"]
 
 [doom2]
 dir = "~/dosgames/doom2"
@@ -84,6 +84,7 @@ exe = "~/Games/heroes-of-might-and-magic-3-complete/drive_c/GOG Games/HoMM 3 Com
 res = "800x600"
 
 [heroes-of-the-storm]
+env = {WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1, __GL_DXVK_OPTIMIZATIONS=1, __GL_SHADER_DISK_CACHE=1}
 prefix = "~/Games/heroes-of-the-storm"
 runner = "wine"
 exe = "~/Games/heroes-of-the-storm/drive_c/Program Files (x86)/Heroes of the Storm/Heroes of the Storm.exe"
@@ -94,6 +95,7 @@ winetricks = [
   "d3dx11_42",
   "d3dx9_42",
   "dxvk_nvapi0061",
+  "grabfullscreen=y",
   "ucrtbase2019",
   "vkd3d",
 ]
