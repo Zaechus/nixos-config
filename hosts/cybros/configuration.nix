@@ -67,13 +67,14 @@
     eza # exa
     ffmpeg
     # gimp
+    # glxinfo # glxgears
     imagemagick
     # infra-arcana
     lftp
     # libwebp # dwebp
     p7zip
     pciutils # lspci
-    poppler_utils # pdftotext
+    poppler_utils # pdf
     scummvm
     rbdoom-3-bfg
     rogue

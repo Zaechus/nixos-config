@@ -8,14 +8,12 @@ exe = "~/Games/Amnesia The Dark Descent/start.sh"
 
 [battlefront]
 prefix = "~/Games/star-wars-battlefront"
-pre = "steam-run"
-runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+runner = "wine"
 exe = "~/Games/star-wars-battlefront/drive_c/GOG Games/Star Wars - Battlefront/LaunchBF.exe"
 
 [battlefront-ii]
 prefix = "~/Games/star-wars-battlefront-ii"
-pre = "steam-run"
-runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+runner = "wine"
 exe = "~/Games/star-wars-battlefront-ii/drive_c/GOG Games/Star Wars - Battlefront 2/SWB2Launcher.exe"
 
 [cuphead]
@@ -28,14 +26,10 @@ exe = "~/Games/cuphead/drive_c/Cuphead/Cuphead.exe"
 prefix = "~/Games/dark-souls"
 runner = "wine"
 exe = "~/Games/dark-souls/drive_c/DarkSouls/DARKSOULS.exe"
-winetricks = [
-  "grabfullscreen=y",
-]
 
 [dead-space]
 prefix = "~/Games/dead-space"
-pre = "steam-run"
-runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+runner = "wine"
 exe = "~/Games/dead-space/drive_c/GOG Games/Dead Space/Dead Space.exe"
 winetricks = [
   "grabfullscreen=y",
@@ -60,8 +54,7 @@ runner = "dhewm3"
 
 [doom64]
 prefix = "~/Games/doom-64"
-pre = "steam-run"
-runner = "~/.local/share/ley/lutris-GE-Proton8-25-x86_64/bin/wine"
+runner = "wine"
 exe = "~/Games/doom-64/drive_c/DOOM 64/DOOM64_x64.exe"
 args = ["-skipmovies"]
 
@@ -130,8 +123,7 @@ args = ["-iwad", "~/dosgames/doom2/DOOM2.WAD"]
 
 [noita]
 prefix = "~/Games/noita"
-pre = "steam-run"
-runner = "~/.local/share/ley/lutris-GE-Proton8-25-x86_64/bin/wine"
+runner = "wine"
 exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
 
 [original-war]
