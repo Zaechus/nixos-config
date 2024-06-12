@@ -20,12 +20,10 @@
         FirewallMark = 51820;
       };
       wireguardPeers = [{
-        wireguardPeerConfig = {
-          Endpoint = "146.70.174.242:51820";
-          PublicKey = "l7w86I7WktXeH5okV0/c/NW14hfDiAqrkZ33MBJAmyE=";
-          AllowedIPs = [ "0.0.0.0/0" ];
-          # PersistentKeepalive = 25;
-        };
+        Endpoint = "146.70.174.242:51820";
+        PublicKey = "l7w86I7WktXeH5okV0/c/NW14hfDiAqrkZ33MBJAmyE=";
+        AllowedIPs = [ "0.0.0.0/0" ];
+        # PersistentKeepalive = 25;
       }];
     };
     networks.wg0 = {
@@ -38,28 +36,22 @@
         DNSOverTLS = false;
       };
       routes = [{
-        routeConfig = {
-          Destination = "0.0.0.0/0";
-          Gateway = "10.2.0.1";
-          GatewayOnLink = true;
-          Table = 51820;
-        };
+        Destination = "0.0.0.0/0";
+        Gateway = "10.2.0.1";
+        GatewayOnLink = true;
+        Table = 51820;
       }];
       routingPolicyRules = [
         {
-          routingPolicyRuleConfig = {
-            Family = "ipv4";
-            InvertRule = true;
-            FirewallMark = 51820;
-            Table = 51820;
-          };
+          Family = "ipv4";
+          InvertRule = true;
+          FirewallMark = 51820;
+          Table = 51820;
         }
         {
-          routingPolicyRuleConfig = {
-            Family = "ipv4";
-            SuppressPrefixLength = 0;
-            Table = "main";
-          };
+          Family = "ipv4";
+          SuppressPrefixLength = 0;
+          Table = "main";
         }
       ];
       linkConfig = {

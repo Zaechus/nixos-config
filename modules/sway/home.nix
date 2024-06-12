@@ -198,6 +198,7 @@
 
       assigns = {
         "2" = [
+          { class = "heroesofthestorm_x64.exe"; }
           { class = "noita.exe"; }
           { title = "Cuphead"; }
           { title = "Default - Wine desktop"; }
@@ -207,8 +208,9 @@
         ];
         "4" = [
           { app_id = "lutris"; }
+          { class = "battle.net.exe"; }
+          { class = "explorer.exe"; } # wine system tray
           { class = "galaxyclient.exe"; }
-          { title = "Battle.net"; }
           { title = "Steam"; }
           { title = "Wine System Tray"; }
         ];
@@ -216,6 +218,7 @@
 
       floating.criteria = [
         { app_id = "brave-nngceckbapebfimnlniiiahkandclblb-Default"; } # Bitwarden
+        { class = "battle.net.exe"; }
         { class = "galaxyclient.exe"; }
       ];
 
@@ -227,6 +230,20 @@
         {
           criteria = { app_id = ".*"; };
           command = "inhibit_idle fullscreen";
+        }
+
+        {
+          criteria = { class = "battle.net.exe"; };
+          command = "fullscreen disable";
+        }
+        {
+          criteria = { class = "battle.net.exe"; };
+          command = "resize set width 90ppt height 90ppt";
+        }
+
+        {
+          criteria = { class = "explorer.exe"; }; # wine system tray
+          command = "no_focus";
         }
       ];
 

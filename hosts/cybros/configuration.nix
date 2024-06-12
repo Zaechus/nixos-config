@@ -12,7 +12,6 @@
     ../../modules/network/wireguard.nix
 
     ../../modules/dev
-    ../../modules/virt
 
     ../../modules/games
     ../../modules/games/misc
@@ -60,7 +59,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
   environment.systemPackages = with pkgs; [
-    aria2
+    aria2 # torrent
     brogue-ce
     # crawl
     du-dust

@@ -227,7 +227,6 @@ res = "800x600"
 scale = "1.8"
 winetricks = [
   "directplay",
-  "grabfullscreen=y",
   "vd=800x600",
   "winxp",
 ]
@@ -240,7 +239,6 @@ res = "640x480"
 scale = "2.25"
 winetricks = [
   "directplay",
-  "grabfullscreen=y",
   "vd=640x480",
   "winxp",
 ]
