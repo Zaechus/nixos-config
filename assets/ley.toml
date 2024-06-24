@@ -208,6 +208,10 @@ prefix = "~/Games/turtle-wow"
 runner = "wine"
 exe = "~/Games/turtle-wow/drive_c/twmoa/VanillaFixes.exe"
 args = ["WoW_tweaked.exe"]
+winetricks = [
+  "grabfullscreen=y",
+  "vd=1920x1080",
+]
 
 [vvvvvv]
 pre = "steam-run"

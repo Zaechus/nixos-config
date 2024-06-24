@@ -236,10 +236,6 @@
           criteria = { class = "battle.net.exe"; };
           command = "fullscreen disable";
         }
-        {
-          criteria = { class = "battle.net.exe"; };
-          command = "resize set width 90ppt height 90ppt";
-        }
 
         {
           criteria = { class = "explorer.exe"; }; # wine system tray
