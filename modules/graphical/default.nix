@@ -7,6 +7,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    alsa-utils
     imv
     mpv
     xdg-utils # need this for copy/paste images and other stuff
@@ -21,12 +22,10 @@
     };
   };
 
-  hardware.opengl = {
-    # Wayland
+  # Wayland/Vulkan
+  hardware.graphics = {
     enable = true;
-    # Vulkan
-    driSupport = true;
-    driSupport32Bit = true; # needed for some games
+    enable32Bit = true;
   };
 
   xdg = {
@@ -47,7 +46,6 @@
   };
 
   # Enable sound
-  sound.enable = true; # alsamixer, amixer, speaker-test, saves sound state
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

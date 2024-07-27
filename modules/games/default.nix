@@ -17,6 +17,7 @@
         mesen # nes
         mgba # gba
         mupen64plus # n64
+        # parallel-n64 # n64
         prosystem # atari 7800
         snes9x # snes
         stella # atari 2600
