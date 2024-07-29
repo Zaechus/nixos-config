@@ -52,5 +52,26 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber = {
+      enable = true;
+
+      # pipewire/wireplumber has awful docs but this somehow gets HDMI audio to work automatically
+      extraScripts = {
+        "90-autoswitch.lua" = ''
+          policy = {
+            ["audio.sink"] = {
+              {
+                name = "HDMI",
+                matches = {
+                  { ".*hdmi.*" }
+                },
+                priority = 1000,
+                default = true,
+              }
+            }
+          }
+        '';
+      };
+    };
   };
 }
