@@ -8,9 +8,9 @@ rustPlatform.buildRustPackage rec {
     owner = "Zaechus";
     repo = pname;
     rev = "refs/heads/main";
-    hash = "sha256-wev2niXn9Z5MzWT59Kl8q82eU/lhNZY9hABHNqmD8oI=";
+    hash = "sha256-FAHBJnwl5V2v0TpwqOKy+Nz9H5OATgX7tMckB2wG/i4=";
   };
 
-  cargoHash = "sha256-NpVCKsCXqpuv+gSWpIHp28g/07F219cGi94yGxBbR5s=";
+  cargoHash = "sha256-OBCMTcinHOP9s7DKiiiF14q9IX7PoZnyf4GcVjO7k9w=";
 }
 

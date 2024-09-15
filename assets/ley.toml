@@ -210,17 +210,20 @@ exe = "~/Games/turtle-wow/drive_c/twmoa/VanillaFixes.exe"
 args = ["WoW_tweaked.exe"]
 winetricks = [
   "grabfullscreen=y",
-  "vd=1920x1080",
 ]
 
 [vvvvvv]
 pre = "steam-run"
 exe = "~/Games/VVVVVV/start.sh"
 
-[world-of-warcraft]
+[wow]
 prefix = "~/Games/world-of-warcraft"
 runner = "wine"
 exe = "~/Games/world-of-warcraft/drive_c/WoW/WoW.exe"
+winetricks = [
+  "grabfullscreen=y",
+  "vd=1280x1024",
+]
 
 [x-wing-alliance]
 prefix = "~/Games/star-wars-x-wing-alliance"
