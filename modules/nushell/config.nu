@@ -4,6 +4,9 @@ $env.config = {
   ls: {
     clickable_links: false
   }
+  display_errors: {
+    exit_code: false
+  }
   cursor_shape: {
     vi_insert: block
     vi_normal: block
