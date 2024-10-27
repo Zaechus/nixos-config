@@ -209,10 +209,8 @@
         "4" = [
           { app_id = "lutris"; }
           { class = "battle.net.exe"; }
-          { class = "explorer.exe"; } # wine system tray
           { class = "galaxyclient.exe"; }
           { title = "Steam"; }
-          { title = "Wine System Tray"; }
         ];
       };
 

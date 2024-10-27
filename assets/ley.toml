@@ -16,6 +16,17 @@ prefix = "~/Games/star-wars-battlefront-ii"
 runner = "wine"
 exe = "~/Games/star-wars-battlefront-ii/drive_c/GOG Games/Star Wars - Battlefront 2/SWB2Launcher.exe"
 
+[caesar3]
+prefix = "~/Games/caesar3"
+runner = "wine"
+exe = "~/Games/caesar3/drive_c/GOG Games/Caesar 3/c3.exe"
+res = "1024x768"
+scale = "1.40625"
+winetricks = [
+  "grabfullscreen=y",
+  "vd=1024x768",
+]
+
 [cuphead]
 prefix = "~/Games/cuphead"
 pre = "steam-run"
@@ -31,9 +42,6 @@ exe = "~/Games/dark-souls/drive_c/DarkSouls/DARKSOULS.exe"
 prefix = "~/Games/dead-space"
 runner = "wine"
 exe = "~/Games/dead-space/drive_c/GOG Games/Dead Space/Dead Space.exe"
-winetricks = [
-  "grabfullscreen=y",
-]
 
 [diablo]
 dir = "~/.local/share/diasurgical/devilution"
@@ -61,6 +69,16 @@ args = ["-skipmovies"]
 [doomrl]
 pre = "steam-run"
 exe = "~/Games/doomrl-linux-x64-0997/doomrl"
+
+[empire-earth]
+prefix = "~/Games/empire-earth"
+arch = "win32"
+runner = "wine"
+exe = "~/Games/empire-earth/drive_c/GOG Games/Empire Earth Gold/Empire Earth/Empire Earth.exe"
+winetricks = [
+  "directmusic",
+  "vd=1920x1080"
+]
 
 [gog-galaxy]
 prefix = "~/Games/gog-galaxy"
@@ -116,6 +134,11 @@ args = ["-c", "ihnm.ini", "--themepath=scummvm"]
 pre = "steam-run"
 exe = "~/Games/kerbal-space-program/start.sh"
 
+[lsl1]
+dir = "~/Games/Leisure Suit Larry"
+runner = "scummvm"
+args = ["-c", "lsl1.ini", "--themepath=scummvm"]
+
 [master]
 dir = "~/dosgames/master/wads"
 runner = "crispy-doom"
@@ -125,6 +148,10 @@ args = ["-iwad", "~/dosgames/doom2/DOOM2.WAD"]
 prefix = "~/Games/noita"
 runner = "wine"
 exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
+
+[openttd]
+pre = "steam-run"
+exe = "~/Games/OpenTTD/start.sh"
 
 [original-war]
 prefix = "~/Games/original-war"
@@ -194,6 +221,37 @@ winetricks = [
 [stardew-valley]
 pre = "steam-run"
 exe = "~/Games/Stardew Valley/start.sh"
+
+[stronghold]
+prefix = "~/Games/stronghold"
+runner = "wine"
+exe = "~/Games/stronghold/drive_c/GOG Games/Stronghold HD/Stronghold.exe"
+winetricks = [
+  "directplay",
+  "vd=1920x1080",
+]
+
+[swat4]
+prefix = "~/Games/swat4"
+runner = "wine"
+exe = "~/Games/swat4/drive_c/GOG Games/SWAT 4/Content/System/Swat4.exe"
+
+[swat4x]
+prefix = "~/Games/swat4"
+runner = "wine"
+exe = "~/Games/swat4/drive_c/GOG Games/SWAT 4/ContentExpansion/System/Swat4X.exe"
+
+[swgb]
+prefix = "~/Games/star-wars-galactic-battlegrounds"
+runner = "wine"
+exe = "~/Games/star-wars-galactic-battlegrounds/drive_c/GOG Games/Star Wars - Galactic Battlegrounds/swgbg.exe"
+res = "1280x1024"
+scale = "1.054"
+winetricks = [
+  "directplay",
+  "grabfullscreen=y",
+  "vd=1280x1024",
+]
 
 [terraria]
 pre = "steam-run"
