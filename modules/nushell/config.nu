@@ -6,6 +6,7 @@ $env.config = {
   }
   display_errors: {
     exit_code: false
+    termination_signal: false # do not show error on SIGINT
   }
   cursor_shape: {
     vi_insert: block
