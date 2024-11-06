@@ -2,12 +2,13 @@
 
 {
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
     ../../modules
     ../../modules/network/wired.nix
     ../../modules/network/wireless.nix
     ../../modules/laptop
     ../../modules/network/wireguard.nix
+
     ../../modules/rtorrent
   ];
 
