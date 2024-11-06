@@ -19,4 +19,8 @@ A Lenovo Thinkpad T430 running NixOS. This laptop has previously used Arch, Manj
 ![](https://img.shields.io/badge/OS-openSUSE-74bb20?logo=openSUSE)
 ![](https://img.shields.io/badge/Nix-gray?logo=NixOS)
 
-A Lenovo Legion 5 running openSUSE Tumbleweed with Nix. My fiance's laptop.
+A Lenovo Legion 5 running Fedora with Nix. My wife's laptop.
+
+## telperion
+
+An old Dell laptop running NixOS.

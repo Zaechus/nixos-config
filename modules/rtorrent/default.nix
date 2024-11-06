@@ -1,0 +1,5 @@
+{
+  services.rtorrent = {
+    enable = true;
+  };
+}
