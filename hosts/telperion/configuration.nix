@@ -7,10 +7,10 @@
     ../../modules/network/wired.nix
     ../../modules/network/wireless.nix
     ../../modules/laptop
-    ../../modules/network/wireguard.nix
 
     ../../modules/deluge
     ../../modules/ssh
+    ../../modules/network/wg-quick.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -43,6 +43,9 @@
   # Hostname
   networking.hostName = "telperion";
 
+  # Options
+  systemd.targets.tpm2.enable = false;
+
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
   # environment.systemPackages = with pkgs; [
@@ -52,12 +55,15 @@
   # User
   users.users.narud = {
     isNormalUser = true;
+    extraGroups = [ "deluge" ];
   };
 
   home-manager.users.narud = {
     imports = [
       ../../modules/home.nix
       ../../modules/zellij
+
+      ../../modules/deluge/home.nix
     ];
 
     home.stateVersion = "24.11";
