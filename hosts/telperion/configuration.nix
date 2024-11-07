@@ -1,4 +1,4 @@
-# { pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -9,7 +9,6 @@
     ../../modules/laptop
     ../../modules/network/wireguard.nix
 
-    ../../modules/rtorrent
     ../../modules/ssh
   ];
 
@@ -45,11 +44,9 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
-  # environment.systemPackages = with pkgs; [
-  #   # aria2 # torrent
-  #   # du-dust
-  #   # pciutils # #lspci
-  # ];
+  environment.systemPackages = with pkgs; [
+    rtorrent
+  ];
 
   # User
   users.users.narud = {

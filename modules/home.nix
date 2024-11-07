@@ -3,7 +3,7 @@
     ./options.nix
     ../themes/theme.nix
     ./bottom
-    ./git
+    ./git/home.nix
     ./helix
     ./nushell
     ./starship

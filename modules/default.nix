@@ -6,6 +6,10 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [
+    ./git
+  ];
+
   boot.loader.timeout = 1;
   # powerManagement.cpuFreqGovernor = "schedutil"; # FIXME
   boot.tmp = {
