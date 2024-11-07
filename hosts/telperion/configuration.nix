@@ -9,6 +9,7 @@
     ../../modules/laptop
 
     ../../modules/deluge
+    ../../modules/ftp
     ../../modules/ssh
     ../../modules/network/wg-quick.nix
   ];
@@ -45,6 +46,7 @@
 
   # Options
   systemd.targets.tpm2.enable = false;
+  services.vsftpd.anonymousUserHome = "/var/lib/deluge/Downloads";
 
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
@@ -55,7 +57,7 @@
   # User
   users.users.narud = {
     isNormalUser = true;
-    extraGroups = [ "deluge" ];
+    extraGroups = [ "deluge" "ftp" ];
   };
 
   home-manager.users.narud = {
