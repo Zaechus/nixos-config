@@ -10,6 +10,7 @@
     ../../modules/network/wireguard.nix
 
     ../../modules/rtorrent
+    ../../modules/ssh
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -58,6 +59,7 @@
   home-manager.users.narud = {
     imports = [
       ../../modules/home.nix
+      ../../modules/zellij
     ];
 
     home.stateVersion = "24.11";

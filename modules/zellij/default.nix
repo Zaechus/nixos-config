@@ -26,7 +26,7 @@
     keybinds {
       ${keybinds}
     }
-
-    theme "${theme}"
-  '' + builtins.readFile ./themes.kdl;
+  '' +
+  (if builtins.hasAttr "theme" config.programs.zellij.settings then "\ntheme \"${theme}\"\n\n" else "") +
+  builtins.readFile ./themes.kdl;
 }
