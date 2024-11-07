@@ -1,0 +1,5 @@
+{
+  services.deluge = {
+    enable = true;
+  };
+}
