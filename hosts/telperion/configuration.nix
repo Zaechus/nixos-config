@@ -1,4 +1,4 @@
-# { pkgs, ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -47,6 +47,11 @@
   # Options
   systemd.targets.tpm2.enable = false;
   services.vsftpd.anonymousUserHome = "/var/lib/deluge/Downloads";
+  services.logind = lib.mkForce {
+    lidSwitch = "ignore";
+    lidSwitchExternalPower = "ignore";
+    lidSwitchDocked = "ignore";
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
