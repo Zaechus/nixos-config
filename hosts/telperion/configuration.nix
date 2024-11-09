@@ -45,12 +45,15 @@
   networking.hostName = "telperion";
 
   # Options
+  fileSystems."/home/ftp/Downloads" = {
+    device = "/var/lib/deluge/Downloads";
+    options = [ "bind" ];
+  };
   services.logind = lib.mkForce {
     lidSwitch = "ignore";
     lidSwitchExternalPower = "ignore";
     lidSwitchDocked = "ignore";
   };
-  services.vsftpd.anonymousUserHome = "/var/lib/deluge/Downloads";
   systemd.network.networks.wlan0.linkConfig.ActivationPolicy = "down";
   systemd.targets.tpm2.enable = false;
 
