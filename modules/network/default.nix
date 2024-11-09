@@ -17,9 +17,7 @@
   services.resolved = {
     enable = true;
     dnssec = "true";
-    extraConfig = ''
-      DNSOverTLS=yes
-    '';
+    dnsovertls = "true";
   };
 
   systemd.network = {
