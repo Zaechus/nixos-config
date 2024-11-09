@@ -9,7 +9,7 @@
     ../../modules/laptop
     ../../modules/graphical
     ../../modules/network/bluetooth.nix
-    ../../modules/network/wireguard.nix
+    ./wireguard.nix
 
     ../../modules/dev
 

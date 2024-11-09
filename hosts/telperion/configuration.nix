@@ -45,13 +45,14 @@
   networking.hostName = "telperion";
 
   # Options
-  systemd.targets.tpm2.enable = false;
-  services.vsftpd.anonymousUserHome = "/var/lib/deluge/Downloads";
   services.logind = lib.mkForce {
     lidSwitch = "ignore";
     lidSwitchExternalPower = "ignore";
     lidSwitchDocked = "ignore";
   };
+  services.vsftpd.anonymousUserHome = "/var/lib/deluge/Downloads";
+  systemd.network.networks.wlan0.linkConfig.ActivationPolicy = "down";
+  systemd.targets.tpm2.enable = false;
 
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
