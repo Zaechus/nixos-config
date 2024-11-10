@@ -47,7 +47,10 @@
     options = [ "bind" ];
   };
   services.logind.lidSwitch = "ignore";
-  systemd.network.networks.wlan0.linkConfig.ActivationPolicy = "down";
+  systemd.network.networks = {
+    "99-ethernet-default-dhcp".networkConfig.LinkLocalAddressing = false;
+    "99-wireless-client-dhcp".linkConfig.ActivationPolicy = "down";
+  };
   systemd.targets.tpm2.enable = false;
 
   # User
