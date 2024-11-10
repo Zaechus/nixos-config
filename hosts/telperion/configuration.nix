@@ -1,12 +1,9 @@
-{ lib, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
     ../../modules
     ../../modules/network/wired.nix
     ../../modules/network/wireless.nix
-    ../../modules/laptop
 
     ../../modules/deluge
     ../../modules/ftp
@@ -49,19 +46,9 @@
     device = "/var/lib/deluge/Downloads";
     options = [ "bind" ];
   };
-  services.logind = lib.mkForce {
-    lidSwitch = "ignore";
-    lidSwitchExternalPower = "ignore";
-    lidSwitchDocked = "ignore";
-  };
+  services.logind.lidSwitch = "ignore";
   systemd.network.networks.wlan0.linkConfig.ActivationPolicy = "down";
   systemd.targets.tpm2.enable = false;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search nixpkgs ripgrep
-  # environment.systemPackages = with pkgs; [
-  #   deluge
-  # ];
 
   # User
   users.users.narud = {

@@ -86,10 +86,4 @@
     "8ec07c"
     "ebdbb2"
   ];
-
-  services.logind = {
-    lidSwitch = "suspend";
-    lidSwitchExternalPower = "suspend";
-    lidSwitchDocked = "ignore";
-  };
 }
