@@ -52,6 +52,12 @@ dir = "~/.local/share/diasurgical/devilution/hellfire"
 runner = "devilutionx"
 args = ["--hellfire"]
 
+[dishonored]
+prefix = "~/Games/dishonored"
+runner = "wine"
+exe = "~/Games/dishonored/drive_c/GOG Games/Dishonored/Binaries/Win32/Dishonored.exe"
+args = ["-nostartupmovies"]
+
 [doom2]
 dir = "~/dosgames/doom2"
 runner = "crispy-doom"
