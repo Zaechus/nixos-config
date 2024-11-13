@@ -19,7 +19,15 @@
       ../../../modules/games/dwarf-fortress
     ];
 
-    wayland.windowManager.sway.config.output.eDP-1.subpixel = "rgb";
+    wayland.windowManager.sway.config.output = {
+      eDP-1 = {
+        pos = "0 0";
+        subpixel = "rgb";
+      };
+      DP-1 = {
+        pos = "1920 0";
+      };
+    };
 
     home.stateVersion = "21.11";
   };

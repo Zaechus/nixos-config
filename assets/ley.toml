@@ -29,8 +29,7 @@ winetricks = [
 
 [cuphead]
 prefix = "~/Games/cuphead"
-pre = "steam-run"
-runner = "~/.local/share/ley/lutris-GE-Proton8-25-x86_64/bin/wine"
+runner = "wine"
 exe = "~/Games/cuphead/drive_c/Cuphead/Cuphead.exe"
 
 [dark-souls]
@@ -88,10 +87,13 @@ winetricks = [
 
 [gog-galaxy]
 prefix = "~/Games/gog-galaxy"
-pre = "steam-run"
-runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+runner = "wine"
 exe = "~/Games/gog-galaxy/drive_c/Program Files (x86)/GOG Galaxy/GalaxyClient.exe"
 args = ["/runWithoutUpdating", "/deelevated"]
+winetricks = [
+  "corefonts",
+  "mfc140"
+]
 
 [halo]
 prefix = "~/Games/halo"
