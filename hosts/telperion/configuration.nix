@@ -11,6 +11,7 @@
     ../../modules/ftp
     ../../modules/ssh
     ../../modules/network/wg-quick.nix
+    ../../modules/bedrock-server
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -63,7 +64,7 @@
   # User
   users.users.narud = {
     isNormalUser = true;
-    extraGroups = [ "deluge" "ftp" ];
+    extraGroups = [ "deluge" "ftp" "bedrockserver" ];
   };
 
   home-manager.users.narud = {
