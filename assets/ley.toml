@@ -85,6 +85,7 @@ winetricks = [
   "vd=1920x1080"
 ]
 
+# https://content-system.gog.com/open_link/download?path=/open/galaxy/client/2.0.73.27/setup_galaxy_2.0.73.27.exe
 [gog-galaxy]
 prefix = "~/Games/gog-galaxy"
 runner = "wine"
