@@ -22,6 +22,7 @@
     isSystemUser = true;
     group = "bedrockserver";
     home = "/home/bedrockserver";
+    homeMode = "770";
     createHome = true;
   };
   users.groups.bedrockserver.name = "bedrockserver";
