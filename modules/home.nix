@@ -10,7 +10,7 @@
     ./zoxide
   ];
 
-  programs.bat.enable = true;
+  programs.bat.enable = true; # TODO
 
   home.sessionVariables = {
     # MANPAGER = "sh -c 'col -bx | bat -l man -p'"; # FIXME: '-l man' broken for now
