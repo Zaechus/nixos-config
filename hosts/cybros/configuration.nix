@@ -75,6 +75,7 @@
     p7zip
     pciutils # lspci
     poppler_utils # pdf
+    ppsspp # psp
     scummvm
     rbdoom-3-bfg
     rogue

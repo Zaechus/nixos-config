@@ -7,16 +7,18 @@
     # cataclysmDDA.stable.curses # apparently this is separate and doesn't compile...
     my.devilutionx # diablo
     dhewm3 # doom 3
+    # dolphin-emu # gamecube
+    # duckstation # playstation
     # ecwolf # wolf3d
     ironwail # quake
     # minetest
-    my.rpcs3 # ps3
+    # ppsspp # playstation portable
+    # my.rpcs3 # ps3 FIXME
     ruffle # flash
     # scrcpy # android
     # wesnoth
     # my.xdvdfs # pack xiso
-    # xemu # xbox BUG
-    # my.xenia # TODO: xbox 360
+    # xemu # xbox
     # zeroad # 0ad
   ];
 

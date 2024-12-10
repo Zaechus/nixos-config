@@ -27,7 +27,7 @@
 
 stdenv.mkDerivation rec {
   pname = "dosbox-staging";
-  version = "0.81.1";
+  version = "0.82.0";
 
   src = fetchFromGitHub {
     owner = pname;

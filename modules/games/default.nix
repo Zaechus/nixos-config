@@ -2,26 +2,23 @@
 
 {
   environment.systemPackages = with pkgs; [
-    dolphin-emu # gamecube
-    # duckstation # playstation
     innoextract # extract GOG offline installers
     my.ley
-    (retroarch.override {
-      cores = with libretro; [
-        beetle-psx-hw # playstation
-        # dolphin # gamecube (outdated)
-        fbneo # arcade
-        freeintv # intellivision
-        gambatte # game boy / gbc
-        genesis-plus-gx # genesis
-        mesen # nes
-        mgba # gba
-        mupen64plus # n64
-        prosystem # atari 7800
-        snes9x # snes
-        stella # atari 2600
-      ];
-    })
+    (retroarch.withCores (cores: with cores; [
+      beetle-psx-hw # playstation
+      # bluemsx # colecovision
+      # dolphin # gamecube (outdated)
+      fbneo # arcade
+      freeintv # intellivision
+      gambatte # game boy / gbc
+      genesis-plus-gx # genesis
+      mesen # nes
+      mgba # gba
+      mupen64plus # n64
+      prosystem # atari 7800
+      snes9x # snes
+      stella # atari 2600
+    ]))
     wineWowPackages.staging
     winetricks
   ];
