@@ -8,6 +8,8 @@
       ../../../modules/home.nix
       ../../../themes/gruvbox
       ../../../modules/graphical/home.nix
+
+      ../../../modules/dev/rust
     ];
 
     wayland.windowManager.sway.config.window.titlebar = false; # TODO: just get rid of home-manager....

@@ -7,6 +7,10 @@
     ../../modules/laptop
     ../../modules/graphical
 
+    ../../modules/dev
+
+    ../../modules/games
+
     ./users/zaechus.nix
   ];
 
