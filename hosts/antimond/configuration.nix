@@ -6,6 +6,8 @@
     ../../modules/network/wireless.nix
     ../../modules/laptop
     ../../modules/graphical
+
+    ./users/zaechus.nix
   ];
 
   # systemd-boot
