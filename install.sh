@@ -67,4 +67,4 @@ btrfs filesystem mkswapfile -s 4G /mnt/swap/swapfile
 # NixOS
 nixos-generate-config --root /mnt
 
-nixos-install
+# nixos-install
