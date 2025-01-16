@@ -10,6 +10,8 @@
       ../../../modules/graphical/home.nix
     ];
 
+    wayland.windowManager.sway.config.window.titlebar = false; # TODO: just get rid of home-manager....
+
     home.stateVersion = "24.05";
   };
 }
