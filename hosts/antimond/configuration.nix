@@ -4,6 +4,7 @@
     ../../modules
     ../../modules/network/wired.nix
     ../../modules/network/wireless.nix
+    ../../modules/network/bluetooth.nix
     ../../modules/laptop
     ../../modules/graphical
 

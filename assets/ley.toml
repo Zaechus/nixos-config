@@ -270,15 +270,6 @@ exe = "~/Games/Terraria/start.sh"
 dir = "~/Games/final-doom/TNT"
 runner = "crispy-doom"
 
-[turtle-wow]
-prefix = "~/Games/turtle-wow"
-runner = "wine"
-exe = "~/Games/turtle-wow/drive_c/twmoa/VanillaFixes.exe"
-args = ["WoW_tweaked.exe"]
-winetricks = [
-  "grabfullscreen=y",
-]
-
 [vvvvvv]
 pre = "steam-run"
 exe = "~/Games/VVVVVV/start.sh"

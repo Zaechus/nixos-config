@@ -19,7 +19,7 @@
       snes9x # snes
       stella # atari 2600
     ]))
-    wineWowPackages.staging
+    wineWowPackages.staging # FIXME: wine-10.0-rc5 is just... not doing well with games rn lol
     winetricks
   ];
 
