@@ -21,7 +21,11 @@
     algorithm = "zstd";
   };
 
-  # services.fwupd.enable = true;
+  # systemctl start fwupd
+  # fwupdmgr refresh
+  # fwupdmgr get-udpates
+  # fwupdmgr update
+  services.fwupd.enable = true;
 
   nix = {
     extraOptions = ''

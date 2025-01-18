@@ -59,7 +59,7 @@ mount -o compress=zstd,noatime,subvol=nix /dev/mapper/root /mnt/nix
 mount -o noatime,nodatacow,subvol=swap /dev/mapper/root /mnt/swap
 
 mkdir /mnt/boot
-mount "$part1" /mnt/boot
+mount -o umask=0077 "$part1" /mnt/boot
 
 # Swapfile
 btrfs filesystem mkswapfile -s 4G /mnt/swap/swapfile

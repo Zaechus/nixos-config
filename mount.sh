@@ -23,4 +23,4 @@ mount -o compress=zstd,subvol=root /dev/mapper/root /mnt
 mount -o compress=zstd,subvol=home /dev/mapper/root /mnt/home
 mount -o compress=zstd,noatime,subvol=nix /dev/mapper/root /mnt/nix
 mount -o noatime,nodatacow,subvol=swap /dev/mapper/root /mnt/swap
-mount "$part1" /mnt/boot
+mount -o umask=0077 "$part1" /mnt/boot

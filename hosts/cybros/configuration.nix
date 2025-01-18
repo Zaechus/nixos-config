@@ -42,6 +42,7 @@
   # Enforce fstab options
   fileSystems = {
     "/".options = [ "compress=zstd" ];
+    "/boot".options = [ "umask=0077" ];
     "/home".options = [ "compress=zstd" ];
     "/nix".options = [ "compress=zstd" "noatime" ];
     "/swap".options = [ "noatime" "nodatacow" ];
