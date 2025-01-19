@@ -12,7 +12,18 @@
       ../../../modules/dev/rust
     ];
 
-    wayland.windowManager.sway.config.window.titlebar = false; # TODO: just get rid of home-manager....
+    wayland.windowManager.sway.config = {
+      output = {
+        eDP-2 = {
+          pos = "0 0";
+          subpixel = "rgb";
+        };
+        DP-4 = {
+          pos = "2560 0";
+        };
+      };
+      window.titlebar = false; # TODO: just get rid of home-manager....
+    };
 
     home.stateVersion = "24.05";
   };
