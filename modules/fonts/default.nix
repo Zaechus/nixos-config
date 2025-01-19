@@ -10,6 +10,7 @@
       dejavu_fonts
       fira
       fira-code
+      font-awesome
       iosevka
     ];
 

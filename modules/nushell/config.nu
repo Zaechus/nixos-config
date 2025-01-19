@@ -73,7 +73,7 @@ def "nix dev" [
 }
 
 def "nix try" [] {
-  nix-build -E 'with import <nixpkgs> { }; callPackage ./default.nix { }'
+  NIXPKGS_ALLOW_UNFREE=1 nix-build -E 'with import <nixpkgs> { }; callPackage ./default.nix { }'
 }
 
 def sc2cfg [] {
