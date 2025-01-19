@@ -98,8 +98,7 @@ winetricks = [
 
 [halo]
 prefix = "~/Games/halo"
-pre = "steam-run"
-runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+wine = "lutris-GE-Proton8-26-x86_64"
 exe = "~/Games/halo/drive_c/Program Files (x86)/Microsoft Games/Halo/halo.exe"
 winetricks = [
   "grabfullscreen=y",
@@ -155,7 +154,7 @@ args = ["-iwad", "~/dosgames/doom2/DOOM2.WAD"]
 
 [noita]
 prefix = "~/Games/noita"
-runner = "wine"
+wine = "wine-9.22-staging-tkg-amd64-wow64" # runner = "wine"
 exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
 
 [openttd]
@@ -173,8 +172,7 @@ runner = "crispy-doom"
 
 [quake-enhanced]
 prefix = "~/Games/quake-enhanced"
-pre = "steam-run"
-runner = "~/.local/share/ley/lutris-GE-Proton8-26-x86_64/bin/wine"
+wine = "lutris-GE-Proton8-26-x86_64"
 exe = "~/Games/quake-enhanced/drive_c/Quake Enhanced/Quake_Shipping_Playfab_GOG_x64.exe"
 args = ["+g_showintromovie", "0"]
 
@@ -198,11 +196,11 @@ exe = "~/Games/rimworld/start.sh"
 
 [starcraft]
 prefix = "~/Games/starcraft"
-runner = "wine"
+wine = "wine-9.22-staging-tkg-amd64-wow64"
 exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
 res = "640x480"
 scale = "2.25"
-mouse_speed = "-0.55"
+# mouse_speed = "-0.55"
 winetricks = [
   "grabfullscreen=y",
   "vd=640x480",
