@@ -70,7 +70,7 @@
   home-manager.users.narud = {
     imports = [
       ../../modules/home.nix
-      ../../modules/zellij
+      ../../modules/zellij/home.nix
 
       ../../modules/deluge/home.nix
     ];
