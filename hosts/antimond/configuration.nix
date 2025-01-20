@@ -24,6 +24,10 @@
   # AMD
   hardware.amdgpu.initrd.enable = true;
   hardware.cpu.amd.updateMicrocode = true;
+  boot.kernelParams = [
+    "amdgpu.dcdebugmask=0x10" # disable PSR
+    "amdgpu.abmlevel=0" # disable ABM
+  ];
 
   # Enable trim
   boot.initrd.luks.devices."root".allowDiscards = true;
