@@ -2,7 +2,7 @@
   imports = [
     ./base.nix
     ../../modules/home.nix
-    ../../themes/gruvbox
+    ../../themes/gruvbox/home.nix
   ];
 
   home.stateVersion = "23.11";

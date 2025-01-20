@@ -3,7 +3,6 @@
     ./options.nix
     ../themes/theme.nix
     ./bottom
-    ./git/home.nix
     ./helix
     ./nushell
     ./starship
@@ -11,6 +10,8 @@
   ];
 
   programs.bat.enable = true; # TODO
+
+  programs.git.enable = true;
 
   home.sessionVariables = {
     # MANPAGER = "sh -c 'col -bx | bat -l man -p'"; # FIXME: '-l man' broken for now

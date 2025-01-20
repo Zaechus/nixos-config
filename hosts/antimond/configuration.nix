@@ -8,7 +8,7 @@
     ../../modules/laptop
     ../../modules/graphical
 
-    ../../modules/dev
+    ../../modules/dev/rust
 
     ../../modules/games
 

@@ -1,7 +1,7 @@
 {
   imports = [
     ../../../modules/home.nix
-    ../../../themes/gruvbox
+    ../../../themes/gruvbox/home.nix
   ];
 
   home = {

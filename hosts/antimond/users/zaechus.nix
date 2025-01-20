@@ -6,10 +6,10 @@
   home-manager.users.zaechus = {
     imports = [
       ../../../modules/home.nix
-      ../../../themes/gruvbox
+      ../../../themes/gruvbox/home.nix
       ../../../modules/graphical/home.nix
 
-      ../../../modules/dev/rust
+      ../../../modules/dev/rust/home.nix
     ];
 
     wayland.windowManager.sway.config = {
