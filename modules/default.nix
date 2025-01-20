@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ./git
+    (import ./git { })
   ];
 
   boot.loader.timeout = 1;

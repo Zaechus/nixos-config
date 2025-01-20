@@ -24,6 +24,8 @@
       ../../../modules/games/dwarf-fortress
     ];
 
+    programs.git.enable = true;
+
     wayland.windowManager.sway.config.output = {
       eDP-1 = {
         pos = "0 0";

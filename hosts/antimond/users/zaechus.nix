@@ -1,6 +1,14 @@
+let
+  username = "zaechus";
+in
 {
   imports = [
-    (import ../../../modules/dev/rust { username = "zaechus"; })
+    (import ../../../modules/dev/rust { inherit username; })
+    (import ../../../modules/git {
+      inherit username;
+      email = "zaechus@pm.me";
+      name = "Zaechus";
+    })
   ];
 
   users.users.zaechus = {
@@ -10,12 +18,9 @@
 
   home-manager.users.zaechus = {
     imports = [
-      ../../../users/zaechus/home.nix
       ../../../modules/home.nix
       ../../../themes/gruvbox/home.nix
       ../../../modules/graphical/home.nix
-
-      ../../../modules/zellij/home.nix
     ];
 
     wayland.windowManager.sway.config = {
@@ -29,6 +34,11 @@
         };
       };
       window.titlebar = false; # TODO: just get rid of home-manager....
+    };
+
+    home = {
+      homeDirectory = "/home/zaechus";
+      username = "zaechus";
     };
 
     home.stateVersion = "24.05";
