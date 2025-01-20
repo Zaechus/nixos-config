@@ -8,8 +8,6 @@
     ../../modules/laptop
     ../../modules/graphical
 
-    ../../modules/dev/rust
-
     ../../modules/games
 
     ./users/zaechus.nix

@@ -1,12 +1,14 @@
 { lib, ... }:
 
 {
-  imports = [
-    ../../../users/zaechus
-  ];
+  users.users.zaechus = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "video" ];
+  };
 
   home-manager.users.zaechus = {
     imports = [
+      ../../../users/zaechus/home.nix
       ../../../modules/home.nix
       ../../../themes/tokyonight
       ../../../modules/graphical/home.nix

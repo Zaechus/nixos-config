@@ -11,8 +11,6 @@
     ../../modules/network/bluetooth.nix
     ./wireguard.nix
 
-    ../../modules/dev/rust
-
     ../../modules/games
     ../../modules/games/misc
     ../../modules/games/misc/xvt.nix

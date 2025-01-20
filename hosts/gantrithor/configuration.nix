@@ -39,9 +39,5 @@
   # Hostname
   networking.hostName = "gantrithor";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search nixpkgs wget
-  #environment.systemPackages = with pkgs; [];
-
-  system.stateVersion = "21.11"; # Did you read the comment?
+  system.stateVersion = "21.11";
 }

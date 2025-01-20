@@ -1,9 +1,9 @@
 { lib, ... }:
 
 {
-  imports = [
-    ../../../users/lizzie
-  ];
+  users.users.lizzie = {
+    isNormalUser = true;
+  };
 
   home-manager.users.lizzie = {
     imports = [
