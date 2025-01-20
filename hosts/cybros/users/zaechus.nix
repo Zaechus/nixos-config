@@ -10,7 +10,6 @@
       ../../../modules/graphical/home.nix
       ../../../modules/laptop/thinkpad
       ../../../modules/dev/home.nix
-      ../../../modules/dev/rust/home.nix
       ../../../modules/games/dosbox
       ../../../modules/games/nethack
 

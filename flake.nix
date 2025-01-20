@@ -52,15 +52,6 @@
       };
     };
 
-    homeConfigurations = {
-      "lizzie@sparkle3" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = [
-          ./hosts/sparkle3/lizzie/home.nix
-        ];
-      };
-    };
-
     devShells."x86_64-linux" =
       let
         pkgs = nixpkgs.legacyPackages."x86_64-linux";

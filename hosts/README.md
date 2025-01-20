@@ -20,13 +20,6 @@ A Lenovo Thinkpad T14 Gen 2 AMD running NixOS.
 
 A Lenovo Thinkpad T430 running NixOS.
 
-## sparkle3 💻
-
-![](https://img.shields.io/badge/OS-openSUSE-74bb20?logo=openSUSE)
-![](https://img.shields.io/badge/Nix-gray?logo=NixOS)
-
-A Lenovo Legion 5 running Fedora with Nix. My wife's laptop.
-
 ## telperion
 
 ![](https://img.shields.io/badge/OS-NixOS-6e9bcb?logo=NixOS)

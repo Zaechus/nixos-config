@@ -9,7 +9,7 @@
       ../../../themes/gruvbox/home.nix
       ../../../modules/graphical/home.nix
 
-      ../../../modules/dev/rust/home.nix
+      ../../../modules/dev/home.nix
     ];
 
     wayland.windowManager.sway.config = {

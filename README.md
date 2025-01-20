@@ -22,11 +22,3 @@ cd nixos-config-main
 ./setup.sh $HOST
 passwd $USER
 ```
-
-## [Nix](https://nixos.org/download.html#nix-install-linux) + [Home Manager](https://nix-community.github.io/home-manager/index.html#sec-flakes-standalone)
-```sh
-sh <(curl -L https://nixos.org/nix/install) --daemon
-```
-```sh
-./nix.sh $USER
-```
