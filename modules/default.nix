@@ -21,12 +21,6 @@
     algorithm = "zstd";
   };
 
-  # systemctl start fwupd
-  # fwupdmgr refresh
-  # fwupdmgr get-udpates
-  # fwupdmgr update
-  services.fwupd.enable = true;
-
   nix = {
     extraOptions = ''
       experimental-features = nix-command flakes

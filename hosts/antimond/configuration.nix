@@ -49,5 +49,7 @@
   # Hostname
   networking.hostName = "antimond";
 
+  services.fwupd.enable = true;
+
   system.stateVersion = "24.05";
 }
