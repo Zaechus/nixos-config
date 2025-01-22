@@ -5,4 +5,7 @@
 
 {
   programs.git.config.delta.syntax-theme = "gruvbox-dark";
+
+  # https://chrome.google.com/webstore/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
+  programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 }
