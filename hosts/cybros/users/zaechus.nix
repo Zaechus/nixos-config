@@ -11,17 +11,17 @@
   home-manager.users.zaechus = {
     imports = [
       ../../../users/zaechus/home.nix
-      ../../../modules/home.nix
+      ../../../home
       ../../../themes/gruvbox/home.nix
-      ../../../modules/graphical/home.nix
-      ../../../modules/laptop/thinkpad
-      ../../../modules/zellij/home.nix
-      ../../../modules/games/dosbox
-      ../../../modules/games/nethack
+      ../../../home/graphical
+      ../../../home/thinkpad
+      ../../../home/zellij
+      ../../../home/games/dosbox
+      ../../../home/games/nethack
 
-      ../../../modules/tiny
-      ../../../modules/games/doomrl
-      ../../../modules/games/dwarf-fortress
+      ../../../home/tiny
+      ../../../home/games/doomrl
+      ../../../home/games/dwarf-fortress
     ];
 
     programs.git.enable = true;

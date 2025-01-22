@@ -69,10 +69,10 @@
 
   home-manager.users.narud = {
     imports = [
-      ../../modules/home.nix
-      ../../modules/zellij/home.nix
+      ../../home
+      ../../home/zellij
 
-      ../../modules/deluge/home.nix
+      ../../home/deluge
     ];
 
     home.stateVersion = "24.11";

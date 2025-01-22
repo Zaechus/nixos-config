@@ -9,10 +9,10 @@
   home-manager.users.zaechus = {
     imports = [
       ../../../users/zaechus/home.nix
-      ../../../modules/home.nix
-      ../../../themes/tokyonight
-      ../../../modules/graphical/home.nix
-      ../../../modules/laptop/thinkpad
+      ../../../home
+      ../../../themes/tokyonight/home.nix
+      ../../../home/graphical
+      ../../../home/thinkpad
     ];
 
     programs.git.enable = true;

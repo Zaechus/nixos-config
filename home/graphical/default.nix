@@ -2,8 +2,8 @@
   imports = [
     ../alacritty
     ../chromium/brave.nix
-    ../sway/home.nix
-    ../fonts/home.nix
+    ../sway
+    ../fonts
   ];
 
   gtk.enable = true;

@@ -7,9 +7,9 @@
 
   home-manager.users.lizzie = {
     imports = [
-      ../../../modules/home.nix
-      ../../../themes/tokyonight
-      ../../../modules/graphical/home.nix
+      ../../../home
+      ../../../themes/tokyonight/home.nix
+      ../../../home/graphical
     ];
 
     programs.nushell.extraLogin = lib.mkOverride 0 "if (tty) =~ '/dev/tty' { exec sway }";

@@ -8,7 +8,7 @@ and should be placed into user imports.
 ## NixOS Modules
 
 ### Default
-`default.nix` and `home.nix` contain basic functionality/configuration that should
+`default.nix` contains basic functionality/configuration that should
 be shared by most systems and users.
 
 ### Wired & Wireless

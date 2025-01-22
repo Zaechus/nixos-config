@@ -18,9 +18,9 @@ in
 
   home-manager.users.zaechus = {
     imports = [
-      ../../../modules/home.nix
+      ../../../home
       ../../../themes/gruvbox/home.nix
-      ../../../modules/graphical/home.nix
+      ../../../home/graphical
     ];
 
     wayland.windowManager.sway.config = {
