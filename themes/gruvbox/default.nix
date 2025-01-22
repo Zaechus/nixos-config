@@ -79,6 +79,8 @@
   #   };
   # };
 
-  # home.packages = with pkgs; [ vivid ];
-  # vivid.theme = "gruvbox-dark";
+  programs.vivid = {
+    enable = true;
+    theme = "gruvbox-dark";
+  };
 }
