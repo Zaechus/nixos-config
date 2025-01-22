@@ -22,9 +22,6 @@ in
   };
   home-manager.users.zaechus = {
     imports = [
-      ../../../themes/gruvbox/home.nix
-      ../../../themes/theme.nix
-
       # ../../../home
       ../../../modules/options.nix
       ../../../home/nushell
