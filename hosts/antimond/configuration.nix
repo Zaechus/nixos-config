@@ -10,6 +10,8 @@
 
     ../../modules/games
 
+    ../../themes/gruvbox
+
     ./users/zaechus.nix
   ];
 
