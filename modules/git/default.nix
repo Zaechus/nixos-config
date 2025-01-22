@@ -18,13 +18,16 @@
 
   system.activationScripts =
     let
+      config_file = pkgs.writeTextFile {
+        name = "config-git-config";
+        text = ''
+          [user]
+          	email = "${email}"
+          	name = "${name}"
+        '';
+      };
       config_dir = "/home/${username}/.config/git";
       config_dest = "${config_dir}/config";
-      config_text = ''
-        [user]
-        	email = "${email}"
-        	name = "${name}"
-      '';
     in
     {
       git_config = {
@@ -33,9 +36,8 @@
           if username != "" then ''
             if [ -d "/home/${username}" ]; then
               install -d -o ${username} -g users ${config_dir}
-              printf '${config_text}' > ${config_dest}
-              chown ${username}:users ${config_dest}
-              chmod 444 ${config_dest}
+              ln -sf ${config_file} ${config_dest}
+              chown -h ${username}:users ${config_dest}
             fi
           '' else "";
       };
