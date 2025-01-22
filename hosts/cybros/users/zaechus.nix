@@ -8,6 +8,10 @@
     extraGroups = [ "wheel" "video" ];
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
   home-manager.users.zaechus = {
     imports = [
       ../../../users/zaechus/home.nix

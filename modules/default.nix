@@ -33,13 +33,9 @@
     };
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-  };
-
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    bottom
     fd
     file
     ouch

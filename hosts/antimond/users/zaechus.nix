@@ -16,12 +16,44 @@ in
     extraGroups = [ "wheel" "video" ];
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
   home-manager.users.zaechus = {
     imports = [
-      ../../../home
       ../../../themes/gruvbox/home.nix
-      ../../../home/graphical
+      ../../../themes/theme.nix
+
+      # ../../../home
+      ../../../modules/options.nix
+      ../../../home/nushell
+
+      # ../../../home/graphical
+      ../../../home/alacritty
+      ../../../home/sway
     ];
+
+    home.shellAliases = {
+      btm = "btm -R --battery"; # TODO: use bottom.toml
+      diff = "diff --color";
+      doas = "sudo";
+      ip = "ip -c";
+
+      l = "ls";
+      la = "l -a";
+      ll = "l -l";
+      lal = "l -al";
+
+      pp = "ping 1.1.1.1";
+      x = "xdg-open";
+    };
+
+    services.gammastep = {
+      enable = true;
+      dawnTime = "05:30-06:30";
+      duskTime = "20:30-21:30";
+    };
 
     wayland.windowManager.sway.config = {
       output = {

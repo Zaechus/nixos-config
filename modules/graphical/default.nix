@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../chromium/brave.nix
     ../fonts
     ../sway
   ];
