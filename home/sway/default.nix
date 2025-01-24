@@ -34,7 +34,7 @@
       output."*".bg = "${../../assets/background.jpg} fill";
 
       menu = with config.theme; ''
-        bemenu-run --fn '${config.fonts.monospace} 14' \
+        bemenu-run --fn 'Iosevka Extended 14' \
           --tb \${bg} \
           --fb \${bg} \
           --nb \${bg} \
@@ -169,7 +169,7 @@
       };
 
       fonts = {
-        names = [ config.fonts.monospace ];
+        names = [ "Iosevka Extended" ];
         size = 9.0;
       };
 

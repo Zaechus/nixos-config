@@ -1,8 +1,11 @@
+{ config, ... }:
+
 let
   username = "zaechus";
 in
 {
   imports = [
+    (import ../../../modules/alacritty { inherit username; })
     (import ../../../modules/dev/rust { inherit username; })
     (import ../../../modules/git {
       inherit username;
@@ -16,6 +19,35 @@ in
     extraGroups = [ "wheel" "video" ];
   };
 
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      cursor.style.shape = "Block";
+      colors = {
+        primary = {
+          background = config.theme.bg;
+          foreground = config.theme.fg;
+        };
+
+        normal = with config.theme; {
+          inherit black red green yellow blue magenta cyan white;
+        };
+
+        bright = with config.theme.bright; {
+          inherit black red green yellow blue magenta cyan white;
+        };
+      };
+
+      font = {
+        normal = {
+          family = "Iosevka Extended";
+          style = "Term";
+        };
+        size = 10.0;
+      };
+    };
+  };
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -23,12 +55,7 @@ in
   home-manager.users.zaechus = {
     imports = [
       ../../../themes/theme.nix
-      # ../../../home
-      ../../../modules/options.nix
       ../../../home/nushell
-
-      # ../../../home/graphical
-      ../../../home/alacritty
       ../../../home/sway
     ];
 
@@ -85,6 +112,7 @@ in
     };
 
     wayland.windowManager.sway.config = {
+      terminal = "alacritty msg create-window || alacritty";
       output = {
         eDP-2 = {
           pos = "0 0";

@@ -1,6 +1,5 @@
 {
   imports = [
-    ../modules/options.nix
     ../themes/theme.nix
     ./bottom
     ./helix

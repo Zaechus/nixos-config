@@ -7,7 +7,8 @@
 
 {
   imports = [
-    (import ./git { })
+    ./options.nix
+    # (import ./git { })
   ];
 
   boot.loader.timeout = 1;

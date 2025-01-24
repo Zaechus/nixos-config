@@ -86,6 +86,6 @@
     };
   };
 
-  home.packages = with pkgs; [ vivid ];
-  vivid.theme = "nord";
+  # home.packages = with pkgs; [ vivid ];
+  # vivid.theme = "nord";
 }

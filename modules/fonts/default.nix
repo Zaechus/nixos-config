@@ -1,10 +1,6 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-    ../options.nix
-  ];
-
   fonts = {
     packages = with pkgs; [
       dejavu_fonts
@@ -15,11 +11,9 @@
     ];
 
     fontconfig = {
-      defaultFonts.monospace = [ config.fonts.monospace ];
+      defaultFonts.monospace = [ "Iosevka Extended" ];
       hinting.enable = false;
       subpixel.lcdfilter = "light"; # fix for status bar characters
     };
-
-    monospace = "Iosevka Extended";
   };
 }

@@ -5,7 +5,7 @@
     position = "top";
     statusCommand = "${pkgs.my.rustatus}/bin/rustatus";
     fonts = {
-      names = [ config.fonts.monospace ];
+      names = [ "Iosevka Extended" ];
       size = 10.0;
     };
     colors = with config.theme; {

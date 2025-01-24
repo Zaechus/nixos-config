@@ -97,8 +97,8 @@
     };
   };
 
-  home.packages = with pkgs; [ vivid ];
-  vivid.theme = "gruvbox-dark";
+  # home.packages = with pkgs; [ vivid ];
+  # vivid.theme = "gruvbox-dark";
 
   programs.micro.settings.colorscheme = "gruvbox";
 
