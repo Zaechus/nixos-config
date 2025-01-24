@@ -13,7 +13,7 @@
     ironwail # quake
     # minetest
     # ppsspp # playstation portable
-    # my.rpcs3 # ps3 FIXME
+    # my.rpcs3 # ps3
     ruffle # flash
     # scrcpy # android
     # wesnoth

@@ -1,13 +1,23 @@
+let
+  username = "zaechus";
+in
 {
   imports = [
-    (import ../../../modules/dev/rust { username = "zaechus"; })
+    (import ../../../common/users { inherit username; })
+    ../../../common/users/graphical
+
+    (import ../../../common/users/dev/rust { inherit username; })
+    (import ../../../common/users/git {
+      inherit username;
+      email = "zaechus@pm.me";
+      name = "Zaechus";
+    })
   ];
 
   users.users.zaechus = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
   };
-
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -15,28 +25,51 @@
   home-manager.users.zaechus = {
     imports = [
       ../../../users/zaechus/home.nix
-      ../../../home
       ../../../themes/gruvbox/home.nix
-      ../../../home/graphical
+
+      # ../../../home
+      ../../../themes/theme.nix
+      ../../../home/nushell
+      ../../../home/starship
+
+      ../../../home/sway
+
       ../../../home/thinkpad
       ../../../home/zellij
       ../../../home/games/dosbox
       ../../../home/games/nethack
-
-      ../../../home/tiny
-      ../../../home/games/doomrl
-      ../../../home/games/dwarf-fortress
     ];
 
-    programs.git.enable = true;
+    home.shellAliases = {
+      diff = "diff --color";
+      doas = "sudo";
+      ip = "ip -c";
 
-    wayland.windowManager.sway.config.output = {
-      eDP-1 = {
-        pos = "0 0";
-        subpixel = "rgb";
-      };
-      DP-1 = {
-        pos = "1920 0";
+      l = "ls";
+      la = "l -a";
+      ll = "l -l";
+      lal = "l -al";
+
+      pp = "ping 1.1.1.1";
+      x = "xdg-open";
+    };
+
+    services.gammastep = {
+      enable = true;
+      dawnTime = "05:30-06:30";
+      duskTime = "20:30-21:30";
+    };
+
+    wayland.windowManager.sway.config = {
+      terminal = "alacritty msg create-window || alacritty";
+      output = {
+        eDP-1 = {
+          pos = "0 0";
+          subpixel = "rgb";
+        };
+        DP-1 = {
+          pos = "1920 0";
+        };
       };
     };
 

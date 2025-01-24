@@ -3,21 +3,23 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules
-    ../../modules/network/wired.nix
-    ../../modules/network/wireless.nix
-    ../../modules/laptop
-    ../../modules/graphical
-    ../../modules/network/bluetooth.nix
+    ../../common
+    ../../common/network/wired.nix
+    ../../common/network/wireless.nix
+    ../../common/laptop
+    ../../common/graphical
+    ../../common/network/bluetooth.nix
     ./wireguard.nix
 
-    ../../modules/games
-    ../../modules/games/misc
-    ../../modules/games/misc/xvt.nix
-    ../../modules/games/doom
-    ../../modules/games/minecraft
+    ../../common/games
+    ../../common/games/misc
+    ../../common/games/misc/xvt.nix
+    ../../common/games/doom
+    ../../common/games/minecraft
 
-    ../../modules/waydroid
+    ../../common/waydroid
+
+    ../../themes/gruvbox
 
     ./users/zaechus.nix
     ./users/lizzie.nix

@@ -1,3 +1,3 @@
 {
-  home.file.".config/deluge/auth".source = ../../modules/deluge/auth;
+  home.file.".config/deluge/auth".source = ../../common/deluge/auth;
 }

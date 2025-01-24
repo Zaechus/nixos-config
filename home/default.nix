@@ -8,12 +8,7 @@
     ./zoxide
   ];
 
-  programs.bat.enable = true; # TODO
-
-  home.sessionVariables = {
-    # MANPAGER = "sh -c 'col -bx | bat -l man -p'"; # FIXME: '-l man' broken for now
-    MANPAGER = "bat -p";
-  };
+  programs.bat.enable = true;
 
   home.shellAliases = {
     diff = "diff --color";

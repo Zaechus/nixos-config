@@ -1,13 +1,13 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules
-    ../../modules/laptop
-    ../../modules/network/wired.nix
-    ../../modules/network/wireless.nix
-    ../../modules/graphical
+    ../../common
+    ../../common/laptop
+    ../../common/network/wired.nix
+    ../../common/network/wireless.nix
+    ../../common/graphical
 
-    ../../modules/ssh
+    ../../common/ssh
 
     ./users/zaechus.nix
   ];

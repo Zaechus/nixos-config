@@ -1,13 +1,13 @@
-{ config, ... }:
-
 let
   username = "zaechus";
 in
 {
   imports = [
-    (import ../../../modules/alacritty { inherit username; })
-    (import ../../../modules/dev/rust { inherit username; })
-    (import ../../../modules/git {
+    (import ../../../common/users { inherit username; })
+    (import ../../../common/users/dev/rust { inherit username; })
+    ../../../common/users/alacritty
+
+    (import ../../../common/users/git {
       inherit username;
       email = "zaechus@pm.me";
       name = "Zaechus";
@@ -17,35 +17,6 @@ in
   users.users.zaechus = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
-  };
-
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      cursor.style.shape = "Block";
-      colors = {
-        primary = {
-          background = config.theme.bg;
-          foreground = config.theme.fg;
-        };
-
-        normal = with config.theme; {
-          inherit black red green yellow blue magenta cyan white;
-        };
-
-        bright = with config.theme.bright; {
-          inherit black red green yellow blue magenta cyan white;
-        };
-      };
-
-      font = {
-        normal = {
-          family = "Iosevka Extended";
-          style = "Term";
-        };
-        size = 10.0;
-      };
-    };
   };
 
   home-manager = {
@@ -91,7 +62,6 @@ in
     };
 
     home.shellAliases = {
-      btm = "btm -R --battery"; # TODO: use bottom.toml
       diff = "diff --color";
       doas = "sudo";
       ip = "ip -c";

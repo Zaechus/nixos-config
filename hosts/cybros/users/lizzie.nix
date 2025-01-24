@@ -1,15 +1,28 @@
 { lib, ... }:
 
+# let
+#   username = "lizzie";
+# in
 {
+  # imports = [
+  #   (import ../../../common/users { inherit username; })
+  #   ../../../common/users/graphical
+  # ];
+
   users.users.lizzie = {
     isNormalUser = true;
   };
 
   home-manager.users.lizzie = {
     imports = [
-      ../../../home
       ../../../themes/tokyonight/home.nix
-      ../../../home/graphical
+
+      # ../../../home
+      ../../../themes/theme.nix
+      ../../../home/nushell
+      ../../../home/starship
+
+      ../../../home/sway
     ];
 
     programs.nushell.extraLogin = lib.mkOverride 0 "if (tty) =~ '/dev/tty' { exec sway }";

@@ -1,14 +1,14 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules
-    ../../modules/network/wired.nix
-    ../../modules/network/wireless.nix
-    ../../modules/network/bluetooth.nix
-    ../../modules/laptop
-    ../../modules/graphical
+    ../../common
+    ../../common/network/wired.nix
+    ../../common/network/wireless.nix
+    ../../common/network/bluetooth.nix
+    ../../common/laptop
+    ../../common/graphical
 
-    ../../modules/games
+    ../../common/games
 
     ../../themes/gruvbox
 

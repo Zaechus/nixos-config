@@ -3,14 +3,14 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules
-    ../../modules/network/wired.nix
-    ../../modules/network/wireless.nix
+    ../../common
+    ../../common/network/wired.nix
+    ../../common/network/wireless.nix
 
-    ../../modules/deluge
-    ../../modules/ftp
-    ../../modules/ssh
-    ../../modules/network/wg-quick.nix
+    ../../common/deluge
+    ../../common/ftp
+    ../../common/ssh
+    ../../common/network/wg-quick.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

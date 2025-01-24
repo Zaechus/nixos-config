@@ -53,11 +53,11 @@
   # https://chrome.google.com/webstore/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 
-  # programs.bat.config.theme = "gruvbox-dark";
+  programs.bat.settings.theme = "gruvbox-dark";
 
-  # programs.bottom.settings.flags.color = "gruvbox";
+  programs.bottom.settings.flags.color = "gruvbox";
 
-  # programs.helix.settings.theme = "gruvbox";
+  programs.helix.settings.theme = "gruvbox";
 
   # programs.zellij.settings = {
   #   theme = "gruvbox";

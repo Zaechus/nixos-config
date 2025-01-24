@@ -1,84 +1,35 @@
-# The base configuration
-#
-# The default module includes basic system utilities and configuration that
-# should be present on all systems.
+{ config, lib, pkgs, ... }:
 
-{ config, pkgs, lib, ... }:
+with lib;
 
 {
-  imports = [
-    ./options.nix
-    # (import ./git { })
-  ];
-
-  boot.loader.timeout = 1;
-  # powerManagement.cpuFreqGovernor = "schedutil"; # FIXME
-  boot.tmp = {
-    useTmpfs = true;
-    cleanOnBoot = true;
-  };
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-  };
-
-  nix = {
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-    settings.auto-optimise-store = true;
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 32d";
+  options = {
+    files = mkOption {
+      type = with types; attrsOf (submodule ({ name, config, options, ... }: {
+        options = {
+          text = mkOption {
+            type = types.str;
+            default = "";
+          };
+          source = mkOption { type = types.path; };
+        };
+        config = {
+          source = lib.mkIf (config.text != "") (
+            pkgs.writeText name config.text
+          );
+        };
+      }));
+      default = { };
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
-    bottom
-    fd
-    file
-    ouch
-    ripgrep
-    my.zinfo
-  ];
-  environment.defaultPackages = [ pkgs.helix ];
-  environment.sessionVariables.EDITOR = "hx";
-
-  users.defaultUserShell = pkgs.nushell;
-  environment.shells = [ pkgs.nushell ];
-
-  environment.localBinInPath = true;
-
-  security.sudo.execWheelOnly = true;
-
-  services.getty = {
-    greetingLine = "NixOS ${builtins.substring 0 5 config.system.nixos.label} (\\m) - \\l";
-    helpLine = lib.mkForce "";
+  # TODO: verify paths; user perms; delete old links?
+  config = {
+    system.activationScripts = {
+      files = {
+        deps = [ "users" ];
+        text = concatStringsSep "\n" (mapAttrsToList (dest: file: "mkdir -p $(dirname ${dest}); ln -sf ${file.source} ${dest}") config.files);
+      };
+    };
   };
-  users.motd = "\nHello, sailor!\n\n";
-
-  services.nscd.enableNsncd = true;
-
-  console.keyMap = "us";
-  console.font = "Lat2-Terminus16";
-  console.colors = [
-    "282828"
-    "cc241d"
-    "98971a"
-    "d79921"
-    "458588"
-    "b16286"
-    "689d6a"
-    "a89984"
-    "928374"
-    "fb4934"
-    "b8bb26"
-    "fabd2f"
-    "83a598"
-    "d3869b"
-    "8ec07c"
-    "ebdbb2"
-  ];
 }

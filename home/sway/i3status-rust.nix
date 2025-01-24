@@ -9,7 +9,6 @@
     bars.top = {
       # https://greshake.github.io/i3status-rust/i3status_rs/blocks/index.html
       blocks = [
-        # TODO: fix net block; maybe file an issue for how broken it is
         { block = "net"; device = "(en|wl).*"; format = " $icon  "; format_alt = " $icon{ $ssid $signal_strength|}  "; missing_format = ""; }
         { block = "cpu"; format = " $utilization "; }
         { block = "temperature"; format = " $icon "; format_alt = " $icon $max "; }
