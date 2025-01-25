@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -52,11 +50,6 @@
   networking.hostName = "antimond";
 
   services.fwupd.enable = true;
-  environment.systemPackages = with pkgs; [
-    alacritty
-    git
-    helix
-  ];
 
   system.stateVersion = "24.05";
 }

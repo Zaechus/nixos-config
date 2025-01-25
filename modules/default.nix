@@ -28,6 +28,7 @@ in
     ./alacritty
     ./bottom
     ./helix
+    ./zellij
   ];
 
   options.users.users = mkOption {

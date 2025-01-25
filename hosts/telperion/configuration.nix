@@ -11,6 +11,9 @@
     ../../common/ftp
     ../../common/ssh
     ../../common/network/wg-quick.nix
+
+    (import ../../common/users { username = "narud"; })
+    (import ../../common/users/dev/zellij { username = "narud"; })
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -65,17 +68,8 @@
   users.users.narud = {
     isNormalUser = true;
     extraGroups = [ "deluge" "ftp" "bedrockserver" "systemd-journal" ];
-  };
 
-  home-manager.users.narud = {
-    imports = [
-      ../../home
-      ../../home/zellij
-
-      ../../home/deluge
-    ];
-
-    home.stateVersion = "24.11";
+    files.".config/deluge/auth".source = ../../common/deluge/auth;
   };
 
   system.stateVersion = "24.11";

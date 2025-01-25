@@ -45,7 +45,6 @@
       telperion = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          home-manager.nixosModules.home-manager
           { nixpkgs.overlays = [ self.overlays.my ]; }
           ./hosts/telperion/configuration.nix
         ];

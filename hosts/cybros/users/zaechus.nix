@@ -7,6 +7,7 @@ in
     (import ../../../themes/gruvbox { inherit username; })
     (import ../../../common/users/graphical { inherit username; })
     (import ../../../common/users/dev/rust { inherit username; })
+    (import ../../../common/users/dev/zellij { inherit username; })
     (import ../../../common/users/games/dosbox { inherit username; })
 
     (import ../../../common/users/git {
@@ -38,7 +39,6 @@ in
       ../../../home/sway
 
       ../../../home/thinkpad
-      ../../../home/zellij
       ../../../home/games/nethack
     ];
 
