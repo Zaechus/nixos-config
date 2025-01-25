@@ -1,5 +1,7 @@
+{ username, ... }: { ... }:
+
 {
-  programs.bottom = {
+  users.users.${username}.programs.bottom = {
     enable = true;
     settings.flags = {
       battery = true;

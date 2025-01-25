@@ -1,4 +1,4 @@
-{ username ? "", ... }: { pkgs, ... }:
+{ username, ... }: { pkgs, ... }:
 
 {
   imports = [ ../default.nix ];

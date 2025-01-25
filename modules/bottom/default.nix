@@ -1,23 +1,35 @@
-{ username, ... }: { config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
-  cfg = config.programs.bottom;
   settingsFormat = pkgs.formats.toml { };
-in
-{
-  options = {
-    programs.bottom = {
+  userOptions = {
+    options.programs.bottom = {
       enable = lib.mkEnableOption "bottom";
       settings = lib.mkOption {
         type = settingsFormat.type;
       };
     };
   };
-
-  config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ bottom ];
-    files."/home/${username}/.config/bottom/bottom.toml" = lib.mkIf (cfg.settings != [ ]) {
-      source = settingsFormat.generate "bottom.toml" cfg.settings;
+in
+{
+  options = {
+    users.users = lib.mkOption {
+      type = with lib.types; attrsOf (submodule userOptions);
     };
   };
+
+  config = lib.mkMerge [
+    {
+      environment.systemPackages = lib.mkIf (lib.any (user: user.programs.bottom.enable) (lib.attrValues config.users.users)) [ pkgs.bottom ];
+    }
+    {
+      files = lib.mapAttrs'
+        (name: user:
+          lib.nameValuePair "/home/${user.name}/.config/bottom/bottom.toml" {
+            source = settingsFormat.generate "bottom.toml" user.programs.bottom.settings;
+          }
+        )
+        (lib.filterAttrs (name: user: user.programs.bottom.enable && user.programs.bottom.settings != { }) config.users.users);
+    }
+  ];
 }

@@ -1,23 +1,36 @@
-{ username, ... }: { config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
-  cfg = config.programs.helix;
   settingsFormat = pkgs.formats.toml { };
-in
-{
-  options = {
-    programs.helix = {
+  userOptions = {
+    options.programs.helix = {
       enable = lib.mkEnableOption "helix";
       settings = lib.mkOption {
         type = settingsFormat.type;
+        default = { };
       };
     };
   };
-
-  config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ helix ];
-    files."/home/${username}/.config/helix/config.toml" = lib.mkIf (cfg.settings != [ ]) {
-      source = settingsFormat.generate "helix-config" cfg.settings;
+in
+{
+  options = {
+    users.users = lib.mkOption {
+      type = with lib.types; attrsOf (submodule userOptions);
     };
   };
+
+  config = lib.mkMerge [
+    {
+      environment.systemPackages = lib.mkIf (lib.any (user: user.programs.helix.enable) (lib.attrValues config.users.users)) [ pkgs.helix ];
+    }
+    {
+      files = lib.mapAttrs'
+        (name: user:
+          lib.nameValuePair "/home/${user.name}/.config/helix/config.toml" {
+            source = settingsFormat.generate "helix-config" user.programs.helix.settings;
+          }
+        )
+        (lib.filterAttrs (name: user: user.programs.helix.enable && user.programs.helix.settings != { }) config.users.users);
+    }
+  ];
 }

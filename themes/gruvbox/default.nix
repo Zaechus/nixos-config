@@ -3,7 +3,7 @@
 # https://raw.githubusercontent.com/wiki/gruvbox-community/gruvbox/images/gruvbox_palette_dark.png
 # https://github.com/alacritty/alacritty-theme/blob/master/themes/gruvbox_dark.toml
 
-{ pkgs, ... }:
+{ username, ... }: { pkgs, ... }:
 
 {
   imports = [ ../theme.nix ];
@@ -55,10 +55,6 @@
 
   programs.bat.settings.theme = "gruvbox-dark";
 
-  programs.bottom.settings.flags.color = "gruvbox";
-
-  programs.helix.settings.theme = "gruvbox";
-
   # programs.zellij.settings = {
   #   theme = "gruvbox";
 
@@ -82,5 +78,11 @@
   programs.vivid = {
     enable = true;
     theme = "gruvbox-dark";
+  };
+
+  users.users.${username} = {
+    programs.bottom.settings.flags.color = "gruvbox";
+
+    programs.helix.settings.theme = "gruvbox";
   };
 }

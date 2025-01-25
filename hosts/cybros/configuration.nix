@@ -19,8 +19,6 @@
 
     ../../common/waydroid
 
-    ../../themes/gruvbox
-
     ./users/zaechus.nix
     ./users/lizzie.nix
   ];

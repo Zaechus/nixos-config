@@ -1,23 +1,35 @@
-{ username, ... }: { config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
-  cfg = config.programs.alacritty;
   settingsFormat = pkgs.formats.toml { };
-in
-{
-  options = {
-    programs.alacritty = {
+  userOptions = {
+    options.programs.alacritty = {
       enable = lib.mkEnableOption "Alacritty";
       settings = lib.mkOption {
         type = settingsFormat.type;
       };
     };
   };
-
-  config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ alacritty ];
-    files."/home/${username}/.config/alacritty/alacritty.toml" = lib.mkIf (cfg.settings != [ ]) {
-      source = settingsFormat.generate "alacritty.toml" cfg.settings;
+in
+{
+  options = {
+    users.users = lib.mkOption {
+      type = with lib.types; attrsOf (submodule userOptions);
     };
   };
+
+  config = lib.mkMerge [
+    {
+      environment.systemPackages = lib.mkIf (lib.any (user: user.programs.alacritty.enable) (lib.attrValues config.users.users)) [ pkgs.alacritty ];
+    }
+    {
+      files = lib.mapAttrs'
+        (name: user:
+          lib.nameValuePair "/home/${user.name}/.config/alacritty/alacritty.toml" {
+            source = settingsFormat.generate "alacritty.toml" user.programs.alacritty.settings;
+          }
+        )
+        (lib.filterAttrs (name: user: user.programs.alacritty.enable && user.programs.alacritty.settings != { }) config.users.users);
+    }
+  ];
 }

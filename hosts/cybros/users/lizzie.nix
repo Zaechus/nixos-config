@@ -1,13 +1,12 @@
 { lib, ... }:
 
-# let
-#   username = "lizzie";
-# in
+let
+  username = "lizzie";
+in
 {
-  # imports = [
-  #   (import ../../../common/users { inherit username; })
-  #   ../../../common/users/graphical
-  # ];
+  imports = [
+    (import ../../../common/users { inherit username; })
+  ];
 
   users.users.lizzie = {
     isNormalUser = true;

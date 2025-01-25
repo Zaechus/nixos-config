@@ -3,7 +3,7 @@
 {
   imports = [
     ../modules
-    # (import ./git { })
+    ./git
   ];
 
   boot.loader.timeout = 1;

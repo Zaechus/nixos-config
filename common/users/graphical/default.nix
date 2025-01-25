@@ -1,5 +1,7 @@
+{ username, ... }: { ... }:
+
 {
   imports = [
-    ../alacritty
+    (import ../alacritty { inherit username; })
   ];
 }

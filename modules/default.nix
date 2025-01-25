@@ -3,6 +3,12 @@
 with lib;
 
 {
+  imports = [
+    ./alacritty
+    ./bottom
+    ./helix
+  ];
+
   options = {
     files = mkOption {
       type = with types; attrsOf (submodule ({ name, config, options, ... }: {
@@ -26,7 +32,7 @@ with lib;
   # TODO: verify paths; user perms; delete old links?
   config = {
     system.activationScripts = {
-      files = {
+      link-files = {
         deps = [ "users" ];
         text = concatStringsSep "\n" (mapAttrsToList (dest: file: "mkdir -p $(dirname ${dest}); ln -sf ${file.source} ${dest}") config.files);
       };

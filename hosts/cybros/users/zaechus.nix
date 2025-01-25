@@ -4,9 +4,10 @@ in
 {
   imports = [
     (import ../../../common/users { inherit username; })
-    ../../../common/users/graphical
-
+    (import ../../../themes/gruvbox { inherit username; })
+    (import ../../../common/users/graphical { inherit username; })
     (import ../../../common/users/dev/rust { inherit username; })
+
     (import ../../../common/users/git {
       inherit username;
       email = "zaechus@pm.me";
@@ -18,6 +19,7 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
   };
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
