@@ -1,11 +1,11 @@
-{ username ? ""
-, email ? ""
-, name ? ""
+{ username
+, email
+, name
 , ...
 }: { ... }:
 
 {
-  files."/home/${username}/.config/git/config".text = ''
+  users.users.${username}.files.".config/git/config".text = ''
     [user]
     	email = "${email}"
     	name = "${name}"
