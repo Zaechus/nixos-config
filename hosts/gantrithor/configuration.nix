@@ -23,11 +23,11 @@
 
   # Enforce fstab options
   fileSystems = {
-    "/".options = [ "compress=zstd" ];
+    "/".options = [ "compress=zstd" "space_cache=v2" ];
     "/boot".options = [ "umask=0077" ];
-    "/home".options = [ "compress=zstd" ];
-    "/nix".options = [ "compress=zstd" "noatime" ];
-    "/swap".options = [ "noatime" "nodatacow" ];
+    "/home".options = [ "compress=zstd" "space_cache=v2" ];
+    "/nix".options = [ "compress=zstd" "noatime" "space_cache=v2" ];
+    "/swap".options = [ "noatime" "nodatacow" "space_cache=v2" ];
   };
 
   # Swap
