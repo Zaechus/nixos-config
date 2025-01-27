@@ -33,8 +33,6 @@ in
 
       # ../../../home
       ../../../themes/theme.nix
-      ../../../home/nushell
-      ../../../home/starship
 
       ../../../home/sway
 

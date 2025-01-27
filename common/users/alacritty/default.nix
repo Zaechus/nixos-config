@@ -29,4 +29,6 @@
       };
     };
   };
+
+  # sway.config.terminal = "alacritty msg create-window || alacritty";
 }

@@ -28,7 +28,6 @@ in
   home-manager.users.zaechus = {
     imports = [
       ../../../themes/theme.nix
-      ../../../home/nushell
       ../../../home/sway
     ];
 
@@ -61,20 +60,6 @@ in
 
       primary = "#665c54"; # bg3 241
       secondary = "#fe8019"; # orange 208
-    };
-
-    home.shellAliases = {
-      diff = "diff --color";
-      doas = "sudo";
-      ip = "ip -c";
-
-      l = "ls";
-      la = "l -a";
-      ll = "l -l";
-      lal = "l -al";
-
-      pp = "ping 1.1.1.1";
-      x = "xdg-open";
     };
 
     services.gammastep = {

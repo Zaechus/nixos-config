@@ -1,6 +1,21 @@
 { lib, ... }:
 
+let
+  username = "zaechus";
+in
 {
+  imports = [
+    (import ../../../common/users { inherit username; })
+    (import ../../../themes/gruvbox { inherit username; })
+    (import ../../../common/users/graphical { inherit username; })
+
+    (import ../../../common/users/git {
+      inherit username;
+      email = "zaechus@pm.me";
+      name = "Zaechus";
+    })
+  ];
+
   users.users.zaechus = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
@@ -13,9 +28,8 @@
   home-manager.users.zaechus = {
     imports = [
       ../../../users/zaechus/home.nix
-      ../../../home
       ../../../themes/tokyonight/home.nix
-      ../../../home/graphical
+      ../../../home/sway
       ../../../home/thinkpad
     ];
 

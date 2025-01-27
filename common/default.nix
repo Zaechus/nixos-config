@@ -78,4 +78,19 @@
   ];
 
   programs.bat.enable = true;
+
+  environment.shellAliases = {
+    diff = "diff --color";
+    doas = "sudo";
+    ip = "ip -c";
+
+    ls = "ls";
+    l = "ls";
+    la = "l -a";
+    ll = "l -l";
+    lal = "l -al";
+
+    pp = "ping 1.1.1.1";
+    x = "xdg-open";
+  };
 }
