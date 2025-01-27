@@ -29,8 +29,8 @@ winetricks = [
 
 [cuphead]
 prefix = "~/Games/cuphead"
-runner = "wine"
-exe = "~/Games/cuphead/drive_c/Cuphead/Cuphead.exe"
+wine = "wine-9.20-staging-amd64-wow64"
+exe = "~/Games/cuphead/drive_c/GOG Games/Cuphead/Cuphead.exe"
 
 [dark-souls]
 prefix = "~/Games/dark-souls"
@@ -53,7 +53,7 @@ args = ["--hellfire"]
 
 [dishonored]
 prefix = "~/Games/dishonored"
-runner = "wine"
+wine = "wine-9.20-staging-amd64-wow64"
 exe = "~/Games/dishonored/drive_c/GOG Games/Dishonored/Binaries/Win32/Dishonored.exe"
 args = ["-nostartupmovies"]
 
@@ -88,7 +88,7 @@ winetricks = [
 # https://content-system.gog.com/open_link/download?path=/open/galaxy/client/2.0.73.27/setup_galaxy_2.0.73.27.exe
 [gog-galaxy]
 prefix = "~/Games/gog-galaxy"
-runner = "wine"
+wine = "wine-9.20-staging-amd64-wow64"
 exe = "~/Games/gog-galaxy/drive_c/Program Files (x86)/GOG Galaxy/GalaxyClient.exe"
 args = ["/runWithoutUpdating", "/deelevated"]
 winetricks = [
@@ -154,7 +154,7 @@ args = ["-iwad", "~/dosgames/doom2/DOOM2.WAD"]
 
 [noita]
 prefix = "~/Games/noita"
-wine = "wine-9.22-staging-tkg-amd64-wow64" # runner = "wine"
+wine = "wine-9.20-staging-amd64-wow64"
 exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
 
 [openttd]
@@ -196,7 +196,7 @@ exe = "~/Games/rimworld/start.sh"
 
 [starcraft]
 prefix = "~/Games/starcraft"
-wine = "wine-9.22-staging-tkg-amd64-wow64"
+wine = "wine-9.20-staging-amd64-wow64"
 exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
 res = "640x480"
 scale = "2.25"

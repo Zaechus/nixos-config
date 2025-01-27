@@ -1,4 +1,5 @@
 themes {
+	// https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/themes/gruvbox.kdl
 	gruvbox {
 		fg 213 196 161
 		bg 40 40 40
