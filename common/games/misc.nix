@@ -26,11 +26,13 @@
     7551 # Halo
     7777 # Terraria
     24642 # Stardew Valley
+    47584 # Dark Souls
   ];
 
   networking.firewall.allowedTCPPorts = [
     6112 # Diablo
     7777 # Terraria
+    47584 # Dark Souls
   ];
 
   programs.steam = {

@@ -49,6 +49,13 @@
   # Hostname
   networking.hostName = "antimond";
 
+  networking.firewall.allowedUDPPorts = [
+    47584
+  ];
+  networking.firewall.allowedTCPPorts = [
+    47584
+  ];
+
   services.fwupd.enable = true;
 
   system.stateVersion = "24.05";

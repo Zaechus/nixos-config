@@ -8,8 +8,8 @@ rustPlatform.buildRustPackage rec {
     owner = "Zaechus";
     repo = pname;
     rev = "refs/heads/main";
-    hash = "sha256-1c+H5VUuH5cfqu+mx65Jb9V2/C6MJEnDD47J+E/L3nQ=";
+    hash = "sha256-41sdhk6phGwdZhMSUJxeCR11B8WiHrL7GrU53nIW4II=";
   };
 
-  cargoHash = "sha256-t8MwqG5F7yvvqAHBgZZSdpiRRS1q9kD6zaVMX/inUN8=";
+  cargoHash = "sha256-8j0p5/0muAc4yjyD3XG4A0R3uYcIVa3Cc77Yepr2O20=";
 }

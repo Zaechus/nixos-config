@@ -12,8 +12,8 @@
     ./wireguard.nix
 
     ../../common/games
-    ../../common/games/misc
-    ../../common/games/misc/xvt.nix
+    ../../common/games/misc.nix
+    ../../common/games/xvt.nix
     ../../common/games/doom
     ../../common/games/minecraft
 
