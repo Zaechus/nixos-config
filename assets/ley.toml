@@ -34,8 +34,11 @@ exe = "~/Games/cuphead/drive_c/GOG Games/Cuphead/Cuphead.exe"
 
 [dark-souls]
 prefix = "~/Games/dark-souls"
-runner = "wine"
+wine = "wine-9.20-staging-amd64-wow64"
 exe = "~/Games/dark-souls/drive_c/DarkSouls/DARKSOULS.exe"
+winetricks = [
+  "vd=1024x720",
+]
 
 [dead-space]
 prefix = "~/Games/dead-space"
