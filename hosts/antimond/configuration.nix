@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./hardware-configuration.nix
@@ -23,8 +25,9 @@
   hardware.amdgpu.initrd.enable = true;
   hardware.cpu.amd.updateMicrocode = true;
   boot.kernelParams = [
-    "amdgpu.dcdebugmask=0x10" # disable PSR
     "amdgpu.abmlevel=0" # disable ABM
+    # "amdgpu.dcdebugmask=0x10" # disable PSR
+    # "amdgpu.dcdebugmask=0x400" # disable DISPLAY_PANEL_REPLAY
   ];
 
   # Enable trim
@@ -57,6 +60,8 @@
   ];
 
   services.fwupd.enable = true;
+
+  boot.kernelPackages = pkgs.linuxPackages_6_6; # FIXME: using 6.6 fixes graphical issues, 6.12 was having issues
 
   system.stateVersion = "24.05";
 }

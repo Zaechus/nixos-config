@@ -34,7 +34,7 @@ exe = "~/Games/cuphead/drive_c/GOG Games/Cuphead/Cuphead.exe"
 
 [dark-souls]
 prefix = "~/Games/dark-souls"
-wine = "wine-9.20-staging-amd64-wow64"
+runner = "wine"
 exe = "~/Games/dark-souls/drive_c/DarkSouls/DARKSOULS.exe"
 winetricks = [
   "vd=1024x720",
@@ -56,7 +56,7 @@ args = ["--hellfire"]
 
 [dishonored]
 prefix = "~/Games/dishonored"
-wine = "wine-9.20-staging-amd64-wow64"
+runner = "wine"
 exe = "~/Games/dishonored/drive_c/GOG Games/Dishonored/Binaries/Win32/Dishonored.exe"
 args = ["-nostartupmovies"]
 
@@ -157,7 +157,7 @@ args = ["-iwad", "~/dosgames/doom2/DOOM2.WAD"]
 
 [noita]
 prefix = "~/Games/noita"
-wine = "wine-9.20-staging-amd64-wow64"
+runner = "wine"
 exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
 
 [openttd]
@@ -199,7 +199,7 @@ exe = "~/Games/rimworld/start.sh"
 
 [starcraft]
 prefix = "~/Games/starcraft"
-wine = "wine-9.20-staging-amd64-wow64"
+runner = "wine"
 exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
 res = "640x480"
 scale = "2.25"
