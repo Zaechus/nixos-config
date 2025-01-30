@@ -67,4 +67,20 @@
 
     programs.zellij.settings.theme = "gruvbox";
   };
+
+  # # use bg2 as black for contrast in some terminal games
+  # programs.nushell.extraConfig = let new_black = "#504945"; in ''
+  #   def --wrapped nethack [
+  #     --nao
+  #     ...args: string
+  #   ] {
+  #     printf '\e]4;0;${new_black}'
+  #     if $nao {
+  #       printf '\e]4;0;${new_black}'; ssh nethack@alt.org
+  #     } else {
+  #       ^nethack ...$args
+  #     }
+  #     printf '\e]4;0;${config.theme.black}'
+  #   }
+  # '';
 }

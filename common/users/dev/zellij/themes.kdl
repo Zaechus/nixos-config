@@ -15,6 +15,20 @@ themes {
 		orange 214 93 14
 	}
 
+	nord = {
+		fg 216 222 233
+		bg 46 52 64
+		black 59 66 82
+		red 191 97 106
+		green 163 190 140
+		yellow 235 203 139
+		blue 129 161 193
+		magenta 180 142 173
+		cyan 136 192 208
+		white 229 233 240
+		orange 208 135 112
+	}
+
 	tokyonight-storm {
 		fg 169 177 214
 		bg 36 40 59

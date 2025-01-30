@@ -3,6 +3,7 @@
 with lib;
 
 {
+  # TODO
   options.theme = {
     bg = mkOption { type = types.str; default = "#191919"; };
     fg = mkOption { type = types.str; default = "#cccccc"; };

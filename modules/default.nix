@@ -29,6 +29,7 @@ in
     ./bottom
     ./helix
     ./nushell
+    ./sway
     ./zellij
   ];
 

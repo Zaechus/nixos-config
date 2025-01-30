@@ -4,7 +4,6 @@
   imports = [
     ../chromium/brave.nix
     ../fonts
-    ../sway
   ];
 
   environment.systemPackages = with pkgs; [

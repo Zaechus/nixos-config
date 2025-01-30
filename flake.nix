@@ -4,14 +4,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-pinned.url = "github:nixos/nixpkgs/c792c60b8a97daa7efe41a6e4954497ae410e0c1";
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-pinned, home-manager, ... }: {
+  outputs = { self, nixpkgs, nixpkgs-pinned, ... }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
     overlays = {
@@ -21,13 +16,12 @@
       };
     };
 
-    nixosConfigurations = let overlays = { nixpkgs.overlays = [ self.overlays.my self.overlays.pinned ]; }; in {
+    nixosConfigurations = let overlays = { nixpkgs.overlays = with self.overlays; [ my pinned ]; }; in {
       antimond = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/antimond/configuration.nix
           overlays
-          home-manager.nixosModules.home-manager
         ];
       };
 
@@ -36,7 +30,6 @@
         modules = [
           ./hosts/cybros/configuration.nix
           overlays
-          home-manager.nixosModules.home-manager
         ];
       };
 
@@ -45,7 +38,6 @@
         modules = [
           ./hosts/gantrithor/configuration.nix
           overlays
-          home-manager.nixosModules.home-manager
         ];
       };
 
@@ -65,9 +57,19 @@
       {
         python =
           pkgs.mkShell {
+            nativeBuildInputs = with pkgs.python312Packages; [
+              python
+              pylsp-mypy
+            ];
+          };
+        rust =
+          pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
-              python3
-              python311Packages.pylsp-mypy
+              cargo
+              clippy
+              rust-analyzer
+              rustc
+              rustfmt
             ];
           };
         sh =

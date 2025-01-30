@@ -6,7 +6,7 @@ in
 {
   imports = [
     (import ../../../common/users { inherit username; })
-    (import ../../../themes/gruvbox { inherit username; })
+    (import ../../../themes/tokyonight { inherit username; })
     (import ../../../common/users/graphical { inherit username; })
 
     (import ../../../common/users/git {
@@ -19,24 +19,8 @@ in
   users.users.zaechus = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
-  };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-  };
-  home-manager.users.zaechus = {
-    imports = [
-      ../../../users/zaechus/home.nix
-      ../../../themes/tokyonight/home.nix
-      ../../../home/sway
-      ../../../home/thinkpad
-    ];
-
-    programs.git.enable = true;
-
-    programs.alacritty.settings.font.size = lib.mkOverride 0 10.0;
-
-    home.stateVersion = "21.11";
+    programs.alacritty.settings.font.size = lib.mkForce 10.0;
+    programs.sway.config.input."type:touchpad".events = "disabled";
   };
 }

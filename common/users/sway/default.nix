@@ -1,21 +1,28 @@
-{ config, ... }:
+{ username, ... }: { config, pkgs, ... }:
 
 {
-  imports = [
-    ./rustatus.nix
-  ];
 
-  wayland.windowManager.sway = {
+  programs.sway = {
     enable = true;
-    package = null;
-    systemd.enable = true;
-    xwayland = true;
-    config = {
-      defaultWorkspace = "workspace number 1";
+    wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [
+      bemenu
+      brightnessctl
+      swayidle
+      swaylock
+      wf-recorder
+      wl-clipboard
+      grim # screenshot
+      slurp # screenshot selection
+      jq # parse outputs for screenshot
+    ];
+  };
 
-      focus.followMouse = "no";
-      focus.wrapping = "force";
-      gaps.smartBorders = "on";
+  users.users.${username}.programs.sway = {
+    enable = true;
+    config = {
+      focusFollowsMouse = "no";
+      smartBorders = "on";
 
       input."type:keyboard" = {
         repeat_delay = "300";
@@ -31,7 +38,18 @@
         natural_scroll = "enabled";
       };
 
-      output."*".bg = "${../../assets/background.jpg} fill";
+      # older thinkpads
+      input."2:10:TPPS\/2_IBM_TrackPoint" = {
+        pointer_accel = "0.63";
+        accel_profile = "flat";
+      };
+      # newer thinkpads
+      input."2:10:TPPS\/2_Elan_TrackPoint" = {
+        pointer_accel = "0.63";
+        accel_profile = "flat";
+      };
+
+      output."*".bg = "${../../../assets/background.jpg} fill";
 
       menu = with config.theme; ''
         bemenu-run --fn 'Iosevka Extended 14' \
@@ -46,14 +64,9 @@
           --nf \${fg}
       '';
 
-      modifier = "Mod4";
-      floating.modifier = "Mod4";
-      left = "h";
-      down = "j";
-      up = "k";
-      right = "l";
+      floatingModifier = "Mod4";
 
-      keybindings = with config.wayland.windowManager.sway.config;
+      keybindings = with config.users.users.${username}.programs.sway.config;
         let
           mod = modifier;
         in
@@ -154,7 +167,7 @@
 
           "${mod}+r" = ''mode "resize"'';
         };
-      modes.resize = with config.wayland.windowManager.sway.config; {
+      modes.resize = with config.users.users.${username}.programs.sway.config; {
         "Left" = "resize shrink width 10px";
         "Down" = "resize grow height 10px";
         "Up" = "resize shrink height 10px";
@@ -168,8 +181,8 @@
         "Escape" = ''mode "default"'';
       };
 
-      fonts = {
-        names = [ "Iosevka Extended" ];
+      font = {
+        name = "Iosevka Extended";
         size = 9.0;
       };
 
@@ -198,76 +211,48 @@
         };
       };
 
-      assigns = {
-        "2" = [
-          { class = "heroesofthestorm_x64.exe"; }
-          { class = "noita.exe"; }
-          { title = "Cuphead"; }
-          { title = "Default - Wine desktop"; }
-          { title = "Hollow Knight"; }
-          { title = "StarCraft II"; }
-          { title = "World of Warcraft"; }
-        ];
-        "4" = [
-          { app_id = "lutris"; }
-          { class = "battle.net.exe"; }
-          { class = "galaxyclient.exe"; }
-          { title = "Steam"; }
-        ];
-      };
-
-      floating.criteria = [
-        { app_id = "brave-nngceckbapebfimnlniiiahkandclblb-Default"; } # Bitwarden
-        { class = "battle.net.exe"; }
-        { class = "galaxyclient.exe"; }
-      ];
-
-      window.commands = [
-        {
-          criteria = { class = ".*"; };
-          command = "inhibit_idle fullscreen";
-        }
-        {
-          criteria = { app_id = ".*"; };
-          command = "inhibit_idle fullscreen";
-        }
-
-        {
-          criteria = { class = "battle.net.exe"; };
-          command = "fullscreen disable";
-        }
-
-        {
-          criteria = { class = "explorer.exe"; }; # wine system tray
-          command = "no_focus";
-        }
-      ];
+      bars = [{
+        position = "top";
+        statusCommand = "${pkgs.my.rustatus}/bin/rustatus";
+        font = {
+          name = "Iosevka Extended";
+          size = 10.0;
+        };
+        colors = with config.theme; {
+          statusline = fg;
+          background = bg;
+          focusedWorkspace = {
+            background = primary;
+            border = primary;
+            text = fg0;
+          };
+          inactiveWorkspace = {
+            background = bg;
+            border = bg;
+            text = fg;
+          };
+        };
+      }];
 
       startup = [
-        {
-          command = ''
-            swayidle -w timeout 300 'swaylock -fc 000000' \
-              timeout 600 'swaymsg output "*" power off' \
-                resume 'swaymsg output "*" power on' \
-              before-sleep 'swaylock -fc 000000'
-          '';
-        }
+        ''assign [app_id="lutris"] 4''
+        ''assign [class="battle.net.exe"] 4''
+        ''assign [class="galaxyclient.exe"] 4''
+        ''assign [title="Steam"] 4''
+        ''for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable''
+        ''for_window [class="battle.net.exe"] floating enable''
+        ''for_window [class="galaxyclient.exe"] floating enable''
+        ''for_window [class=".*"] inhibit_idle fullscreen''
+        ''for_window [app_id=".*"] inhibit_idle fullscreen''
+        ''
+          swayidle -w timeout 300 'swaylock -fc 000000' \
+            timeout 600 'swaymsg output "*" power off' \
+              resume 'swaymsg output "*" power on' \
+            before-sleep 'swaylock -fc 000000'
+        ''
       ];
     };
   };
 
-  home.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "sway";
-    NIXOS_OZONE_WL = "1";
-  };
-
   nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-
-  programs.nushell.extraLogin = "if (tty) =~ '/dev/tty1' { exec sway }";
-
-  programs.zsh.profileExtra = ''
-    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-      exec sway
-    fi
-  '';
 }

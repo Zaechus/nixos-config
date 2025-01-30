@@ -100,3 +100,25 @@ def setup_quake [] {
   mv *.wav rogue/music
   rm track01.iso
 }
+
+def doomrl [
+  --install
+] {
+  if $install {
+    http get https://drl.chaosforge.org/file_download/32/doomrl-linux-x64-0997.tar.gz& | save ~/Games/doomrl-linux-x64-0997.tar.gz
+    tar -xf ~/Games/doomrl-linux-x64-0997.tar.gz -C ~/Games
+    open -r ~/.config/doomrl/config.lua | save -f ~/Games/doomrl-linux-x64-0997/config.lua
+    open -r ~/.config/doomrl/keybindings.lua | save -f ~/Games/doomrl-linux-x64-0997/keybindings.lua
+  } else {
+    cd ~/Games/doomrl-linux-x64-0997
+    TERM=xterm steam-run ./doomrl -console
+  }
+}
+
+def --wrapped dwarf-fortress [...args: string] {
+  alacritty msg config 'font.normal.family = "DejaVu Sans Mono"'
+  alacritty msg config draw_bold_text_with_bright_colors=true
+  ^dwarf-fortress
+  alacritty msg config draw_bold_text_with_bright_colors=false
+  alacritty msg config 'font.normal.family = "monospace"'
+}
