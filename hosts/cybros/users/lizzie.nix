@@ -1,4 +1,4 @@
-# { lib, ... }:
+{ lib, ... }:
 
 let
   username = "lizzie";
@@ -12,6 +12,6 @@ in
   users.users.lizzie = {
     isNormalUser = true;
 
-    # programs.nushell.login = lib.mkForce "if (tty) =~ '/dev/tty' { exec sway }"; # TODO
+    files.".config/nushell/login.nu".text = lib.mkForce "if (tty) =~ '/dev/tty' { exec sway }";
   };
 }

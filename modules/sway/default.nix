@@ -181,6 +181,11 @@ let
         default = [ ];
       };
 
+      extra = mkOption {
+        type = types.listOf types.str;
+        default = [ ];
+      };
+
       startup = mkOption {
         type = types.listOf types.str;
         default = [ ];
@@ -268,6 +273,7 @@ let
             "}"
           ])
           cfg.config.bars)
+        ++ cfg.config.extra
         ++ (map
           (command:
             "exec ${command}"
