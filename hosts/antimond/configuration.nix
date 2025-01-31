@@ -28,6 +28,7 @@
     "amdgpu.abmlevel=0" # disable ABM
     # "amdgpu.dcdebugmask=0x10" # disable PSR
     # "amdgpu.dcdebugmask=0x400" # disable DISPLAY_PANEL_REPLAY
+    "video=2560x1600"
   ];
 
   # Enable trim

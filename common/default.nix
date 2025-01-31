@@ -6,12 +6,14 @@
     ./git
   ];
 
-  boot.loader.timeout = 1;
+  boot.loader = {
+    timeout = 1;
+    systemd-boot.editor = false;
+  };
   boot.tmp = {
     useTmpfs = true;
     cleanOnBoot = true;
   };
-  # powerManagement.cpuFreqGovernor = "schedutil";
   zramSwap = {
     enable = true;
     algorithm = "zstd";
