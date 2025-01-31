@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 
@@ -193,6 +193,8 @@ let
     };
   };
 
+  nixosConf = builtins.readFile config.environment.etc."sway/config.d/nixos.conf".source;
+
   userOptions = { config, ... }: {
     options.programs.sway = {
       enable = mkEnableOption "Sway";
@@ -276,9 +278,10 @@ let
         ++ cfg.config.extra
         ++ (map
           (command:
-            "exec ${command}"
+            "\nexec ${command}"
           )
-          cfg.config.startup));
+          cfg.config.startup)
+        ++ [ nixosConf ]);
       };
     };
   };

@@ -9,8 +9,6 @@ in
     (import ../../../common/users/dev/rust { inherit username; })
     (import ../../../common/users/dev/zellij { inherit username; })
 
-    (import ../../../common/users/gammastep { inherit username; }) # TODO
-
     (import ../../../common/users/git {
       inherit username;
       email = "zaechus@pm.me";
