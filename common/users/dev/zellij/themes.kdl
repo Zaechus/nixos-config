@@ -15,7 +15,7 @@ themes {
 		orange 214 93 14
 	}
 
-	nord = {
+	nord {
 		fg 216 222 233
 		bg 46 52 64
 		black 59 66 82

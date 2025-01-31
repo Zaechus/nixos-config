@@ -31,15 +31,6 @@
     secondary = config.theme.cyan;
   };
 
-  environment.systemPackages = with pkgs; [
-    numix-icon-theme
-    nordic
-  ];
-  environment.etc = {
-    "xdg/gtk-2.0".source = ./gtk-2.0;
-    "xdg/gtk-3.0".source = ./gtk-3.0;
-  };
-
   programs.bat.settings.theme = "Nord";
 
   programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
@@ -47,6 +38,13 @@
   programs.git.config.delta.syntax-theme = "Nord";
 
   users.users.${username} = {
+    packages = with pkgs; [
+      numix-icon-theme
+      nordic
+    ];
+    files.".gtkrc-2.0".source = ./gtk-2.0;
+    files.".config/gtk-3.0/settings.ini".source = ./gtk-3.0;
+
     programs.bottom.settings.flags.color = "nord";
 
     programs.helix.settings.theme = "nord";

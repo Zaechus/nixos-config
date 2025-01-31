@@ -39,15 +39,6 @@
     secondary = "#fe8019"; # orange 208
   };
 
-  environment.systemPackages = with pkgs; [
-    gruvbox-dark-icons-gtk
-    gruvbox-dark-gtk
-  ];
-  environment.etc = {
-    "xdg/gtk-2.0".source = ./gtk-2.0;
-    "xdg/gtk-3.0".source = ./gtk-3.0;
-  };
-
   programs.git.config.delta.syntax-theme = "gruvbox-dark";
 
   # https://chrome.google.com/webstore/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
@@ -61,6 +52,13 @@
   };
 
   users.users.${username} = {
+    packages = with pkgs; [
+      gruvbox-dark-icons-gtk
+      gruvbox-dark-gtk
+    ];
+    files.".gtkrc-2.0".source = ./gtk-2.0;
+    files.".config/gtk-3.0/settings.ini".source = ./gtk-3.0;
+
     programs.bottom.settings.flags.color = "gruvbox";
 
     programs.helix.settings.theme = "gruvbox";
