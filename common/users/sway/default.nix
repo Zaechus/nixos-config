@@ -35,8 +35,9 @@
         };
 
         input."type:touchpad" = {
-          pointer_accel = "0.4";
+          events = "disabled_on_external_mouse";
           natural_scroll = "enabled";
+          pointer_accel = "0.4";
         };
 
         # older thinkpads
