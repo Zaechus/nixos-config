@@ -67,7 +67,7 @@
   # User
   users.users.narud = {
     isNormalUser = true;
-    extraGroups = [ "deluge" "ftp" "bedrockserver" "systemd-journal" ];
+    extraGroups = [ "deluge" "ftp" "systemd-journal" ];
 
     files.".config/deluge/auth".source = ../../common/deluge/auth;
   };
