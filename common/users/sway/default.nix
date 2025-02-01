@@ -261,5 +261,7 @@
     files.".config/nushell/login.nu".text = "if (tty) =~ '/dev/tty1' { exec sway }";
   };
 
+  # Enable Wayland support in chrome
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 }
