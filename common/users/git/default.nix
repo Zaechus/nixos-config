@@ -5,6 +5,7 @@
 }: { ... }:
 
 {
+  # TODO
   users.users.${username}.files.".config/git/config".text = ''
     [user]
     	email = "${email}"

@@ -1,7 +1,7 @@
-{ username, ... }: { config, ... }:
+{ username, ... }: { ... }:
 
 {
-  users.users.${username} = {
+  users.users.${username} = { config, ... }: {
     programs.alacritty = {
       enable = true;
       settings = {

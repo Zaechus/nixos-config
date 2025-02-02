@@ -4,7 +4,7 @@ in
 {
   imports = [
     (import ../../../common/users { inherit username; })
-    (import ../../../themes/gruvbox { inherit username; })
+    (import ../../../common/users/themes/gruvbox { inherit username; })
     (import ../../../common/users/graphical { inherit username; })
     (import ../../../common/users/dev/rust { inherit username; })
     (import ../../../common/users/dev/zellij { inherit username; })

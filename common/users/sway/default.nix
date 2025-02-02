@@ -1,4 +1,4 @@
-{ username, ... }: { config, pkgs, ... }:
+{ username, ... }: { pkgs, ... }:
 
 {
 
@@ -18,7 +18,7 @@
     ];
   };
 
-  users.users.${username} = {
+  users.users.${username} = { config, ... }: {
     programs.sway = {
       enable = true;
       config = {
@@ -68,7 +68,7 @@
 
         floatingModifier = "Mod4";
 
-        keybindings = with config.users.users.${username}.programs.sway.config;
+        keybindings = with config.programs.sway.config;
           let
             mod = modifier;
           in
@@ -169,7 +169,7 @@
 
             "${mod}+r" = ''mode "resize"'';
           };
-        modes.resize = with config.users.users.${username}.programs.sway.config; {
+        modes.resize = with config.programs.sway.config; {
           "Left" = "resize shrink width 10px";
           "Down" = "resize grow height 10px";
           "Up" = "resize shrink height 10px";

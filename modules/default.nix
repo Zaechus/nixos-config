@@ -30,6 +30,7 @@ in
     ./helix
     ./nushell
     ./sway
+    ./theme.nix
     ./zellij
   ];
 
