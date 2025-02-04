@@ -1,6 +1,7 @@
 final: prev: {
   my = {
     angband = final.callPackage ./angband { };
+    bin2iso = final.callPackage ./bin2iso { };
     devilutionx = final.callPackage ./devilutionx { };
     dosbox-staging = final.callPackage ./dosbox-staging { };
     ley = final.callPackage ./ley { };
