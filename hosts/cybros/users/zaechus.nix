@@ -12,17 +12,16 @@ in
     (import ../../../common/users/dev/zellij { inherit username; })
     (import ../../../common/users/games/dosbox { inherit username; })
     (import ../../../common/users/games/nethack { inherit username; })
-
-    (import ../../../common/users/git {
-      inherit username;
-      email = "zaechus@pm.me";
-      name = "Zaechus";
-    })
   ];
 
   users.users.zaechus = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
+
+    programs.git.config.user = {
+      email = "zaechus@pm.me";
+      name = "Zaechus";
+    };
 
     programs.sway.config = {
       input."type:touchpad".events = lib.mkForce "disabled";

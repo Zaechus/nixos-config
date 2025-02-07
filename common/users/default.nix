@@ -6,4 +6,8 @@
     (import ./helix { inherit username; })
     (import ./nushell { inherit username; })
   ];
+
+  users.users.${username} = {
+    programs.git.enable = true;
+  };
 }

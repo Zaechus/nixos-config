@@ -6,10 +6,8 @@
 { username, ... }: { pkgs, ... }:
 
 {
-  programs.git.config.delta.syntax-theme = "gruvbox-dark";
-
   # https://chrome.google.com/webstore/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
-  programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
+  programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ]; # TODO
 
   programs.bat.settings.theme = "gruvbox-dark";
 
@@ -58,6 +56,8 @@
     files.".config/gtk-3.0/settings.ini".source = ./gtk-3.0;
 
     programs.bottom.settings.flags.color = "gruvbox";
+
+    programs.git.config.delta.syntax-theme = "gruvbox-dark";
 
     programs.helix.settings.theme = "gruvbox";
 

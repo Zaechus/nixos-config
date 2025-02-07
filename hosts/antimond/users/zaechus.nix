@@ -8,17 +8,16 @@ in
     (import ../../../common/users/graphical { inherit username; })
     (import ../../../common/users/dev/rust { inherit username; })
     (import ../../../common/users/dev/zellij { inherit username; })
-
-    (import ../../../common/users/git {
-      inherit username;
-      email = "zaechus@pm.me";
-      name = "Zaechus";
-    })
   ];
 
   users.users.zaechus = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
+
+    programs.git.config.user = {
+      email = "zaechus@pm.me";
+      name = "Zaechus";
+    };
 
     programs.sway.config.output = {
       eDP-2 = {

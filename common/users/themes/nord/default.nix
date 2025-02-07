@@ -9,8 +9,6 @@
 
   programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
 
-  programs.git.config.delta.syntax-theme = "Nord";
-
   users.users.${username} = {
     theme = {
       bg = "#2E3440"; # nord0
@@ -46,6 +44,8 @@
     programs.bottom.settings.flags.color = "nord";
 
     programs.helix.settings.theme = "nord";
+
+    programs.git.config.delta.syntax-theme = "Nord";
 
     programs.zellij.settings.theme = "nord";
   };

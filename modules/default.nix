@@ -27,6 +27,7 @@ in
   imports = [
     ./alacritty
     ./bottom
+    ./git
     ./helix
     ./nushell
     ./sway
