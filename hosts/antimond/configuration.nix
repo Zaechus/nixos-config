@@ -62,6 +62,8 @@
 
   services.fwupd.enable = true;
 
+  virtualisation.waydroid.enable = true;
+
   boot.kernelPackages = pkgs.linuxPackages_6_6; # FIXME: using 6.6 fixes graphical issues, 6.12 was having issues
 
   system.stateVersion = "24.05";

@@ -7,11 +7,11 @@
     cargo
     clang
     clippy
+    # lldb # FIXME
     mold
     rust-analyzer
     rustc
     rustfmt
-    vscode-extensions.llvm-org.lldb-vscode # for helix
   ];
 
   users.users.${username}.files.".cargo/config.toml".text = ''

@@ -2,12 +2,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "xdvdfs-cli";
-  version = "0.7.0";
+  version = "0.8.3";
 
   src = fetchCrate {
     inherit pname version;
-    hash = "sha256-qeTqn9EX/pEc7Pfs0swWNRNk2wQVVQwxAxnXpc6NKIE=";
+    hash = "sha256-EQQzsMsoUeMC71D3rUKs7iV6PnOeIllhTsXJFW+qKtM=";
   };
 
-  cargoHash = "sha256-t6HgaC8c5DeQ2zRy/c33S/0TdDJInmAaDZBgoLBy4rI=";
+  useFetchCargoVendor = true;
+  cargoHash = "sha256-UIAmdXF92iEPIE2DyRN1Rw2adugsEAGy00kUQ2Fp6M8=";
 }
