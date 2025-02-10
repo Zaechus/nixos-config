@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ username, ... }: { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
+  users.users.${username}.packages = with pkgs; [
     nil # Nix LSP
     tokei
   ];

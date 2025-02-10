@@ -3,5 +3,7 @@
 {
   imports = [ ../chromium ];
 
-  environment.systemPackages = with pkgs; [ brave ];
+  environment.systemPackages = with pkgs; [
+    brave
+  ];
 }
