@@ -1,12 +1,10 @@
 # https://github.com/folke/tokyonight.nvim
 # https://github.com/folke/tokyonight.nvim/blob/main/extras/alacritty_tokyonight_storm.yml
+# https://chrome.google.com/webstore/detail/tokyonight/enpfonmmpgoinjpglildebkaphbhndek
 
 { username, ... }: { ... }:
 
 {
-  # https://chrome.google.com/webstore/detail/tokyonight/enpfonmmpgoinjpglildebkaphbhndek
-  programs.chromium.extensions = [ "enpfonmmpgoinjpglildebkaphbhndek" ];
-
   # # TODO
   # programs.vivid = {
   #   enable = true;
@@ -44,5 +42,7 @@
     programs.helix.settings.theme = "tokyonight_storm";
 
     programs.zellij.settings.theme = "tokyonight-storm";
+
+    files.".config/BraveSoftware/Brave-Browser/External Extensions/enpfonmmpgoinjpglildebkaphbhndek.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}'';
   };
 }

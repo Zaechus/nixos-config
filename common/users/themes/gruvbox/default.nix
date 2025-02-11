@@ -2,14 +2,12 @@
 # https://github.com/gruvbox-community/gruvbox
 # https://raw.githubusercontent.com/wiki/gruvbox-community/gruvbox/images/gruvbox_palette_dark.png
 # https://github.com/alacritty/alacritty-theme/blob/master/themes/gruvbox_dark.toml
+# https://chrome.google.com/webstore/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
 
 { username, ... }: { pkgs, ... }:
 
 {
-  # https://chrome.google.com/webstore/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
-  programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ]; # TODO
-
-  programs.bat.settings.theme = "gruvbox-dark";
+  programs.bat.settings.theme = "gruvbox-dark"; # TODO
 
   programs.vivid = {
     enable = true;
@@ -62,6 +60,8 @@
     programs.helix.settings.theme = "gruvbox";
 
     programs.zellij.settings.theme = "gruvbox";
+
+    files.".config/BraveSoftware/Brave-Browser/External Extensions/hmalklkailocblgkjpdagjoieifkdfbj.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}''; # TODO
   };
 
   # # use bg2 as black for contrast in some terminal games

@@ -46,12 +46,12 @@ in
         text = concatStringsSep "\n" (flatten (mapAttrsToList
           (name: user: mapAttrsToList
             (dest: file: ''
-              mkdir -p $(dirname ${user.home}/${dest})
-              ln -sf ${file.source} ${user.home}/${dest}
               path="${user.home}/${dest}"
+              mkdir -p "$(dirname "$path")"
+              ln -sf ${file.source} "$path"
               while [ "$path" != "${user.home}" ]; do
-                chown -h ${user.name}:${user.group} $path
-                path=$(dirname "$path")
+                chown -h ${user.name}:${user.group} "$path"
+                path="$(dirname "$path")"
               done
             '')
             user.files)
