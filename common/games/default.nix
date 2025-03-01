@@ -33,4 +33,8 @@
   networking.firewall.allowedTCPPorts = [
     55435 # retroarch netplay
   ];
+
+  environment.sessionVariables = {
+    SDL_GAMECONTROLLER_IGNORE_DEVICES = "0x32ac/0x0012,0x32ac/0x0014"; # for some reason, the Framework Laptop 16 input modules are detected as evdev joysticks
+  };
 }
