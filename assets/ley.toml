@@ -85,13 +85,8 @@ runner = "wine"
 exe = "~/Games/empire-earth/drive_c/GOG Games/Empire Earth Gold/Empire Earth/Empire Earth.exe"
 winetricks = [
   "directmusic",
-  "vd=1920x1080"
+  "vd=1920x1080",
 ]
-
-[forgive-me-father]
-prefix = "~/Games/forgive-me-father"
-runner = "wine"
-exe = "~/Games/forgive-me-father/drive_c/GOG Games/Forgive me Father/FMF.exe"
 
 # https://content-system.gog.com/open_link/download?path=/open/galaxy/client/2.0.73.27/setup_galaxy_2.0.73.27.exe
 [gog-galaxy]
@@ -101,7 +96,8 @@ exe = "~/Games/gog-galaxy/drive_c/Program Files (x86)/GOG Galaxy/GalaxyClient.ex
 args = ["/runWithoutUpdating", "/deelevated"]
 winetricks = [
   "corefonts",
-  "mfc140"
+  "mfc140",
+  "win10",
 ]
 
 [halo]
