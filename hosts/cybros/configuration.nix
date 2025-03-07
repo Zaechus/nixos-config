@@ -9,7 +9,7 @@
     ../../common/laptop
     ../../common/graphical
     ../../common/network/bluetooth.nix
-    ./wireguard.nix
+    ../../common/network/wg-quick.nix
 
     ../../common/games
     ../../common/games/misc.nix

@@ -17,7 +17,6 @@
       ExecStart = "${pkgs.wireguard-tools}/bin/wg-quick up wg0";
       ExecStartPost = "resolvectl dnsovertls wg0 no";
       ExecStop = "${pkgs.wireguard-tools}/bin/wg-quick down wg0";
-      # ExecReload = "${pkgs.bash}/bin/bash -c 'exec ${pkgs.wireguard-tools}/bin/wg syncconf wg0 <(exec ${pkgs.wireguard-tools}/bin/wg-quick strip wg0)'";
       Environment = "WG_ENDPOINT_RESOLUTION_RETRIES=infinity";
     };
     unitConfig = {

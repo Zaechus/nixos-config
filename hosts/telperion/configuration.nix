@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -58,11 +56,6 @@
     "99-wireless-client-dhcp".linkConfig.ActivationPolicy = "down";
   };
   systemd.targets.tpm2.enable = false;
-
-  # Packages
-  environment.systemPackages = with pkgs; [
-    steam-run
-  ];
 
   # User
   users.users.narud = {
