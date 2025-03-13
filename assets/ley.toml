@@ -71,7 +71,7 @@ runner = "dhewm3"
 [doom64]
 prefix = "~/Games/doom-64"
 runner = "wine"
-exe = "~/Games/doom-64/drive_c/DOOM 64/DOOM64_x64.exe"
+exe = "~/Games/doom-64/drive_c/GOG Games/DOOM 64/DOOM64_x64.exe"
 args = ["-skipmovies"]
 
 [doomrl]
