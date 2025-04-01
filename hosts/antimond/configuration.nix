@@ -53,18 +53,29 @@
   # Hostname
   networking.hostName = "antimond";
 
+  # Options
+  boot.kernelPackages = pkgs.linuxPackages_6_6; # FIXME: using 6.6 fixes graphical issues, 6.12 was having issues
+
   networking.firewall.allowedUDPPorts = [
     47584
   ];
   networking.firewall.allowedTCPPorts = [
+    6112
     47584
   ];
 
+  # Services
   services.fwupd.enable = true;
 
   virtualisation.waydroid.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_6; # FIXME: using 6.6 fixes graphical issues, 6.12 was having issues
+  # Packages
+  environment.systemPackages = with pkgs; [
+    ffmpeg
+    lftp
+
+    my.devilutionx
+  ];
 
   system.stateVersion = "24.05";
 }
