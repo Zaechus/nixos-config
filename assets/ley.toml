@@ -198,6 +198,10 @@ runner = "quake"
 pre = "steam-run"
 exe = "~/Games/rimworld/start.sh"
 
+[slay-the-princess]
+pre = "steam-run"
+exe = "~/Games/Slay the Princess The Pristine Cut/start.sh"
+
 [starcraft]
 prefix = "~/Games/starcraft"
 runner = "wine"
@@ -282,7 +286,6 @@ runner = "wine"
 exe = "~/Games/world-of-warcraft/drive_c/WoW/WoW.exe"
 winetricks = [
   "grabfullscreen=y",
-  "vd=1280x1024",
 ]
 
 [x-wing-alliance]
