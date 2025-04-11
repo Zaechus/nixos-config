@@ -54,7 +54,7 @@
   networking.hostName = "antimond";
 
   # Options
-  # boot.kernelPackages = pkgs.linuxPackages_6_6; # FIXME: using 6.6 fixes graphical issues, 6.12 was having issues
+  boot.kernelPackages = pkgs.linuxPackages_6_6; # FIXME: using 6.6 fixes graphical issues, 6.12 was having issues
 
   networking.firewall.allowedUDPPorts = [
     47584

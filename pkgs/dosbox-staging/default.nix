@@ -27,13 +27,14 @@
 
 stdenv.mkDerivation rec {
   pname = "dosbox-staging";
-  version = "0.81.2";
+  version = "0.82.1";
+  shortRev = "13441a";
 
   src = fetchFromGitHub {
     owner = pname;
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-gErfJDQKpf0q4v3NHL+Yr+cBg+AbemqqNpksZx3DPMk=";
+    hash = "sha256-BVeFBKqTQiEftWVvMkSYBjC6dCYI4juWD4A6Bx8E8/Y=";
   };
 
   nativeBuildInputs = [
@@ -61,6 +62,15 @@ stdenv.mkDerivation rec {
     speexdsp
     zlib-ng
   ];
+
+  postPatch = ''
+    substituteInPlace meson.build --replace-fail "meson.project_source_root() + '/scripts/get-version.sh'," \
+      "'printf',"
+    substituteInPlace meson.build --replace-fail "'version', check: true," \
+      "'${version}', check: true,"
+    substituteInPlace meson.build --replace-fail "'./scripts/get-version.sh', 'hash'," \
+      "'printf', '${builtins.substring 0 5 shortRev}',"
+  '';
 
   postFixup = ''
     mv $out/bin/dosbox $out/bin/${pname}
