@@ -5,6 +5,7 @@ final: prev: {
     devilutionx = final.callPackage ./devilutionx { };
     dosbox-staging = final.callPackage ./dosbox-staging { };
     ley = final.callPackage ./ley { };
+    mangos-classic = final.callPackage ./mangos-classic { };
     RBDOOM-3-BFG = final.callPackage ./RBDOOM-3-BFG { };
     rpcs3 = final.callPackage ./rpcs3 { };
     rustatus = final.callPackage ./rustatus { };

@@ -11,6 +11,7 @@
     ../../common/graphical
 
     ../../common/games
+    ../../common/games/mangos-classic
 
     ./users/zaechus.nix
   ];
