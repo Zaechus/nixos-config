@@ -6,6 +6,7 @@
     ./git
   ];
 
+  boot.consoleLogLevel = 2;
   boot.loader = {
     timeout = 1;
     systemd-boot.editor = false;
