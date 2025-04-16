@@ -5,7 +5,6 @@
 { username, ... }: { ... }:
 
 {
-  # # TODO
   # programs.vivid = {
   #   enable = true;
   #   theme = "tokyonight-storm";

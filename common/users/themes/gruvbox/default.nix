@@ -7,8 +7,7 @@
 { username, ... }: { pkgs, ... }:
 
 {
-  programs.bat.settings.theme = "gruvbox-dark"; # TODO
-
+  # TODO
   programs.vivid = {
     enable = true;
     theme = "gruvbox-dark";
@@ -50,8 +49,10 @@
       gruvbox-dark-icons-gtk
       gruvbox-dark-gtk
     ];
-    files.".gtkrc-2.0".source = ./gtk-2.0;
-    files.".config/gtk-3.0/settings.ini".source = ./gtk-3.0;
+    files.".gtkrc-2.0".source = ./gtk-2.0; # TODO
+    files.".config/gtk-3.0/settings.ini".source = ./gtk-3.0; # TODO
+
+    programs.bat.settings.theme = "gruvbox-dark";
 
     programs.bottom.settings.flags.color = "gruvbox";
 

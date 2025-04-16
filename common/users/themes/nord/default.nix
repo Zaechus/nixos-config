@@ -5,8 +5,6 @@
 { username, ... }: { config, pkgs, ... }:
 
 {
-  programs.bat.settings.theme = "Nord";
-
   # programs.vivid = {
   #   enable = true;
   #   theme = "nord";
@@ -44,6 +42,8 @@
     files.".gtkrc-2.0".source = ./gtk-2.0;
     files.".config/gtk-3.0/settings.ini".source = ./gtk-3.0;
 
+    programs.bat.settings.theme = "Nord";
+
     programs.bottom.settings.flags.color = "nord";
 
     programs.helix.settings.theme = "nord";
@@ -52,6 +52,6 @@
 
     programs.zellij.settings.theme = "nord";
 
-    files.".config/BraveSoftware/Brave-Browser/External Extensions/abehfkkfjlplnjadfcjiflnejblfmmpj.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}''; # TODO
+    files.".config/BraveSoftware/Brave-Browser/External Extensions/abehfkkfjlplnjadfcjiflnejblfmmpj.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}'';
   };
 }

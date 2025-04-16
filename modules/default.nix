@@ -26,6 +26,7 @@ in
 {
   imports = [
     ./alacritty
+    ./bat
     ./bottom
     ./git
     ./helix

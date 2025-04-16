@@ -8,6 +8,7 @@
   ];
 
   users.users.${username} = {
+    programs.bat.enable = true;
     programs.git.enable = true;
   };
 }
