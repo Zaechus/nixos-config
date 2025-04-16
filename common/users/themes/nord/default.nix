@@ -2,7 +2,7 @@
 # https://www.nordtheme.com/docs/colors-and-palettes
 # https://github.com/arcticicestudio/nord-alacritty/blob/develop/src/nord.yml
 
-{ username, ... }: { config, pkgs, ... }:
+{ username, ... }: { pkgs, ... }:
 
 {
   # programs.vivid = {
@@ -10,7 +10,7 @@
   #   theme = "nord";
   # };
 
-  users.users.${username} = {
+  users.users.${username} = { config, ... }: {
     theme = {
       bg = "#2E3440"; # nord0
       fg = "#D8DEE9"; # nord4
