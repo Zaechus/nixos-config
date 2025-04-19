@@ -72,9 +72,7 @@ def "nix dev" [
   }
 }
 
-def "nix try" [
-  file: string
-] {
+def "nix try" [file?: string] {
   if $file == null {
     NIXPKGS_ALLOW_UNFREE=1 nix-build -E 'with import <nixpkgs> { }; callPackage ./default.nix { }'
   } else {
