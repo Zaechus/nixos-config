@@ -11,6 +11,8 @@
     ../../common/graphical
 
     ../../common/games
+    ../../common/games/diablo
+    ../../common/games/doom
     ../../common/games/mangos-classic
 
     ./users/zaechus.nix
@@ -29,7 +31,6 @@
     "amdgpu.abmlevel=0" # disable ABM
     # "amdgpu.dcdebugmask=0x10" # disable PSR
     # "amdgpu.dcdebugmask=0x400" # disable DISPLAY_PANEL_REPLAY
-    # "video=2560x1600"
   ];
 
   # Enable trim
@@ -59,11 +60,10 @@
   # boot.kernelPackages = pkgs.linuxPackages_6_14; # trying 6.14 since 6.6 has some graphics-related crashes possible fixed in 6.7 and onwards
 
   networking.firewall.allowedUDPPorts = [
-    47584
+    47584 # Dark Souls
   ];
   networking.firewall.allowedTCPPorts = [
-    6112
-    47584
+    47584 # Dark Souls
   ];
 
   # Services
@@ -75,8 +75,6 @@
   environment.systemPackages = with pkgs; [
     ffmpeg
     lftp
-
-    my.devilutionx
   ];
 
   system.stateVersion = "24.05";

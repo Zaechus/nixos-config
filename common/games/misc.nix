@@ -5,7 +5,6 @@
     # appimage-run # mcpelauncher
     bchunk # quake music tracks
     # cataclysmDDA.stable.curses # apparently this is separate and doesn't compile...
-    my.devilutionx # diablo
     dhewm3 # doom 3
     # dolphin-emu # gamecube
     # duckstation # playstation
@@ -30,7 +29,6 @@
   ];
 
   networking.firewall.allowedTCPPorts = [
-    6112 # Diablo
     7777 # Terraria
     47584 # Dark Souls
   ];

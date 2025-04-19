@@ -14,6 +14,7 @@
     ../../common/games
     ../../common/games/misc.nix
     ../../common/games/xvt.nix
+    ../../common/games/diablo
     ../../common/games/doom
     ../../common/games/minecraft
 
