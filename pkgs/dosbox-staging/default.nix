@@ -12,14 +12,15 @@
 , fluidsynth
 , glib
 , iir1
+, libGL
 , libmt32emu
 , libogg
 , libpng
 , libslirp
+, libX11
 , libXi
 , opusfile
 , SDL2
-, SDL2_image
 , SDL2_net
 , speexdsp
 , zlib-ng
@@ -27,14 +28,13 @@
 
 stdenv.mkDerivation rec {
   pname = "dosbox-staging";
-  version = "0.82.1";
-  shortRev = "13441a";
+  version = "0.81.2";
 
   src = fetchFromGitHub {
     owner = pname;
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-BVeFBKqTQiEftWVvMkSYBjC6dCYI4juWD4A6Bx8E8/Y=";
+    hash = "sha256-gErfJDQKpf0q4v3NHL+Yr+cBg+AbemqqNpksZx3DPMk=";
   };
 
   nativeBuildInputs = [
@@ -50,27 +50,19 @@ stdenv.mkDerivation rec {
     fluidsynth
     glib
     iir1
+    libGL
     libmt32emu
     libogg
     libpng
     libslirp
+    libX11
     libXi
     opusfile
     SDL2
-    SDL2_image
     SDL2_net
     speexdsp
     zlib-ng
   ];
-
-  postPatch = ''
-    substituteInPlace meson.build --replace-fail "meson.project_source_root() + '/scripts/get-version.sh'," \
-      "'printf',"
-    substituteInPlace meson.build --replace-fail "'version', check: true," \
-      "'${version}', check: true,"
-    substituteInPlace meson.build --replace-fail "'./scripts/get-version.sh', 'hash'," \
-      "'printf', '${builtins.substring 0 5 shortRev}',"
-  '';
 
   postFixup = ''
     mv $out/bin/dosbox $out/bin/${pname}

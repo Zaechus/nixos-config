@@ -204,7 +204,7 @@ exe = "~/Games/Slay the Princess The Pristine Cut/start.sh"
 
 [starcraft]
 prefix = "~/Games/starcraft"
-runner = "wine"
+wine = "wine-9.20-staging-amd64-wow64"
 exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
 res = "640x480"
 scale = "2.25"
