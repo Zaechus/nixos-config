@@ -1,3 +1,15 @@
+# https://content-system.gog.com/open_link/download?path=/open/galaxy/client/2.0.73.27/setup_galaxy_2.0.73.27.exe
+[gog-galaxy]
+prefix = "~/Games/gog-galaxy"
+wine = "wine-9.20-staging-amd64-wow64"
+exe = "~/Games/gog-galaxy/drive_c/Program Files (x86)/GOG Galaxy/GalaxyClient.exe"
+args = ["/runWithoutUpdating", "/deelevated"]
+winetricks = [
+  "corefonts",
+  "mfc140",
+  "win10",
+]
+
 [albion-online]
 pre = "steam-run"
 exe = "~/Games/albiononline/Albion-Online"
@@ -6,15 +18,15 @@ exe = "~/Games/albiononline/Albion-Online"
 pre = "steam-run"
 exe = "~/Games/Amnesia The Dark Descent/start.sh"
 
-[battlefront]
-prefix = "~/Games/star-wars-battlefront"
-runner = "wine"
-exe = "~/Games/star-wars-battlefront/drive_c/GOG Games/Star Wars - Battlefront/LaunchBF.exe"
-
 [battlefront-ii]
 prefix = "~/Games/star-wars-battlefront-ii"
 runner = "wine"
 exe = "~/Games/star-wars-battlefront-ii/drive_c/GOG Games/Star Wars - Battlefront 2/SWB2Launcher.exe"
+
+[battlefront]
+prefix = "~/Games/star-wars-battlefront"
+runner = "wine"
+exe = "~/Games/star-wars-battlefront/drive_c/GOG Games/Star Wars - Battlefront/LaunchBF.exe"
 
 [caesar3]
 prefix = "~/Games/caesar3"
@@ -45,20 +57,29 @@ prefix = "~/Games/dead-space"
 runner = "wine"
 exe = "~/Games/dead-space/drive_c/GOG Games/Dead Space/Dead Space.exe"
 
-[diablo]
-dir = "~/.local/share/diasurgical/devilution"
-runner = "devilutionx"
-
 [diablo-hellfire]
 dir = "~/.local/share/diasurgical/devilution/hellfire"
 runner = "devilutionx"
 args = ["--hellfire"]
+
+[diablo]
+dir = "~/.local/share/diasurgical/devilution"
+runner = "devilutionx"
 
 [dishonored]
 prefix = "~/Games/dishonored"
 runner = "wine"
 exe = "~/Games/dishonored/drive_c/GOG Games/Dishonored/Binaries/Win32/Dishonored.exe"
 args = ["-nostartupmovies"]
+
+[doom2016]
+prefix = "~/Games/doom-2016"
+runner = "wine"
+exe = "/home/zaechus/Games/doom-2016/drive_c/GOG Games/DOOM (2016)/DOOMx64vk.exe"
+args = ["+com_skipIntroVideo", "1"]
+winetricks = [
+  "mfc140",
+]
 
 [doom2]
 dir = "~/dosgames/doom2"
@@ -74,6 +95,10 @@ runner = "wine"
 exe = "~/Games/doom-64/drive_c/GOG Games/DOOM 64/DOOM64_x64.exe"
 args = ["-skipmovies"]
 
+[doom]
+dir = "~/dosgames/doom"
+runner = "crispy-doom"
+
 [doomrl]
 pre = "steam-run"
 exe = "~/Games/doomrl-linux-x64-0997/doomrl"
@@ -88,18 +113,6 @@ winetricks = [
   "vd=1920x1080",
 ]
 
-# https://content-system.gog.com/open_link/download?path=/open/galaxy/client/2.0.73.27/setup_galaxy_2.0.73.27.exe
-[gog-galaxy]
-prefix = "~/Games/gog-galaxy"
-wine = "wine-9.20-staging-amd64-wow64"
-exe = "~/Games/gog-galaxy/drive_c/Program Files (x86)/GOG Galaxy/GalaxyClient.exe"
-args = ["/runWithoutUpdating", "/deelevated"]
-winetricks = [
-  "corefonts",
-  "mfc140",
-  "win10",
-]
-
 [halo]
 prefix = "~/Games/halo"
 wine = "lutris-GE-Proton8-26-x86_64"
@@ -109,12 +122,6 @@ winetricks = [
   "mfc42",
   "winxp",
 ]
-
-[heroes3]
-prefix = "~/Games/heroes-of-might-and-magic-3-complete"
-runner = "wine"
-exe = "~/Games/heroes-of-might-and-magic-3-complete/drive_c/GOG Games/HoMM 3 Complete/Heroes3.exe"
-res = "800x600"
 
 [heroes-of-the-storm]
 env = {WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1, __GL_DXVK_OPTIMIZATIONS=1, __GL_SHADER_DISK_CACHE=1}
@@ -132,6 +139,12 @@ winetricks = [
   "ucrtbase2019",
   "vkd3d",
 ]
+
+[heroes3]
+prefix = "~/Games/heroes-of-might-and-magic-3-complete"
+runner = "wine"
+exe = "~/Games/heroes-of-might-and-magic-3-complete/drive_c/GOG Games/HoMM 3 Complete/Heroes3.exe"
+res = "800x600"
 
 [hollow-knight]
 pre = "steam-run"
@@ -202,6 +215,24 @@ exe = "~/Games/rimworld/start.sh"
 pre = "steam-run"
 exe = "~/Games/Slay the Princess The Pristine Cut/start.sh"
 
+[starcraft-ii]
+prefix = "~/Games/starcraft-ii"
+runner = "wine"
+exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II/StarCraft II.exe"
+winetricks = [
+  "arial",
+  "grabfullscreen=y",
+  "tahoma",
+]
+
+[starcraft-remastered]
+prefix = "~/Games/starcraft-remastered"
+runner = "wine"
+exe = "~/Games/starcraft-remastered/drive_c/Program Files (x86)/StarCraft/StarCraft Launcher.exe"
+winetricks = [
+  "grabfullscreen=y",
+]
+
 [starcraft]
 prefix = "~/Games/starcraft"
 wine = "wine-9.20-staging-amd64-wow64"
@@ -213,24 +244,6 @@ winetricks = [
   "grabfullscreen=y",
   "vd=640x480",
   "winxp",
-]
-
-[starcraft-remastered]
-prefix = "~/Games/starcraft-remastered"
-runner = "wine"
-exe = "~/Games/starcraft-remastered/drive_c/Program Files (x86)/StarCraft/StarCraft Launcher.exe"
-winetricks = [
-  "grabfullscreen=y",
-]
-
-[starcraft-ii]
-prefix = "~/Games/starcraft-ii"
-runner = "wine"
-exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II/StarCraft II.exe"
-winetricks = [
-  "arial",
-  "grabfullscreen=y",
-  "tahoma",
 ]
 
 [stardew-valley]
