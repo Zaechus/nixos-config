@@ -75,6 +75,7 @@
   environment.systemPackages = with pkgs; [
     ffmpeg
     lftp
+    sshfs
   ];
 
   system.stateVersion = "24.05";

@@ -1,15 +1,3 @@
-# https://content-system.gog.com/open_link/download?path=/open/galaxy/client/2.0.73.27/setup_galaxy_2.0.73.27.exe
-[gog-galaxy]
-prefix = "~/Games/gog-galaxy"
-wine = "wine-9.20-staging-amd64-wow64"
-exe = "~/Games/gog-galaxy/drive_c/Program Files (x86)/GOG Galaxy/GalaxyClient.exe"
-args = ["/runWithoutUpdating", "/deelevated"]
-winetricks = [
-  "corefonts",
-  "mfc140",
-  "win10",
-]
-
 [albion-online]
 pre = "steam-run"
 exe = "~/Games/albiononline/Albion-Online"
@@ -41,7 +29,7 @@ winetricks = [
 
 [cuphead]
 prefix = "~/Games/cuphead"
-wine = "wine-9.20-staging-amd64-wow64"
+runner = "wine"
 exe = "~/Games/cuphead/drive_c/GOG Games/Cuphead/Cuphead.exe"
 
 [dark-souls]
@@ -49,7 +37,9 @@ prefix = "~/Games/dark-souls"
 runner = "wine"
 exe = "~/Games/dark-souls/drive_c/DarkSouls/DARKSOULS.exe"
 winetricks = [
+  "d3dx9",
   "vd=1024x720",
+  "~/.config/ley/k_lite.verb"
 ]
 
 [dead-space]
@@ -111,6 +101,18 @@ exe = "~/Games/empire-earth/drive_c/GOG Games/Empire Earth Gold/Empire Earth/Emp
 winetricks = [
   "directmusic",
   "vd=1920x1080",
+]
+
+[gog-galaxy]
+# https://content-system.gog.com/open_link/download?path=/open/galaxy/client/2.0.73.27/setup_galaxy_2.0.73.27.exe
+prefix = "~/Games/gog-galaxy"
+wine = "wine-9.20-staging-amd64-wow64"
+exe = "~/Games/gog-galaxy/drive_c/Program Files (x86)/GOG Galaxy/GalaxyClient.exe"
+args = ["/runWithoutUpdating", "/deelevated"]
+winetricks = [
+  "corefonts",
+  "mfc140",
+  "win10",
 ]
 
 [halo]

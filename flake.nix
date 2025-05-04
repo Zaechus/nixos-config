@@ -7,7 +7,8 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-pinned, ... }: {
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+    # # RIP nixpkgs-fmt. gonna wait for NixOS to get their stuff together before touching a different formatter
+    # formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
     overlays = {
       my = import ./pkgs;

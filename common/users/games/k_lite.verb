@@ -1,0 +1,14 @@
+w_metadata k_lite dlls \
+	title="K-Lite Codec Pack" \
+	year="2025" \
+	media="download" \
+	conflicts="lavfilters lavfilters702 mpc" \
+	file1="K-Lite_Codec_Pack_1890_Standard.exe" \
+	homepage="https://www.codecguide.com/download_k-lite_codec_pack_standard.htm"
+
+load_k_lite()
+{
+	w_download "https://files2.codecguide.com/${file1}" aaf9fb7d368872fd41fee9d60cc76f3db1b146ffd382037e2179ec8ea6c7d62f
+	w_try_cd "${W_CACHE}/${W_PACKAGE}"
+	w_try "${WINE}" "${file1}" ${W_OPT_UNATTENDED:+ /VERYSILENT}
+}
