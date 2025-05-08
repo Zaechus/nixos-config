@@ -13,7 +13,6 @@
     ../../common/games
     ../../common/games/diablo
     ../../common/games/doom
-    ../../common/games/mangos-classic
 
     ./users/zaechus.nix
   ];
@@ -31,6 +30,7 @@
     "amdgpu.abmlevel=0" # disable ABM
     # "amdgpu.dcdebugmask=0x10" # disable PSR
     # "amdgpu.dcdebugmask=0x400" # disable DISPLAY_PANEL_REPLAY
+    # "amdgpu.dcdebugmask=0x410" # disable both
   ];
 
   # Enable trim
@@ -54,10 +54,6 @@
 
   # Hostname
   networking.hostName = "antimond";
-
-  # Options
-  # boot.kernelPackages = pkgs.linuxPackages_6_6; # FIXME: using 6.6 fixes graphical issues, 6.12 was having issues
-  # boot.kernelPackages = pkgs.linuxPackages_6_14; # trying 6.14 since 6.6 has some graphics-related crashes possible fixed in 6.7 and onwards
 
   networking.firewall.allowedUDPPorts = [
     47584 # Dark Souls
