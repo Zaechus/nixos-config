@@ -3,9 +3,8 @@
 , fetchFromGitHub
 , cmake
 , directx-shader-compiler
-, libGLU
-, libpng
-, libjpeg_turbo
+, ispc
+, ncurses
 , openal
 , rapidjson
 , SDL2
@@ -16,25 +15,24 @@
 
 stdenv.mkDerivation rec {
   pname = "RBDOOM-3-BFG";
-  version = "1.5.1";
+  version = "1.6.0";
 
   src = fetchFromGitHub {
     owner = "RobertBeckebans";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-bjjeTdbQDWTibSrIWhCnr6F0Ef17efLgWGQAAwezjUw=";
+    hash = "sha256-9BZEFO+e5IG6hv9+QI9OJecQ84rLTWBDz4k0GU6SeDE=";
     fetchSubmodules = true;
   };
 
   nativeBuildInputs = [
     cmake
     directx-shader-compiler
+    ispc
   ];
 
   buildInputs = [
-    libGLU
-    libpng
-    libjpeg_turbo
+    ncurses
     openal
     rapidjson
     SDL2
@@ -45,12 +43,8 @@ stdenv.mkDerivation rec {
 
   cmakeDir = "../neo";
   cmakeFlags = [
-    "-DONATIVE=ON"
     "-DFFMPEG=OFF"
     "-DBINKDEC=ON"
-    "-DUSE_SYSTEM_LIBGLEW=ON"
-    "-DUSE_SYSTEM_LIBPNG=ON"
-    "-DUSE_SYSTEM_LIBJPEG=ON"
     "-DUSE_SYSTEM_RAPIDJSON=ON"
     "-DUSE_SYSTEM_ZLIB=ON"
   ];
