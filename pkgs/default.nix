@@ -4,6 +4,7 @@ final: prev: {
     bin2iso = final.callPackage ./bin2iso { };
     devilutionx = final.callPackage ./devilutionx { };
     dosbox-staging = final.callPackage ./dosbox-staging { };
+    doukutsu-rs = final.callPackage ./doukutsu-rs { };
     ley = final.callPackage ./ley { };
     mangos-classic = final.callPackage ./mangos-classic { };
     RBDOOM-3-BFG = final.callPackage ./RBDOOM-3-BFG { };

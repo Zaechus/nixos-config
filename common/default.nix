@@ -38,7 +38,10 @@
     fd
     file
     ouch
+    pciutils
     ripgrep
+    usbutils
+
     my.zinfo
   ];
   environment.defaultPackages = [ pkgs.helix ];

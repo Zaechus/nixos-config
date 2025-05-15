@@ -72,6 +72,9 @@
     ffmpeg
     lftp
     sshfs
+
+    my.doukutsu-rs
+    my.RBDOOM-3-BFG
   ];
 
   system.stateVersion = "24.05";
