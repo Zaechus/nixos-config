@@ -139,6 +139,7 @@ winetricks = [
   "dxvk_nvapi0061",
   "grabfullscreen=y",
   "ucrtbase2019",
+  "vd=2560x1600",
   "vkd3d",
 ]
 
@@ -151,6 +152,10 @@ res = "800x600"
 [hollow-knight]
 pre = "steam-run"
 exe = "~/Games/hollow-knight/start.sh"
+
+[hotline-miami]
+pre = "steam-run"
+exe = "~/Games/Hotline Miami/start.sh"
 
 [ihnm]
 dir = "~/Games/i-have-no-mouth-and-i-must-scream"
@@ -225,6 +230,7 @@ winetricks = [
   "arial",
   "grabfullscreen=y",
   "tahoma",
+  "vd=2560x1600",
 ]
 
 [starcraft-remastered]

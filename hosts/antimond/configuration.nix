@@ -71,10 +71,19 @@
   environment.systemPackages = with pkgs; [
     ffmpeg
     lftp
+    scummvm
     sshfs
 
+    my.adom1
     my.doukutsu-rs
     my.RBDOOM-3-BFG
+  ];
+
+  programs.steam.extraPackages = with pkgs; [
+    # Hotline Miami
+    pkgsi686Linux.libGLU
+    pkgsi686Linux.openal
+    pkgsi686Linux.nvidia_cg_toolkit
   ];
 
   system.stateVersion = "24.05";

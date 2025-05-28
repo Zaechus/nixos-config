@@ -239,7 +239,6 @@
         extra = [
           ''assign [class="^steam_app.*"] 2''
           ''assign [app_id="lutris"] 4''
-          ''assign [class="battle.net.exe"] 4''
           ''assign [class="galaxyclient.exe"] 4''
           ''assign [class="^steam$"] 4''
           ''for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable''
