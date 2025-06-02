@@ -69,6 +69,7 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
+    anki
     ffmpeg
     lftp
     scummvm
