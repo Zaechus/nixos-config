@@ -19,7 +19,7 @@
       snes9x # snes
       stella # atari 2600
     ]))
-    wineWowPackages.staging
+    pinned.wineWowPackages.staging # 10.5
     winetricks
   ];
 

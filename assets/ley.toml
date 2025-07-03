@@ -117,7 +117,7 @@ winetricks = [
 
 [halo]
 prefix = "~/Games/halo"
-wine = "lutris-GE-Proton8-26-x86_64"
+runner = "wine"
 exe = "~/Games/halo/drive_c/Program Files (x86)/Microsoft Games/Halo/halo.exe"
 winetricks = [
   "grabfullscreen=y",
@@ -196,7 +196,7 @@ runner = "crispy-doom"
 
 [quake-enhanced]
 prefix = "~/Games/quake-enhanced"
-wine = "lutris-GE-Proton8-26-x86_64"
+runner = "wine"
 exe = "~/Games/quake-enhanced/drive_c/Quake Enhanced/Quake_Shipping_Playfab_GOG_x64.exe"
 args = ["+g_showintromovie", "0"]
 

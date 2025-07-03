@@ -71,6 +71,7 @@
   environment.systemPackages = with pkgs; [
     anki
     ffmpeg
+    imagemagick
     lftp
     scummvm
     sshfs
