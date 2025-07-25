@@ -13,10 +13,11 @@
       rust-analyzer
       rustc
       rustfmt
+      # rustup
     ];
 
     files.".cargo/config.toml".text = ''
-      [target.x86_64-unknown-linux-gnu]
+      [target.'cfg(target_os = "linux")']
       linker = "clang"
       rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
 

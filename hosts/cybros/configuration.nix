@@ -59,6 +59,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
   environment.systemPackages = with pkgs; [
+    anki
     aria2 # torrent
     brogue-ce
     # crawl
@@ -73,11 +74,10 @@
     # libwebp # dwebp
     # mkvtoolnix-cli # mkvmerge
     p7zip
-    pciutils # lspci
     poppler_utils # pdf
     ppsspp # psp
     scummvm
-    rbdoom-3-bfg
+    # rbdoom-3-bfg
     rogue
     umoria
 

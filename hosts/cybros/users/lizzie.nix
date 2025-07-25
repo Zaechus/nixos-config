@@ -7,6 +7,7 @@ in
   imports = [
     (import ../../../common/users { inherit username; })
     (import ../../../common/users/themes/tokyonight { inherit username; })
+    (import ../../../common/users/graphical { inherit username; })
   ];
 
   users.users.lizzie = {

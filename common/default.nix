@@ -38,9 +38,9 @@
     fd
     file
     ouch
-    pciutils
+    pciutils # lspci
     ripgrep
-    usbutils
+    usbutils # lsusb
 
     my.zinfo
   ];
