@@ -56,6 +56,20 @@
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
       in
       {
+        cpp =
+          pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              clang-tools
+              lldb
+            ];
+          };
+        java =
+          pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              jdk_headless
+              jdt-language-server
+            ];
+          };
         python =
           pkgs.mkShell {
             nativeBuildInputs = with pkgs.python312Packages; [
