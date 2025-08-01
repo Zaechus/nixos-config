@@ -167,6 +167,8 @@
             "${mod}+Shift+minus" = "move scratchpad";
             "${mod}+minus" = "scratchpad show";
 
+            "${mod}+p" = "bar mode toggle";
+
             "${mod}+r" = ''mode "resize"'';
           };
         modes.resize = with config.programs.sway.config; {
