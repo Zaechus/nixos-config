@@ -1,9 +1,7 @@
 [albion-online]
-pre = "steam-run"
 exe = "~/Games/albiononline/Albion-Online"
 
 [amnesia]
-pre = "steam-run"
 exe = "~/Games/Amnesia The Dark Descent/start.sh"
 
 [battlefront-ii]
@@ -90,7 +88,6 @@ dir = "~/dosgames/doom"
 runner = "crispy-doom"
 
 [doomrl]
-pre = "steam-run"
 exe = "~/Games/doomrl-linux-x64-0997/doomrl"
 
 [empire-earth]
@@ -150,11 +147,9 @@ exe = "~/Games/heroes-of-might-and-magic-3-complete/drive_c/GOG Games/HoMM 3 Com
 res = "800x600"
 
 [hollow-knight]
-pre = "steam-run"
 exe = "~/Games/hollow-knight/start.sh"
 
 [hotline-miami]
-pre = "steam-run"
 exe = "~/Games/Hotline Miami/start.sh"
 
 [ihnm]
@@ -163,7 +158,6 @@ runner = "scummvm"
 args = ["-c", "ihnm.ini", "--themepath=scummvm"]
 
 [ksp]
-pre = "steam-run"
 exe = "~/Games/kerbal-space-program/start.sh"
 
 [lsl1]
@@ -182,7 +176,6 @@ runner = "wine"
 exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
 
 [openttd]
-pre = "steam-run"
 exe = "~/Games/OpenTTD/start.sh"
 
 [original-war]
@@ -215,11 +208,9 @@ dir = "~/dosgames/quake"
 runner = "quake"
 
 [rimworld]
-pre = "steam-run"
 exe = "~/Games/rimworld/start.sh"
 
 [slay-the-princess]
-pre = "steam-run"
 exe = "~/Games/Slay the Princess The Pristine Cut/start.sh"
 
 [starcraft-ii]
@@ -255,7 +246,6 @@ winetricks = [
 ]
 
 [stardew-valley]
-pre = "steam-run"
 exe = "~/Games/Stardew Valley/start.sh"
 
 [stronghold]
@@ -290,7 +280,6 @@ winetricks = [
 ]
 
 [terraria]
-pre = "steam-run"
 exe = "~/Games/Terraria/start.sh"
 
 [tnt]
@@ -298,7 +287,6 @@ dir = "~/Games/final-doom/TNT"
 runner = "crispy-doom"
 
 [vvvvvv]
-pre = "steam-run"
 exe = "~/Games/VVVVVV/start.sh"
 
 [wow]

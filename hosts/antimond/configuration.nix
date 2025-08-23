@@ -86,6 +86,7 @@
     pkgsi686Linux.libGLU
     pkgsi686Linux.openal
     pkgsi686Linux.nvidia_cg_toolkit
+    pkgsi686Linux.xorg.libXrandr
   ];
 
   system.stateVersion = "24.05";
