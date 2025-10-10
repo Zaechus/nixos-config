@@ -9,6 +9,7 @@ final: prev: {
     devilutionx = final.callPackage ./devilutionx { };
     dosbox-staging = final.callPackage ./dosbox-staging { };
     doukutsu-rs = final.callPackage ./doukutsu-rs { };
+    endless-sky = final.callPackage ./endless-sky { };
     ley = final.callPackage ./ley { };
     mangos-classic = final.callPackage ./mangos-classic { };
     RBDOOM-3-BFG = final.callPackage ./RBDOOM-3-BFG { };

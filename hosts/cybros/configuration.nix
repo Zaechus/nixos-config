@@ -82,6 +82,7 @@
     umoria
 
     my.angband
+    my.endless-sky
   ];
 
   system.stateVersion = "21.11";
