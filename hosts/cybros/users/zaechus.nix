@@ -33,6 +33,9 @@ in
         DP-1 = {
           pos = "1920 0";
         };
+        HDMI-A-1 = {
+          mode = "1920x1080@60Hz";
+        };
       };
       terminal = "alacritty msg create-window || alacritty";
     };
