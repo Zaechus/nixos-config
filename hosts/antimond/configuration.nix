@@ -77,7 +77,9 @@
     sshfs
 
     my.adom1
+    my.angband
     my.doukutsu-rs
+    # my.endless-sky
     my.RBDOOM-3-BFG
   ];
 
