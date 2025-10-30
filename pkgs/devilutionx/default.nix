@@ -8,6 +8,7 @@
 , libpng
 , libsodium
 , libtiff
+, libwebp
 , pkg-config
 , SDL2
 , SDL2_image
@@ -32,8 +33,8 @@ let
     owner = "diasurgical";
     repo = "libzt";
     fetchSubmodules = true;
-    rev = "d6c6a069a5041a3e89594c447ced3f15d77618b8";
-    sha256 = "sha256-ttRJLfaGHzhS4jd8db7BNPWROCti3ZxuRouqsL/M5ew=";
+    rev = "1a9d83b8c4c2bdcd7ea6d8ab1dd2771b16eb4e13";
+    sha256 = "sha256-/A77ZM4s+br1hYa0OBdjXcWXUXYG+GiEYcW8VB+UJHo=";
   };
   SDL_audiolib = fetchurl {
     url = "https://github.com/realnc/SDL_audiolib/archive/cc1bb6af8d4cf5e200259072bde1edd1c8c5137e.tar.gz";
@@ -42,13 +43,13 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "devilutionx";
-  version = "1.5.4";
+  version = "1.5.5";
 
   src = fetchFromGitHub {
     owner = "diasurgical";
     repo = "devilutionX";
     rev = version;
-    sha256 = "sha256-F23MTe7vMOgIBH6qm7X1+8gIMmN9E+d/GZnFsQZt2cM=";
+    sha256 = "sha256-XfHpKERYZ+VCeWx95568FEEZ4UZg3Z4abA8mG4kHjy0=";
   };
 
   postPatch = ''
@@ -74,6 +75,7 @@ stdenv.mkDerivation rec {
     libpng
     libsodium
     libtiff
+    libwebp
     SDL2
     SDL2_image
     simpleini
