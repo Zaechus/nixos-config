@@ -50,7 +50,7 @@
     device = "/var/lib/deluge/Downloads";
     options = [ "bind" ];
   };
-  services.logind.lidSwitch = "ignore";
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
   systemd.network.networks = {
     "99-ethernet-default-dhcp".networkConfig.LinkLocalAddressing = false;
     "99-wireless-client-dhcp".linkConfig.ActivationPolicy = "down";
