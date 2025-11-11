@@ -25,6 +25,18 @@ winetricks = [
   "vd=1024x768",
 ]
 
+[civ3]
+prefix = "~/Games/civilization3"
+runner = "wine"
+exe = "~/Games/civilization3/drive_c/GOG Games/Civilization III Complete/Civ3Launcher.exe"
+res = "1024x768"
+scale = "1.40625"
+winetricks = [
+  "directplay",
+  "grabfullscreen=y",
+  "vd=1024x768",
+]
+
 [cuphead]
 prefix = "~/Games/cuphead"
 runner = "wine"
@@ -157,6 +169,9 @@ dir = "~/Games/i-have-no-mouth-and-i-must-scream"
 runner = "scummvm"
 args = ["-c", "ihnm.ini", "--themepath=scummvm"]
 
+[jupiter-hell]
+exe = "~/Games/Jupiter Hell/start.sh"
+
 [ksp]
 exe = "~/Games/kerbal-space-program/start.sh"
 
@@ -206,6 +221,11 @@ args = ["-rogue"]
 [quake]
 dir = "~/dosgames/quake"
 runner = "quake"
+
+[rain-world]
+prefix = "~/Games/rain-world"
+runner = "wine"
+exe = "~/Games/rain-world/drive_c/GOG Games/Rain World/RainWorld.exe"
 
 [rimworld]
 exe = "~/Games/rimworld/start.sh"
