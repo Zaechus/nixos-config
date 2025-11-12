@@ -11,6 +11,7 @@ in
     (import ../../../common/users/dev/zellij { inherit username; })
 
     (import ../../../common/users/games { inherit username; })
+    (import ../../../common/users/games/doomrl { inherit username; })
     (import ../../../common/users/games/dosbox { inherit username; })
     (import ../../../common/users/games/nethack { inherit username; })
   ];

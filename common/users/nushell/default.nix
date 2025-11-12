@@ -3,7 +3,8 @@
 let
   aliases = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (k: v: "alias ${k} = ${v}")
-      config.environment.shellAliases) + "\n\n";
+      (lib.filterAttrs (k: v: builtins.typeOf v == "string")
+        config.environment.shellAliases)) + "\n\n";
   vars =
     lib.concatStringsSep "\n"
       (lib.mapAttrsToList (k: v: "$env.${k} = \"${v}\"")

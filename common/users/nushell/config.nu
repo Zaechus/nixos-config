@@ -105,18 +105,19 @@ def setup_quake [] {
   rm track01.iso
 }
 
-def doomrl [
-  --install
-] {
-  if $install {
-    http get https://drl.chaosforge.org/file_download/32/doomrl-linux-x64-0997.tar.gz& | save -p ~/Games/doomrl-linux-x64-0997.tar.gz
+def doomrl [] {
+  if not ('~/Games/doomrl-linux-x64-0997' | path exists) {
+    if not ('~/Games/doomrl-linux-x64-0997.tar.gz' | path exists) {
+      http get https://drl.chaosforge.org/file_download/32/doomrl-linux-x64-0997.tar.gz& | save -p ~/Games/doomrl-linux-x64-0997.tar.gz
+    }
     tar -xf ~/Games/doomrl-linux-x64-0997.tar.gz -C ~/Games
-    open -r ~/.config/doomrl/config.lua | save -f ~/Games/doomrl-linux-x64-0997/config.lua
-    open -r ~/.config/doomrl/keybindings.lua | save -f ~/Games/doomrl-linux-x64-0997/keybindings.lua
-  } else {
-    cd ~/Games/doomrl-linux-x64-0997
-    TERM=xterm steam-run ./doomrl -console
+    if ([~/.config/doomrl/config.lua, ~/.config/doomrl/keybindings.lua] | path exists | all {}) {
+      open -r ~/.config/doomrl/config.lua | save -f ~/Games/doomrl-linux-x64-0997/config.lua
+      open -r ~/.config/doomrl/keybindings.lua | save -f ~/Games/doomrl-linux-x64-0997/keybindings.lua
+    }
   }
+  cd ~/Games/doomrl-linux-x64-0997
+  TERM=xterm steam-run ./doomrl -console
 }
 
 def --wrapped dwarf-fortress [...args: string] {
@@ -125,4 +126,24 @@ def --wrapped dwarf-fortress [...args: string] {
   ^dwarf-fortress
   alacritty msg config draw_bold_text_with_bright_colors=false
   alacritty msg config 'font.normal.family = "monospace"'
+}
+
+def --env fish_completions [] {
+  if (which fish | length) > 0 {
+    # https://www.nushell.sh/cookbook/external_completers.html#fish-completer
+    let fish_completer = {|spans|
+      fish --command $"complete '--do-complete=($spans | str replace --all "'" "\\'" | str join ' ')'"
+      | from tsv --flexible --noheaders --no-infer
+      | rename value description
+      | update value {|row|
+        let value = $row.value
+        let need_quote = ['\' ',' '[' ']' '(' ')' ' ' '\t' "'" '"' "`"] | any {$in in $value}
+        if ($need_quote and ($value | path exists)) {
+          let expanded_path = if ($value starts-with ~) {$value | path expand --no-symlink} else {$value}
+          $'"($expanded_path | str replace --all "\"" "\\\"")"'
+        } else {$value}
+      }
+    }
+    $env.config.completions.external.completer = $fish_completer
+  }
 }

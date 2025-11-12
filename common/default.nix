@@ -90,7 +90,7 @@
     doas = "sudo";
     ip = "ip -c";
 
-    ls = "ls";
+    ls = null;
     l = "ls";
     la = "l -a";
     ll = "l -l";
