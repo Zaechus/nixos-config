@@ -8,6 +8,8 @@
 
   programs.steam.extraPackages = with pkgs; [
     SDL
+    SDL_image
     SDL_mixer
+    SDL_ttf
   ];
 }
