@@ -72,9 +72,11 @@
           };
         python =
           pkgs.mkShell {
-            nativeBuildInputs = with pkgs.python312Packages; [
-              python
-              pylsp-mypy
+            nativeBuildInputs = with pkgs; [
+              python3
+              ruff
+              ty
+              # uv
             ];
           };
         rust =
