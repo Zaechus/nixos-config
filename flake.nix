@@ -63,6 +63,22 @@
               lldb
             ];
           };
+        c-sharp =
+          pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              dotnet-sdk
+              omnisharp-roslyn
+              # netcoredbg
+            ];
+          };
+        go =
+          pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              # delve
+              go
+              gopls
+            ];
+          };
         java =
           pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
@@ -84,6 +100,7 @@
             nativeBuildInputs = with pkgs; [
               cargo
               clippy
+              # lldb
               rust-analyzer
               rustc
               rustfmt
@@ -92,6 +109,7 @@
         sh =
           pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
+              bash-language-server
               shellcheck
               shfmt
             ];

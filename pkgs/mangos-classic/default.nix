@@ -18,7 +18,7 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "mangos-classic";
-  version = "2025-04-11)";
+  version = "2025-04-11";
 
   src = fetchFromGitHub {
     owner = "cmangos";

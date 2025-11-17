@@ -56,9 +56,11 @@
   networking.hostName = "antimond";
 
   networking.firewall.allowedUDPPorts = [
+    7777 # Terraria
     47584 # Dark Souls
   ];
   networking.firewall.allowedTCPPorts = [
+    7777 # Terraria
     47584 # Dark Souls
   ];
 

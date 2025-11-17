@@ -234,6 +234,7 @@ exe = "~/Games/rimworld/start.sh"
 exe = "~/Games/Slay the Princess The Pristine Cut/start.sh"
 
 [starcraft-ii]
+env = {WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1}
 prefix = "~/Games/starcraft-ii"
 runner = "wine"
 exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II/StarCraft II.exe"
