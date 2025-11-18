@@ -32,6 +32,7 @@
     # "amdgpu.dcdebugmask=0x400" # disable DISPLAY_PANEL_REPLAY
     # "amdgpu.dcdebugmask=0x410" # disable both
   ];
+  boot.postBootCommands = "${pkgs.fbset}/bin/fbset -a -xres 2560 -yres 1600";
 
   # Enable trim
   boot.initrd.luks.devices."root".allowDiscards = true;
