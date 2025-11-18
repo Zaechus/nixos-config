@@ -21,3 +21,7 @@ sector-size: 512
 ### Audio
 
 The Audio Expansion Card must be set as the default card in order for the audio to switch to headphones when plugged in. This is relatively simple with `wpctl status` and `wpctl set-default <id>`.
+
+### Input Modules
+
+The Framework Laptop 16 input modules, the keyboard and numpad, are presented as joysticks in the system. It is possible to use `SDL_GAMECONTROLLER_IGNORE_DEVICES` or a udev rule to fix this.

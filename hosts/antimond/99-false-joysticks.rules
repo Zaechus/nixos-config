@@ -1,0 +1,8 @@
+# Prevent the Framework Laptop 16 Keyboard and Numpad Modules from being detected as gamepads
+#
+# Thanks to https://github.com/denilsonsa/udev-joystick-blacklist/blob/master/after_kernel_4_9/51-these-are-not-joysticks.rules
+
+SUBSYSTEM=="input", ATTRS{idVendor}=="32ac", ATTRS{idProduct}=="0012", ENV{ID_INPUT_JOYSTICK}=="?*", ENV{ID_INPUT_JOYSTICK}=""
+SUBSYSTEM=="input", ATTRS{idVendor}=="32ac", ATTRS{idProduct}=="0012", KERNEL=="js[0-9]*", MODE="0000", ENV{ID_INPUT_JOYSTICK}=""
+SUBSYSTEM=="input", ATTRS{idVendor}=="32ac", ATTRS{idProduct}=="0014", ENV{ID_INPUT_JOYSTICK}=="?*", ENV{ID_INPUT_JOYSTICK}=""
+SUBSYSTEM=="input", ATTRS{idVendor}=="32ac", ATTRS{idProduct}=="0014", KERNEL=="js[0-9]*", MODE="0000", ENV{ID_INPUT_JOYSTICK}=""

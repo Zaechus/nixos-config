@@ -66,6 +66,7 @@
 
   # Services
   services.fwupd.enable = true;
+  services.udev.extraRules = builtins.readFile ./99-false-joysticks.rules;
 
   virtualisation.waydroid.enable = true;
 
@@ -92,6 +93,8 @@
     pkgsi686Linux.nvidia_cg_toolkit
     pkgsi686Linux.xorg.libXrandr
   ];
+
+  environment.sessionVariables.SDL_GAMECONTROLLER_IGNORE_DEVICES = "0x32ac/0x0012,0x32ac/0x0014"; # for some reason, the Framework Laptop 16 input modules are detected as evdev joysticks
 
   system.stateVersion = "24.05";
 }

@@ -159,7 +159,7 @@ exe = "~/Games/heroes-of-might-and-magic-3-complete/drive_c/GOG Games/HoMM 3 Com
 res = "800x600"
 
 [hollow-knight]
-exe = "~/Games/hollow-knight/start.sh"
+exe = "~/Games/Hollow Knight/start.sh"
 
 [hotline-miami]
 exe = "~/Games/Hotline Miami/start.sh"
@@ -229,6 +229,9 @@ exe = "~/Games/rain-world/drive_c/GOG Games/Rain World/RainWorld.exe"
 
 [rimworld]
 exe = "~/Games/rimworld/start.sh"
+
+[silksong]
+exe = "~/Games/Hollow Knight Silksong/start.sh"
 
 [slay-the-princess]
 exe = "~/Games/Slay the Princess The Pristine Cut/start.sh"
