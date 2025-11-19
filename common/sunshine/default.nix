@@ -5,4 +5,5 @@
     capSysAdmin = true;
     openFirewall = true;
   };
+  services.avahi.enable = false;
 }

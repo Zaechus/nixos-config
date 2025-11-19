@@ -18,6 +18,7 @@
     enable = true;
     dnssec = "true";
     dnsovertls = "true";
+    llmnr = "false";
   };
 
   systemd.network = {
