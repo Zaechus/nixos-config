@@ -5,7 +5,10 @@
     ../ssh
   ];
 
-  environment.systemPackages = with pkgs; [ waypipe ];
+  environment.systemPackages = with pkgs; [
+    my.waypipe
+    xwayland-satellite
+  ];
 
   services.openssh.startWhenNeeded = true;
 }
