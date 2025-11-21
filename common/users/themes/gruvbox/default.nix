@@ -15,6 +15,8 @@
 
   environment.sessionVariables."GTK_THEME" = "gruvbox-dark"; # TODO
 
+  programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ]; # TODO
+
   users.users.${username} = {
     theme = {
       bg = "#282828"; # bg 235

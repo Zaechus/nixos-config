@@ -1,7 +1,7 @@
 {
   programs.chromium = {
     enable = true;
-    extensions = [
+    extensions = [ # TODO
       "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
       "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
     ];
