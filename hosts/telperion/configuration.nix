@@ -23,10 +23,6 @@
   # Intel
   hardware.cpu.intel.updateMicrocode = true;
 
-  # Enable trim
-  boot.initrd.luks.devices."root".allowDiscards = true;
-  services.fstrim.enable = true;
-
   # Enforce fstab options
   fileSystems = {
     "/".options = [ "compress=zstd" ];
