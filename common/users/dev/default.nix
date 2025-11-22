@@ -2,6 +2,7 @@
 
 {
   users.users.${username}.packages = with pkgs; [
+    inlyne # markdown viewer
     nil # Nix LSP
     tokei
   ];
