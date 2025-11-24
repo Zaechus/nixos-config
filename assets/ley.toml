@@ -137,7 +137,7 @@ winetricks = [
 [heroes-of-the-storm]
 env = {WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1, __GL_DXVK_OPTIMIZATIONS=1, __GL_SHADER_DISK_CACHE=1}
 prefix = "~/Games/heroes-of-the-storm"
-runner = "wine"
+wine = "wine-10.5-staging-amd64-wow64"
 exe = "~/Games/heroes-of-the-storm/drive_c/Program Files (x86)/Heroes of the Storm/Heroes of the Storm.exe"
 winetricks = [
   "arial",

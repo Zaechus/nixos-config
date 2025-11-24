@@ -11,7 +11,7 @@
       # fbneo # arcade (potentially bugged?)
       # freeintv # intellivision
       gambatte # game boy / gbc
-      genesis-plus-gx # genesis
+      genesis-plus-gx # md
       mesen # nes
       mgba # gba
       mupen64plus # n64
