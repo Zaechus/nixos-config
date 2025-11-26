@@ -261,7 +261,7 @@
       };
     };
 
-    files.".config/nushell/login.nu".text = "if (tty) =~ '/dev/tty1' { exec sway }";
+    files.".config/nushell/login.nu".text = "if (tty) =~ '/dev/tty1' { exec systemd-cat --identifier=sway sway }";
   };
 
   # Enable Wayland support in chrome
