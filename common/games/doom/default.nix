@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    crispyDoom
+    crispy-doom
   ];
 
   networking.firewall.allowedUDPPorts = [ 2342 ];

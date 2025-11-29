@@ -1,7 +1,7 @@
 final: prev: {
   my = {
     adom = final.callPackage ./adom { };
-    adom1 = final.callPackage_i686 ./adom1 { };
+    adom1 = final.pkgsi686Linux.callPackage ./adom1 { };
     adom2 = final.callPackage ./adom2 { };
     adom3 = final.callPackage ./adom3 { };
     angband = final.callPackage ./angband { };
