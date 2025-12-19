@@ -6,4 +6,9 @@
     HandleLidSwitchExternalPower = "suspend";
     HandleLidSwitchDocked = "ignore";
   };
+
+  nix.settings = {
+    keep-outputs = true;
+    keep-derivations = true;
+  };
 }

@@ -50,9 +50,6 @@
   # Swap
   swapDevices = [{ device = "/swap/swapfile"; }];
 
-  # Set your time zone.
-  time.timeZone = "America/Denver";
-
   # Hostname
   networking.hostName = "cybros";
 
@@ -63,7 +60,7 @@
     aria2 # torrent
     brogue-ce
     # crawl
-    du-dust
+    dust
     eza # exa
     ffmpeg
     # gimp
@@ -74,7 +71,7 @@
     # libwebp # dwebp
     # mkvtoolnix-cli # mkvmerge
     p7zip
-    poppler_utils # pdf
+    poppler-utils # pdf
     ppsspp # psp
     scummvm
     # rbdoom-3-bfg

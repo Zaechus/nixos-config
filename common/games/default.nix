@@ -19,6 +19,7 @@
       snes9x # snes
       stella # atari 2600
     ]))
+    unzip
     # pinned.wineWowPackages.staging # 10.5
     wineWowPackages.staging
     winetricks
