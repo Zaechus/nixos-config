@@ -15,7 +15,7 @@
 
   environment.sessionVariables."GTK_THEME" = "gruvbox-dark"; # TODO
 
-  programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ]; # TODO
+  programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 
   users.users.${username} = {
     theme = {
@@ -66,7 +66,5 @@
     programs.helix.settings.theme = "gruvbox";
 
     programs.zellij.settings.theme = "gruvbox";
-
-    files.".config/BraveSoftware/Brave-Browser/External Extensions/hmalklkailocblgkjpdagjoieifkdfbj.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}''; # TODO
   };
 }
