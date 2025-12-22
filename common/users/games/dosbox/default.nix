@@ -7,6 +7,8 @@
     ];
 
     files = {
+      ".config/dosbox/arena.conf".source = ./arena.conf;
+      ".config/dosbox/dagger.conf".source = ./dagger.conf;
       ".config/dosbox/default.conf".source = ./default.conf;
       ".config/dosbox/dosbox-staging.conf".source = ./dosbox-staging.conf;
       ".config/dosbox/gauntlet.conf".source = ./gauntlet.conf;
