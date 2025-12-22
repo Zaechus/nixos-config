@@ -1,4 +1,8 @@
-{ rustPlatform, fetchFromGitHub }:
+{
+  rustPlatform,
+  fetchFromGitHub,
+  perl,
+}:
 
 rustPlatform.buildRustPackage rec {
   pname = "ley";
@@ -8,8 +12,12 @@ rustPlatform.buildRustPackage rec {
     owner = "Zaechus";
     repo = pname;
     rev = "refs/heads/main";
-    hash = "sha256-kpGmjwcru2uM7ZBYB+H9PQXvLd7Dp5L2mp6wcatGZdA=";
+    hash = "sha256-9MsbEbZX7l9ONv5qKVztZ+80swdlDtDnhxNK50nokvE=";
   };
 
-  cargoHash = "sha256-ryMVd+rj2wYjHVajvKuX13EPsRPFZaxNb7nAylb3dDY=";
+  cargoHash = "sha256-n33yj4nLTcnKW8ynv6IzlYxM8Fvj9gcRhDM5hi/0rO8=";
+
+  nativeBuildInputs = [
+    perl
+  ];
 }

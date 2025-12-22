@@ -108,10 +108,6 @@
               # openssl
               gnumake
               perl
-              pkg-config
-            ];
-            buildInputs = with pkgs; [
-              openssl
             ];
           };
         sh =
