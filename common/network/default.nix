@@ -4,6 +4,7 @@
   ];
 
   networking = {
+    nftables.enable = true;
     useNetworkd = true;
 
     nameservers = [

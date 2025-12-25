@@ -12,6 +12,7 @@ final: prev: {
     endless-sky = final.callPackage ./endless-sky { };
     ley = final.callPackage ./ley { };
     mangos-classic = final.callPackage ./mangos-classic { };
+    openssl_1_0_2 = final.pkgsi686Linux.callPackage ./openssl_1_0_2 { };
     RBDOOM-3-BFG = final.callPackage ./RBDOOM-3-BFG { };
     rpcs3 = final.callPackage ./rpcs3 { };
     rustatus = final.callPackage ./rustatus { };

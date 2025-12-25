@@ -8,7 +8,7 @@
       beetle-psx-hw # playstation
       # bluemsx # colecovision
       # dolphin # gamecube (outdated)
-      # fbneo # arcade (potentially bugged?)
+      fbneo # arcade (potentially bugged?)
       # freeintv # intellivision
       gambatte # game boy / gbc
       genesis-plus-gx # md

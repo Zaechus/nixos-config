@@ -52,6 +52,7 @@
 
   # Hostname
   networking.hostName = "cybros";
+  networking.wireless.iwd.settings.General.EnableNetworkConfiguration = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
@@ -80,6 +81,14 @@
 
     my.angband
     my.endless-sky
+  ];
+
+  programs.steam.extraPackages = with pkgs; [
+    # Undertale
+    my.openssl_1_0_2
+    pkgsi686Linux.libGLU
+    pkgsi686Linux.openal
+    pkgsi686Linux.xorg.libXrandr
   ];
 
   system.stateVersion = "21.11";

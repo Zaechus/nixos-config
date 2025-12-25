@@ -11,7 +11,7 @@ exe = "~/Games/star-wars-battlefront-ii/drive_c/GOG Games/Star Wars - Battlefron
 
 [battlefront]
 prefix = "~/Games/star-wars-battlefront"
-runner = "wine"
+wine = "10.5"
 exe = "~/Games/star-wars-battlefront/drive_c/GOG Games/Star Wars - Battlefront/LaunchBF.exe"
 
 [caesar3]
@@ -309,6 +309,10 @@ exe = "~/Games/Terraria/start.sh"
 [tnt]
 dir = "~/Games/final-doom/TNT"
 runner = "crispy-doom"
+
+[undertale]
+env = {R600_DEBUG="vs.ps"}
+exe = "~/Games/Undertale/start.sh"
 
 [vvvvvv]
 exe = "~/Games/VVVVVV/start.sh"
