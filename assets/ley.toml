@@ -135,7 +135,7 @@ winetricks = [
 ]
 
 [heroes-of-the-storm]
-env = {WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1, __GL_DXVK_OPTIMIZATIONS=1, __GL_SHADER_DISK_CACHE=1}
+env = { WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1, __GL_DXVK_OPTIMIZATIONS=1, __GL_SHADER_DISK_CACHE=1 }
 prefix = "~/Games/heroes-of-the-storm"
 wine = "10.5"
 exe = "~/Games/heroes-of-the-storm/drive_c/Program Files (x86)/Heroes of the Storm/Heroes of the Storm.exe"
@@ -231,13 +231,14 @@ exe = "~/Games/rain-world/drive_c/GOG Games/Rain World/RainWorld.exe"
 exe = "~/Games/rimworld/start.sh"
 
 [silksong]
+env = { DRI_PRIME=1 }
 exe = "~/Games/Hollow Knight Silksong/start.sh"
 
 [slay-the-princess]
 exe = "~/Games/Slay the Princess The Pristine Cut/start.sh"
 
 [starcraft-ii]
-env = {WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1}
+env = { WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1 }
 prefix = "~/Games/starcraft-ii"
 runner = "wine"
 exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II/StarCraft II.exe"
@@ -311,7 +312,7 @@ dir = "~/Games/final-doom/TNT"
 runner = "crispy-doom"
 
 [undertale]
-env = {R600_DEBUG="vs.ps"}
+env = { R600_DEBUG="vs.ps" }
 exe = "~/Games/Undertale/start.sh"
 
 [vvvvvv]

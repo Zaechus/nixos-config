@@ -8,6 +8,8 @@
       fira-code
       font-awesome
       iosevka
+      # liberation_ttf
+      noto-fonts-cjk-sans
     ];
 
     fontconfig = {
