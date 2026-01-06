@@ -9,8 +9,8 @@
     # dolphin-emu # gamecube
     # duckstation # playstation
     # ecwolf # wolf3d
-    ironwail # quake
-    # minetest
+    # ironwail # quake
+    # luanti # formerly minetest
     # ppsspp # playstation portable
     # my.rpcs3 # ps3
     ruffle # flash
@@ -31,17 +31,5 @@
   networking.firewall.allowedTCPPorts = [
     7777 # Terraria
     47584 # Dark Souls
-  ];
-
-  programs.steam = {
-    package = (pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        openssl_1_1 # for Stardew Valley
-      ];
-    });
-  };
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "openssl-1.1.1w" # for inclusion in steam-run
   ];
 }
