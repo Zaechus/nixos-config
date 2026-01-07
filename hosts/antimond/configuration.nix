@@ -57,7 +57,11 @@
   networking.hostName = "antimond";
 
   networking.firewall.allowedUDPPorts = [
+    3657 # Star Wars: Battlefront
+    3658 # Star Wars: Battlefront
+    # 7551 # Halo
     7777 # Terraria
+    24642 # Stardew Valley
     47584 # Dark Souls
   ];
   networking.firewall.allowedTCPPorts = [

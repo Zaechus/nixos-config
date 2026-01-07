@@ -12,10 +12,10 @@
     ../../common/network/wg-quick.nix
 
     ../../common/games
-    ../../common/games/xvt.nix
     ../../common/games/diablo
     ../../common/games/doom
     ../../common/games/minecraft
+    ../../common/games/xvt
 
     ../../common/waydroid
 
