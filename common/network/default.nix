@@ -17,9 +17,11 @@
 
   services.resolved = {
     enable = true;
-    dnssec = "true";
-    dnsovertls = "true";
-    llmnr = "false";
+    settings.Resolve = {
+      DNSOverTLS = "true";
+      DNSSEC = "true";
+      LLMNR = "false";
+    };
   };
 
   systemd.network = {

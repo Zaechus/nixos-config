@@ -81,10 +81,11 @@
     ffmpeg
     imagemagick
     lftp
+    mkvtoolnix-cli
     scummvm
     sshfs
 
-    my.adom1
+    # my.adom1 # FIXME
     my.angband
     my.doukutsu-rs
     # my.endless-sky
