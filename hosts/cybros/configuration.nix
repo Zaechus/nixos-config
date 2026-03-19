@@ -86,8 +86,8 @@
     # Undertale
     my.openssl_1_0_2
     pkgsi686Linux.libGLU
+    pkgsi686Linux.libxrandr
     pkgsi686Linux.openal
-    pkgsi686Linux.xorg.libXrandr
   ];
 
   system.stateVersion = "21.11";

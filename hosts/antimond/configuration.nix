@@ -13,6 +13,7 @@
     ../../common/games
     ../../common/games/diablo
     ../../common/games/doom
+    ../../common/games/quake
 
     ./users/zaechus.nix
   ];
@@ -65,6 +66,8 @@
     47584 # Dark Souls
   ];
   networking.firewall.allowedTCPPorts = [
+    4000 # Diablo II
+    6112 # Diablo II
     7777 # Terraria
     47584 # Dark Souls
   ];
@@ -95,9 +98,9 @@
   programs.steam.extraPackages = with pkgs; [
     # Hotline Miami
     pkgsi686Linux.libGLU
+    pkgsi686Linux.libxrandr
     pkgsi686Linux.openal
     pkgsi686Linux.nvidia_cg_toolkit
-    pkgsi686Linux.xorg.libXrandr
   ];
 
   environment.sessionVariables.SDL_GAMECONTROLLER_IGNORE_DEVICES = "0x32ac/0x0012,0x32ac/0x0014"; # for some reason, the Framework Laptop 16 input modules are detected as evdev joysticks

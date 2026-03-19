@@ -57,6 +57,12 @@ prefix = "~/Games/dead-space"
 runner = "wine"
 exe = "~/Games/dead-space/drive_c/GOG Games/Dead Space/Dead Space.exe"
 
+[diablo-ii]
+prefix = "~/Games/diablo-ii"
+runner = "wine"
+exe = "~/Games/diablo-ii/drive_c/Program Files (x86)/Diablo II/Diablo II.exe"
+res = "800x600"
+
 [diablo-hellfire]
 dir = "~/.local/share/diasurgical/devilution/hellfire"
 runner = "devilutionx"
@@ -210,17 +216,22 @@ args = ["+g_showintromovie", "0"]
 
 [quake-hipnotic]
 dir = "~/dosgames/quake"
-runner = "quake"
+runner = "ironwail"
 args = ["-hipnotic"]
+
+[quake-listen]
+dir = "~/dosgames/quake"
+runner = "ironwail"
+args = ["-listen", "16"]
 
 [quake-rogue]
 dir = "~/dosgames/quake"
-runner = "quake"
+runner = "ironwail"
 args = ["-rogue"]
 
 [quake]
 dir = "~/dosgames/quake"
-runner = "quake"
+runner = "ironwail"
 
 [rain-world]
 prefix = "~/Games/rain-world"
@@ -229,6 +240,11 @@ exe = "~/Games/rain-world/drive_c/GOG Games/Rain World/RainWorld.exe"
 
 [rimworld]
 exe = "~/Games/rimworld/start.sh"
+
+[scm]
+prefix = "~/Games/scm"
+wine = "10.5"
+exe = "~/Games/scm/drive_c/SCM/SCMarine.exe"
 
 [silksong]
 env = { DRI_PRIME=1 }
@@ -317,6 +333,27 @@ exe = "~/Games/Undertale/start.sh"
 
 [vvvvvv]
 exe = "~/Games/VVVVVV/start.sh"
+
+[wow-retail]
+prefix = "~/Games/world-of-warcraft-retail"
+runner = "wine"
+exe = "~/Games/world-of-warcraft-retail/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe"
+
+[wow-tbc]
+prefix = "~/Games/world-of-warcraft-the-burning-crusade"
+runner = "wine"
+exe = "~/Games/world-of-warcraft-the-burning-crusade/drive_c/WoW/Wow.exe"
+winetricks = [
+  "grabfullscreen=y",
+]
+
+[wow-wotlk]
+prefix = "~/Games/world-of-warcraft-wrath-of-the-lich-king"
+runner = "wine"
+exe = "~/Games/world-of-warcraft-wrath-of-the-lich-king/drive_c/WoW/Wow.exe"
+winetricks = [
+  "grabfullscreen=y",
+]
 
 [wow]
 prefix = "~/Games/world-of-warcraft"

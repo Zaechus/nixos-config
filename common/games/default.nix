@@ -21,7 +21,7 @@
     ]))
     unzip
     # pinned.wineWowPackages.staging # 10.5
-    wineWowPackages.staging
+    wineWow64Packages.staging
     winetricks
   ];
 
