@@ -1,6 +1,19 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.overlays = [
+    (final: prev: {
+      retroarch-joypad-autoconfig = prev.retroarch-joypad-autoconfig.overrideAttrs {
+        src = prev.fetchFromGitHub {
+          owner = "libretro";
+          repo = "retroarch-joypad-autoconfig";
+          rev = "c389f65e16f0044ddd9bb70da6af2a92c5f3ee42";
+          hash = "sha256-G/Fs411ysC2kS20kQdo4su3Qo9YcNpSwd7e7sus/zys=";
+        };
+      };
+    })
+  ];
+
   environment.systemPackages = with pkgs; [
     innoextract # extract GOG offline installers
     my.ley
@@ -21,7 +34,7 @@
     ]))
     unzip
     # pinned.wineWowPackages.staging # 10.5
-    wineWow64Packages.staging
+    wineWow64Packages.staging # FIXME: NIXOS CANNOT GET WINE RIGHT
     winetricks
   ];
 
