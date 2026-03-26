@@ -86,6 +86,7 @@
     lftp
     mkvtoolnix-cli
     scummvm
+    sdl-jstest
     sshfs
 
     # my.adom1 # FIXME

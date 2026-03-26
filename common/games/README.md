@@ -3,6 +3,9 @@
 ## Retroarch
 Keep vsync ON, and just don't bother using fullscreen wayland and forcing vulkan...
 
+### General
+`input_joypad_driver = "sdl2"` for gyro/accelerometer support.
+
 ### N64
 `mupen64plus-rdp-plugin = "parallel"` and optionally \\\
 `mupen64plus-rsp-plugin = "parallel"` are greatly superior for accuracy. \
