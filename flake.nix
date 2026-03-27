@@ -17,6 +17,8 @@
       };
     };
 
+    packages.x86_64-linux.livecd = self.nixosConfigurations.livecd.config.system.build.isoImage;
+
     nixosConfigurations = let overlays = { nixpkgs.overlays = with self.overlays; [ my pinned ]; }; in {
       antimond = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -38,6 +40,14 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/gantrithor/configuration.nix
+          overlays
+        ];
+      };
+
+      livecd = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/livecd/configuration.nix
           overlays
         ];
       };

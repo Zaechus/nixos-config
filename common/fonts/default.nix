@@ -13,6 +13,7 @@
     ];
 
     fontconfig = {
+      enable = true;
       defaultFonts.monospace = [ "Iosevka Extended" ];
       hinting.enable = false;
       subpixel.lcdfilter = "light"; # fix for status bar characters
