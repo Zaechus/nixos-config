@@ -363,6 +363,14 @@ winetricks = [
   "grabfullscreen=y",
 ]
 
+[wow2]
+prefix = "~/Games/world-of-warcraft-2"
+runner = "wine"
+exe = "~/Games/world-of-warcraft-2/drive_c/WoW/WoW.exe"
+winetricks = [
+  "grabfullscreen=y",
+]
+
 [x-wing-alliance]
 prefix = "~/Games/star-wars-x-wing-alliance"
 runner = "wine"

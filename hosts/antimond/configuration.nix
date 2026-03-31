@@ -10,6 +10,8 @@
     ../../common/laptop
     ../../common/graphical
 
+    ../../common/qemu
+
     ../../common/games
     ../../common/games/diablo
     ../../common/games/doom

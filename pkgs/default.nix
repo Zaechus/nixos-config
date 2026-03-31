@@ -20,6 +20,7 @@ final: prev: {
     tiny = final.callPackage ./tiny { };
     UltimateDoomBuilder = final.callPackage ./UltimateDoomBuilder { };
     waypipe = final.callPackage ./waypipe { };
+    xboxdrv = final.callPackage ./xboxdrv { };
     xdvdfs-cli = final.callPackage ./xdvdfs-cli { };
     zinfo = final.callPackage ./zinfo { };
   };

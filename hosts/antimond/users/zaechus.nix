@@ -1,5 +1,3 @@
-{ config, lib, ... }:
-
 let
   username = "zaechus";
 in
@@ -20,8 +18,7 @@ in
 
   users.users.zaechus = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "kvm" ]
-      ++ lib.optionals config.virtualisation.libvirtd.enable [ "libvirtd" ];
+    extraGroups = [ "wheel" "video" "kvm" ];
 
     programs.git.config.user = {
       email = "zaechus@pm.me";
