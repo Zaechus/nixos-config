@@ -83,6 +83,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     anki
+    dust
     ffmpeg
     imagemagick
     lftp

@@ -14,6 +14,10 @@
       rustc
       rustfmt
       # rustup
+
+      # openssl
+      gnumake
+      perl
     ];
 
     files.".cargo/config.toml".text = ''
