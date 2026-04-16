@@ -57,16 +57,16 @@ prefix = "~/Games/dead-space"
 runner = "wine"
 exe = "~/Games/dead-space/drive_c/GOG Games/Dead Space/Dead Space.exe"
 
+[diablo-hellfire]
+dir = "~/.local/share/diasurgical/devilution/hellfire"
+runner = "devilutionx"
+args = ["--hellfire"]
+
 [diablo-ii]
 prefix = "~/Games/diablo-ii"
 runner = "wine"
 exe = "~/Games/diablo-ii/drive_c/Program Files (x86)/Diablo II/Diablo II.exe"
 res = "800x600"
-
-[diablo-hellfire]
-dir = "~/.local/share/diasurgical/devilution/hellfire"
-runner = "devilutionx"
-args = ["--hellfire"]
 
 [diablo]
 dir = "~/.local/share/diasurgical/devilution"
@@ -208,10 +208,16 @@ exe = "~/Games/original-war/drive_c/GOG Games/Original War/OwarFull.exe"
 dir = "~/Games/final-doom/Plutonia"
 runner = "crispy-doom"
 
+[quake-4]
+prefix = "~/Games/quake-4"
+runner = "wine"
+exe = "/home/zaechus/Games/quake-4/drive_c/GOG Games/Quake 4/Quake4.exe"
+args = ["+disconnect"]
+
 [quake-enhanced]
 prefix = "~/Games/quake-enhanced"
 runner = "wine"
-exe = "~/Games/quake-enhanced/drive_c/Quake Enhanced/Quake_Shipping_Playfab_GOG_x64.exe"
+exe = "~/Games/quake-enhanced/drive_c/GOG Games/Quake Enhanced/Quake_Shipping_Playfab_GOG_x64.exe"
 args = ["+g_showintromovie", "0"]
 
 [quake-hipnotic]
@@ -275,7 +281,8 @@ winetricks = [
 
 [starcraft]
 prefix = "~/Games/starcraft"
-wine = "9.20"
+# wine = "9.20"
+runner = "wine"
 exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
 res = "640x480"
 scale = "2.25"
@@ -355,18 +362,18 @@ winetricks = [
   "grabfullscreen=y",
 ]
 
-[wow]
-prefix = "~/Games/world-of-warcraft"
-runner = "wine"
-exe = "~/Games/world-of-warcraft/drive_c/WoW/WoW.exe"
-winetricks = [
-  "grabfullscreen=y",
-]
-
 [wow2]
 prefix = "~/Games/world-of-warcraft-2"
 runner = "wine"
 exe = "~/Games/world-of-warcraft-2/drive_c/WoW/WoW.exe"
+winetricks = [
+  "grabfullscreen=y",
+]
+
+[wow]
+prefix = "~/Games/world-of-warcraft"
+runner = "wine"
+exe = "~/Games/world-of-warcraft/drive_c/WoW/WoW.exe"
 winetricks = [
   "grabfullscreen=y",
 ]
