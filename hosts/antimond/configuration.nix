@@ -83,6 +83,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     anki
+    dolphin-emu # gamecube / wii
     dust
     ffmpeg
     imagemagick
