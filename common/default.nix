@@ -6,10 +6,12 @@
     ./git
   ];
 
-  boot.consoleLogLevel = 2;
+  boot.consoleLogLevel = 3;
   boot.loader = {
     timeout = 1;
-    systemd-boot.editor = false;
+    systemd-boot = {
+      editor = false;
+    };
   };
   boot.tmp = {
     useTmpfs = true;
@@ -62,6 +64,8 @@
 
   services.nscd.enableNsncd = true;
 
+  # FIXME: update broke boot resolutions again...
+  console.earlySetup = true;
   console.keyMap = "us";
   console.font = "Lat2-Terminus16";
   console.colors = [

@@ -89,9 +89,13 @@
     imagemagick
     lftp
     mkvtoolnix-cli
+    # narsil
     scummvm
     sdl-jstest
+    # sil
+    # sil-q
     sshfs
+    # tome2
 
     # my.adom1 # FIXME
     my.angband

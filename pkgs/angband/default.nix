@@ -7,13 +7,13 @@
 
 stdenv.mkDerivation rec {
   pname = "angband";
-  version = "4.2.5";
+  version = "4.2.6";
 
   src = fetchFromGitHub {
     owner = pname;
     repo = pname;
     rev = version;
-    sha256 = "sha256-Fp3BGCZYYdQCKXOLYsT4zzlibNRlbELZi26ofrbGGPQ=";
+    sha256 = "sha256-lx2EfE3ylcH1vLAHwNT1me1l4e4Jspkw4YJIAOlu/0E=";
   };
 
   nativeBuildInputs = [ autoreconfHook ];
