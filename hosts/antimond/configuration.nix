@@ -37,6 +37,8 @@
   ];
   boot.postBootCommands = "${pkgs.fbset}/bin/fbset -a -xres 2560 -yres 1600";
 
+  # boot.kernelPackages = pkgs.linuxPackages_latest; # 7.0
+
   # Enable trim
   boot.initrd.luks.devices."root".allowDiscards = true;
   services.fstrim.enable = true;

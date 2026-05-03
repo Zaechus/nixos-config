@@ -64,7 +64,6 @@
 
   services.nscd.enableNsncd = true;
 
-  # FIXME: update broke boot resolutions again...
   console.earlySetup = true;
   console.keyMap = "us";
   console.font = "Lat2-Terminus16";

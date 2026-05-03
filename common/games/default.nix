@@ -19,12 +19,15 @@
     my.ley
     (retroarch.withCores (cores: with cores; [
       beetle-psx-hw # playstation
+      beetle-vb # virtualboy
       # bluemsx # colecovision
+      desmume # nds
       # dolphin # gamecube (outdated)
       fbneo # arcade (potentially bugged?)
       # freeintv # intellivision
       gambatte # game boy / gbc
       genesis-plus-gx # md
+      # melonds # nds / dsi (either super broken or i need a diff bios)
       mesen # nes
       mgba # gba
       mupen64plus # n64
