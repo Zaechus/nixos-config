@@ -85,6 +85,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     anki
+    apotris # tetris
     dolphin-emu # gamecube / wii
     dust
     ffmpeg

@@ -3,23 +3,26 @@
 , fetchFromGitHub
 , cmake
 , glew
-, libdevil
+, libX11
 , pkg-config
 , rtaudio
 , rtmidi
 , SDL2
+, SDL2_image
 }:
 
 stdenv.mkDerivation rec {
   pname = "TheForceEngine";
-  version = "1.09.100";
+  version = "1.22.420";
 
   src = fetchFromGitHub {
     owner = "luciusDXL";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-nw9yp/StaSi5thafVT1V5YA2ZCYGWNoHUvQTpK90Foc=";
+    hash = "sha256-8JhaCIJgyaikoDLesshKiIhOO6OFis0xBYDq4vio4F4=";
   };
+
+  hardeningDisable = [ "format" ];
 
   nativeBuildInputs = [
     cmake
@@ -28,18 +31,17 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     glew
-    libdevil
+    libX11
     rtaudio
     rtmidi
     SDL2
+    SDL2_image
   ];
 
   postPatch = ''
     substituteInPlace TheForceEngine/TFE_FileSystem/paths-posix.cpp \
-      --replace /usr/share $out/share
+      --replace-fail "/usr/share" "$out/share"
   '';
-
-  enableParallelBuilding = true;
 
   meta = with lib; {
     homepage = "https://theforceengine.github.io";

@@ -152,6 +152,7 @@
             "XF86AudioMicMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
             "XF86Calculator" = "exec ${terminal}";
+            "XF86Tools" = "exec ${terminal}"; # the Framework logo key on F12
 
             "${mod}+b" = "splith";
             "${mod}+v" = "splitv";
@@ -166,7 +167,7 @@
             "${mod}+Shift+minus" = "move scratchpad";
             "${mod}+minus" = "scratchpad show";
 
-            "${mod}+p" = "bar mode toggle";
+            "${mod}+p" = "bar mode toggle"; # the display key on F9 maps to this
 
             "${mod}+r" = ''mode "resize"'';
           };

@@ -20,7 +20,7 @@
     (retroarch.withCores (cores: with cores; [
       beetle-psx-hw # playstation
       beetle-vb # virtualboy
-      # bluemsx # colecovision
+      bluemsx # msx2, colecovision
       desmume # nds
       # dolphin # gamecube (outdated)
       fbneo # arcade (potentially bugged?)
