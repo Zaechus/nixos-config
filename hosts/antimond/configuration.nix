@@ -84,6 +84,7 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
+    _7zz
     anki
     apotris # tetris
     dolphin-emu # gamecube / wii
@@ -93,6 +94,8 @@
     lftp
     mkvtoolnix-cli
     # narsil
+    pcsx2 # ps2
+    ppsspp # psp
     scummvm
     sdl-jstest
     # sil

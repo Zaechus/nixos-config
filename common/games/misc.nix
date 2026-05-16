@@ -9,7 +9,7 @@
     # duckstation # playstation
     # ecwolf # wolf3d
     # luanti # formerly minetest
-    # ppsspp # playstation portable
+    ppsspp # playstation portable
     # my.rpcs3 # ps3
     ruffle # flash
     # scrcpy # android
