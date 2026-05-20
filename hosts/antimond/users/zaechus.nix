@@ -26,15 +26,11 @@ in
     };
 
     programs.sway.config.output = {
-      eDP-1 = {
-        pos = "0 0";
-        subpixel = "rgb";
-      };
       eDP-2 = {
         pos = "0 0";
         subpixel = "rgb";
+        adaptive_sync = "on";
       };
-      DP-3.pos = "2560 0";
       DP-4.pos = "2560 0";
     };
   };

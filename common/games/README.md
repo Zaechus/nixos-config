@@ -1,15 +1,19 @@
 # Games
 
 ## Retroarch
-Keep vsync ON, and just don't bother using fullscreen wayland and forcing vulkan...
+Keep vsync ON when using gl and not using VRR, and force fullscreen+wayland+vulkan at your own risk...
 
 ### Tips
 `input_joypad_driver = "sdl2"` for gyro/accelerometer support.
 
+### GBA
+`mgba_interframe_blending = "mix"` can fix LCD ghosting on some games.
+
 ### N64
 `mupen64plus-rdp-plugin = "parallel"` and optionally \\\
 `mupen64plus-rsp-plugin = "parallel"` are greatly superior for accuracy. \
-`mupen64plus-cpucore = "cached_interpreter"` can also improve accuracy and stability. \
+`mupen64plus-cpucore = "cached_interpreter"` can also improve accuracy and stability.
+
 `mupen64plus-parallel-rdp-deinterlace-method = "Weave"` can fix games with screenshake.
 
 ### General
@@ -43,6 +47,15 @@ video_fullscreen = "true"
 video_scale_integer = "true"
 video_shader_enable = "true"
 video_shader_remember_last_dir = "true"
+```
+optional settings:
+```ini
+video_driver = "vulkan"
+video_max_swapchain_images = "2"
+video_vsync = "false"
+video_windowed_fullscreen = "false"
+vrr_runloop_enable = "true"
+vulkan_gpu_index = "1"
 ```
 
 ## rpcs3

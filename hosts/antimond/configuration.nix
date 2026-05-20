@@ -102,6 +102,7 @@
     # sil-q
     sshfs
     # tome2
+    umoria
 
     # my.adom1 # FIXME
     my.angband
