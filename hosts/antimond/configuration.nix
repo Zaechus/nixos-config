@@ -36,6 +36,7 @@
     # "amdgpu.dcdebugmask=0x410" # disable both
   ];
   boot.postBootCommands = "${pkgs.fbset}/bin/fbset -a -xres 2560 -yres 1600";
+  powerManagement.cpuFreqGovernor = "performance";
 
   # boot.kernelPackages = pkgs.linuxPackages_latest; # 7.0
 
@@ -80,7 +81,7 @@
   services.fwupd.enable = true;
   services.udev.extraRules = builtins.readFile ./99-false-joysticks.rules;
 
-  virtualisation.waydroid.enable = true;
+  # virtualisation.waydroid.enable = true;
 
   # Packages
   environment.systemPackages = with pkgs; [
