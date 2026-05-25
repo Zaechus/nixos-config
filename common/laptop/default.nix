@@ -1,5 +1,5 @@
 {
-  services.power-profiles-daemon.enable = true;
+  # services.power-profiles-daemon.enable = true; # what a nightmare. disable for now.
 
   services.logind.settings.Login = {
     HandleLidSwitch = "suspend";
