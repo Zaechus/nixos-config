@@ -34,10 +34,10 @@
     # "amdgpu.dcdebugmask=0x10" # disable PSR
     # "amdgpu.dcdebugmask=0x400" # disable DISPLAY_PANEL_REPLAY
     # "amdgpu.dcdebugmask=0x410" # disable both
-    "amdgpu.runpm=0" # disable runtime pm (dgpu auto powering down)
+    # "amdgpu.runpm=0" # disable runtime pm (dgpu auto powering down)
   ];
   boot.postBootCommands = "${pkgs.fbset}/bin/fbset -a -xres 2560 -yres 1600";
-  # powerManagement.cpuFreqGovernor = "performance";
+  powerManagement.cpuFreqGovernor = "performance";
 
   # boot.kernelPackages = pkgs.linuxPackages_latest; # 7.0
 

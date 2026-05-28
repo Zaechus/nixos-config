@@ -260,7 +260,7 @@ exe = "~/Games/Hollow Knight Silksong/start.sh"
 exe = "~/Games/Slay the Princess The Pristine Cut/start.sh"
 
 [starcraft-ii]
-env = { WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1 }
+env = { WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1, STAGING_WRITECOPY=1 }
 prefix = "~/Games/starcraft-ii"
 runner = "wine"
 exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II/StarCraft II.exe"
@@ -286,7 +286,7 @@ runner = "wine"
 exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
 res = "640x480"
 scale = "2.25"
-# mouse_speed = "-0.55"
+mouse_speed = "-0.55"
 winetricks = [
   "grabfullscreen=y",
   "vd=640x480",
@@ -362,10 +362,12 @@ winetricks = [
   "grabfullscreen=y",
 ]
 
-[wow2]
-prefix = "~/Games/world-of-warcraft-2"
+[wow1]
+prefix = "~/Games/world-of-warcraft-1"
 runner = "wine"
-exe = "~/Games/world-of-warcraft-2/drive_c/WoW/WoW.exe"
+exe = "~/Games/world-of-warcraft-1/drive_c/WoW/VanillaFixes.exe"
+args = [ "WoW.exe" ]
+# args = [ "WoW_tweaked.exe" ]
 winetricks = [
   "grabfullscreen=y",
 ]

@@ -11,8 +11,8 @@ in
     ../../common/network/wired.nix
     ../../common/network/wireless.nix
     ../../common/network/bluetooth.nix
-    ../../common/laptop
     ../../common/graphical
+    ../../common/games
     (import ../../common/users { inherit username; })
     (import ../../common/users/themes/gruvbox { inherit username; })
     (import ../../common/users/graphical { inherit username; })
@@ -40,23 +40,6 @@ in
   programs.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
-    innoextract
-    lftp
-    (retroarch.withCores (cores: with cores; [
-      beetle-psx-hw # playstation
-      gambatte # game boy / gbc
-      genesis-plus-gx # md
-      mesen # nes
-      mgba # gba
-      mupen64plus # n64
-      prosystem # atari 7800
-      snes9x # snes
-      stella # atari 2600
-    ]))
-    unzip
-    wineWow64Packages.staging
-    winetricks
-
     my.angband
     my.endless-sky
   ];
