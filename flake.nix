@@ -131,7 +131,7 @@
         web =
           pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
-              nodePackages.typescript-language-server
+              typescript-language-server
               vscode-langservers-extracted # HTML, CSS
             ];
           };

@@ -44,6 +44,7 @@
   # Options
   fileSystems."/home/ftp/Downloads" = {
     device = "/var/lib/deluge/Downloads";
+    fsType = "none";
     options = [ "bind" ];
   };
   services.logind.settings.Login.HandleLidSwitch = "ignore";

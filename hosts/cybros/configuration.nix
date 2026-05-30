@@ -17,8 +17,6 @@
     ../../common/games/minecraft
     ../../common/games/xvt
 
-    ../../common/waydroid
-
     ./users/zaechus.nix
     ./users/lizzie.nix
   ];
@@ -52,6 +50,9 @@
   # Hostname
   networking.hostName = "cybros";
   networking.wireless.iwd.settings.General.EnableNetworkConfiguration = true;
+
+  # Services
+  virtualisation.waydroid.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search nixpkgs ripgrep
