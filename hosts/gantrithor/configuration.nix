@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
     ../../common
     ../../common/laptop
-    ../../common/network/wired.nix
+    ../../common/network
     ../../common/network/wireless.nix
     ../../common/graphical
 

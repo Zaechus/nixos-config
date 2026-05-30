@@ -8,7 +8,7 @@ in
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
     ../../modules
     ../../common
-    ../../common/network/wired.nix
+    ../../common/network/core.nix
     ../../common/network/wireless.nix
     ../../common/network/bluetooth.nix
     ../../common/graphical

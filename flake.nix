@@ -3,10 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-pinned.url = "github:nixos/nixpkgs/2795c506fe8fb7b03c36ccb51f75b6df0ab2553f";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-pinned, ... }: {
+  outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-pinned, ... }: {
     # # RIP nixpkgs-fmt. gonna wait for NixOS to get their stuff together before touching a different formatter
     # formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
@@ -19,7 +20,9 @@
 
     packages.x86_64-linux.livecd = self.nixosConfigurations.livecd.config.system.build.isoImage;
 
-    nixosConfigurations = let overlays = { nixpkgs.overlays = with self.overlays; [ my pinned ]; }; in {
+    nixosConfigurations = let
+      overlays = { nixpkgs.overlays = with self.overlays; [ my pinned ]; };
+    in {
       antimond = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -44,7 +47,7 @@
         ];
       };
 
-      livecd = nixpkgs.lib.nixosSystem {
+      livecd = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/livecd/configuration.nix
@@ -52,7 +55,7 @@
         ];
       };
 
-      telperion = nixpkgs.lib.nixosSystem {
+      telperion = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/telperion/configuration.nix

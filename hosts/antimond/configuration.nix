@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../common
-    ../../common/network/wired.nix
+    ../../common/network
     ../../common/network/wireless.nix
     ../../common/network/bluetooth.nix
     ../../common/laptop
