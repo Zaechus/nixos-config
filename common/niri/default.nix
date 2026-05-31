@@ -2,6 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    alacritty
+    fuzzel
+    swaylock
     xwayland-satellite
   ];
 

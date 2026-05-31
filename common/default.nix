@@ -56,6 +56,13 @@
 
   security.sudo.execWheelOnly = true;
 
+  security.wrappers.write = {
+    setgid = true;
+    owner = "root";
+    group = "tty";
+    source = "${pkgs.util-linux}/bin/write";
+  };
+
   services.getty = {
     greetingLine = "NixOS ${builtins.substring 0 5 config.system.nixos.label} (\\m) - \\l";
     helpLine = lib.mkForce "";
