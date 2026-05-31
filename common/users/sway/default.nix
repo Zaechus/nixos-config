@@ -9,7 +9,6 @@
       brightnessctl
       swayidle
       swaylock
-      wf-recorder
       wl-clipboard
       grim # screenshot
       slurp # screenshot selection
