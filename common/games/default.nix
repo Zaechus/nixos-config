@@ -18,17 +18,18 @@
     innoextract # extract GOG offline installers
     my.ley
     (retroarch.withCores (cores: with cores; [
-      beetle-ngp # Neo Geo Pocket
-      beetle-pce # PC Engine
+      # beetle-ngp # Neo Geo Pocket
+      beetle-pce-fast # PC Engine CD
       beetle-psx-hw # playstation
+      beetle-saturn # Sega Saturn
       beetle-vb # virtualboy
       bluemsx # msx2, colecovision
       desmume # nds
-      # dolphin # gamecube (outdated)
-      fbneo # arcade (potentially bugged?)
+      fbneo # arcade (often breaks)
+      # fceumm # nes
       freeintv # intellivision
       gambatte # game boy / gbc
-      genesis-plus-gx # md
+      genesis-plus-gx # MS/GG/MD/CD
       # melonds # nds / dsi (either super broken or i need a diff bios)
       mesen # nes
       mgba # gba

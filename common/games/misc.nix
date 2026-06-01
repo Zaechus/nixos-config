@@ -5,7 +5,7 @@
     # appimage-run # mcpelauncher
     # cataclysmDDA.stable.curses # apparently this is separate and doesn't compile...
     dhewm3 # doom 3
-    dolphin-emu # gamecube
+    dolphin-emu # gamecube / wii
     # ecwolf # wolf3d
     # luanti # formerly minetest
     ppsspp # playstation portable
