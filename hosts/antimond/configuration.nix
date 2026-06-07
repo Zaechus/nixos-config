@@ -109,7 +109,7 @@
 
     # my.adom1 # FIXME
     my.angband
-    my.doukutsu-rs
+    # my.doukutsu-rs
     # my.endless-sky
     my.RBDOOM-3-BFG
   ];

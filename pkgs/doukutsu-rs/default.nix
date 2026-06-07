@@ -5,7 +5,6 @@
 , pkg-config
 , alsa-lib
 , SDL2
-, SDL2_image
 }:
 
 let
@@ -18,26 +17,19 @@ let
 in
 rustPlatform.buildRustPackage rec {
   pname = "doukutsu-rs";
-  version = "0.102.0-beta7";
+  version = "1.0.0";
 
   src = fetchFromGitHub {
     owner = pname;
     repo = pname;
     rev = version;
-    hash = "sha256-Gi58pGNs5u+tPIiPbprUxgj16vkOU73v19bG6/eR200=";
+    hash = "sha256-iVW7IvUhz+3wXmRsC75Jlo2g4fvoIlAoGavPMQ78f3Q=";
   };
 
-  cargoHash = "sha256-++rb+jzeQORYrX1vXFb6RQH30ccVoNQD/znZmZOqn5U=";
+  cargoHash = "sha256-uK9TkRXp19+29o+vHQ/jAKIOL67l/pHzT55F77IwdkI=";
 
-  nativeBuildInputs = [
-    cmake
-    pkg-config
-  ];
-
-  buildInputs = [
-    alsa-lib
-    SDL2
-    SDL2_image
+  cargoPatches = [
+    ./sdl2.patch
   ];
 
   buildNoDefaultFeatures = true;
@@ -48,20 +40,17 @@ rustPlatform.buildRustPackage rec {
     "exe"
   ];
 
-  doCheck = false;
+  nativeBuildInputs = [
+    cmake
+    pkg-config
+  ];
 
-  postPatch = ''
-    substituteInPlace Cargo.toml \
-      --replace-fail \
-        'sdl2 = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "f2f1e29a416bcc22f2faf411866db2c8d9536308", optional = true, features = ["unsafe_textures", "bundled", "static-link"] }' \
-        'sdl2 = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "f2f1e29a416bcc22f2faf411866db2c8d9536308", optional = true, features = ["unsafe_textures"] }' \
-      --replace-fail \
-        'sdl2-sys = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "f2f1e29a416bcc22f2faf411866db2c8d9536308", optional = true, features = ["bundled", "static-link"] }' \
-        'sdl2-sys = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "f2f1e29a416bcc22f2faf411866db2c8d9536308", optional = true }' \
-      --replace-fail \
-        'sdl2 = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "f2f1e29a416bcc22f2faf411866db2c8d9536308", optional = true, features = ["image", "unsafe_textures", "bundled", "static-link"] }' \
-        'sdl2 = { git = "https://github.com/doukutsu-rs/rust-sdl2.git", rev = "f2f1e29a416bcc22f2faf411866db2c8d9536308", optional = true, features = ["image", "unsafe_textures"] }'
-  '';
+  buildInputs = [
+    alsa-lib
+    SDL2
+  ];
+
+  doCheck = false;
 
   postInstall = ''
     ln -s ${gameData} $out/bin/data
