@@ -47,13 +47,20 @@ in
         text = concatStringsSep "\n" (flatten (mapAttrsToList
           (name: user: mapAttrsToList
             (dest: file: ''
-              path="${user.home}/${dest}"
-              mkdir -p "$(dirname "$path")"
-              ln -sf ${file.source} "$path"
-              while [ "$path" != "${user.home}" ]; do
-                chown -h ${user.name}:${user.group} "$path"
-                path="$(dirname "$path")"
-              done
+              link_file() {
+                path="$1/$2"
+                mkdir -p "$(dirname "$path")"
+                ln -sf ${file.source} "$path"
+                while [ "$path" != "$1" ]; do
+                  chown -h ${user.name}:${user.group} "$path"
+                  path="$(dirname "$path")"
+                done
+              }
+              link_file "${user.home}" "${dest}"
+              gcrootpath="/nix/var/nix/gcroots/user-files/${user.name}"
+              link_file "$gcrootpath" "${dest}"
+              chown ${user.name}:${user.group} "$gcrootpath"
+              chmod 700 "$gcrootpath"
             '')
             user.files)
           config.users.users));
