@@ -57,6 +57,7 @@
     "99-ethernet-default-dhcp".networkConfig.LinkLocalAddressing = false;
     "99-wireless-client-dhcp".linkConfig.ActivationPolicy = "down";
   };
+  systemd.services.wg-quick.wantedBy = [ "multi-user.target" ];
   systemd.targets.tpm2.enable = false;
 
   # User
