@@ -67,6 +67,7 @@
   networking.firewall.allowedUDPPorts = [
     3657 # Star Wars: Battlefront
     3658 # Star Wars: Battlefront
+    5123 # Noita Entangled Worlds
     # 7551 # Halo
     7777 # Terraria
     24642 # Stardew Valley

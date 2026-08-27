@@ -3,9 +3,9 @@
 {
   users.users.${username}.programs.bottom = {
     enable = true;
-    settings.flags = {
-      battery = true;
-      regex = true;
+    settings = {
+      flags.battery = true;
+      processes.regex = true;
     };
   };
 }

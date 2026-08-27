@@ -3,7 +3,7 @@
 , fetchurl
 , bzip2
 , cmake
-, fmt
+, fmt_11
 , gettext
 , libpng
 , libsodium
@@ -71,7 +71,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     bzip2
-    fmt
+    fmt_11
     libpng
     libsodium
     libtiff
