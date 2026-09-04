@@ -10,6 +10,7 @@
       swayidle
       swaylock
       wl-clipboard
+      wl-screenrec
       grim # screenshot
       slurp # screenshot selection
       jq # parse outputs for screenshot
