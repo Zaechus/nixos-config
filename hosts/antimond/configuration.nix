@@ -10,6 +10,7 @@
     ../../common/laptop
     ../../common/graphical
 
+    ../../common/v4l2loopback
     ../../common/qemu
 
     ../../common/games
@@ -81,7 +82,7 @@
   ];
 
   # Services
-  services.fwupd.enable = true;
+  # services.fwupd.enable = true; # FIX YOUR STUFF FRAMEWORK
   services.udev.extraRules = builtins.readFile ./99-false-joysticks.rules;
 
   # virtualisation.waydroid.enable = true;

@@ -266,5 +266,5 @@
 
   # Enable Wayland support in chrome
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+  nixpkgs.config.chromium.commandLineArgs = "--ozone-platform-hint=auto";
 }
