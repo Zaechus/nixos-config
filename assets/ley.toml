@@ -192,9 +192,25 @@ runner = "crispy-doom"
 args = ["-iwad", "~/dosgames/doom2/DOOM2.WAD"]
 
 [noita]
+env = { DRI_PRIME=1 }
 prefix = "~/Games/noita"
 runner = "wine"
 exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
+
+[noita-coop-run]
+prefix = "~/Games/other-noita/noita-coop"
+runner = "wine"
+exe = "~/Games/other-noita/noita-coop/drive_c/GOG Games/Noita/noita.exe"
+
+[noita-coop]
+exe = "~/Games/other-noita/noita_proxy.x86_64"
+args = ["--exe-path", "~/Games/other-noita/noita-coop/drive_c/GOG Games/Noita/noita.exe", "--launch-cmd", "ley noita-coop-run"]
+
+[noita-sandbox]
+env = { DRI_PRIME=1 }
+prefix = "~/Games/other-noita/noita-sandbox"
+runner = "wine"
+exe = "~/Games/other-noita/noita-sandbox/drive_c/GOG Games/Noita/noita.exe"
 
 [openttd]
 exe = "~/Games/OpenTTD/start.sh"
@@ -346,6 +362,12 @@ exe = "~/Games/Undertale/start.sh"
 
 [vvvvvv]
 exe = "~/Games/VVVVVV/start.sh"
+
+[warcraft-iii-reforged]
+env = { STAGING_SHARED_MEMORY=1 }
+prefix = "~/Games/warcraft-iii-reforged"
+runner = "wine"
+exe = "~/Games/warcraft-iii-reforged/drive_c/Program Files (x86)/Warcraft III/Warcraft III Launcher.exe"
 
 [wow-retail]
 prefix = "~/Games/world-of-warcraft-retail"

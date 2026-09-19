@@ -37,8 +37,6 @@ def --wrapped lt [...args: string] {
   lx -T ...$args | bat -p
 }
 
-alias scrcpy = scrcpy -KM --forward-all-clicks
-
 # Run nixpkgs binary without installing
 def --wrapped , [
   pkg: string # Nix package to run
