@@ -6,9 +6,9 @@
   services.resolved = {
     enable = true;
     settings.Resolve = {
-      DNSOverTLS = "true";
-      DNSSEC = "true";
-      LLMNR = "false";
+      DNSOverTLS = true;
+      DNSSEC = true;
+      LLMNR = false;
     };
   };
 }
