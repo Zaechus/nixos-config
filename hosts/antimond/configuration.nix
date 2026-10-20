@@ -10,7 +10,7 @@
     ../../common/laptop
     ../../common/graphical
 
-    ../../common/v4l2loopback
+    # ../../common/v4l2loopback # BUG: nix? more like sucks
     ../../common/qemu
 
     ../../common/games
@@ -109,11 +109,10 @@
     # tome2
     umoria
 
-    # my.adom1 # FIXME
     my.angband
     # my.doukutsu-rs
     # my.endless-sky
-    my.RBDOOM-3-BFG
+    # my.RBDOOM-3-BFG # FIXME
   ];
 
   programs.steam.extraPackages = with pkgs; [
