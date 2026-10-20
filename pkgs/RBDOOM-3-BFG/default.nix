@@ -1,13 +1,15 @@
 { lib
 , stdenv
 , fetchFromGitHub
+
 , cmake
 , directx-shader-compiler
 , ispc
+
+, SDL2
 , ncurses
 , openal
 , rapidjson
-, SDL2
 , vulkan-headers
 , vulkan-loader
 , zlib
@@ -32,10 +34,10 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
+    SDL2
     ncurses
     openal
     rapidjson
-    SDL2
     vulkan-headers
     vulkan-loader
     zlib
@@ -43,11 +45,13 @@ stdenv.mkDerivation rec {
 
   cmakeDir = "../neo";
   cmakeFlags = [
-    "-DFFMPEG=OFF"
-    "-DBINKDEC=ON"
-    "-DUSE_SYSTEM_RAPIDJSON=ON"
-    "-DUSE_SYSTEM_ZLIB=ON"
+    (lib.cmakeBool "FFMPEG" false)
+    (lib.cmakeBool "BINKDEC" true)
+    (lib.cmakeBool "USE_SYSTEM_RAPIDJSON" true)
+    (lib.cmakeBool "USE_SYSTEM_ZLIB" true)
   ];
+
+  buildFlags = [ "RBDoom3BFG" ];
 
   installPhase = ''
     runHook preInstall
@@ -59,8 +63,8 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    homepage = "https://github.com/RobertBeckebans/RBDOOM-3-BFG";
     description = "Doom 3 BFG Edition with modern engine features";
+    homepage = "https://github.com/RobertBeckebans/RBDOOM-3-BFG";
     license = licenses.gpl3Plus;
     platforms = platforms.unix;
   };

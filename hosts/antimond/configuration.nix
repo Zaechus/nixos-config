@@ -112,7 +112,7 @@
     my.angband
     # my.doukutsu-rs
     # my.endless-sky
-    # my.RBDOOM-3-BFG # FIXME
+    my.RBDOOM-3-BFG
   ];
 
   programs.steam.extraPackages = with pkgs; [
