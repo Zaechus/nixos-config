@@ -2,12 +2,13 @@
 
 {
   users.users.${username}.packages = with pkgs; [
-    # inlyne # markdown viewer # FIXME
+    inlyne # markdown viewer
     nil # Nix LSP
     tokei
   ];
 
-  # documentation.man.generateCaches = true; # FIXME: https://github.com/NixOS/nixpkgs/issues/384499
+  documentation.man.cache.enable = true;
+  # documentation.man.cache.generateAtRuntime = true;
   environment.systemPackages = with pkgs; [
     man-pages
     man-pages-posix

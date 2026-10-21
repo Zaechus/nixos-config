@@ -40,7 +40,7 @@
     ]))
     unzip
     # pinned.wineWowPackages.staging # 10.5
-    wineWow64Packages.staging # FIXME: NIXOS CANNOT GET WINE RIGHT
+    wineWow64Packages.staging
     winetricks
   ];
 

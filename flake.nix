@@ -113,7 +113,7 @@
             nativeBuildInputs = with pkgs; [
               cargo
               clippy
-              # lldb
+              lldb
               rust-analyzer
               rustc
               rustfmt

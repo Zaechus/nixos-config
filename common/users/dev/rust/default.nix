@@ -8,7 +8,7 @@
       cargo
       clang
       clippy
-      # lldb # FIXME
+      lldb
       mold
       rust-analyzer
       rustc
