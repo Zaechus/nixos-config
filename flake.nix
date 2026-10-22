@@ -138,6 +138,13 @@
               vscode-langservers-extracted # HTML, CSS
             ];
           };
+        zig =
+          pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              zls
+              zig
+            ];
+          };
       };
   };
 }
