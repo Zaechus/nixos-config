@@ -62,7 +62,6 @@
     brogue-ce
     # crawl
     dust
-    eza # exa
     ffmpeg
     # gimp
     # glxinfo # glxgears

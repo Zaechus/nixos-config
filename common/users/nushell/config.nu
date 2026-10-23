@@ -29,14 +29,6 @@ $env.config = {
   ]
 }
 
-alias lx = eza --color=always
-alias lxa = lx -a
-alias lxl = lx -l
-alias lxal = lx -aalg
-def --wrapped lt [...args: string] {
-  lx -T ...$args | bat -p
-}
-
 # Run nixpkgs binary without installing
 def --wrapped , [
   pkg: string # Nix package to run
