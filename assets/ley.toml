@@ -141,7 +141,7 @@ winetricks = [
 ]
 
 [heroes-of-the-storm]
-env = { WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1, __GL_DXVK_OPTIMIZATIONS=1, __GL_SHADER_DISK_CACHE=1 }
+# env = { WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1, __GL_DXVK_OPTIMIZATIONS=1, __GL_SHADER_DISK_CACHE=1 }
 prefix = "~/Games/heroes-of-the-storm"
 wine = "10.5"
 exe = "~/Games/heroes-of-the-storm/drive_c/Program Files (x86)/Heroes of the Storm/Heroes of the Storm.exe"
@@ -168,7 +168,7 @@ res = "800x600"
 exe = "~/Games/Hollow Knight/start.sh"
 
 [hotline-miami]
-exe = "~/Games/Hotline Miami/start.sh"
+exe = "~/Games/Hotline Miami/game/Hotline"
 
 [ihnm]
 dir = "~/Games/i-have-no-mouth-and-i-must-scream"
@@ -369,11 +369,6 @@ prefix = "~/Games/warcraft-iii-reforged"
 runner = "wine"
 exe = "~/Games/warcraft-iii-reforged/drive_c/Program Files (x86)/Warcraft III/Warcraft III Launcher.exe"
 
-[wow-retail]
-prefix = "~/Games/world-of-warcraft-retail"
-runner = "wine"
-exe = "~/Games/world-of-warcraft-retail/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe"
-
 [wow-tbc]
 prefix = "~/Games/world-of-warcraft-the-burning-crusade"
 runner = "wine"
@@ -391,9 +386,9 @@ winetricks = [
 ]
 
 [wow1]
-prefix = "~/Games/world-of-warcraft-1"
+prefix = "~/Games/world-of-warcraft"
 runner = "wine"
-exe = "~/Games/world-of-warcraft-1/drive_c/WoW/VanillaFixes.exe"
+exe = "~/Games/world-of-warcraft/drive_c/WoW/VanillaFixes.exe"
 args = [ "WoW.exe" ]
 # args = [ "WoW_tweaked.exe" ]
 winetricks = [

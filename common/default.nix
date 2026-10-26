@@ -110,6 +110,8 @@
     x = "xdg-open";
   };
 
+  services.fwupd.daemonSettings.P2pPolicy = "nothing";
+
   # FIXME
   security.pki.caCertificateBlacklist = [
     "Comodo AAA Services root"

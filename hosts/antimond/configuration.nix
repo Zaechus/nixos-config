@@ -116,6 +116,9 @@
   ];
 
   programs.steam.extraPackages = with pkgs; [
+    # # Dwarf Fortress
+    # SDL2_image
+
     # Hotline Miami
     pkgsi686Linux.libGLU
     pkgsi686Linux.libxrandr

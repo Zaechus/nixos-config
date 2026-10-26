@@ -7,7 +7,7 @@
     tokei
   ];
 
-  documentation.man.cache.enable = true;
+  # documentation.man.cache.enable = true;
   # documentation.man.cache.generateAtRuntime = true;
   environment.systemPackages = with pkgs; [
     man-pages
