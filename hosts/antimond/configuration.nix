@@ -91,7 +91,7 @@
   environment.systemPackages = with pkgs; [
     _7zz
     anki
-    apotris # tetris
+    # apotris # tetris
     dolphin-emu # gamecube / wii
     dust
     ffmpeg

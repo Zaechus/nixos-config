@@ -31,22 +31,17 @@ $env.config = {
 
 # Run nixpkgs binary without installing
 def --wrapped , [
-  pkg: string # Nix package to run
+  pkg: string # nix package to run
   ...args: string # arguments
 ] {
-  nix run $'nixpkgs#($pkg)' -- ...$args
+  NIXPKGS_ALLOW_UNFREE=1 nix run --impure $'nixpkgs#($pkg)' -- ...$args
 }
 
-# Create a shell with a set of available temporary packages
+# Create a shell with additional temporary packages
 def ,, [
-  --unfree
   ...packages: string # packages to include
 ] {
-  if ($unfree) {
-    NIXPKGS_ALLOW_UNFREE=1 nix shell --impure ...($packages | each { |p| $'nixpkgs#($p)' })
-  } else {
-    nix shell ...($packages | each { |p| $'nixpkgs#($p)' })
-  }
+  NIXPKGS_ALLOW_UNFREE=1 nix shell --impure ...($packages | each { |p| $'nixpkgs#($p)' })
 }
 
 def "nix dev" [
