@@ -10,7 +10,7 @@
     ../../common/laptop
     ../../common/graphical
 
-    # ../../common/v4l2loopback # BUG: nix? more like sucks
+    ../../common/v4l2loopback
     ../../common/qemu
 
     ../../common/games
