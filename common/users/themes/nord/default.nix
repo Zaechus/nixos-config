@@ -5,10 +5,7 @@
 { username, ... }: { pkgs, ... }:
 
 {
-  # programs.vivid = {
-  #   enable = true;
-  #   theme = "nord";
-  # };
+  # programs.vivid.theme = "nord";
 
   users.users.${username} = { config, ... }: {
     theme = {

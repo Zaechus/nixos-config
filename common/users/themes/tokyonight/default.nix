@@ -5,10 +5,7 @@
 { username, ... }: { ... }:
 
 {
-  # programs.vivid = {
-  #   enable = true;
-  #   theme = "tokyonight-storm";
-  # };
+  # programs.vivid.theme = "tokyonight-storm";
 
   users.users.${username} = { config, ... }: {
     theme = {

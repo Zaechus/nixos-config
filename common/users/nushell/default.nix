@@ -9,15 +9,14 @@ let
     lib.concatStringsSep "\n"
       (lib.mapAttrsToList (k: v: "$env.${k} = \"${v}\"")
         config.environment.sessionVariables) + "\n\n" + ''
-      $env.PATH = ($env.PATH | split row (char esep))
-      $env.PATH = (if $'($env.HOME)/.cargo/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($env.HOME)/.cargo/bin' })
-      $env.PATH = (if $'($env.HOME)/.local/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($env.HOME)/.local/bin' })
+      $env.PATH = (if $'($nu.home-dir)/.cargo/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($nu.home-dir)/.cargo/bin' })
+      $env.PATH = (if $'($nu.home-dir)/.local/bin' in $env.PATH { $env.PATH } else { $env.PATH | prepend $'($nu.home-dir)/.local/bin' })
     '' + "\n";
-  LS_COLORS = "$env.LS_COLORS = (${pkgs.vivid}/bin/vivid generate ${config.programs.vivid.theme} | str trim)\n";
+  LS_COLORS = "$env.LS_COLORS = (${lib.getExe pkgs.vivid} generate ${config.programs.vivid.theme} | str trim)\n";
   PROMPT =
     if !config.programs.starship.enable then ''
       def create_left_prompt [] {
-        $"\n(ansi blue_bold)($env.PWD | str replace $env.HOME ~)(ansi reset)(ansi green_bold)\n〉"
+        $"\n(ansi blue_bold)($env.PWD | str replace $nu.home-dir ~)(ansi reset)(ansi green_bold)\n〉"
       }
 
       $env.PROMPT_COMMAND = { create_left_prompt }

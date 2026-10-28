@@ -7,11 +7,7 @@
 { username, ... }: { pkgs, ... }:
 
 {
-  # TODO
-  programs.vivid = {
-    enable = true;
-    theme = "gruvbox-dark";
-  };
+  programs.vivid.theme = "gruvbox-dark"; # TODO
 
   environment.sessionVariables."GTK_THEME" = "gruvbox-dark"; # TODO
 

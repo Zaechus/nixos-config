@@ -1,6 +1,6 @@
 $env.config = {
   show_banner: false
-  edit_mode: vi
+  edit_mode: helix
   ls: {
     clickable_links: false
   }
@@ -9,24 +9,9 @@ $env.config = {
     termination_signal: false # do not show error on SIGINT
   }
   cursor_shape: {
-    vi_insert: block
-    vi_normal: block
     emacs: line
+    helix_insert: block
   }
-  keybindings: [
-    {
-      name: completion_menu
-      modifier: none
-      keycode: tab
-      mode: [emacs, vi_normal, vi_insert]
-      event: {
-        until: [
-          { send: menu name: completion_menu }
-          { send: menunext }
-        ]
-      }
-    }
-  ]
 }
 
 # Run nixpkgs binary without installing
@@ -39,9 +24,9 @@ def --wrapped , [
 
 # Create a shell with additional temporary packages
 def ,, [
-  ...packages: string # packages to include
+  ...pkgs: string # packages to include
 ] {
-  NIXPKGS_ALLOW_UNFREE=1 nix shell --impure ...($packages | each { |p| $'nixpkgs#($p)' })
+  NIXPKGS_ALLOW_UNFREE=1 nix shell --impure ...($pkgs| each { |p| $'nixpkgs#($p)' })
 }
 
 def "nix dev" [
@@ -108,7 +93,7 @@ def doomrl [] {
 def --wrapped dwarf-fortress [...args: string] {
   alacritty msg config 'font.normal.family = "DejaVu Sans Mono"'
   alacritty msg config colors.draw_bold_text_with_bright_colors=true
-  ^dwarf-fortress
+  ^dwarf-fortress ...$args
   alacritty msg config colors.draw_bold_text_with_bright_colors=false
   alacritty msg config 'font.normal.family = "monospace"'
 }
