@@ -56,9 +56,6 @@ def sc2cfg [] {
 }
 
 def setup_quake [] {
-  mv id1/PAK0.PAK id1/pak0.pak
-  mv id1/PAK1.PAK id1/pak1.pak
-
   mkdir id1/music
   bchunk -w game.gog game.cue track
   mv *.wav id1/music
@@ -73,6 +70,9 @@ def setup_quake [] {
   bchunk -w gamed.gog gamed.cue track
   mv *.wav rogue/music
   rm track01.iso
+
+  mv id1/PAK0.PAK id1/pak0.pak
+  mv id1/PAK1.PAK id1/pak1.pak
 }
 
 def doomrl [] {
