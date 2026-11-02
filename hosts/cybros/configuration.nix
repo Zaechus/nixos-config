@@ -74,6 +74,7 @@
     poppler-utils # pdf
     ppsspp # psp
     scummvm
+    sshfs
     # rbdoom-3-bfg
     rogue
     umoria
@@ -82,13 +83,13 @@
     my.endless-sky
   ];
 
-  programs.steam.extraPackages = with pkgs; [
-    # Undertale
-    my.openssl_1_0_2
-    pkgsi686Linux.libGLU
-    pkgsi686Linux.libxrandr
-    pkgsi686Linux.openal
-  ];
+  # programs.steam.extraPackages = with pkgs; [
+  #   # # Undertale
+  #   # my.openssl_1_0_2
+  #   # pkgsi686Linux.libGLU
+  #   # pkgsi686Linux.libxrandr
+  #   # pkgsi686Linux.openal
+  # ];
 
   system.stateVersion = "21.11";
 }

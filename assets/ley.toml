@@ -1,9 +1,3 @@
-[albion-online]
-exe = "~/Games/albiononline/Albion-Online"
-
-[amnesia]
-exe = "~/Games/Amnesia The Dark Descent/start.sh"
-
 [battlefront-ii]
 prefix = "~/Games/star-wars-battlefront-ii"
 runner = "wine"
@@ -175,17 +169,6 @@ dir = "~/Games/i-have-no-mouth-and-i-must-scream"
 runner = "scummvm"
 args = ["-c", "ihnm.ini", "--themepath=scummvm"]
 
-[jupiter-hell]
-exe = "~/Games/Jupiter Hell/start.sh"
-
-[ksp]
-exe = "~/Games/kerbal-space-program/start.sh"
-
-[lsl1]
-dir = "~/Games/Leisure Suit Larry"
-runner = "scummvm"
-args = ["-c", "lsl1.ini", "--themepath=scummvm"]
-
 [master]
 dir = "~/dosgames/master/wads"
 runner = "crispy-doom"
@@ -212,23 +195,19 @@ prefix = "~/Games/other-noita/noita-sandbox"
 runner = "wine"
 exe = "~/Games/other-noita/noita-sandbox/drive_c/GOG Games/Noita/noita.exe"
 
-[openttd]
-exe = "~/Games/OpenTTD/start.sh"
-
 [original-war]
 prefix = "~/Games/original-war"
 runner = "wine"
 exe = "~/Games/original-war/drive_c/GOG Games/Original War/OwarFull.exe"
 
 [plutonia]
-dir = "~/Games/final-doom/Plutonia"
+dir = "~/dosgames/plutonia"
 runner = "crispy-doom"
 
 [quake-4]
 prefix = "~/Games/quake-4"
 runner = "wine"
 exe = "/home/zaechus/Games/quake-4/drive_c/GOG Games/Quake 4/Quake4.exe"
-args = ["+disconnect"]
 
 [quake-enhanced]
 prefix = "~/Games/quake-enhanced"
@@ -287,11 +266,6 @@ winetricks = [
   "tahoma",
   "vd=2560x1600",
 ]
-
-[starcraft-ii-ptr]
-prefix = "~/Games/starcraft-ii"
-runner = "wine"
-exe = "~/Games/starcraft-ii/drive_c/Program Files (x86)/StarCraft II Public Test/Support64/SC2Switcher_x64.exe"
 
 [starcraft-remastered]
 prefix = "~/Games/starcraft-remastered"
@@ -353,7 +327,7 @@ winetricks = [
 exe = "~/Games/Terraria/start.sh"
 
 [tnt]
-dir = "~/Games/final-doom/TNT"
+dir = "~/dosgames/tnt"
 runner = "crispy-doom"
 
 [undertale]
