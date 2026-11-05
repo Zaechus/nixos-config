@@ -46,7 +46,7 @@ def "nix try" [file?: string] {
   if $file == null {
     NIXPKGS_ALLOW_UNFREE=1 nix-build -E 'with import <nixpkgs> { }; callPackage ./default.nix { }'
   } else {
-    NIXPKGS_ALLOW_UNFREE=1 nix-build -E $'with import <nixpkgs> { }; callPackage ($file) { }'
+    NIXPKGS_ALLOW_UNFREE=1 nix-build -E $'with import <nixpkgs> { }; callPackage ($file | path expand) { }'
   }
 }
 
