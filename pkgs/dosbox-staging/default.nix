@@ -74,7 +74,8 @@ stdenv.mkDerivation rec {
 
   postFixup = ''
     mv $out/bin/dosbox $out/bin/${pname}
-    makeWrapper $out/bin/${pname} $out/bin/dosbox
+    makeWrapper $out/bin/${pname} $out/bin/dosbox \
+      --run '[ "$WAYLAND_DISPLAY" ] && unset DISPLAY'
   '';
 
   meta = with lib; {

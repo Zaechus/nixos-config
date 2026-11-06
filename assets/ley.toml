@@ -8,6 +8,12 @@ prefix = "~/Games/star-wars-battlefront"
 wine = "10.5"
 exe = "~/Games/star-wars-battlefront/drive_c/GOG Games/Star Wars - Battlefront/LaunchBF.exe"
 
+[blizzard]
+env = { STAGING_SHARED_MEMORY=1 }
+prefix = "~/Games/blizzard"
+runner = "wine"
+exe = "~/Games/blizzard/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe"
+
 [caesar3]
 prefix = "~/Games/caesar3"
 runner = "wine"
@@ -104,12 +110,13 @@ exe = "~/Games/doomrl-linux-x64-0997/doomrl"
 
 [empire-earth]
 prefix = "~/Games/empire-earth"
-arch = "win32"
+# arch = "win32"
 runner = "wine"
 exe = "~/Games/empire-earth/drive_c/GOG Games/Empire Earth Gold/Empire Earth/Empire Earth.exe"
+res = "1024x768"
 winetricks = [
   "directmusic",
-  "vd=1920x1080",
+  "vd=1024x768",
 ]
 
 [gog-galaxy]
@@ -174,12 +181,6 @@ dir = "~/dosgames/master/wads"
 runner = "crispy-doom"
 args = ["-iwad", "~/dosgames/doom2/DOOM2.WAD"]
 
-[noita]
-env = { DRI_PRIME=1 }
-prefix = "~/Games/noita"
-runner = "wine"
-exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
-
 [noita-coop-run]
 prefix = "~/Games/other-noita/noita-coop"
 runner = "wine"
@@ -194,6 +195,12 @@ env = { DRI_PRIME=1 }
 prefix = "~/Games/other-noita/noita-sandbox"
 runner = "wine"
 exe = "~/Games/other-noita/noita-sandbox/drive_c/GOG Games/Noita/noita.exe"
+
+[noita]
+env = { DRI_PRIME=1 }
+prefix = "~/Games/noita"
+runner = "wine"
+exe = "~/Games/noita/drive_c/GOG Games/Noita/noita.exe"
 
 [original-war]
 prefix = "~/Games/original-war"
@@ -212,7 +219,7 @@ exe = "/home/zaechus/Games/quake-4/drive_c/GOG Games/Quake 4/Quake4.exe"
 [quake-enhanced]
 prefix = "~/Games/quake-enhanced"
 runner = "wine"
-exe = "~/Games/quake-enhanced/drive_c/GOG Games/Quake Enhanced/Quake_Shipping_Playfab_GOG_x64.exe"
+exe = "~/Games/quake-enhanced/drive_c/GOG Games/Quake Enhanced/quake_gog.exe"
 args = ["+g_showintromovie", "0"]
 
 [quake-hipnotic]
@@ -250,6 +257,16 @@ exe = "~/Games/scm/drive_c/SCM/SCMarine.exe"
 [silksong]
 env = { DRI_PRIME=1 }
 exe = "~/Games/Hollow Knight Silksong/start.sh"
+
+[skyrim]
+prefix = "~/Games/skyrim"
+# wine = "10.5"
+runner = "wine"
+exe = "~/Games/skyrim/drive_c/GOG Games/Skyrim Anniversary Edition/SkyrimSELauncher.exe"
+# winetricks = [
+#   "faudio",
+#   # "xact",
+# ]
 
 [slay-the-princess]
 exe = "~/Games/Slay the Princess The Pristine Cut/start.sh"
@@ -336,12 +353,6 @@ exe = "~/Games/Undertale/start.sh"
 
 [vvvvvv]
 exe = "~/Games/VVVVVV/start.sh"
-
-[warcraft-iii-reforged]
-env = { STAGING_SHARED_MEMORY=1 }
-prefix = "~/Games/warcraft-iii-reforged"
-runner = "wine"
-exe = "~/Games/warcraft-iii-reforged/drive_c/Program Files (x86)/Warcraft III/Warcraft III Launcher.exe"
 
 [wow-tbc]
 prefix = "~/Games/world-of-warcraft-the-burning-crusade"
