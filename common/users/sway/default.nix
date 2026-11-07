@@ -134,7 +134,7 @@
             "${mod}+Tab" = "move workspace to output right";
             "${mod}+Shift+Tab" = "move workspace to output left";
 
-            "${mod}+Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')";
+            "${mod}+Print" = "exec GRIM_DEFAULT_DIR=~/Pictures grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')";
             "${mod}+g" = ''exec grim -g "$(slurp)" - | wl-copy'';
 
             "${mod}+Shift+s" = "exec swaylock -c 000000";
