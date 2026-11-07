@@ -92,8 +92,10 @@ dir = "~/dosgames/doom2"
 runner = "crispy-doom"
 
 [doom3]
+env = { DRI_PRIME=1 }
 dir = "~/.local/share/dhewm3"
 runner = "dhewm3"
+wayland = true
 
 [doom64]
 prefix = "~/Games/doom-64"
@@ -265,7 +267,6 @@ runner = "wine"
 exe = "~/Games/skyrim/drive_c/GOG Games/Skyrim Anniversary Edition/SkyrimSELauncher.exe"
 # winetricks = [
 #   "faudio",
-#   # "xact",
 # ]
 
 [slay-the-princess]
