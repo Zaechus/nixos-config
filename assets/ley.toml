@@ -5,7 +5,8 @@ exe = "~/Games/star-wars-battlefront-ii/drive_c/GOG Games/Star Wars - Battlefron
 
 [battlefront]
 prefix = "~/Games/star-wars-battlefront"
-wine = "10.5"
+# wine = "10.5"
+runner = "wine"
 exe = "~/Games/star-wars-battlefront/drive_c/GOG Games/Star Wars - Battlefront/LaunchBF.exe"
 
 [blizzard]
@@ -21,6 +22,7 @@ exe = "~/Games/caesar3/drive_c/GOG Games/Caesar 3/c3.exe"
 res = "1024x768"
 scale = "1.40625"
 winetricks = [
+  # "cnc_ddraw",
   "grabfullscreen=y",
   "vd=1024x768",
 ]
@@ -49,7 +51,7 @@ exe = "~/Games/dark-souls/drive_c/DarkSouls/DARKSOULS.exe"
 winetricks = [
   "d3dx9",
   "vd=1024x720",
-  "~/.config/ley/k_lite.verb"
+  # "~/.config/ley/k_lite.verb", # for wmv3+wmapro movies; needed if directshow/quartz not working
 ]
 
 [dead-space]
@@ -144,7 +146,7 @@ winetricks = [
 ]
 
 [heroes-of-the-storm]
-# env = { WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1, __GL_DXVK_OPTIMIZATIONS=1, __GL_SHADER_DISK_CACHE=1 }
+# env = { WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1 }
 prefix = "~/Games/heroes-of-the-storm"
 wine = "10.5"
 exe = "~/Games/heroes-of-the-storm/drive_c/Program Files (x86)/Heroes of the Storm/Heroes of the Storm.exe"
@@ -251,11 +253,6 @@ exe = "~/Games/rain-world/drive_c/GOG Games/Rain World/RainWorld.exe"
 [rimworld]
 exe = "~/Games/rimworld/start.sh"
 
-[scm]
-prefix = "~/Games/scm"
-wine = "10.5"
-exe = "~/Games/scm/drive_c/SCM/SCMarine.exe"
-
 [silksong]
 env = { DRI_PRIME=1 }
 exe = "~/Games/Hollow Knight Silksong/start.sh"
@@ -266,7 +263,7 @@ prefix = "~/Games/skyrim"
 runner = "wine"
 exe = "~/Games/skyrim/drive_c/GOG Games/Skyrim Anniversary Edition/SkyrimSELauncher.exe"
 # winetricks = [
-#   "faudio",
+#   "faudio", # xact, xaudio
 # ]
 
 [slay-the-princess]
@@ -282,6 +279,7 @@ winetricks = [
   "arial",
   "grabfullscreen=y",
   "tahoma",
+  # "vcrun2015"
   "vd=2560x1600",
 ]
 
@@ -298,10 +296,12 @@ prefix = "~/Games/starcraft"
 # wine = "9.20"
 runner = "wine"
 exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
+# res = "1024x768"
 res = "640x480"
 scale = "2.25"
 mouse_speed = "-0.55"
 winetricks = [
+  # "cnc_ddraw",
   "grabfullscreen=y",
   "vd=640x480",
   "winxp",
@@ -336,6 +336,7 @@ exe = "~/Games/star-wars-galactic-battlegrounds/drive_c/GOG Games/Star Wars - Ga
 res = "1280x1024"
 scale = "1.054"
 winetricks = [
+  # "cnc_ddraw",
   "directplay",
   "grabfullscreen=y",
   "vd=1280x1024",
@@ -354,6 +355,24 @@ exe = "~/Games/Undertale/start.sh"
 
 [vvvvvv]
 exe = "~/Games/VVVVVV/start.sh"
+
+[warcraft-iii]
+prefix = "~/Games/warcraft-iii"
+runner = "wine"
+exe = "/home/zaechus/Games/warcraft-iii/drive_c/Program Files (x86)/Warcraft III/Warcraft III.exe"
+res = "800x600"
+winetricks = [
+  "vd=800x600",
+]
+
+[warcraft-iii-tft]
+prefix = "~/Games/warcraft-iii"
+runner = "wine"
+exe = "/home/zaechus/Games/warcraft-iii/drive_c/Program Files (x86)/Warcraft III/Frozen Throne.exe"
+res = "800x600"
+winetricks = [
+  "vd=800x600",
+]
 
 [wow-tbc]
 prefix = "~/Games/world-of-warcraft-the-burning-crusade"

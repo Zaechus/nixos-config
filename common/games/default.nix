@@ -39,7 +39,6 @@
       stella # atari 2600
     ]))
     unzip
-    # pinned.wineWowPackages.staging # 10.5
     wineWow64Packages.stagingFull
     winetricks
   ];
