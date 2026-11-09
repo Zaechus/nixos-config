@@ -4,21 +4,17 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
-    nixpkgs-pinned.url = "github:nixos/nixpkgs/2795c506fe8fb7b03c36ccb51f75b6df0ab2553f";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-pinned, ... }: {
+  outputs = { self, nixpkgs, nixpkgs-stable, ... }: {
     overlays = {
       my = import ./pkgs;
-      pinned = final: prev: {
-        pinned = import nixpkgs-pinned { system = "x86_64-linux"; };
-      };
     };
 
     packages.x86_64-linux.livecd = self.nixosConfigurations.livecd.config.system.build.isoImage;
 
     nixosConfigurations = let
-      overlays = { nixpkgs.overlays = with self.overlays; [ my pinned ]; };
+      overlays = { nixpkgs.overlays = with self.overlays; [ my ]; };
     in {
       antimond = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
