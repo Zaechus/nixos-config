@@ -283,14 +283,6 @@ winetricks = [
   "vd=2560x1600",
 ]
 
-[starcraft-remastered]
-prefix = "~/Games/starcraft-remastered"
-runner = "wine"
-exe = "~/Games/starcraft-remastered/drive_c/Program Files (x86)/StarCraft/StarCraft Launcher.exe"
-winetricks = [
-  "grabfullscreen=y",
-]
-
 [starcraft]
 prefix = "~/Games/starcraft"
 # wine = "9.20"
