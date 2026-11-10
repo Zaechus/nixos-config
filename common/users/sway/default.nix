@@ -238,15 +238,22 @@
         }];
 
         extra = [
-          ''assign [class="^steam_app.*"] 2''
           ''assign [app_id="lutris"] 4''
-          ''assign [class="galaxyclient.exe"] 4''
           ''assign [class="^steam$"] 4''
+          ''assign [class="battle.net.exe"] 4''
+          ''assign [class="galaxyclient.exe"] 4''
+
+          ''for_window [app_id=".*\.exe$"] floating enable, border none''
+          ''for_window [class=".*\.exe$"] floating enable, border none''
+          ''for_window [class="^steam_app.*"] floating enable, border none''
+          ''for_window [class="regedit.exe"] border normal''
+          ''for_window [class="^wine.*\.exe"] border normal''
+          ''for_window [floating title="" class="explorer.exe"] move position 100 ppt 0 ppt, move left 161px''
+          ''for_window [title="Wine Desktop" class="explorer.exe"] border pixel, floating disable''
+
           ''for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable''
-          ''for_window [class="battle.net.exe"] floating enable''
-          ''for_window [class="galaxyclient.exe"] floating enable''
-          ''for_window [class=".*"] inhibit_idle fullscreen''
-          ''for_window [app_id=".*"] inhibit_idle fullscreen''
+
+          ''for_window [all] inhibit_idle fullscreen''
         ];
 
         startup = [
