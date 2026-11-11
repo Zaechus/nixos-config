@@ -1,9 +1,11 @@
+# Interface
+OPTIONS=windowtype:tty
 OPTIONS=symset:curses
 
 # Disable autopickup
 OPTIONS=!autopickup
 
-# Make commands that ask for an inventory item pop up a menu
+# Commands asking for an inventory item will show a menu instead of a letter query
 OPTIONS=force_invmenu
 
 # Disable numpad
@@ -13,20 +15,20 @@ OPTIONS=number_pad:0
 OPTIONS=name:player,selectsaved
 
 # Options
-OPTIONS=altmeta,msg_window:combination
+OPTIONS=altmeta,msg_window:combination,!tips,!tutorial
 
 # Visual options
-OPTIONS=lit_corridor,hilite_pet,hilite_pile
+OPTIONS=boulder:0,hilite_pet,hilite_pile,lit_corridor
 
 # Add items to status line
-OPTIONS=time,showexp
+OPTIONS=showexp,time
 
 OPTIONS=menucolors
-MENUCOLOR=" blessed " = green
-MENUCOLOR=" holy " = green
-MENUCOLOR=" cursed " = red
-MENUCOLOR=" unholy " = red
-MENUCOLOR=" cursed .* (being worn)" = orange&underline
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" holy "=green
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" unholy "=red
+MENUCOLOR=" cursed .* (being worn)"=orange&underline
 
 # Status hilites
 OPTIONS=statushilites
@@ -38,35 +40,25 @@ OPTIONS=hilite_status:hitpoints/<66%/yellow&normal
 OPTIONS=hilite_status:hitpoints/<50%/orange&normal
 OPTIONS=hilite_status:hitpoints/<33%/red&bold
 OPTIONS=hilite_status:hitpoints/<15%/red&inverse
-
 ## Pw
 OPTIONS=hilite_status:power/100%/gray&normal
 OPTIONS=hilite_status:power/<100%/green&normal
 OPTIONS=hilite_status:power/<66%/yellow&normal
 OPTIONS=hilite_status:power/<50%/orange&normal
 OPTIONS=hilite_status:power/<33%/red&bold
-
 ## Carry
 OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
-
 ## Hunger
 OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
-
 ## Mental
 OPTIONS=hilite_status:condition/hallu/yellow
 OPTIONS=hilite_status:condition/conf/orange
 OPTIONS=hilite_status:condition/stun/red&bold
-
 ## Health
 OPTIONS=hilite_status:condition/termill/red&inverse
 OPTIONS=hilite_status:condition/foodpois/red&inverse
 OPTIONS=hilite_status:condition/slime/red&inverse
-
-# gold
-OPTIONS=hilite_status:gold/up/yellow/down/brown
-
 # St, Dx, Co, In, Wi, Ch
 OPTIONS=hilite_status:characteristics/up/green/down/red
-
-# Fancier interface with multiple windows and more color
-#OPTIONS=windowtype:curses
+# gold
+OPTIONS=hilite_status:gold/up/yellow/down/brown

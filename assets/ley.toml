@@ -14,6 +14,9 @@ env = { STAGING_SHARED_MEMORY=1 }
 prefix = "~/Games/blizzard"
 runner = "wine"
 exe = "~/Games/blizzard/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe"
+winetricks = [
+  "grabfullscreen=y",
+]
 
 [caesar3]
 prefix = "~/Games/caesar3"
@@ -383,11 +386,13 @@ winetricks = [
 ]
 
 [wow1]
+env = { DXVK_CONFIG = "d3d9.maxFrameRate = 165" }
 prefix = "~/Games/world-of-warcraft"
 runner = "wine"
 exe = "~/Games/world-of-warcraft/drive_c/WoW/VanillaFixes.exe"
 args = [ "WoW.exe" ]
 # args = [ "WoW_tweaked.exe" ]
+# max_render_time = 4
 winetricks = [
   "grabfullscreen=y",
 ]
