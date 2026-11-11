@@ -9,7 +9,6 @@ in
     (import ../../../common/users/themes/gruvbox { inherit username; })
     (import ../../../common/users/graphical { inherit username; })
     (import ../../../common/users/dev/rust { inherit username; })
-    (import ../../../common/users/dev/zellij { inherit username; })
     (import ../../../common/users/games/dosbox { inherit username; })
     (import ../../../common/users/games/nethack { inherit username; })
   ];

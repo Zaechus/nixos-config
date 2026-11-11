@@ -8,7 +8,6 @@ in
     (import ../../../common/users/graphical { inherit username; })
 
     (import ../../../common/users/dev/rust { inherit username; })
-    (import ../../../common/users/dev/zellij { inherit username; })
 
     (import ../../../common/users/games { inherit username; })
     (import ../../../common/users/games/doomrl { inherit username; })

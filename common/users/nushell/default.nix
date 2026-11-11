@@ -43,7 +43,5 @@ in
       editor.shell = [ "nu" "-c" ];
       keys.normal."C-z" = "no_op"; # nushell doesn't have suspend
     };
-
-    programs.zellij.settings.default_shell = "nu";
   };
 }

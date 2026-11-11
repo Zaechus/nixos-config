@@ -47,8 +47,6 @@
 
     programs.git.config.delta.syntax-theme = "Nord";
 
-    programs.zellij.settings.theme = "nord";
-
     files.".config/BraveSoftware/Brave-Browser/External Extensions/abehfkkfjlplnjadfcjiflnejblfmmpj.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}'';
   };
 }

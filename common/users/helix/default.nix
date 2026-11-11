@@ -12,7 +12,5 @@
       mergetool.hx.cmd = ''hx "$MERGED"'';
       mergetool.keepBackup = false;
     };
-
-    programs.zellij.settings.scrollback_editor = "hx";
   };
 }

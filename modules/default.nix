@@ -33,7 +33,6 @@ in
     ./nushell
     ./sway
     ./theme.nix
-    ./zellij
   ];
 
   options.users.users = mkOption {

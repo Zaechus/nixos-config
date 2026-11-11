@@ -37,8 +37,6 @@
 
     programs.helix.settings.theme = "tokyonight_storm";
 
-    programs.zellij.settings.theme = "tokyonight-storm";
-
     files.".config/BraveSoftware/Brave-Browser/External Extensions/enpfonmmpgoinjpglildebkaphbhndek.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}'';
   };
 }

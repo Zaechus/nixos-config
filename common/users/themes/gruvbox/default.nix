@@ -60,7 +60,5 @@
     programs.git.config.delta.syntax-theme = "gruvbox-dark";
 
     programs.helix.settings.theme = "gruvbox";
-
-    programs.zellij.settings.theme = "gruvbox";
   };
 }

@@ -10,7 +10,6 @@
     ../../common/network/wg-quick.nix
 
     (import ../../common/users { username = "narud"; })
-    (import ../../common/users/dev/zellij { username = "narud"; })
   ];
 
   # Use the systemd-boot EFI boot loader.
