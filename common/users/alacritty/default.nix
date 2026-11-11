@@ -33,4 +33,6 @@
 
     programs.sway.config.terminal = "alacritty msg create-window || alacritty";
   };
+
+  programs.tmux.terminal = "alacritty";
 }

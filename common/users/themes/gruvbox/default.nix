@@ -13,6 +13,8 @@
 
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 
+  programs.tmux.plugins = [ pkgs.tmuxPlugins.gruvbox ];
+
   users.users.${username} = {
     theme = {
       bg = "#282828"; # bg 235

@@ -2,10 +2,11 @@
 # https://github.com/folke/tokyonight.nvim/blob/main/extras/alacritty_tokyonight_storm.yml
 # https://chrome.google.com/webstore/detail/tokyonight/enpfonmmpgoinjpglildebkaphbhndek
 
-{ username, ... }: { ... }:
+{ username, ... }: { pkgs, ... }:
 
 {
   # programs.vivid.theme = "tokyonight-storm";
+  # programs.tmux.plugins = [ pkgs.tmuxPlugins.tokyo-night-tmux ];
 
   users.users.${username} = { config, ... }: {
     theme = {

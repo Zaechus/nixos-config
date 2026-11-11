@@ -3,11 +3,12 @@
     ./hardware-configuration.nix
     ../../common
     ../../common/network/core.nix
+    ../../common/network/wg-quick.nix
 
     ../../common/deluge
     ../../common/ftp
     ../../common/ssh
-    ../../common/network/wg-quick.nix
+    ../../common/tmux
 
     (import ../../common/users { username = "narud"; })
   ];

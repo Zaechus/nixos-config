@@ -6,6 +6,7 @@
 
 {
   # programs.vivid.theme = "nord";
+  # programs.tmux.plugins = [ pkgs.tmuxPlugins.nord ];
 
   users.users.${username} = { config, ... }: {
     theme = {

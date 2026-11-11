@@ -12,6 +12,7 @@
 
     ../../common/v4l2loopback
     ../../common/qemu
+    ../../common/tmux
 
     ../../common/games
     ../../common/games/diablo
