@@ -38,9 +38,11 @@
     mime = {
       enable = true;
       defaultApplications = {
-        "image/jpg" = "imv.desktop";
-        "image/jpeg" = "imv.desktop";
-        "image/png" = "imv.desktop";
+        "image/*" = "imv.desktop";
+        "video/*" = [
+          "umpv.desktop"
+          "mpv.desktop"
+        ];
       };
     };
   };

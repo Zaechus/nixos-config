@@ -245,9 +245,10 @@
 
           ''for_window [class="battle.net.exe"] floating enable''
           ''for_window [class="galaxyclient.exe"] floating enable''
-          ''for_window [floating title="" class="explorer.exe"] move position 100 ppt 0 ppt, move left 161px''
+          ''for_window [floating title="" class="explorer.exe"] move position 100 ppt 24 px, move left 196 px, move window workspace 4''
 
           ''for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable''
+          ''for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] move position cursor, move left 128 px, move down 100 px''
 
           ''for_window [all] inhibit_idle fullscreen''
         ];

@@ -4,8 +4,8 @@
   imports = [ ../chromium ];
 
   environment.systemPackages = with pkgs; [
-    brave
+    brave-origin
   ];
 
-  environment.sessionVariables.BROWSER = "brave";
+  environment.sessionVariables.BROWSER = "brave-origin";
 }
