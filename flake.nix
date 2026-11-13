@@ -128,7 +128,7 @@
           pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
               typescript-language-server
-              vscode-langservers-extracted # HTML, CSS
+              vscode-langservers-extracted # HTML, CSS, JSON
             ];
           };
         zig =

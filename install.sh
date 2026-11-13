@@ -40,7 +40,7 @@ yes "$cryptpass" | cryptsetup open "$part2" root
 # Format
 mkfs.fat -F 32 "$part1"
 
-mkfs.btrfs /dev/mapper/root
+mkfs.btrfs --csum xxhash /dev/mapper/root
 mkdir -p /mnt
 mount /dev/mapper/root /mnt
 btrfs subvolume create /mnt/root
