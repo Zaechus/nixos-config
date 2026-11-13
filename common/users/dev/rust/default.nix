@@ -9,24 +9,21 @@
       clang
       clippy
       lldb
-      mold
       rust-analyzer
       rustc
       rustfmt
       # rustup
+      wild
 
-      # openssl
       gnumake
+      # openssl
       perl
     ];
 
     files.".cargo/config.toml".text = ''
       [target.'cfg(target_os = "linux")']
       linker = "clang"
-      rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
-
-      [registries.crates-io]
-      protocol = "sparse"
+      rustflags = ["-Clink-arg=--ld-path=${pkgs.wild}/bin/wild"]
     '';
   };
 }
