@@ -9,11 +9,26 @@
 {
   programs.vivid.theme = "gruvbox-dark"; # TODO
 
-  environment.sessionVariables."GTK_THEME" = "gruvbox-dark"; # TODO
-
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 
   programs.tmux.plugins = [ pkgs.tmuxPlugins.gruvbox ];
+
+  # TODO: i hate gnome
+  programs.dconf = {
+    profiles.gruvbox.databases = [
+      {
+        settings = {
+          "org/gnome/desktop/interface" = {
+            color-scheme = "prefer-dark";
+            icon-theme = "oomox-gruvbox-dark";
+            gtk-theme = "gruvbox-dark";
+          };
+        };
+      }
+    ];
+  };
+  environment.sessionVariables.DCONF_PROFILE = "gruvbox";
+  environment.sessionVariables.GTK_THEME = "gruvbox-dark";
 
   users.users.${username} = {
     theme = {
@@ -49,11 +64,12 @@
     };
 
     packages = with pkgs; [
-      gruvbox-dark-icons-gtk
       gruvbox-dark-gtk
+      gruvbox-dark-icons-gtk
     ];
-    files.".gtkrc-2.0".source = ./gtk-2.0; # TODO
-    files.".config/gtk-3.0/settings.ini".source = ./gtk-3.0; # TODO
+    files.".gtkrc-2.0".source = ./gtkrc-2.0;
+    files.".config/gtk-3.0/settings.ini".source = ./settings.ini;
+    files.".config/gtk-4.0/settings.ini".source = ./settings.ini;
 
     programs.bat.settings.theme = "gruvbox-dark";
 

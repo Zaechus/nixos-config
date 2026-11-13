@@ -5,8 +5,25 @@
 { username, ... }: { pkgs, ... }:
 
 {
+  # programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
   # programs.vivid.theme = "nord";
   # programs.tmux.plugins = [ pkgs.tmuxPlugins.nord ];
+
+  # programs.dconf = {
+  #   profiles.nord.databases = [
+  #     {
+  #       settings = {
+  #         "org/gnome/desktop/interface" = {
+  #           color-scheme = "prefer-dark";
+  #           icon-theme = "Numix";
+  #           gtk-theme = "Nordic";
+  #         };
+  #       };
+  #     }
+  #   ];
+  # };
+  # environment.sessionVariables.DCONF_PROFILE = "nord";
+  # environment.sessionVariables.GTK_THEME = "Nordic";
 
   users.users.${username} = { config, ... }: {
     theme = {
@@ -34,11 +51,12 @@
     };
 
     packages = with pkgs; [
-      numix-icon-theme
       nordic
+      numix-icon-theme
     ];
-    files.".gtkrc-2.0".source = ./gtk-2.0;
-    files.".config/gtk-3.0/settings.ini".source = ./gtk-3.0;
+    files.".gtkrc-2.0".source = ./gtkrc-2.0;
+    files.".config/gtk-3.0/settings.ini".source = ./settings.ini;
+    files.".config/gtk-4.0/settings.ini".source = ./settings.ini;
 
     programs.bat.settings.theme = "Nord";
 
