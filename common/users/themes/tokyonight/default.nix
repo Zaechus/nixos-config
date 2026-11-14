@@ -5,8 +5,9 @@
 { username, ... }: { pkgs, ... }:
 
 {
-  # programs.vivid.theme = "tokyonight-storm";
+  # programs.chromium.extensions = [ "hpcmeljpfhclmddogcblpfenipkdbdfh" ];
   # programs.tmux.plugins = [ pkgs.tmuxPlugins.tokyo-night-tmux ];
+  # programs.vivid.theme = "tokyonight-storm";
 
   users.users.${username} = { config, ... }: {
     theme = {
@@ -34,6 +35,10 @@
     packages = with pkgs; [
       tokyonight-gtk-theme
     ];
+    files.".gtkrc-2.0".source = ./gtkrc-2.0;
+    files.".config/gtk-3.0/settings.ini".source = ./settings.ini;
+    files.".config/gtk-4.0/settings.ini".source = ./settings.ini;
+    files.".config/dconf/user.txt".source = ./user.txt;
 
     programs.alacritty.settings.colors.indexed_colors = [
       { index = 16; color = "#ff9e64"; }
@@ -41,7 +46,5 @@
     ];
 
     programs.helix.settings.theme = "tokyonight_storm";
-
-    files.".config/BraveSoftware/Brave-Browser/External Extensions/enpfonmmpgoinjpglildebkaphbhndek.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}'';
   };
 }

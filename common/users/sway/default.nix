@@ -267,6 +267,10 @@
     files.".config/nushell/login.nu".text = "if (tty) =~ '/dev/tty1' { exec systemd-cat --identifier=sway sway }";
   };
 
+  programs.tmux.extraConfig = ''
+    set-option -g update-environment "DISPLAY WAYLAND_DISPLAY SWAYSOCK SSH_AUTH_SOCK"
+  '';
+
   # Enable Wayland support in chrome
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   nixpkgs.config.chromium.commandLineArgs = "--ozone-platform-hint=auto";

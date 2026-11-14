@@ -40,4 +40,9 @@ in
   options.users.users = mkOption {
     type = with types; attrsOf (submodule userOptions);
   };
+
+  config.environment.etc."dconf/profile/user".text = ''
+    service-db:keyfile/user
+    user-db:user
+  '';
 }

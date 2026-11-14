@@ -8,6 +8,7 @@
     # https://chromeenterprise.google/policies/
     extraOpts = {
       "AIModeSettings" = 1;
+      "BackgroundModeEnabled" = false;
       "BrowserSignin" = 0;
       "DefaultBrowserSettingEnabled" = false;
       "EnableMediaRouter" = false;
@@ -15,8 +16,8 @@
       "PromotionsEnabled" = false;
       "ShowHomeButton" = false;
       "SyncDisabled" = true;
-    };
-    extraOptsRecommended = {
+
+      # extraOptsRecommended
       "BookmarkBarEnabled" = false;
       "HomepageIsNewTabPage" = true;
       "RestoreOnStartup" = 1;

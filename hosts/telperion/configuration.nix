@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../common
-    ../../common/network/core.nix
+    ../../common/network
     ../../common/network/wg-quick.nix
 
     ../../common/deluge
@@ -39,12 +39,6 @@
 
   # Hostname
   networking.hostName = "telperion";
-
-  services.resolved = {
-    dnsovertls = "true";
-    dnssec = "true";
-    llmnr = "false";
-  };
 
   # Options
   fileSystems."/home/ftp/Downloads" = {

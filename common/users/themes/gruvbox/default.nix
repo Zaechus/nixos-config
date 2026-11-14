@@ -13,23 +13,6 @@
 
   programs.tmux.plugins = [ pkgs.tmuxPlugins.gruvbox ];
 
-  # TODO: i hate gnome
-  programs.dconf = {
-    profiles.gruvbox.databases = [
-      {
-        settings = {
-          "org/gnome/desktop/interface" = {
-            color-scheme = "prefer-dark";
-            icon-theme = "oomox-gruvbox-dark";
-            gtk-theme = "gruvbox-dark";
-          };
-        };
-      }
-    ];
-  };
-  environment.sessionVariables.DCONF_PROFILE = "gruvbox";
-  environment.sessionVariables.GTK_THEME = "gruvbox-dark";
-
   users.users.${username} = {
     theme = {
       bg = "#282828"; # bg 235
@@ -70,6 +53,7 @@
     files.".gtkrc-2.0".source = ./gtkrc-2.0;
     files.".config/gtk-3.0/settings.ini".source = ./settings.ini;
     files.".config/gtk-4.0/settings.ini".source = ./settings.ini;
+    files.".config/dconf/user.txt".source = ./user.txt;
 
     programs.bat.settings.theme = "gruvbox-dark";
 

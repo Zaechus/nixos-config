@@ -1,0 +1,4 @@
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+gtk-theme='gruvbox-dark'
+icon-theme='oomox-gruvbox-dark'

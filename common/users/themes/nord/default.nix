@@ -6,24 +6,8 @@
 
 {
   # programs.chromium.extensions = [ "abehfkkfjlplnjadfcjiflnejblfmmpj" ];
-  # programs.vivid.theme = "nord";
   # programs.tmux.plugins = [ pkgs.tmuxPlugins.nord ];
-
-  # programs.dconf = {
-  #   profiles.nord.databases = [
-  #     {
-  #       settings = {
-  #         "org/gnome/desktop/interface" = {
-  #           color-scheme = "prefer-dark";
-  #           icon-theme = "Numix";
-  #           gtk-theme = "Nordic";
-  #         };
-  #       };
-  #     }
-  #   ];
-  # };
-  # environment.sessionVariables.DCONF_PROFILE = "nord";
-  # environment.sessionVariables.GTK_THEME = "Nordic";
+  # programs.vivid.theme = "nord";
 
   users.users.${username} = { config, ... }: {
     theme = {
@@ -57,6 +41,7 @@
     files.".gtkrc-2.0".source = ./gtkrc-2.0;
     files.".config/gtk-3.0/settings.ini".source = ./settings.ini;
     files.".config/gtk-4.0/settings.ini".source = ./settings.ini;
+    files.".config/dconf/user.txt".source = ./user.txt;
 
     programs.bat.settings.theme = "Nord";
 
@@ -66,6 +51,6 @@
 
     programs.git.config.delta.syntax-theme = "Nord";
 
-    files.".config/BraveSoftware/Brave-Browser/External Extensions/abehfkkfjlplnjadfcjiflnejblfmmpj.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}'';
+    # files.".config/BraveSoftware/Brave-Browser/External Extensions/abehfkkfjlplnjadfcjiflnejblfmmpj.json".text = ''{"external_update_url":"https://clients2.google.com/service/update2/crx"}'';
   };
 }
