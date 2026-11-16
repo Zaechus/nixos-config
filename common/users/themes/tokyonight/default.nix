@@ -1,6 +1,6 @@
 # https://github.com/folke/tokyonight.nvim
-# https://github.com/folke/tokyonight.nvim/blob/main/extras/alacritty_tokyonight_storm.yml
-# https://chrome.google.com/webstore/detail/tokyonight/enpfonmmpgoinjpglildebkaphbhndek
+# https://github.com/folke/tokyonight.nvim/blob/main/extras/alacritty/tokyonight_storm.toml
+# https://chromewebstore.google.com/detail/tokyo-night-storm/hpcmeljpfhclmddogcblpfenipkdbdfh
 
 { username, ... }: { pkgs, ... }:
 
@@ -14,7 +14,7 @@
       bg = "#24283b";
       fg = "#c0caf5";
 
-      black = "#1D202F";
+      black = "#1d202f";
       red = "#f7768e";
       green = "#9ece6a";
       yellow = "#e0af68";

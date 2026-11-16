@@ -5,7 +5,6 @@ exe = "~/Games/star-wars-battlefront-ii/drive_c/GOG Games/Star Wars - Battlefron
 
 [battlefront]
 prefix = "~/Games/star-wars-battlefront"
-# wine = "10.5"
 runner = "wine"
 exe = "~/Games/star-wars-battlefront/drive_c/GOG Games/Star Wars - Battlefront/LaunchBF.exe"
 
@@ -22,8 +21,8 @@ winetricks = [
 prefix = "~/Games/caesar3"
 runner = "wine"
 exe = "~/Games/caesar3/drive_c/GOG Games/Caesar 3/c3.exe"
-res = "1024x768"
-scale = "1.40625"
+res = "800x600"
+# res = "1024x768"
 winetricks = [
   # "cnc_ddraw",
   "grabfullscreen=y",
@@ -35,7 +34,6 @@ prefix = "~/Games/civilization3"
 runner = "wine"
 exe = "~/Games/civilization3/drive_c/GOG Games/Civilization III Complete/Civ3Launcher.exe"
 res = "1024x768"
-scale = "1.40625"
 winetricks = [
   "directplay",
   "grabfullscreen=y",
@@ -54,7 +52,7 @@ exe = "~/Games/dark-souls/drive_c/DarkSouls/DARKSOULS.exe"
 winetricks = [
   "d3dx9",
   "vd=1024x720",
-  # "~/.config/ley/k_lite.verb", # for wmv3+wmapro movies; needed if directshow/quartz not working
+  # "~/.config/ley/k_lite.verb", # for wmv3+wmapro movies; needed if gstreamer/directshow/quartz not working
 ]
 
 [dead-space]
@@ -151,7 +149,7 @@ winetricks = [
 [heroes-of-the-storm]
 # env = { WINE_SIMULATE_WRITECOPY=1, STAGING_SHARED_MEMORY=1 }
 prefix = "~/Games/heroes-of-the-storm"
-wine = "10.5"
+runner = "wine"
 exe = "~/Games/heroes-of-the-storm/drive_c/Program Files (x86)/Heroes of the Storm/Heroes of the Storm.exe"
 winetricks = [
   "arial",
@@ -262,7 +260,6 @@ exe = "~/Games/Hollow Knight Silksong/start.sh"
 
 [skyrim]
 prefix = "~/Games/skyrim"
-# wine = "10.5"
 runner = "wine"
 exe = "~/Games/skyrim/drive_c/GOG Games/Skyrim Anniversary Edition/SkyrimSELauncher.exe"
 # winetricks = [
@@ -287,16 +284,15 @@ winetricks = [
 ]
 
 [starcraft]
+env = { WINEDLLOVERRIDES="ddraw.dll=b,n" }
 prefix = "~/Games/starcraft"
 # wine = "9.20"
 runner = "wine"
 exe = "~/Games/starcraft/drive_c/Program Files (x86)/Starcraft/StarCraft.exe"
-# res = "1024x768"
 res = "640x480"
-scale = "2.25"
-mouse_speed = "-0.55"
+mouse_speed = "-0.5"
 winetricks = [
-  # "cnc_ddraw",
+  "cnc_ddraw",
   "grabfullscreen=y",
   "vd=640x480",
   "winxp",
@@ -329,7 +325,6 @@ prefix = "~/Games/star-wars-galactic-battlegrounds"
 runner = "wine"
 exe = "~/Games/star-wars-galactic-battlegrounds/drive_c/GOG Games/Star Wars - Galactic Battlegrounds/swgbg.exe"
 res = "1280x1024"
-scale = "1.054"
 winetricks = [
   # "cnc_ddraw",
   "directplay",
@@ -395,6 +390,7 @@ args = [ "WoW.exe" ]
 # max_render_time = 4
 winetricks = [
   "grabfullscreen=y",
+  "win7",
 ]
 
 [wow]
@@ -403,15 +399,14 @@ runner = "wine"
 exe = "~/Games/world-of-warcraft/drive_c/WoW/WoW.exe"
 winetricks = [
   "grabfullscreen=y",
+  "win7",
 ]
 
 [x-wing-alliance]
 prefix = "~/Games/star-wars-x-wing-alliance"
 runner = "wine"
 exe = "~/Games/star-wars-x-wing-alliance/drive_c/GOG Games/Star Wars - X-Wing Alliance/Alliance.EXE"
-esync = false
 res = "800x600"
-scale = "1.8"
 winetricks = [
   "directplay",
   "vd=800x600",
@@ -423,7 +418,6 @@ prefix = "~/Games/sw-xvt"
 runner = "wine"
 exe = "~/Games/sw-xvt/drive_c/GOG Games/Star Wars - XvT/XWINGTIE.EXE"
 res = "640x480"
-scale = "2.25"
 winetricks = [
   "directplay",
   "vd=640x480",

@@ -1,6 +1,6 @@
-# https://github.com/arcticicestudio/nord
+# https://github.com/nordtheme/nord
 # https://www.nordtheme.com/docs/colors-and-palettes
-# https://github.com/arcticicestudio/nord-alacritty/blob/develop/src/nord.yml
+# https://chromewebstore.google.com/detail/nord/abehfkkfjlplnjadfcjiflnejblfmmpj
 
 { username, ... }: { pkgs, ... }:
 

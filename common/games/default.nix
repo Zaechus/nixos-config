@@ -14,6 +14,8 @@
     })
   ];
 
+  boot.kernelModules = [ "ntsync" ];
+
   environment.systemPackages = with pkgs; [
     innoextract # extract GOG offline installers
     my.ley

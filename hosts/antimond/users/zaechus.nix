@@ -27,7 +27,7 @@ in
     programs.sway.config.output = {
       eDP-2 = {
         pos = "0 0";
-        subpixel = "rgb";
+        subpixel = "none";
         adaptive_sync = "on";
       };
       DP-4.pos = "2560 0";

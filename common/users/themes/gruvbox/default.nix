@@ -2,16 +2,16 @@
 # https://github.com/gruvbox-community/gruvbox
 # https://raw.githubusercontent.com/wiki/gruvbox-community/gruvbox/images/gruvbox_palette_dark.png
 # https://github.com/alacritty/alacritty-theme/blob/master/themes/gruvbox_dark.toml
-# https://chrome.google.com/webstore/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
+# https://chromewebstore.google.com/detail/czo-gruvbox64-theme/hmalklkailocblgkjpdagjoieifkdfbj
 
 { username, ... }: { pkgs, ... }:
 
 {
-  programs.vivid.theme = "gruvbox-dark"; # TODO
-
   programs.chromium.extensions = [ "hmalklkailocblgkjpdagjoieifkdfbj" ];
 
   programs.tmux.plugins = [ pkgs.tmuxPlugins.gruvbox ];
+
+  programs.vivid.theme = "gruvbox-dark"; # TODO
 
   users.users.${username} = {
     theme = {
