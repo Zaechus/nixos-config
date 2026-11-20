@@ -83,6 +83,8 @@
     47584 # Dark Souls
   ];
 
+  networking.wireless.iwd.settings.Rank.BandModifier5GHz = 9.0;
+
   # Services
   # services.fwupd.enable = true; # FIX YOUR STUFF FRAMEWORK
   services.udev.extraRules = builtins.readFile ./99-false-joysticks.rules;

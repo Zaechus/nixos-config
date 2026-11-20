@@ -245,6 +245,8 @@
 
           ''for_window [class="battle.net.exe"] floating enable''
           ''for_window [class="galaxyclient.exe"] floating enable''
+          ''for_window [class="[Ww]o[Ww].*exe"] fullscreen enable''
+          ''for_window [class="Xephyr"] fullscreen enable''
           ''for_window [floating title="" class="explorer.exe"] move position 100 ppt 24 px, move left 196 px, move window workspace 4''
 
           ''for_window [app_id="brave-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable''
