@@ -19,6 +19,7 @@
     ../../common/games/doom
     ../../common/games/minecraft
     ../../common/games/quake
+    ../../common/nix-ld
 
     ./users/zaechus.nix
   ];
